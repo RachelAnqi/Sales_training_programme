@@ -1,0 +1,43 @@
+---
+title: "Codes_demonstration"
+author: "Rachel"
+date: "2017"
+output:
+  pdf_document: default
+  word_document: default
+---
+
+## Introduction
+In order to obtain the value of offer attractiveness & success value as well as to create instructor reports, the following codes are used. Please note that offer attractiveness will be produced for each account by every period(cycle); success value will be produced at the end of the programme. The coding process is mainly divided into 5 steps. From step 1, each step is preparation of the next step.
+
+Tip: all values are calculated without considering weightage.
+
+## Step one
+* Create a function for calculation by responsive curves (named ``curve``)
+* Define inputs from participant decisions as well as some default settings
+* carry out data cleaning and formating
+* to obtain: **name,volume,margin of available products**;
+**initial sales knowledge & product knowledge & motivation of available sales representatives**;
+**etc**
+
+
+## Step two
+* calculate the following basic elements using inputs and defaults
+* basic elements: **motivation**; **sales skills**; **product knowledge**; **time with account**; **strategy and cycle planning**; **KPI report analysis**; **administration**; **meeting with team*; *priority fit**; **promotional budget**;  
+
+## Step three
+* calculate the intermediate variables
+* intermediate variables: **sales representative sales performance**; **field work**; **deployment quality**; **product knowledge**; **promotional support**; **past relationship**;
+
+## Step four
+* calculate the intermediate variables
+* intermediate variables: **sales performance**; **customer relationship**; **discount**;
+
+## Step five
+* calculate **offer attractiveness**; **success value**
+ 
+ 
+ 
+
+
+

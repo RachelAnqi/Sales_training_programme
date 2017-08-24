@@ -24,5 +24,9 @@ accounts = list(account1 = list(type = "",
                                 beds = ""),
                 account4 = list(type = "",
                                 beds = ""))
+cycle = list(cycle1 = list(),
+             cycle2 = list(),
+             cycle3 = list(),
+             cycle4 = list())
 
 total_promotional_budget = ""

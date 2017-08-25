@@ -1,9 +1,6 @@
 library(shiny)
 library(shinydashboard)
-
-
-
-
+library(shinyjs)
 
 
 
@@ -12,8 +9,10 @@ shinyApp(
     dashboardPage(
       dashboardHeader(title = "销售培训"),
       dashboardSidebar(
-        tags$div(style="text-align:center;height:40px",
-        menuItem("新闻&WAS计划", tabName = "new&WAS", icon = icon("navicon"))),
+        useShinyjs(),
+        sidebarMenu(
+          id = "sidebarmenu",
+        menuItem("新闻&WAS计划", tabName = "news_and_WAS", icon = icon("navicon"))),
         menuItem("报告", tabName = "reports", icon = icon("list-alt")),
         menuItem("销售代表", tabName = "sr", icon = icon("address-card-o")),
         menuItem("产品", tabName = "products", icon = icon("plus-square-o")),
@@ -24,7 +23,7 @@ shinyApp(
       dashboardBody(
           tabItems(
           # First tab content
-          tabItem(tabName = "new&WAS",
+          tabItem(tabName = "news_and_WAS",
                   tabsetPanel(
                     tabPanel("客户信息",
                              dataTableOutput("hospital_info")),
@@ -46,6 +45,7 @@ shinyApp(
           tabItem(tabName = "decision1",
                   tabsetPanel(#position = "left",
                               tabPanel("Phase1",
+                                       actionButton("decision1_phase1","submit"),
                                        # tags$style(
                                        #   ".container div {width:50px;height:50px;}"),
                                        fluidRow(h3("总推广预算"),
@@ -114,7 +114,7 @@ shinyApp(
                                                   tags$div(style="display:inline-block;width:18%;text-align:center",
                                                            "折扣(%)"),
                                                   tags$div(style="display:inline-block;width:18%;text-align:center",
-                                                           textInput("p1_discount_hosp1_1",label=NULL)),
+                                                           textInput("p1_discount_hosp1_1",label=NULL,"5%")),
                                                   tags$div(style="display:inline-block;width:18%;text-align:center",
                                                            textInput("p1_discount_hosp1_2",label=NULL)),
                                                   tags$div(style="display:inline-block;width:18%;text-align:center",
@@ -6682,35 +6682,37 @@ shinyApp(
   
   
   server=function(input,output){
-    output$sales_rep_info <- renderDataTable(sr_info_initial)
-    output$hospital_info <- renderDataTable(hospital_info_initial)
-    output$products_info <- renderDataTable(product_info_initial)
-    ## phase 1 
-    ## exhibition
-    output$total_promotional_budget <- renderPrint("待计算")
-    output$arranged_promotional_budget <- renderPrint("待计算")
-    output$arranged_time_of_sr1 <- renderPrint("待计算")
-    output$arranged_time_of_sr2 <- renderPrint("待计算")
-    output$arranged_time_of_sr3 <- renderPrint("待计算")
-    output$arranged_time_of_sr4 <- renderPrint("待计算")
-    output$arranged_time_of_sr5 <- renderPrint("待计算")
-    output$potential_hosp1_1 <- renderPrint("待计算")
-    output$potential_hosp1_2 <- renderPrint("待计算")
-    output$potential_hosp1_3 <- renderPrint("待计算")
-    output$potential_hosp1_4 <- renderPrint("待计算")
-    output$current_sales_hosp1_1 <- renderPrint("待计算")
-    output$current_sales_hosp1_2 <- renderPrint("待计算")
-    output$current_sales_hosp1_3 <- renderPrint("待计算")
-    output$current_sales_hosp1_4 <- renderPrint("待计算")
-    output$hosp1_worktime_1 <- renderPrint("待计算")
-    output$hosp1_worktime_2 <- renderPrint("待计算")
-    output$hosp1_worktime_3 <- renderPrint("待计算")
-    output$hosp1_worktime_4 <- renderPrint("待计算")
-    output$hosp1_worktime_1_doc <- renderPrint("待计算")
-    output$hosp1_worktime_1_diet <- renderPrint("待计算")
-    output$hosp1_worktime_1_admin <- renderPrint("待计算")
-    output$hosp1_worktime_1_nurs <- renderPrint("待计算")
-    output$decison1_summary_1 <- renderPrint("待计算")
+    
+    observeEvent(input$decision1_phase1, { disable("p1_discount_hosp1_1") })
+    # output$sales_rep_info <- renderDataTable(sr_info_initial)
+    # output$hospital_info <- renderDataTable(hospital_info_initial)
+    # output$products_info <- renderDataTable(product_info_initial)
+    # ## phase 1 
+    # ## exhibition
+    # output$total_promotional_budget <- renderPrint("待计算")
+    # output$arranged_promotional_budget <- renderPrint("待计算")
+    # output$arranged_time_of_sr1 <- renderPrint("待计算")
+    # output$arranged_time_of_sr2 <- renderPrint("待计算")
+    # output$arranged_time_of_sr3 <- renderPrint("待计算")
+    # output$arranged_time_of_sr4 <- renderPrint("待计算")
+    # output$arranged_time_of_sr5 <- renderPrint("待计算")
+    # output$potential_hosp1_1 <- renderPrint("待计算")
+    # output$potential_hosp1_2 <- renderPrint("待计算")
+    # output$potential_hosp1_3 <- renderPrint("待计算")
+    # output$potential_hosp1_4 <- renderPrint("待计算")
+    # output$current_sales_hosp1_1 <- renderPrint("待计算")
+    # output$current_sales_hosp1_2 <- renderPrint("待计算")
+    # output$current_sales_hosp1_3 <- renderPrint("待计算")
+    # output$current_sales_hosp1_4 <- renderPrint("待计算")
+    # output$hosp1_worktime_1 <- renderPrint("待计算")
+    # output$hosp1_worktime_2 <- renderPrint("待计算")
+    # output$hosp1_worktime_3 <- renderPrint("待计算")
+    # output$hosp1_worktime_4 <- renderPrint("待计算")
+    # output$hosp1_worktime_1_doc <- renderPrint("待计算")
+    # output$hosp1_worktime_1_diet <- renderPrint("待计算")
+    # output$hosp1_worktime_1_admin <- renderPrint("待计算")
+    # output$hosp1_worktime_1_nurs <- renderPrint("待计算")
+    # output$decison1_summary_1 <- renderPrint("待计算")
     
     # output$total_sales_training <- renderPrint(as.numeric(input$sr1_sales_training)+
     #                                              as.numeric(input$sr2_sales_training)+

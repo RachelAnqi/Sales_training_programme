@@ -24,16 +24,23 @@ shinyApp(
       dashboardBody(
           tabItems(
           # First tab content
-          tabItem(tabName = "new&WAS"),
+          tabItem(tabName = "new&WAS",
+                  tabsetPanel(
+                    tabPanel("客户信息",
+                             dataTableOutput("hospital_info")),
+                    tabPanel("新闻")
+                  )),
           
           # Second tab content
           tabItem(tabName = "reports"),
           
           # First tab content
-          tabItem(tabName = "sr"),
+          tabItem(tabName = "sr",
+                  dataTableOutput("sales_rep_info")),
           
           # First tab content
-          tabItem(tabName = "products"),
+          tabItem(tabName = "products",
+                  dataTableOutput("products_info")),
           
           # First tab content
           tabItem(tabName = "decision1",
@@ -6675,7 +6682,11 @@ shinyApp(
   
   
   server=function(input,output){
-    ## phase 1    
+    output$sales_rep_info <- renderDataTable(sr_info_initial)
+    output$hospital_info <- renderDataTable(hospital_info_initial)
+    output$products_info <- renderDataTable(product_info_initial)
+    ## phase 1 
+    ## exhibition
     output$total_promotional_budget <- renderPrint("待计算")
     output$arranged_promotional_budget <- renderPrint("待计算")
     output$arranged_time_of_sr1 <- renderPrint("待计算")
@@ -6736,6 +6747,31 @@ shinyApp(
     # output$total_strategy_planning <- renderPrint(as.numeric(input$flm_strategy_planning))
     # output$total_admin_work <- renderPrint(as.numeric(input$admin_work))
     # output$total_management_time <- renderPrint()
+    
+    # ## data colleciton & cleaning
+    # tmp <- reactive({
+    #   data <- data.frame(phase,
+    #                      hospital,
+    #                      product,
+    #                      sales_representative,
+    #                      promotional_budget,
+    #                      potential_sales,
+    #                      current_sales,
+    #                      discount,
+    #                      sr_worktime,
+    #                      worktime_doc,
+    #                      worktime_diet,
+    #                      worktime_admin,
+    #                      worktime_nurs,
+    #                      sales_traing,
+    #                      field_work,
+    #                      meetings_with_team,
+    #                      kpi_analysis,
+    #                      stategy_and_cycle_planning,
+    #                      admin_work,
+    #                      product_training
+    #                      )
+    # })
     
     ## Phase 2
     

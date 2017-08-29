@@ -22,24 +22,24 @@ data_decision1 <- data.frame(
 # j for hospital
 # q for product
 
-for (i in 1:4) {
+
   for (j in 1:10) {
     for (q in 1:4){
-      name.sales_rep <- input[[paste("p",i,"_sr_hosp",j,sep="")]]
-      value.discount <- input[[paste("p",i,"_discount_hosp",j,"_",q,sep="")]]
-      value.promotional_budget <-input[[paste("p",i,"_promotional_budget_hosp",j,sep="")]]
-      value.sr_time <- as.numeric(input[[paste("p",i,"_hosp",j,"_worktime_",q,seq="")]])*worktime
+      name.sales_rep <- input[[paste("p1_sr_hosp",j,sep="")]]
+      value.discount <- input[[paste("p1_discount_hosp",j,"_",q,sep="")]]
+      value.promotional_budget <-input[[paste("p1_promotional_budget_hosp",j,sep="")]]
+      value.sr_time <- as.numeric(input[[paste("p1_hosp",j,"_worktime_",q,seq="")]])*worktime
       value.time_on_doc <- as.numeric(
-        input[[paste("p",i,"_hosp",j,"_worktime_doc",seq="")]])*value.sr_time
+        input[[paste("p1_hosp",j,"_worktime_doc",seq="")]])*value.sr_time
       value.time_on_diet <- as.numeric(
-        input[[paste("p",i,"_hosp",j,"_worktime_diet",seq="")]])*value.sr_time
+        input[[paste("p1_hosp",j,"_worktime_diet",seq="")]])*value.sr_time
       value.time_on_admin <- as.numeric(
-        input[[paste("p",i,"_hosp",j,"_worktime_admin",seq="")]])*value.sr_time
+        input[[paste("p1_hosp",j,"_worktime_admin",seq="")]])*value.sr_time
       value.time_on_nurs <- as.numeric(
-        input[[paste("p",i,"_hosp",j,"_worktime_nurs",seq="")]])*value.sr_time
+        input[[paste("p1_hosp",j,"_worktime_nurs",seq="")]])*value.sr_time
       
-      data_decision <- rbind(data_decision,data.frame(
-        phase = paste("phase", i, sep = ""),
+      data_decision1 <- rbind(data_decision1,data.frame(
+        phase = "phase1",
         hospital = hospital_info_initial$name[j],
         sales_rep = name.sales_rep, ##need modification
         product = product_info_initial$product[q],
@@ -55,7 +55,7 @@ for (i in 1:4) {
       ))
     }
   }
-}
+
 
 
 ##### decision 2
@@ -76,28 +76,28 @@ data_decision2 <- data.frame(
 # i for phase
 # j for sales rep
 
-for (i in 1:4) {
+
   for (j in 1:5) {
     name.sales_rep <- sr_info_initial$sales_name[j]
     value.sales_training <- as.numeric(
-      input[[paste("p",i,"_sr",j,"_sales_training",sep="")]])*worktime
+      input[[paste("p1_sr",j,"_sales_training",sep="")]])/100*worktime
     value.product_training <- as.numeric(
-      input[[paste("p",i,"_sr",j,"_product_training",sep="")]])*worktime
+      input[[paste("p1_sr",j,"_product_training",sep="")]])/100*worktime
     value.field_work <- as.numeric(
-      input[[paste("p",i,"_sr",j,"_field_work",sep="")]])*worktime
+      input[[paste("p1_sr",j,"_field_work",sep="")]])/100*worktime
     value.meetings_with_team <- as.numeric(
-      input[[paste("p",i,"_flm_team_meeting",sep="")]])*worktime
+      input[[paste("p1_flm_team_meeting",sep="")]])/100*worktime
     value.kpi_analysis <- as.numeric(
-      input[[paste("p",i,"_flm_kpi_analysis",sep="")]])*worktime
+      input[[paste("p1_flm_kpi_analysis",sep="")]])/100*worktime
     value.strategy_and_cycle_planning <- as.numeric(
-      input[[paste("p",i,"_flm_strategy_planning",sep="")]])*worktime
+      input[[paste("p1_flm_strategy_planning",sep="")]])/100*worktime
     value.admin_work <- as.numeric(
-      input[[paste("p",i,"_flm_admin_work",sep="")]])*worktime
+      input[[paste("p1_flm_admin_work",sep="")]])/100*worktime
     value.sales_target <- as.numeric(
-      input[[paste("p",i,"_sr",j,"_sales_target",sep="")]])*worktime
+      input[[paste("p1_sr",j,"_sales_target",sep="")]])/100*worktime
     
     data_decision2 <- rbind(data_decision2,data.frame(
-      phase = paste("phase",i,sep=""),
+      phase = "周期1",
       sales_rep = name.sales_rep,
       sales_training = value.sales_training,
       product_training = value.product_training,
@@ -109,4 +109,3 @@ for (i in 1:4) {
       sales_target = value.sales_target
     ))
   }
-}

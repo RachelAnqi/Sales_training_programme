@@ -140,24 +140,25 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp1_1", label =
-                                                  NULL, "5%")),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp1_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp1_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp1_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_promotional_budget_hosp1", label =
-                                                  NULL))
+                                      textInput("p1_promotional_budget_hosp1", 
+                                                label = NULL,
+                                                value="5"))
                            ),
                            br(),
                            tags$div(
@@ -177,13 +178,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp1_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp1_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp1_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp1_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp1_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp1_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp1_sales_target_4",label = NULL))
+                                      textInput("p1_hosp1_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -208,7 +209,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_1",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -218,7 +219,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_2",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -228,7 +229,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_3",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -238,7 +239,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_4",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -253,7 +254,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_doc",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -268,7 +269,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_diet",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -283,7 +284,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_admin",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -298,7 +299,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp1_worktime_nurs",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -346,16 +347,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp2_1", label =
-                                                  NULL, "5%")),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp2_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp2_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp2_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -363,7 +364,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp2", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -383,13 +384,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp2_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp2_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp2_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp2_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp2_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp2_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp2_sales_target_4",label = NULL))
+                                      textInput("p1_hosp2_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -414,7 +415,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_1",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -424,7 +425,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_2",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -434,7 +435,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_3",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -444,7 +445,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_4",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -459,7 +460,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_doc",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -474,7 +475,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_diet",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -489,7 +490,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_admin",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -504,7 +505,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp2_worktime_nurs",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -551,16 +552,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp3_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp3_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp3_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp3_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -568,7 +569,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp3", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -588,13 +589,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp3_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp3_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp3_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp3_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp3_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp3_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp3_sales_target_4",label = NULL))
+                                      textInput("p1_hosp3_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -619,7 +620,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_1",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -629,7 +630,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_2",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -639,7 +640,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_3",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -649,7 +650,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_4",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -664,7 +665,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_doc",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -679,7 +680,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_diet",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -694,7 +695,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_admin",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -709,7 +710,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp3_worktime_nurs",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -756,16 +757,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp4_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp4_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp4_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp4_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -773,7 +774,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -793,13 +794,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp4_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp4_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp4_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp4_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp4_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp4_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp4_sales_target_4",label = NULL))
+                                      textInput("p1_hosp4_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -824,7 +825,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_1",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -834,7 +835,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_2",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -844,7 +845,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_3",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -854,7 +855,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_4",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -869,7 +870,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_doc",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -884,7 +885,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_diet",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -899,7 +900,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_admin",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -914,7 +915,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp4_worktime_nurs",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -962,16 +963,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp5_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp5_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp5_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp5_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -979,7 +980,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp5", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -999,13 +1000,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp5_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp5_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp5_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp5_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp5_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp5_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp5_sales_target_4",label = NULL))
+                                      textInput("p1_hosp5_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1030,7 +1031,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_1",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1040,7 +1041,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_2",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1050,7 +1051,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_3",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1060,7 +1061,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_4",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1075,7 +1076,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_doc",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1090,7 +1091,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_diet",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1105,7 +1106,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_admin",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1120,7 +1121,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp5_worktime_nurs",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1168,16 +1169,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp6_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp6_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp6_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp6_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1185,7 +1186,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp6", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1205,13 +1206,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp6_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp6_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp6_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp6_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp6_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp6_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp6_sales_target_4",label = NULL))
+                                      textInput("p1_hosp6_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1236,7 +1237,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_1",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1246,7 +1247,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_2",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1256,7 +1257,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_3",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1266,7 +1267,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_4",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1281,7 +1282,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_doc",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1296,7 +1297,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_diet",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1311,7 +1312,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_admin",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1326,7 +1327,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp6_worktime_nurs",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1374,16 +1375,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp7_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp7_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp7_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp7_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1391,7 +1392,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp7", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1411,13 +1412,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp7_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp7_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp7_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp7_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp7_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp7_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp7_sales_target_4",label = NULL))
+                                      textInput("p1_hosp7_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1442,7 +1443,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_1",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1452,7 +1453,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_2",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1462,7 +1463,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_3",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1472,7 +1473,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_4",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1487,7 +1488,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_doc",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1502,7 +1503,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_diet",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1517,7 +1518,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_admin",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1532,7 +1533,7 @@ shinyApp(ui <-
                                numericInput(
                                  "p1_hosp7_worktime_nurs",
                                  label = NULL,
-                                 value = NULL,
+                                 value = 6,
                                  min = 0,
                                  max = 100
                                )
@@ -1580,16 +1581,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp8_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp8_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp8_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp8_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1597,7 +1598,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp8", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1617,13 +1618,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp8_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp8_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp8_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp8_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp8_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp8_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp8_sales_target_4",label = NULL))
+                                      textInput("p1_hosp8_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1650,7 +1651,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1664,7 +1665,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1678,7 +1679,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1692,7 +1693,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1711,7 +1712,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1730,7 +1731,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1749,7 +1750,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1768,7 +1769,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1818,16 +1819,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp9_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp9_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp9_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp9_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1835,7 +1836,7 @@ shinyApp(ui <-
                                       "推广预算分配(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_promotional_budget_hosp9", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1855,13 +1856,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp9_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp9_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp9_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp9_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp9_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp9_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp9_sales_target_4",label = NULL))
+                                      textInput("p1_hosp9_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -1890,7 +1891,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1904,7 +1905,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1918,7 +1919,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1932,7 +1933,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1951,7 +1952,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1970,7 +1971,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -1989,7 +1990,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2008,7 +2009,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2058,16 +2059,16 @@ shinyApp(ui <-
                                       "折扣(%)"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp10_1", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp10_2", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp10_3", label =
-                                                  NULL)),
+                                                  NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       textInput("p1_discount_hosp10_4", label =
-                                                  NULL))
+                                                  NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -2076,7 +2077,7 @@ shinyApp(ui <-
                              tags$div(
                                style = "display:inline-block;width:18%;text-align:center",
                                textInput("p1_promotional_budget_hosp10", label =
-                                           NULL)
+                                           NULL, value="5")
                              )
                            ),
                            br(),
@@ -2097,13 +2098,13 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
                                       "销售指标"),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp10_sales_target_1",label = NULL)),
+                                      textInput("p1_hosp10_sales_target_1",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp10_sales_target_2",label = NULL)),
+                                      textInput("p1_hosp10_sales_target_2",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp10_sales_target_3",label = NULL)),
+                                      textInput("p1_hosp10_sales_target_3",label = NULL, value="5")),
                              tags$div(style = "display:inline-block;width:18%;text-align:center",
-                                      textInput("p1_hosp10_sales_target_4",label = NULL))
+                                      textInput("p1_hosp10_sales_target_4",label = NULL, value="5"))
                            ),
                            br(),
                            tags$div(
@@ -2132,7 +2133,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2146,7 +2147,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2160,7 +2161,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2174,7 +2175,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2193,7 +2194,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2212,7 +2213,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2231,7 +2232,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -2250,7 +2251,7 @@ shinyApp(ui <-
                                  label =
                                    NULL,
                                  value =
-                                   NULL,
+                                   6,
                                  min =
                                    0,
                                  max =
@@ -9676,19 +9677,19 @@ shinyApp(ui <-
                                       verbatimTextOutput("p1_flm_sales_training")),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr1_sales_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr2_sales_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr3_sales_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr4_sales_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr5_sales_training", label =
-                                                  NULL))
+                                                  NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -9699,19 +9700,19 @@ shinyApp(ui <-
                                       verbatimTextOutput("p1_flm_field_work")),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr1_field_work", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr2_field_work", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr3_field_work", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr4_field_work", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_sr5_field_work", label =
-                                                  NULL))
+                                                  NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -9720,7 +9721,7 @@ shinyApp(ui <-
                                       verbatimTextOutput("p1_total_team_meeting")),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_flm_team_meeting", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       verbatimTextOutput("p1_sr1_team_meeting")),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
@@ -9739,7 +9740,7 @@ shinyApp(ui <-
                                       verbatimTextOutput("p1_total_kpi_analysis")),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_flm_kpi_analysis", label =
-                                                  NULL))
+                                                  NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -9748,7 +9749,7 @@ shinyApp(ui <-
                                       verbatimTextOutput("p1_total_stategy_planning")),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_p1_flm_stategy_planning", label =
-                                                  NULL))
+                                                  NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -9757,7 +9758,7 @@ shinyApp(ui <-
                                       verbatimTextOutput("p1_total_admin_work")),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
                                       textInput("p1_flm_admin_work", label =
-                                                  NULL))
+                                                  NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -9788,38 +9789,38 @@ shinyApp(ui <-
                                       "销售指标"),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr1_sales_target", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr2_sales_target", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr3_sales_target", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr4_sales_target", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr5_sales_target", label =
-                                                  NULL))
+                                                  NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "产品培训(天)"),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr1_product_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr2_product_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr3_product_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr4_product_training", label =
-                                                  NULL)),
+                                                  NULL,value=5)),
                              tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
                                       textInput("p1_sr5_product_training", label =
-                                                  NULL))
+                                                  NULL,value=5))
                            )
                          )
                        ),
@@ -10378,8 +10379,10 @@ shinyApp(ui <-
                        )
                      )
                    ),
-                   tabItem(tabName = "report1"),
-                   tabItem(tabName = "report2"),
+                   tabItem(tabName = "report1",
+                           tableOutput("report1_table")),
+                   tabItem(tabName = "report2",
+                           tableOutput("report2_table")),
                    tabItem(tabName = "report3"),
                    tabItem(tabName = "report4")
                  )
@@ -10392,7 +10395,7 @@ shinyApp(ui <-
                
                ##phase1
                
-               output$p1_total_promotional_budget <- renderPrint(
+               output$p1_total_promotional_budget <- renderText(
                  total_promotional_budget$phase1
                )
               
@@ -10448,120 +10451,125 @@ shinyApp(ui <-
                 })
                
               
-               output$p1_arranged_promotional_budget <- renderPrint(tmp()[1]) 
-               output$p1_arranged_time_of_sr1 <- renderPrint(tmp()[2])
-               output$p1_arranged_time_of_sr2 <- renderPrint(tmp()[3])
-               output$p1_arranged_time_of_sr3 <- renderPrint(tmp()[4])
-               output$p1_arranged_time_of_sr4 <- renderPrint(tmp()[5])
-               output$p1_arranged_time_of_sr5 <- renderPrint(tmp()[6])
-               
+               output$p1_arranged_promotional_budget <- renderText(tmp()[1]) 
+               output$p1_arranged_time_of_sr1 <- renderText(tmp()[2])
+               output$p1_arranged_time_of_sr2 <- renderText(tmp()[3])
+               output$p1_arranged_time_of_sr3 <- renderText(tmp()[4])
+               output$p1_arranged_time_of_sr4 <- renderText(tmp()[5])
+               output$p1_arranged_time_of_sr5 <- renderText(tmp()[6])
                
                
                observeEvent(input$decision1_phase1_submit, {
                  disable("p1_discount_hosp1_1")
+                 disable("p1_discount_hosp1_2")
+                 output$p1_decison1_summary_hosp1 <- renderText({12})
+                 output$p1_decison1_summary_hosp2 <- renderText({12})
+                  })
+               
+               data1_phase1 <- eventReactive(input$decision1_phase1_submit,{
+                 data_decision <- data.frame(
+                   phase = NULL, 
+                   hospital = NULL,
+                   sales_rep = NULL,
+                   product = NULL,
+                   potential_sales = NULL,
+                   current_sales = NULL,
+                   discount = NULL,
+                   promotional_budget = NULL,
+                   sr_time = NULL,
+                   time_on_doc = NULL,
+                   time_on_diet = NULL,
+                   time_on_admin = NULL,
+                   time_on_nurs = NULL
+                  )
+                 for (j in 1:10) {
+                   for (q in 1:4){
+                     name.sales_rep <- input[[paste("p1_sr_hosp",j,sep="")]]
+                     value.discount <- input[[paste("p1_discount_hosp",j,"_",q,sep="")]]
+                     value.promotional_budget <- input[[paste("p1_promotional_budget_hosp",j,sep="")]]
+                     value.sr_time <- as.numeric(input[[paste("p1_hosp",j,"_worktime_",q,sep="")]])/100*worktime
+                     value.time_on_doc <- as.numeric(
+                       input[[paste("p1_hosp",j,"_worktime_doc",sep="")]])*value.sr_time
+                     value.time_on_diet <- as.numeric(
+                       input[[paste("p1_hosp",j,"_worktime_diet",sep="")]])*value.sr_time
+                     value.time_on_admin <- as.numeric(
+                       input[[paste("p1_hosp",j,"_worktime_admin",sep="")]])*value.sr_time
+                     value.time_on_nurs <- as.numeric(
+                       input[[paste("p1_hosp",j,"_worktime_nurs",sep="")]])*value.sr_time
+                     
+                     data_decision <- plyr::rbind.fill(data_decision,data.frame(
+                       phase = "周期1",
+                       hospital = hospital_info_initial$name[j],
+                       sales_rep = name.sales_rep, 
+                       product = product_info_initial$product[q],
+                       potential_sales = get(paste("potential_sales_product",q,sep=""))[[j]][[1]], 
+                       current_sales = get(paste("current_sales_product",q,sep=""))[[j]][[1]], 
+                       discount = value.discount, 
+                       promotional_budget = value.promotional_budget,
+                       sr_time = value.sr_time,
+                       time_on_doc = value.time_on_doc,
+                       time_on_diet = value.time_on_diet,
+                       time_on_admin = value.time_on_admin,
+                       time_on_nurs = value.time_on_nurs
+                     ))
+                   }
+                 }
+                 data_decision
                })
-               # output$sales_rep_info <- renderDataTable(sr_info_initial)
-               # output$hospital_info <- renderDataTable(hospital_info_initial)
-               # output$products_info <- renderDataTable(product_info_initial)
-               # ## phase 1
-               # ## exhibition
-               # output$total_promotional_budget <- renderPrint("待计算")
-               # output$arranged_promotional_budget <- renderPrint("待计算")
-               # output$arranged_time_of_sr1 <- renderPrint("待计算")
-               # output$arranged_time_of_sr2 <- renderPrint("待计算")
-               # output$arranged_time_of_sr3 <- renderPrint("待计算")
-               # output$arranged_time_of_sr4 <- renderPrint("待计算")
-               # output$arranged_time_of_sr5 <- renderPrint("待计算")
-               # output$potential_hosp1_1 <- renderPrint("待计算")
-               # output$potential_hosp1_2 <- renderPrint("待计算")
-               # output$potential_hosp1_3 <- renderPrint("待计算")
-               # output$potential_hosp1_4 <- renderPrint("待计算")
-               # output$current_sales_hosp1_1 <- renderPrint("待计算")
-               # output$current_sales_hosp1_2 <- renderPrint("待计算")
-               # output$current_sales_hosp1_3 <- renderPrint("待计算")
-               # output$current_sales_hosp1_4 <- renderPrint("待计算")
-               # output$hosp1_worktime_1 <- renderPrint("待计算")
-               # output$hosp1_worktime_2 <- renderPrint("待计算")
-               # output$hosp1_worktime_3 <- renderPrint("待计算")
-               # output$hosp1_worktime_4 <- renderPrint("待计算")
-               # output$hosp1_worktime_1_doc <- renderPrint("待计算")
-               # output$hosp1_worktime_1_diet <- renderPrint("待计算")
-               # output$hosp1_worktime_1_admin <- renderPrint("待计算")
-               # output$hosp1_worktime_1_nurs <- renderPrint("待计算")
-               # output$decison1_summary_1 <- renderPrint("待计算")
                
-               # output$total_sales_training <- renderPrint(as.numeric(input$sr1_sales_training)+
-               #                                              as.numeric(input$sr2_sales_training)+
-               #                                              as.numeric(input$sr3_sales_training)+
-               #                                              as.numeric(input$sr4_sales_training)+
-               #                                              as.numeric(input$sr1_sales_training))
-               #
-               # output$flm_sales_training <- renderPrint(as.numeric(input$sr1_sales_training)+
-               #                                            as.numeric(input$sr2_sales_training)+
-               #                                            as.numeric(input$sr3_sales_training)+
-               #                                            as.numeric(input$sr4_sales_training)+
-               #                                            as.numeric(input$sr1_sales_training))
-               #
-               # output$total_field_work <- renderPrint(as.numeric(input$sr1_field_work)+
-               #                                              as.numeric(input$sr2_field_work)+
-               #                                              as.numeric(input$sr3_field_work)+
-               #                                              as.numeric(input$sr4_field_work)+
-               #                                              as.numeric(input$sr5_field_work))
-               #
-               # output$flm_field_work <- renderPrint(as.numeric(input$sr1_field_work)+
-               #                                            as.numeric(input$sr2_field_work)+
-               #                                            as.numeric(input$sr3_field_work)+
-               #                                            as.numeric(input$sr4_field_work)+
-               #                                            as.numeric(input$sr5_field_work))
-               #
-               # output$total_team_meeting <- renderPrint(as.numeric(input$flm_team_meeting))
-               # output$sr1_team_meeting <- renderPrint(as.numeric(input$flm_team_meeting))
-               # output$sr3_team_meeting <- renderPrint(as.numeric(input$flm_team_meeting))
-               # output$sr3_team_meeting <- renderPrint(as.numeric(input$flm_team_meeting))
-               # output$sr4_team_meeting <- renderPrint(as.numeric(input$flm_team_meeting))
-               # output$sr5_team_meeting <- renderPrint(as.numeric(input$flm_team_meeting))
-               #
-               # output$total_kpi_analysis <- renderPrint(as.numeric(input$flm_kpi_analysis))
-               # output$total_strategy_planning <- renderPrint(as.numeric(input$flm_strategy_planning))
-               # output$total_admin_work <- renderPrint(as.numeric(input$admin_work))
-               # output$total_management_time <- renderPrint()
+               data2_phase1 <- eventReactive(input$decision1_phase1_submit,{
+                 data_decision2 <- data.frame(
+                   phase,
+                   sales_rep,
+                   sales_training,
+                   product_training,
+                   field_work,
+                   meetings_with_team,
+                   kpi_analysis,
+                   strategy_and_cycle_planning,
+                   admin_work,
+                   sales_target
+                 )
+                 
+                 for (j in 1:5) {
+                   name.sales_rep <- sr_info_initial$sales_name[j]
+                   value.sales_training <- as.numeric(
+                     input[[paste("p1_sr",j,"_sales_training",sep="")]])/100*worktime
+                   value.product_training <- as.numeric(
+                     input[[paste("p1_sr",j,"_product_training",sep="")]])/100*worktime
+                   value.field_work <- as.numeric(
+                     input[[paste("p1_sr",j,"_field_work",sep="")]])/100*worktime
+                   value.meetings_with_team <- as.numeric(
+                     input[[paste("p1_flm_team_meeting",sep="")]])/100*worktime
+                   value.kpi_analysis <- as.numeric(
+                     input[[paste("p1_flm_kpi_analysis",sep="")]])/100*worktime
+                   value.strategy_and_cycle_planning <- as.numeric(
+                     input[[paste("p1_flm_strategy_planning",sep="")]])/100*worktime
+                   value.admin_work <- as.numeric(
+                     input[[paste("p1_flm_admin_work",sep="")]])/100*worktime
+                   value.sales_target <- as.numeric(
+                     input[[paste("p1_sr",j,"_sales_target",sep="")]])/100*worktime
+                   
+                   data_decision2 <- rbind(data_decision2,data.frame(
+                     phase = "周期1",
+                     sales_rep = name.sales_rep,
+                     sales_training = value.sales_training,
+                     product_training = value.product_training,
+                     field_work = value.field_work,
+                     meetings_with_team = value.meetings_with_team,
+                     kpi_analysis = value.kpi_analysis,
+                     strategy_and_cycle_planning = value.strategy_and_cycle_planning,
+                     admin_work = value.admin_work,
+                     sales_target = value.sales_target
+                   ))
+                 }
+                 
+               })
                
-               # ## data colleciton & cleaning
-               # tmp <- reactive({
-               #   data <- data.frame(phase,
-               #                      hospital,
-               #                      product,
-               #                      sales_representative,
-               #                      promotional_budget,
-               #                      potential_sales,
-               #                      current_sales,
-               #                      discount,
-               #                      sr_worktime,
-               #                      worktime_doc,
-               #                      worktime_diet,
-               #                      worktime_admin,
-               #                      worktime_nurs,
-               #                      sales_traing,
-               #                      field_work,
-               #                      meetings_with_team,
-               #                      kpi_analysis,
-               #                      stategy_and_cycle_planning,
-               #                      admin_work,
-               #                      product_training
-               #                      )
-               # })
+               output$report1_table <- renderTable(data1_phase1())
+               output$report2_table <- renderTable(data2_phase1())
                
-               ## Phase 2
                
-               # output$potential_hosp1_4 <- renderPrint("待计算")
-               # output$potential_hosp1_5 <- renderPrint("待计算")
-               # output$potential_hosp1_3 <- renderPrint("待计算")
-               # output$potential_hosp1_4 <- renderPrint("待计算")
-               # output$potential_hosp1_5 <- renderPrint("待计算")
-               # output$potential_hosp1_3 <- renderPrint("待计算")
-               # output$potential_hosp1_4 <- renderPrint("待计算")
-               # output$potential_hosp1_5 <- renderPrint("待计算")
-               #
                
                
              }

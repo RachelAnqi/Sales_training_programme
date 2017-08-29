@@ -452,3 +452,6 @@ current_sales_product4 <- list(hospital1 = list(phase1 = 100000,
 )
 
 
+###
+worktime =100
+

@@ -28,6 +28,29 @@ sr_info_initial <-
                             "high")
              )
 
+sr_info_initial_value <-
+  data.frame(sales_name = c("销售代表1",
+                            "销售代表2",
+                            "销售代表3",
+                            "销售代表4",
+                            "销售代表5"),
+             sales_skills = c("3",
+                              "2",
+                              "2",
+                              "3",
+                              "5"),
+             product_knowledge = c("20",
+                                   "15",
+                                   "5",
+                                   "10",
+                                   "15"),
+             motivation = c("20",
+                            "60",
+                            "60",
+                            "40",
+                            "60")
+  )
+
 product_info_initial <-
   data.frame(product = c("Tube Feed",
                          "Oral Nutritional Supplement(ONS)",

@@ -1,15 +1,16 @@
 ####------------------step one--------------------------------------
 ## curve funcion
 curve <- function(name,input_x){
-  data <- get(name)
+  data <- name
   left <- data[which.min(abs(input_x-data$x)),]
   tmp <- data[-which.min(abs(input_x-data$x)),]
   right <- tmp[which.min(abs(input_x-tmp$x)),]
   y <- ifelse(left$x <= right$x,
-              (1-(input_x-left$x)/(right$y-left$y))*left$y + 
-                (1-(right$x-input_x)/(right$y-left$y))*right$y,
-              (1-(input_x-right$x)/(left$y-right$y))*right$y + 
-                (1-(left$x-input_x)/(left$y-right$y))*left$y)
+              (1-(input_x-left$x)/(right$x-left$x))*left$y + 
+                (1-(right$x-input_x)/(right$x-left$x))*right$y,
+              (1-(input_x-right$x)/(left$x-right$x))*right$y + 
+                (1-(left$x-input_x)/(left$x-right$x))*left$y)
+  
   y
 }
 

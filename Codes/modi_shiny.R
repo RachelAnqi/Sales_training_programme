@@ -9644,7 +9644,7 @@ shinyApp(ui <-
                          actionButton("decision2_phase1_submit", "submit"),
                          fluidRow(h3("时间分配"),
                                   tags$div(
-                                    tags$div(style = "display:inline-block;margin-left:10px;width:40%;text-align:center;",
+                                    tags$div(style = "display:inline-block;text-align:center;width:15%",
                                              "时间分配(天)"),
                                     tags$div(style = "display:inline-block;width:40%;text-align:center;",
                                              "100")
@@ -9671,101 +9671,101 @@ shinyApp(ui <-
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "销售培训"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_total_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_flm_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr1_sales_training", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr2_sales_training", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr3_sales_training", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr4_sales_training", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr5_sales_training", label =
                                                   NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "医院拜访"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_total_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_flm_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr1_field_work", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr2_field_work", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr3_field_work", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr4_field_work", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p1_sr5_field_work", label =
                                                   NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "团队会议"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_total_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p1_flm_team_meeting", label =
                                                   NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p1_sr1_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p1_sr2_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p1_sr3_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p1_sr4_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p1_sr5_team_meeting"))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "KPI 报告分析"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_total_kpi_analysis")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p1_flm_kpi_analysis", label =
                                                   NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "战略和周期计划"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
-                                      verbatimTextOutput("p1_total_stategy_planning")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
-                                      textInput("p1_p1_flm_stategy_planning", label =
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                      verbatimTextOutput("p1_total_strategy_planning")),
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
+                                      textInput("p1_flm_strategy_planning", label =
                                                   NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "行政工作"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_total_admin_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p1_flm_admin_work", label =
                                                   NULL,value=5))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "总体"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_total_management")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p1_flm_management"))
                            )
                          ),
@@ -9784,25 +9784,25 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "代表5")
                            ),
-                           tags$div(
-                             tags$div(style = "display:inline-block;text-align:center;width:15%",
-                                      "销售指标"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p1_sr1_sales_target", label =
-                                                  NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p1_sr2_sales_target", label =
-                                                  NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p1_sr3_sales_target", label =
-                                                  NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p1_sr4_sales_target", label =
-                                                  NULL,value=5)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p1_sr5_sales_target", label =
-                                                  NULL,value=5))
-                           ),
+                           # tags$div(
+                           #   tags$div(style = "display:inline-block;text-align:center;width:15%",
+                           #            "销售指标"),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p1_sr1_sales_target", label =
+                           #                        NULL,value=5)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p1_sr2_sales_target", label =
+                           #                        NULL,value=5)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p1_sr3_sales_target", label =
+                           #                        NULL,value=5)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p1_sr4_sales_target", label =
+                           #                        NULL,value=5)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p1_sr5_sales_target", label =
+                           #                        NULL,value=5))
+                           # ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "产品培训(天)"),
@@ -9855,107 +9855,107 @@ shinyApp(ui <-
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "销售培训"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_total_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_flm_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr1_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr2_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr3_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr4_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr5_sales_training", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "医院拜访"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_total_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_flm_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr1_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr2_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr3_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr4_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p2_sr5_field_work", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "团队会议"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_total_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p2_flm_team_meeting", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p2_sr1_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p2_sr2_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p2_sr3_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p2_sr4_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p2_sr5_team_meeting"))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "KPI 报告分析"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_total_kpi_analysis")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p2_flm_kpi_analysis", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "战略和周期计划"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_total_stategy_planning")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p2_p2_flm_stategy_planning", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "行政工作"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_total_admin_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p2_flm_admin_work", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "总体"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_total_management")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p2_flm_management"))
                            )
                          ),
                          br(),
                          fluidRow(
-                           h3("销售指标&产品培训"),
+                           h3("产品培训"),
                            tags$div(
                              tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:15%",
                                       "代表1"),
@@ -9968,25 +9968,25 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "代表5")
                            ),
-                           tags$div(
-                             tags$div(style = "display:inline-block;text-align:center;width:15%",
-                                      "销售指标"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p2_sr1_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p2_sr2_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p2_sr3_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p2_sr4_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p2_sr5_sales_target", label =
-                                                  NULL))
-                           ),
+                           # tags$div(
+                           #   tags$div(style = "display:inline-block;text-align:center;width:15%",
+                           #            "销售指标"),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p2_sr1_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p2_sr2_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p2_sr3_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p2_sr4_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p2_sr5_sales_target", label =
+                           #                        NULL))
+                           # ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "产品培训(天)"),
@@ -10039,107 +10039,107 @@ shinyApp(ui <-
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "销售培训"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_total_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_flm_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr1_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr2_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr3_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr4_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr5_sales_training", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "医院拜访"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_total_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_flm_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr1_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr2_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr3_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr4_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p3_sr5_field_work", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "团队会议"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_total_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p3_flm_team_meeting", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p3_sr1_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p3_sr2_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p3_sr3_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p3_sr4_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p3_sr5_team_meeting"))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "KPI 报告分析"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_total_kpi_analysis")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p3_flm_kpi_analysis", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "战略和周期计划"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_total_stategy_planning")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p3_p3_flm_stategy_planning", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "行政工作"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_total_admin_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p3_flm_admin_work", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "总体"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_total_management")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p3_flm_management"))
                            )
                          ),
                          br(),
                          fluidRow(
-                           h3("销售指标&产品培训"),
+                           h3("产品培训"),
                            tags$div(
                              tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:15%",
                                       "代表1"),
@@ -10152,25 +10152,25 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "代表5")
                            ),
-                           tags$div(
-                             tags$div(style = "display:inline-block;text-align:center;width:15%",
-                                      "销售指标"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p3_sr1_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p3_sr2_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p3_sr3_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p3_sr4_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p3_sr5_sales_target", label =
-                                                  NULL))
-                           ),
+                           # tags$div(
+                           #   tags$div(style = "display:inline-block;text-align:center;width:15%",
+                           #            "销售指标"),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p3_sr1_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p3_sr2_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p3_sr3_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p3_sr4_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p3_sr5_sales_target", label =
+                           #                        NULL))
+                           # ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "产品培训(天)"),
@@ -10196,7 +10196,7 @@ shinyApp(ui <-
                          "Phase4",
                          fluidRow(h3("时间分配"),
                                   tags$div(
-                                    tags$div(style = "display:inline-block;margin-left:10px;width:40%;text-align:center;",
+                                    tags$div(style = "display:inline-block;text-align:center;width:15%",
                                              "时间分配(天)"),
                                     tags$div(style = "display:inline-block;width:40%;text-align:center;",
                                              "100")
@@ -10223,107 +10223,107 @@ shinyApp(ui <-
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "销售培训"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_total_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_flm_sales_training")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr1_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr2_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr3_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr4_sales_training", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr5_sales_training", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "医院拜访"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_total_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_flm_field_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr1_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr2_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr3_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr4_field_work", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       textInput("p4_sr5_field_work", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "团队会议"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_total_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p4_flm_team_meeting", label =
                                                   NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p4_sr1_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p4_sr2_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p4_sr3_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p4_sr4_team_meeting")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                                       verbatimTextOutput("p4_sr5_team_meeting"))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "KPI 报告分析"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_total_kpi_analysis")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p4_flm_kpi_analysis", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "战略和周期计划"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_total_stategy_planning")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p4_p4_flm_stategy_planning", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "行政工作"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_total_admin_work")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       textInput("p4_flm_admin_work", label =
                                                   NULL))
                            ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "总体"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_total_management")),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3.5%;width:5%;margin-right:3%",
+                             tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                                       verbatimTextOutput("p4_flm_management"))
                            )
                          ),
                          br(),
                          fluidRow(
-                           h3("销售指标&产品培训"),
+                           h3("产品培训"),
                            tags$div(
                              tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:15%",
                                       "代表1"),
@@ -10336,25 +10336,25 @@ shinyApp(ui <-
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "代表5")
                            ),
-                           tags$div(
-                             tags$div(style = "display:inline-block;text-align:center;width:15%",
-                                      "销售指标"),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p4_sr1_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p4_sr2_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p4_sr3_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p4_sr4_sales_target", label =
-                                                  NULL)),
-                             tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
-                                      textInput("p4_sr5_sales_target", label =
-                                                  NULL))
-                           ),
+                           # tags$div(
+                           #   tags$div(style = "display:inline-block;text-align:center;width:15%",
+                           #            "销售指标"),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p4_sr1_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p4_sr2_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p4_sr3_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p4_sr4_sales_target", label =
+                           #                        NULL)),
+                           #   tags$div(style = "display:inline-block;text-align:center;margin-left:3%;width:9%;margin-right:3%",
+                           #            textInput("p4_sr5_sales_target", label =
+                           #                        NULL))
+                           # ),
                            tags$div(
                              tags$div(style = "display:inline-block;text-align:center;width:15%",
                                       "产品培训(天)"),
@@ -10472,6 +10472,7 @@ shinyApp(ui <-
                    hospital = NULL,
                    sales_rep = NULL,
                    product = NULL,
+                   sales_target = NULL,
                    potential_sales = NULL,
                    current_sales = NULL,
                    discount = NULL,
@@ -10485,8 +10486,9 @@ shinyApp(ui <-
                  for (j in 1:10) {
                    for (q in 1:4){
                      name.sales_rep <- input[[paste("p1_sr_hosp",j,sep="")]]
-                     value.discount <- input[[paste("p1_discount_hosp",j,"_",q,sep="")]]
-                     value.promotional_budget <- input[[paste("p1_promotional_budget_hosp",j,sep="")]]
+                     value.sales_target <- as.numeric(input[[paste("p1_hosp",j,"_sales_target_",q,sep="")]])
+                     value.discount <- as.numeric(input[[paste("p1_discount_hosp",j,"_",q,sep="")]])
+                     value.promotional_budget <- as.numeric(input[[paste("p1_promotional_budget_hosp",j,sep="")]])
                      value.sr_time <- as.numeric(input[[paste("p1_hosp",j,"_worktime_",q,sep="")]])/100*worktime
                      value.time_on_doc <- as.numeric(
                        input[[paste("p1_hosp",j,"_worktime_doc",sep="")]])*value.sr_time
@@ -10502,6 +10504,7 @@ shinyApp(ui <-
                        hospital = hospital_info_initial$name[j],
                        sales_rep = name.sales_rep, 
                        product = product_info_initial$product[q],
+                       sales_target = value.sales_target,
                        potential_sales = get(paste("potential_sales_product",q,sep=""))[[j]][[1]], 
                        current_sales = get(paste("current_sales_product",q,sep=""))[[j]][[1]], 
                        discount = value.discount, 
@@ -10517,18 +10520,21 @@ shinyApp(ui <-
                  data_decision
                })
                
-               data2_phase1 <- eventReactive(input$decision1_phase1_submit,{
+               data2_phase1 <- eventReactive(input$decision2_phase1_submit,{
+               
                  data_decision2 <- data.frame(
-                   phase,
-                   sales_rep,
-                   sales_training,
-                   product_training,
-                   field_work,
-                   meetings_with_team,
-                   kpi_analysis,
-                   strategy_and_cycle_planning,
-                   admin_work,
-                   sales_target
+                   phase = NULL,
+                   sales_rep = NULL,
+                   sales_training = NULL,
+                   product_training = NULL,
+                   field_work = NULL,
+                   meetings_with_team = NULL,
+                   kpi_analysis = NULL,
+                   strategy_and_cycle_planning = NULL,
+                   admin_work = NULL,
+                   product_knowledge_0 = NULL,
+                   sales_skills_0 = NULL,
+                   motivation_0 = NULL
                  )
                  
                  for (j in 1:5) {
@@ -10540,17 +10546,15 @@ shinyApp(ui <-
                    value.field_work <- as.numeric(
                      input[[paste("p1_sr",j,"_field_work",sep="")]])/100*worktime
                    value.meetings_with_team <- as.numeric(
-                     input[[paste("p1_flm_team_meeting",sep="")]])/100*worktime
+                     input$p1_flm_team_meeting)/100*worktime
                    value.kpi_analysis <- as.numeric(
-                     input[[paste("p1_flm_kpi_analysis",sep="")]])/100*worktime
+                     input$p1_flm_kpi_analysis)/100*worktime
                    value.strategy_and_cycle_planning <- as.numeric(
-                     input[[paste("p1_flm_strategy_planning",sep="")]])/100*worktime
+                     input$p1_flm_strategy_planning)/100*worktime
                    value.admin_work <- as.numeric(
-                     input[[paste("p1_flm_admin_work",sep="")]])/100*worktime
-                   value.sales_target <- as.numeric(
-                     input[[paste("p1_sr",j,"_sales_target",sep="")]])/100*worktime
+                     input$p1_flm_admin_work)/100*worktime
                    
-                   data_decision2 <- rbind(data_decision2,data.frame(
+                   data_decision2 <- plyr::rbind.fill(data_decision2,data.frame(
                      phase = "周期1",
                      sales_rep = name.sales_rep,
                      sales_training = value.sales_training,
@@ -10560,14 +10564,53 @@ shinyApp(ui <-
                      kpi_analysis = value.kpi_analysis,
                      strategy_and_cycle_planning = value.strategy_and_cycle_planning,
                      admin_work = value.admin_work,
-                     sales_target = value.sales_target
+                     product_knowledge_0 = sr_info_initial_value$product_knowledge[j],
+                     sales_skills_0 = sr_info_initial_value$sales_skills[j],
+                     motivation_0 = sr_info_initial_value$motivation[j]
                    ))
                  }
+                 data_decision2
                  
                })
                
                output$report1_table <- renderTable(data1_phase1())
                output$report2_table <- renderTable(data2_phase1())
+               
+               sales_training <- reactive({sum(c(
+                 as.numeric(input$p1_sr1_sales_training),
+                 as.numeric(input$p1_sr2_sales_training),
+                 as.numeric(input$p1_sr3_sales_training),
+                 as.numeric(input$p1_sr4_sales_training),
+                 as.numeric(input$p1_sr5_sales_training),
+                 na.rm = T))})
+               
+               field_work <- reactive({sum(c(
+                 as.numeric(input$p1_sr1_field_work),
+                 as.numeric(input$p1_sr2_field_work),
+                 as.numeric(input$p1_sr3_field_work),
+                 as.numeric(input$p1_sr4_field_work),
+                 as.numeric(input$p1_sr5_field_work),
+                 na.rm = T
+               ))})
+               
+               output$p1_total_sales_training <-renderText(sales_training())
+               output$p1_flm_sales_training <- renderText(sales_training())
+               output$p1_total_field_work <-renderText(field_work())
+               output$p1_flm_field_work <- renderText(field_work())
+               output$p1_total_team_meeting <- renderText(input$p1_flm_team_meeting)
+               output$p1_total_kpi_analysis <- renderText(input$p1_flm_kpi_analysis)
+               output$p1_total_strategy_planning <- renderText(input$p1_flm_strategy_planning)
+               output$p1_total_admin_work <- renderText(input$p1_flm_admin_work)
+               output$p1_total_management <- renderText(sum(c(
+                 sales_training(),
+                 field_work(),
+                 as.numeric(input$p1_flm_team_meeting),
+                 as.numeric(input$p1_flm_kpi_analysis),
+                 as.numeric(input$p1_flm_strategy_planning),
+                 as.numeric(input$p1_flm_admin_work),
+                 na.rm = T
+               )))
+               
                
                
                

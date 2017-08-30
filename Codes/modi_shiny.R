@@ -1,7 +1,9 @@
 library(shiny)
 library(shinydashboard)
 library(shinyjs)
-
+library(DT)
+library(plyr)
+library(dplyr)
 
 
 shinyApp(ui <-
@@ -10380,10 +10382,11 @@ shinyApp(ui <-
                      )
                    ),
                    tabItem(tabName = "report1",
-                           tableOutput("report1_table")),
+                           DT::dataTableOutput("report1_table")),
                    tabItem(tabName = "report2",
-                           tableOutput("report2_table")),
-                   tabItem(tabName = "report3"),
+                           DT::dataTableOutput("report2_table")),
+                   tabItem(tabName = "report3",
+                           DT::dataTableOutput("report3_table")),
                    tabItem(tabName = "report4")
                  )
                )
@@ -10474,7 +10477,11 @@ shinyApp(ui <-
                    product = NULL,
                    sales_target = NULL,
                    potential_sales = NULL,
-                   current_sales = NULL,
+                   pp_sales = NULL,
+                   pp_sr_sales_performance = NULL,
+                   pp_deployment_quality = NULL,
+                   pp_customer_relationship = NULL,
+                   real_sales = NULL,
                    discount = NULL,
                    promotional_budget = NULL,
                    sr_time = NULL,
@@ -10502,11 +10509,15 @@ shinyApp(ui <-
                      data_decision <- plyr::rbind.fill(data_decision,data.frame(
                        phase = "周期1",
                        hospital = hospital_info_initial$name[j],
-                       sales_rep = name.sales_rep, 
+                       sales_rep = as.character(name.sales_rep), 
                        product = product_info_initial$product[q],
                        sales_target = value.sales_target,
-                       potential_sales = get(paste("potential_sales_product",q,sep=""))[[j]][[1]], 
-                       current_sales = get(paste("current_sales_product",q,sep=""))[[j]][[1]], 
+                       potential_sales = as.numeric(get(paste("potential_sales_product",q,sep=""))[[j]][[1]]), 
+                       pp_sales = as.numeric((pp_info_by_hosp_product[[j]][[q]])$pp_sales),
+                       pp_sr_sales_performance = as.numeric((pp_info_by_hosp_product[[j]][[q]])$sr_sales_performance),
+                       pp_deployment_quality = as.numeric((pp_info_by_hosp_product[[j]][[q]])$deployment_quality),
+                       pp_customer_relationship = as.numeric((pp_info_by_hosp_product[[j]][[q]])$customer_relationship),
+                       real_sales = as.numeric(get(paste("real_sales_product",q,sep=""))[[j]][[q]]),
                        discount = value.discount, 
                        promotional_budget = value.promotional_budget,
                        sr_time = value.sr_time,
@@ -10525,6 +10536,8 @@ shinyApp(ui <-
                  data_decision2 <- data.frame(
                    phase = NULL,
                    sales_rep = NULL,
+                   sales_level = NULL,
+                   acc_revenue_0 = NULL,
                    sales_training = NULL,
                    product_training = NULL,
                    field_work = NULL,
@@ -10556,7 +10569,9 @@ shinyApp(ui <-
                    
                    data_decision2 <- plyr::rbind.fill(data_decision2,data.frame(
                      phase = "周期1",
-                     sales_rep = name.sales_rep,
+                     sales_rep = as.character(name.sales_rep),
+                     sales_level = sr_info_initial_value$sales_level[j],
+                     acc_revenue_0 = as.numeric(sr_info_initial_value$acc_revenue[j]),
                      sales_training = value.sales_training,
                      product_training = value.product_training,
                      field_work = value.field_work,
@@ -10564,17 +10579,17 @@ shinyApp(ui <-
                      kpi_analysis = value.kpi_analysis,
                      strategy_and_cycle_planning = value.strategy_and_cycle_planning,
                      admin_work = value.admin_work,
-                     product_knowledge_0 = sr_info_initial_value$product_knowledge[j],
-                     sales_skills_0 = sr_info_initial_value$sales_skills[j],
-                     motivation_0 = sr_info_initial_value$motivation[j]
+                     product_knowledge_0 = as.numeric(sr_info_initial_value$product_knowledge[j]),
+                     sales_skills_0 = as.numeric(sr_info_initial_value$sales_skills[j]),
+                     motivation_0 = as.numeric(sr_info_initial_value$motivation[j])
                    ))
                  }
                  data_decision2
                  
                })
                
-               output$report1_table <- renderTable(data1_phase1())
-               output$report2_table <- renderTable(data2_phase1())
+               output$report1_table <- renderDataTable(data1_phase1())
+               output$report2_table <- renderDataTable(data2_phase1())
                
                sales_training <- reactive({sum(c(
                  as.numeric(input$p1_sr1_sales_training),
@@ -10610,6 +10625,44 @@ shinyApp(ui <-
                  as.numeric(input$p1_flm_admin_work),
                  na.rm = T
                )))
+               
+               output$report3_table <- renderDataTable({
+                 data1 <- data1_phase1()
+                 data2 <- data2_phase1()
+                 tmp <- left_join(data1,data2,by=c("phase","sales_rep")) %>%
+                   mutate(experience_index = curve(curve11,acc_revenue_0),
+                          product_knowledge_addition_current_period = curve(curve26,product_training),
+                          product_knowledge_transfer_value = curve(curve28,product_knowledge_0),
+                          ss_accumulated_field_work_delta = curve(curve42,field_work),
+                          ss_accumulated_sales_training_delta = curve(curve43,sales_training),
+                          ss_experience_index = curve(curve44,experience_index),
+                          m_meeting_with_team_delta = {if (sales_level == "junior") {
+                            curve(curve13,meetings_with_team)
+                          } else if(sales_level=="middle"){
+                            curve(curve14,meetings_with_team)
+                          } else {curve(curve15,meetings_with_team)}},
+                          sales_target_realization = sales_target/real_sales,
+                          m_sales_target_realization_delta = curve(curve16,sales_target_realization),
+                          m_sales_training_delta = curve(curve17,sales_training),
+                          m_admin_work_delta = curve(curve18,admin_work),
+                          contact_priority_fit_index = sum(c(time_on_doc*0.5,
+                                                             time_on_diet*0.25,
+                                                             time_on_admin*0.15,
+                                                             time_on_nurs*0.1),
+                                                           na.rm=T)) %>%
+                   select(experience_index,
+                          product_knowledge_addition_current_period,
+                          product_knowledge_transfer_value,
+                          ss_accumulated_field_work_delta,
+                          ss_accumulated_sales_training_delta,
+                          ss_experience_index,
+                          m_meeting_with_team_delta,
+                          sales_target_realization,
+                          m_sales_training_delta,
+                          m_admin_work_delta,
+                          contact_priority_fit_index
+                          )
+               })  
                
                
                

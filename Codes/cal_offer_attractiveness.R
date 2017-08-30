@@ -50,16 +50,6 @@ administration_work = curve(curve18,input_administration_work))
 
 employee_time_with_account_factor <- curve(curve35,input_employee_time_with_account) ## by products
 
-## preparation of deployment quality
-contact_priority_fit_index ##????
-
-
-
-
-
-
-
-
 
 
 

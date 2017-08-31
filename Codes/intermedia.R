@@ -10,7 +10,7 @@ tmp <- left_join(data1,data2,by=c("phase","sales_rep")) %>%
   group_by(phase,sales_rep) %>%
   mutate(no.hospitals = n_distinct(hospital)) %>%
   ungroup %>%
-  mutate(experience_index_pp = curve(curve11,acc_revenue_0),
+  mutate(experience_index_pp = curve(curve11,pp_acc_revenue),
          sales_target_realization = sales_target/real_sales,
          contact_priority_fit_index = sum(c(time_on_doc*0.5,
                                             time_on_diet*0.25,
@@ -19,7 +19,7 @@ tmp <- left_join(data1,data2,by=c("phase","sales_rep")) %>%
                                           na.rm=T),
          field_work_peraccount = field_work/no.hospitals,
          product_knowledge_addition_current_period = curve(curve26,product_training),
-         product_knowledge_transfer_value = curve(curve28,product_knowledge_0),
+         product_knowledge_transfer_value = curve(curve28,pp_product_knowledge),
          ss_accumulated_field_work_delta = curve(curve42,field_work),
          ss_accumulated_sales_training_delta = curve(curve43,sales_training),
          ss_experience_index_pp = curve(curve44,experience_index_pp),
@@ -39,16 +39,16 @@ tmp <- left_join(data1,data2,by=c("phase","sales_rep")) %>%
            product_knowledge_addition_current_period,
            product_knowledge_transfer_value),na.rm=T),
          motivation_index = sum(c(
-           (motivation_0+m_admin_work_delta)*
+           (pp_motivation+m_admin_work_delta)*
              ((weightage$motivation)$admin_work),
-           (motivation_0+m_sales_target_realization_delta)*
+           (pp_motivation+m_sales_target_realization_delta)*
              ((weightage$motivation)$sales_target_realization),
-           (motivation_0+m_meeting_with_team_delta)*
+           (pp_motivation+m_meeting_with_team_delta)*
              ((weightage$motivation)$meetings_with_team),
-           (motivation_0+m_sales_training_delta)*
+           (pp_motivation+m_sales_training_delta)*
              ((weightage$motivation)$sales_training)),
            na.rm=T)) %>%
-  mutate(srsp_motivation_factor = curve(curve32,motivation_0),
+  mutate(srsp_motivation_factor = curve(curve32,pp_motivation),
          srsp_sales_skills_factor = curve(curve34,sales_skill_index),
          srsp_product_knowledge_factor = curve(curve33,product_knowledge_index),
          srsp_time_with_account_factor = ({if (product=="product1"){
@@ -104,7 +104,7 @@ tmp <- left_join(data1,data2,by=c("phase","sales_rep")) %>%
              ((weightage$sales_performance)$deployment_quality)),
            na.rm=T)) %>%
   mutate(#cr_market_share_delta = curve(curve1,market_share_peraccount),
-         cr_product_knowledge_delta = curve(curve2,product_knowledge_index-product_knowledge_0),
+         cr_product_knowledge_delta = curve(curve2,product_knowledge_index-pp_product_knowledge),
          cr_promotional_support_delta = curve(curve3,promotional_support_index/pp_promotional_support),
          cr_pp_customer_relationship_index = curve(curve4,pp_customer_relationship))%>%
   mutate(customer_relationship_index = 

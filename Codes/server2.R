@@ -1,4 +1,4 @@
-server = function(input, output) {
+server2 = function(input, output) {
   
   ##phase1
   
@@ -73,14 +73,104 @@ server = function(input, output) {
     output$p1_decison1_summary_hosp2 <- renderText({12})
   })
   
-  
-  
   data1_phase1 <- eventReactive(input$decision1_phase1_submit,{
-    get.data1(input,1)
+    data_decision <- data.frame(
+      phase = NULL, 
+      hospital = NULL,
+      sales_rep = NULL,
+      product = NULL,
+      sales_target = NULL,
+      potential_sales = NULL,
+      real_sales = NULL,
+      discount = NULL,
+      promotional_budget = NULL,
+      sr_time = NULL,
+      time_on_doc = NULL,
+      time_on_diet = NULL,
+      time_on_admin = NULL,
+      time_on_nurs = NULL
+    )
+    for (j in 1:10) {
+      for (q in 1:4){
+        name.sales_rep <- input[[paste("p1_sr_hosp",j,sep="")]]
+        value.sales_target <- as.numeric(input[[paste("p1_hosp",j,"_sales_target_",q,sep="")]])
+        value.discount <- as.numeric(input[[paste("p1_discount_hosp",j,"_",q,sep="")]])
+        value.promotional_budget <- as.numeric(input[[paste("p1_promotional_budget_hosp",j,sep="")]])
+        value.sr_time <- as.numeric(input[[paste("p1_hosp",j,"_worktime_",q,sep="")]])/100*worktime
+        value.time_on_doc <- as.numeric(
+          input[[paste("p1_hosp",j,"_worktime_doc",sep="")]])*value.sr_time
+        value.time_on_diet <- as.numeric(
+          input[[paste("p1_hosp",j,"_worktime_diet",sep="")]])*value.sr_time
+        value.time_on_admin <- as.numeric(
+          input[[paste("p1_hosp",j,"_worktime_admin",sep="")]])*value.sr_time
+        value.time_on_nurs <- as.numeric(
+          input[[paste("p1_hosp",j,"_worktime_nurs",sep="")]])*value.sr_time
+        
+        data_decision <- plyr::rbind.fill(data_decision,data.frame(
+          phase = "周期1",
+          hospital = hospital_info_initial$name[j],
+          sales_rep = as.character(name.sales_rep), 
+          product = product_info_initial$product[q],
+          sales_target = value.sales_target,
+          potential_sales = as.numeric(get(paste("potential_sales_product",q,sep=""))[[j]][[1]]), 
+          discount = value.discount, 
+          promotional_budget = value.promotional_budget,
+          sr_time = value.sr_time,
+          time_on_doc = value.time_on_doc,
+          time_on_diet = value.time_on_diet,
+          time_on_admin = value.time_on_admin,
+          time_on_nurs = value.time_on_nurs
+        ))
+      }
+    }
+    data_decision
   })
   
   data2_phase1 <- eventReactive(input$decision2_phase1_submit,{
-    get.data2(input,1)
+    
+    data_decision2 <- data.frame(
+      phase = NULL,
+      sales_rep = NULL,
+      sales_training = NULL,
+      product_training = NULL,
+      field_work = NULL,
+      meetings_with_team = NULL,
+      kpi_analysis = NULL,
+      strategy_and_cycle_planning = NULL,
+      admin_work = NULL
+    )
+    
+    for (j in 1:5) {
+      name.sales_rep <- sr_info_initial$sales_name[j]
+      value.sales_training <- as.numeric(
+        input[[paste("p1_sr",j,"_sales_training",sep="")]])/100*worktime
+      value.product_training <- as.numeric(
+        input[[paste("p1_sr",j,"_product_training",sep="")]])/100*worktime
+      value.field_work <- as.numeric(
+        input[[paste("p1_sr",j,"_field_work",sep="")]])/100*worktime
+      value.meetings_with_team <- as.numeric(
+        input$p1_flm_team_meeting)/100*worktime
+      value.kpi_analysis <- as.numeric(
+        input$p1_flm_kpi_analysis)/100*worktime
+      value.strategy_and_cycle_planning <- as.numeric(
+        input$p1_flm_strategy_planning)/100*worktime
+      value.admin_work <- as.numeric(
+        input$p1_flm_admin_work)/100*worktime
+      
+      data_decision2 <- plyr::rbind.fill(data_decision2,data.frame(
+        phase = "周期1",
+        sales_rep = as.character(name.sales_rep),
+        sales_training = value.sales_training,
+        product_training = value.product_training,
+        field_work = value.field_work,
+        meetings_with_team = value.meetings_with_team,
+        kpi_analysis = value.kpi_analysis,
+        strategy_and_cycle_planning = value.strategy_and_cycle_planning,
+        admin_work = value.admin_work
+      ))
+    }
+    data_decision2
+    
   })
   
   output$report1_table <- renderDataTable(data1_phase1())

@@ -1,3 +1,4 @@
+library(tidyr)
 available_srs <- c("销售代表1",
                    "销售代表2",
                    "销售代表3",
@@ -5,10 +6,8 @@ available_srs <- c("销售代表1",
                    "销售代表5")
 
 
-pp_info_by_hosp_product <- data.frame(
-  hospital = paste("hospital",rep(1:10,each=28),sep=""),
-  product = paste("product",rep(1:4,each=7))
-)
+
+
 pp_info_by_hosp_product <- list(
                  hospital1 = list(product1 = list(pp_sales = 100000,
                                                   sr_sales_performance = 60,
@@ -291,6 +290,31 @@ pp_info_by_hosp_product <- list(
                                                    sales_performance = 50,
                                                    offer_attractiveness = 50)))
 
+
+pp_info_by_hosp_product_m <- unlist(pp_info_by_hosp_product, recursive = 
+                                      FALSE)
+pp_info_by_hosp_product_m <-
+  do.call("rbind", pp_info_by_hosp_product_m) %>%
+  as.data.frame(., stringsAsFactors = FALSE) %>%
+  mutate(tmp = rownames(.)) %>%
+  separate(tmp, c("hospital", "product"))
+
+pp_info_by_hosp_product_m1 <- pp_info_by_hosp_product_m %>%
+  select(-c(pp_sales,hospital,product))
+colnames(pp_info_by_hosp_product_m1) <- paste("pp_",colnames(pp_info_by_hosp_product_m1),sep="")
+colnames(pp_info_by_hosp_product_m1)[2:4] <- paste(colnames(pp_info_by_hosp_product_m1)[2:4],"_index",sep="")
+colnames(pp_info_by_hosp_product_m1)[6] <- paste(colnames(pp_info_by_hosp_product_m1)[6],"_index",sep="")
+
+pp_info_by_hosp_product_m2 <- pp_info_by_hosp_product_m %>%
+  select(pp_sales,hospital,product)
+
+pp_info_by_hosp_product_new <- data.frame(
+  pp_info_by_hosp_product_m1,
+  pp_info_by_hosp_product_m2
+)
+
+
+
 real_sales <- seq(50000,150000,1000)
 
 real_sales_product1 <- list(hospital1 = list(phase1 = sample(real_sales,1),
@@ -479,7 +503,7 @@ sr_info_initial <-
              )
 
 sr_info_initial_value <-
-  data.frame(sales_name = c("销售代表1",
+  data.frame(sales_rep = c("销售代表1",
                             "销售代表2",
                             "销售代表3",
                             "销售代表4",
@@ -489,32 +513,28 @@ sr_info_initial_value <-
                              "junior",
                              "middle",
                              "senior"),
-             acc_revenue = c(1800000,
+             pp_acc_revenue = c(1800000,
                              1000000,
                              1200000,
                              1500000,
                              2500000),
-             sales_skills = c("3",
-                              "2",
-                              "2",
-                              "3",
-                              "5"),
-             product_knowledge = c("20",
-                                   "15",
-                                   "5",
-                                   "10",
-                                   "15"),
-             motivation = c("20",
-                            "60",
-                            "60",
-                            "40",
-                            "60"))
+             pp_sales_skills_index = c(3,2,2,3,5),
+             pp_product_knowledge_index = c(20,15,5,10,15),
+             pp_motivation_index = c(20,60,60,40,60),
+             pp_acc_field_work = rep(0,5))
+
+sr_info_initial_value$sales_rep <- as.character(sr_info_initial_value$sales_rep)
+sr_info_initial_value$sales_level <- as.character(sr_info_initial_value$sales_level)
 
 product_info_initial <-
   data.frame(product = c("Tube Feed",
                          "Oral Nutritional Supplement(ONS)",
                          "Disease Specific Product1",
                          "Pediatric product"),
+             name2= c("product1",
+                      "product2",
+                      "product3",
+                      "product4"),
              name = c("NutroSource",
                       "NutroDrink",
                       "Peptasource",
@@ -530,7 +550,7 @@ product_info_initial <-
 
 
 hospital_info_initial <- 
-  data.frame(name = c("calgary",
+  data.frame(hospital = c("calgary",
                       "barcelona",
                       "Manchester",
                       "Rome",
@@ -540,6 +560,16 @@ hospital_info_initial <-
                       "New Delhi",
                       "sydney",
                       "Sao Paulo"),
+             name = c("hospital1",
+                      "hospital2",
+                      "hospital3",
+                      "hospital4",
+                      "hospital5",
+                      "hospital6",
+                      "hospital7",
+                      "hospital8",
+                      "hospital9",
+                      "hospital10"),
              type = c("children",
                       "university",
                       "community",
@@ -939,4 +969,5 @@ current_sales_product4 <- list(hospital1 = list(phase1 = 100000,
 ###
 worktime =100
 overhead =2
+basicSalary = 15000
 

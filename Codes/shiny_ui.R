@@ -10386,7 +10386,8 @@ ui <-dashboardPage(
                            DT::dataTableOutput("report2_table")),
                    tabItem(tabName = "report3",
                            DT::dataTableOutput("report3_table")),
-                   tabItem(tabName = "report4")
+                   tabItem(tabName = "report4",
+                           DT::dataTableOutput("report4_table"))
                  )
                )
              )

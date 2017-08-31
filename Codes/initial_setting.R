@@ -4,6 +4,11 @@ available_srs <- c("销售代表1",
                    "销售代表4",
                    "销售代表5")
 
+
+pp_info_by_hosp_product <- data.frame(
+  hospital = paste("hospital",rep(1:10,each=28),sep=""),
+  product = paste("product",rep(1:4,each=7))
+)
 pp_info_by_hosp_product <- list(
                  hospital1 = list(product1 = list(pp_sales = 100000,
                                                   sr_sales_performance = 60,

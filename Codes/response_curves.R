@@ -148,3 +148,18 @@ curve49 <- data.frame(x=c(0,30000,60000,90000,120000,150000,200000,250000,30000,
 curve50 <- data.frame(x=c(0,150000,300000,450000,600000,750000,900000,1050000,1200000,1350000,1500000),
                       y=c(0,15,30,40,50,60,70,80,90,95,100))
 
+## curve funcion
+curve <- function(name,input_x){
+  data <- name
+  left <- data[which.min(abs(input_x-data$x)),]
+  tmp <- data[-which.min(abs(input_x-data$x)),]
+  right <- tmp[which.min(abs(input_x-tmp$x)),]
+  y <- ifelse(left$x <= right$x,
+              (1-(input_x-left$x)/(right$x-left$x))*left$y + 
+                (1-(right$x-input_x)/(right$x-left$x))*right$y,
+              (1-(input_x-right$x)/(left$x-right$x))*right$y + 
+                (1-(left$x-input_x)/(left$x-right$x))*left$y)
+  
+  y
+}
+

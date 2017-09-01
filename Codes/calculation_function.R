@@ -35,7 +35,7 @@ calculator <- function(input,phase){
                available_srs[4]) {
       phase1_total_time_arrangement4 <- 
         phase1_total_time_arrangement4 +tmp
-    } else if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
+    } else (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
                available_srs[5]) {
       phase1_total_time_arrangement5 <- 
         phase1_total_time_arrangement5 +tmp
@@ -125,8 +125,8 @@ calculation <- function(pp_data1,
          } else {curve(curve15,meetings_with_team)}},
          m_sales_target_realization_delta = curve(curve16,sales_target_realization),
          m_sales_training_delta = curve(curve17,sales_training),
-         m_admin_work_delta = curve(curve18,admin_work)) #%>%
-  mutate(sales_skill_index = sum(c(
+         m_admin_work_delta = curve(curve18,admin_work)) %>%
+  mutate(sales_skills_index = sum(c(
     (ss_accumulated_field_work_delta)*((weightage$sales_skills)$field_work),
     ss_accumulated_sales_training_delta*((weightage$sales_skills)$sales_training),
     ss_experience_index_pp*((weightage$sales_skills)$experience)),na.rm=T),
@@ -144,7 +144,7 @@ calculation <- function(pp_data1,
         ((weightage$motivation)$sales_training)),
       na.rm=T)) %>%
   mutate(srsp_motivation_factor = curve(curve32,pp_motivation_index),
-         srsp_sales_skills_factor = curve(curve34,sales_skill_index),
+         srsp_sales_skills_factor = curve(curve34,sales_skills_index),
          srsp_product_knowledge_factor = curve(curve33,product_knowledge_index),
          srsp_time_with_account_factor = ({if (product=="product1"){
            curve(curve35,sr_time)} else if(
@@ -227,16 +227,8 @@ calculation <- function(pp_data1,
   mutate(offer_attractiveness = sum(c(
     cp_offer_attractiveness*(weightage$total_attractiveness)$cp_offer_attractiveness,
     pp_offer_attractiveness*(weightage$total_attractiveness)$pp_offer_attractiveness
-  ))) %>%
-  select(sales_skill_index,
-         product_knowledge_index,
-         motivation_index,
-         sr_sales_performance,
-         deployment_quality_index,
-         promotional_support_index,
-         sales_performance,
-         customer_relationship_index,
-         offer_attractiveness)
+  )),
+  acc_offer_attractiveness = pp_acc_offer_attractiveness+offer_attractiveness)
   
   tmp
 }
@@ -350,6 +342,7 @@ get.data3 <- function(input,phase){
     flm_kpi_analysisi = as.numeric(input[[paste("p",phase,"_flm_kpi_analysis",sep = "")]]),
     flm_strategy_planning = as.numeric(input[[paste("p",phase,"_flm_strategy_planning",sep = "")]]),
     flm_admin_work = as.numeric(input[[paste("p",phase,"_flm_admin_work",sep = "")]]))
+  flm_decision
   
 }
 

@@ -36,6 +36,8 @@ server3 = function(input, output) {
     
   })
   
+  observeEvent(input$save_inputs,{saveRDS( reactiveValuesToList(input) , file = 'inputs.RDS')})
+  
   output$report1_table <- renderDataTable(data1_phase1())
   output$report2_table <- renderDataTable(data2_phase1())
 
@@ -56,7 +58,7 @@ server3 = function(input, output) {
   output$report3_table <- renderDataTable({
     data1<-data1_phase1()
     data2<-data2_phase1()
-    calculation(pp_info_by_hosp_product_new,
+    calculation(pp_info_by_hosp_product,
                 sr_info_initial_value,
                 data1,
                 data2)
@@ -72,4 +74,4 @@ server3 = function(input, output) {
 
 shinyApp(ui=ui,server = server3)
 
-
+x<- readRDS("inputs.RDS")

@@ -9643,6 +9643,7 @@ ui <-dashboardPage(
                        tabPanel(
                          "Phase1",
                          actionButton("decision2_phase1_submit", "submit"),
+                         actionButton('save_inputs', 'Save inputs'),
                          fluidRow(h3("时间分配"),
                                   tags$div(
                                     tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -10387,9 +10388,44 @@ ui <-dashboardPage(
                    tabItem(tabName = "report3",
                            DT::dataTableOutput("report3_table")),
                    tabItem(tabName = "report4",
-                           DT::dataTableOutput("report4_table"))
-                 )
-               )
-             )
+                           tabsetPanel(
+                             tabPanel("Phase1",
+                                      column(4,
+                                      fluidRow(actionLink("p1_staff_report","代表报告")),
+                                      fluidRow(actionLink("p1_flm_report","经理报告")),
+                                      fluidRow(actionLink("p1_hospital_report1","分配报告")),
+                                      fluidRow(actionLink("p1_eva_decision_report","决策报告")),
+                                      fluidRow(actionLink("p1_report_a","市场调研报告")),
+                                      fluidRow(actionLink("p1_report_b","销售报告")),
+                                      fluidRow(actionLink("p1_report_c","利润贡献(总体)")),
+                                      fluidRow(actionLink("p1_report_d","利润贡献(没客户)"))),
+                                      column(8,DT::dataTableOutput("p1_report"))),
+                             tabPanel("Phase2",
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink())),
+                             tabPanel("Phase3",
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink())),
+                             tabPanel("Phase4",
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink()),
+                                      fluidRow(actionLink())))))))
          
          

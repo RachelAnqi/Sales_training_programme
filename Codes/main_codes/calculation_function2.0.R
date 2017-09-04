@@ -89,6 +89,7 @@ calculation <- function(pp_data1,
   tmp2 <- left_join(cp_data2,pp_data2,by=c("sales_rep"))
   
   tmp <- left_join(tmp1,tmp2,by=c("phase","sales_rep")) %>%
+    distinct() %>%
     group_by(phase,sales_rep) %>%
     mutate(no.hospitals = n_distinct(hospital),
            sr_revenue = sum(real_sales,na.rm=T),
@@ -345,7 +346,7 @@ get.data3 <- function(input,phase){
     flm_sales_training = sales_training(input,phase),
     flm_field_work = field_work(input,phase),
     flm_meetings_with_team = as.numeric(input[[paste("p",phase,"_flm_team_meeting",sep = "")]]),
-    flm_kpi_analysisi = as.numeric(input[[paste("p",phase,"_flm_kpi_analysis",sep = "")]]),
+    flm_kpi_analysis = as.numeric(input[[paste("p",phase,"_flm_kpi_analysis",sep = "")]]),
     flm_strategy_planning = as.numeric(input[[paste("p",phase,"_flm_strategy_planning",sep = "")]]),
     flm_admin_work = as.numeric(input[[paste("p",phase,"_flm_admin_work",sep = "")]]))
   flm_decision

@@ -31,7 +31,6 @@ report1_mod1 <- staff_report %>%
   spread(sales_rep,total_salary) %>%
   mutate(rowname="总薪酬(元)")
 
-#row.names(report1_mod1) <- "总薪酬(元)"
 
 report1_mod2 <- staff_report %>%
   select(work_time,
@@ -39,65 +38,60 @@ report1_mod2 <- staff_report %>%
          sales_rep,
          product_training,
          sales_training,
-         meetings_with_team) %>%
-  gather(variable,value,-sales_rep) %>%
-  spread(sales_rep,value) %>% 
-  mutate(rowname=paste(c("团队会议",
-                         "产品培训",
-                         "销售培训",
-                         "医院拜访",
-                         "总工作时间"),"(天)",sep=""))
+         meetings_with_team) 
 
-# rownames(report1_mod2) <- paste(c("团队会议",
-#                             "产品培训",
-#                             "销售培训",
-#                             "医院拜访",
-#                             "总工作时间"),"(天)",sep="")
-# 
-# report1_mod2 <- report1_mod2 %>% select(-variable)
+colnames(report1_mod2) <- c("总工作时间(天)",
+                            "医院拜访(天)",
+                            "销售代表",
+                            "产品培训(天)",
+                            "销售培训(天)",
+                            "团队会议(天)")
+
+report1_mod2 <- report1_mod2 %>%
+  gather(variable,value,-`销售代表`) %>%
+  spread(`销售代表`,value) 
 
 report1_mod3 <- staff_report %>%
   select(sales_rep,
          product_knowledge_index,
-         product_training) %>%
-  gather(variable,value,-sales_rep) %>%
-  spread(sales_rep,value) %>%
-  mutate(rowname=c("产品培训(天)",
-                   "产品知识(指数)"))
+         product_training) 
 
-# rownames(report1_mod3) <- c("产品培训(天)",
-#                             "产品知识(指数)")
-# 
-# report1_mod3 <- report1_mod3 %>% select(-variable)
+colnames(report1_mod3) <- c("销售代表",
+                            "产品知识(指数)",
+                            "产品培训(天)")
+
+report1_mod3 <- report1_mod3 %>%
+  gather(variable,value,-`销售代表`) %>%
+  spread(`销售代表`,value)
 
 report1_mod4 <- staff_report %>%
   select(experience_index,
          acc_revenue,
          sr_revenue,
          pp_experience_index,
-         sales_rep) %>%
-  gather(variable,value,-sales_rep) %>%
-  spread(sales_rep,value)
+         sales_rep) 
+colnames(report1_mod4) <- c("当期经验",
+                            "累计总销售(元)",
+                            "当期销售(元)",
+                            "前期经验",
+                            "销售代表")
+report1_mod4 <- report1_mod4 %>%
+  gather(variable,value,-`销售代表`) %>%
+  spread(`销售代表`,value)
 
-# rownames(report1_mod4) <- c("累计总销售(元)",
-#                             "当期经验",
-#                             "前期经验",
-#                             "当期销售(元)")
-# 
-# report1_mod4 <- report1_mod4 %>% select(-variable)
 
 report1_mod5 <- staff_report %>%
   select(sales_rep,
          pp_sales_skills_index,
          sales_skills_index,
-         field_work) %>%
-  gather(variable,value,-sales_rep) %>%
-  spread(sales_rep,value)
-
-# rownames(report1_mod4) <- c("经理医院随访(天)",
-#                             "前期销售技巧(指数)",
-#                             "当期销售技巧(指数)")
-
+         field_work)
+colnames(report1_mod5) <- c("销售代表",
+                            "前期销售技巧(指数)",
+                            "当期销售技巧(指数)",
+                            "经理医院随访(天)")
+report1_mod5 <- report1_mod5 %>%
+  gather(variable,value,-`销售代表`) %>%
+  spread(`销售代表`,value)
 
 
 ## flm report
@@ -111,24 +105,21 @@ flm_report <- flm_data %>%
          work_time=worktime)
 
 report2_mod1 <- flm_report%>%
-  select(all_sr_salary)
+  select(all_sr_salary) %>%
+  mutate(variable="总薪酬(元)")
  
-# rownames(report2_mod1) <-"总薪酬" 
-
 report2_mod2 <- flm_report %>%
-  select(-all_sr_salary) %>%
+  select(-all_sr_salary) 
+
+colnames(report2_mod2) <- c("销售培训(天)",
+                           "经理随访(天)",
+                           "团队会议(天)",
+                           "KPI分析(天)",
+                           "战略和周期计划(天)",
+                           "行政工作(天)",
+                           "总工作时间(天)")
+report2_mod2 <- report2_mod2 %>%
   gather(variable,value)
-
-# rownames(report2_mod2) <-c("销售培训(天)",
-#                            "经理随访(天)",
-#                            "团队会议(天)",
-#                            "KPI分析(天)",
-#                            "战略和周期计划(天)",
-#                            "行政工作(天)",
-#                            "总工作时间(天)")
-
-report2_mod2 <- report2_mod2%>% select(-variable)
-
 
 
 ## brief time allocation of hospital report
@@ -137,9 +128,15 @@ hospital_report <- tmp %>%
          product,
          sales_rep,
          sr_time) %>%
-  distinct() %>%
-  #mutate(total_time_peraccount = sum(sr_time,na.rm=T)) %>%
-  spread(product,sr_time)
+  distinct() 
+
+colnames(hospital_report) <- c("医院",
+                               "产品",
+                               "销售代表",
+                               "时间分配(天)") 
+
+hospital_report <- hospital_report %>%
+  spread(`产品`,`时间分配(天)`)
 
 
 
@@ -174,6 +171,9 @@ report4_mod1 <- eva_decision_report %>%
   select(hospital,
          sales_rep) 
 
+colnames(report4_mod1) <- c("医院",
+                            "销售代表")
+
 report4_mod2 <- eva_decision_report %>%
   select(hospital,
          contact_priority_fit_doc,
@@ -182,6 +182,13 @@ report4_mod2 <- eva_decision_report %>%
          contact_priority_fit_nurs,
          total_deployment_quality_index) %>%
   distinct()
+
+colnames(report4_mod2) <- c("医院",
+                            "医生时间分配",
+                            "营养师时间分配",
+                            "行政时间分配",
+                            "护士时间分配",
+                            "总分级匹配度")
 
 report4_mod3 <- eva_decision_report %>%
   select(hospital,
@@ -194,6 +201,14 @@ report4_mod3 <- eva_decision_report %>%
          admin_work) %>%
   distinct()
 
+colnames(report4_mod3) <- c("医院",
+                            "当期决策质量(指数)",
+                            "上期决策质量(指数)",
+                            "总分级匹配度",
+                            "战略和周期计划(天)",
+                            "KPI分析(天)",
+                            "团队会议(天)",
+                            "行政工作(天)")
 ## report a
 offer_attractiveness_report <- tmp %>%
   group_by(hospital) %>%
@@ -225,13 +240,42 @@ offer_attractiveness_report <- tmp %>%
          average_product_knowledge_index = mean(product_knowledge_index),
          average_motivation_index = mean(motivation_index))
 
-market_report <- tmp %>%
+report5_mod1 <- offer_attractiveness_report %>%
+  select(total_revenue,
+         total_profit,
+         average_customer_relationship_index,
+         average_sales_skills_index,
+         average_product_knowledge_index,
+         average_motivation_index,
+         total_offer_attractiveness,
+         total_acc_offer_attractiveness) %>%
+  distinct()
+
+colnames(report5_mod1) <- c("总销售(元)",
+                             "总利润(元)",
+                             "客户关系的平均水平(指数)",
+                             "平均销售技巧水平(指数)",
+                             "平均产品知识水平(指数)",
+                             "平均动力值(指数)",
+                             "商业价值(指数)",
+                             "累计商业价值(指数)") 
+report5_mod1 <- report5_mod1 %>% gather(variable,value)
+
+report5_mod2 <- tmp %>%
   select(hospital,product,real_sales) %>%
   group_by(hospital) %>%
   dplyr::summarise(hospital_revenue = sum(real_sales)) %>%
   ungroup() %>%
   mutate(market_revenue=sum(hospital_revenue),
-         market_share=round(hospital_revenue/market_revenue*100),2)
+         market_share=round(hospital_revenue/market_revenue*100,2)) %>%
+  select(hospital,
+         hospital_revenue,
+         market_share) %>%
+  distinct()
+
+colnames(report5_mod2) <- c("医院",
+                            "总销售(元)",
+                            "总市场的市场份额(%)")
   
 ## report b
 hospital_sales_report <- tmp %>%
@@ -282,8 +326,8 @@ out<-list("staff_report"=staff_report,
           "flm_report"=flm_report,
           "hospital_report"=hospital_report,
           "eva_decision_report"=eva_decision_report,
-          "offer_attractiveness_report"=offer_attractiveness_report,
-          "market_report"=market_report,
+          "report5_mod1"=report5_mod1,
+          "report5_mod2"=report5_mod2,
           "hospital_sales_report"=hospital_sales_report,
           "sr_sales_report"=sr_sales_report,
           "product_report_peraccount"=product_report_peraccount,

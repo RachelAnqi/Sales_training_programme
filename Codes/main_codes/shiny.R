@@ -4,6 +4,9 @@ library(shinyjs)
 library(DT)
 library(plyr)
 library(dplyr)
+library(tidyr)
+library(htmlTable)
+library(htmlwidgets)
 
 
 shinyApp(ui=dashboardPage(
@@ -10392,87 +10395,52 @@ shinyApp(ui=dashboardPage(
                 tabPanel("Phase1",
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "代表报告"),
-                           fluidRow(tags$div(
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "职员成本"),
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                      tableOutput("p1_report1_1")))),
-                           
-                           fluidRow(tags$div(
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "时间分配"),
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                    tableOutput("p1_report1_2")))),
-                           fluidRow(tags$div(
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "产品知识"),
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                    tableOutput("p1_report1_3")))),
-                           fluidRow(tags$div(
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "经验"),
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                    tableOutput("p1_report1_4")))),
-                           fluidRow(tags$div(
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "销售技巧"),
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                    tableOutput("p1_report1_5")))),
-                           fluidRow(tags$div(
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "动力值"),
-                             tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                    tableOutput("p1_report1_6"))))),
+                           fluidRow(
+                             tags$div(style = "text-align:left;margin-left:3%",
+                                      htmlTableWidgetOutput("p1_report1_1")),
+                             tags$div(style = "text-align:left;margin-left:3%",
+                                      htmlTableWidgetOutput("p1_report1_2")),
+                             tags$div(style = "text-align:left;margin-left:3%",
+                                      htmlTableWidgetOutput("p1_report1_3")),
+                             tags$div(style = "text-align:left;margin-left:3%",
+                                      htmlTableWidgetOutput("p1_report1_4")),
+                             tags$div(style = "text-align:left;margin-left:3%",
+                                      htmlTableWidgetOutput("p1_report1_5")))
+                           ),
                          br(),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "经理报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
+                                             htmlTableWidgetOutput("p1_report2_1")))),
                                   fluidRow(tags$div(
                                     tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                                    "职员成本"),
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                           tableOutput("p1_report2_1")))),
-                                  fluidRow(tags$div(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                                    "时间分配"),
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                           tableOutput("p1_report2_2"))))),
+                                             htmlTableWidgetOutput("p1_report2_2")))),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "分配报告"),
-                                  fluidRow(tags$div(
+                                  fluidRow(
                                     tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                                    "医院"),
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                           tableOutput("p1_report3"))))),
+                                             htmlTableWidgetOutput("p1_report3")))),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "决策报告"),
-                                  fluidRow(tags$div(
+                                  fluidRow(
                                     tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                                    "总体的分配情况"),
+                                             htmlTableWidgetOutput("p1_report4_1"))),
+                                  fluidRow(
                                     tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                           tableOutput("p1_report4_1")))),
-                                  fluidRow(tags$div(
+                                             htmlTableWidgetOutput("p1_report4_2"))),
+                                  fluidRow(
                                     tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                                    "分级匹配度"),
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                           tableOutput("p1_report4_2")))),
-                                  fluidRow(tags$div(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                                    "决策质量"),
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                           tableOutput("p1_report4_3"))))),
+                                             htmlTableWidgetOutput("p1_report4_3")))),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "市场调研报告"),
                                   fluidRow(tags$div(
                                     tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "商业价值"),
+                                             htmlTableWidgetOutput("p1_report5_1")))),
+                                  fluidRow(
                                     tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             tableOutput("p1_report5_1")))),
-                                  fluidRow(tags$div(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             "总市场概述"),
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             tableOutput("p1_report5_2"))))
-                                  )
+                                             htmlTableWidgetOutput("p1_report5_2"))))
+                              
                          ),
                 
                 tabPanel("Phase2"),
@@ -10485,6 +10453,30 @@ shinyApp(ui=dashboardPage(
   
   
          server=function(input, output) {
+
+           htmlTableWidget1 <- function(x, number_of_entries = c(10, 25, 100),
+                                       width = NULL, height = NULL, elementId = NULL,
+                                       ...) {
+
+             rendered_table <- htmlTable(x, ...)
+
+             # forward options and variables using the input list:
+             input <- list(
+               thetable = rendered_table,
+               options = list(lengthChange = F)
+             )
+
+             # create widget
+             htmlwidgets::createWidget(
+               name = 'htmlTableWidget',
+               x = input,
+               width = width,
+               height = height,
+               package = 'htmlTable',
+               elementId = elementId
+             )
+           }
+
            
            ##phase1
            
@@ -10562,22 +10554,33 @@ shinyApp(ui=dashboardPage(
              flm_data <- get.data3(input,1)
              p1_report <- report_data(tmp,flm_data)})
            
-           output$p1_report1_1 <- renderTable(p1_report()$report1_mod1)
-           output$p1_report1_2 <- renderTable(p1_report()$report1_mod2)
-           output$p1_report1_3 <- renderTable(p1_report()$report1_mod3)
-           output$p1_report1_4 <- renderTable(p1_report()$report1_mod4)
-           output$p1_report1_5 <- renderTable(p1_report()$report1_mod5)
-
-           output$p1_report2_1 <- renderTable(p1_report()$report2_mod1)
-           output$p1_report2_2 <- renderTable(p1_report()$report2_mod2)
-
-           output$p1_report3 <- renderTable(p1_report()$hospital_report)
-
-           output$p1_report4_1 <- renderTable(p1_report()$report4_mod1)
-           output$p1_report4_2 <- renderTable(p1_report()$report4_mod2)
-           output$p1_report4_3 <- renderTable(p1_report()$report4_mod3)
-           output$p1_report5_1 <- renderTable(p1_report()$report5_mod1)
-           output$p1_report5_2 <- renderTable(p1_report()$report5_mod2)
+           output$p1_report1_1 <-
+             renderHtmlTableWidget(htmlTableWidget1(p1_report()$report1_mod1,
+                                                   caption="职员成本"))
+           output$p1_report1_2 <- 
+             renderHtmlTableWidget(htmlTableWidget1(p1_report()$report1_mod2,
+                                                   caption="时间分配"))
+           output$p1_report1_3 <- 
+             renderHtmlTableWidget(htmlTableWidget(p1_report()$report1_mod3,
+                                                   caption="产品知识"))
+           
+           output$p1_report1_4 <- 
+             renderHtmlTableWidget(htmlTableWidget(p1_report()$report1_mod4,
+                                                   caption="经验"))
+           output$p1_report1_5 <- 
+             renderHtmlTableWidget(htmlTableWidget(p1_report()$report1_mod5,
+                                                   caption="销售技巧"))
+           # 
+           # output$p1_report2_1 <- renderTable(p1_report()$report2_mod1)
+           # output$p1_report2_2 <- renderTable(p1_report()$report2_mod2)
+           # 
+           # output$p1_report3 <- renderTable(p1_report()$hospital_report)
+           # 
+           # output$p1_report4_1 <- renderTable(p1_report()$report4_mod1)
+           # output$p1_report4_2 <- renderTable(p1_report()$report4_mod2)
+           # output$p1_report4_3 <- renderTable(p1_report()$report4_mod3)
+           # output$p1_report5_1 <- renderTable(p1_report()$report5_mod1)
+           # output$p1_report5_2 <- renderTable(p1_report()$report5_mod2)
            
            
            

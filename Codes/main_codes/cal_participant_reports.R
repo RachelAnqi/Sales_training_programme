@@ -4,6 +4,7 @@
 ## staff report 1
 
 report_data <- function(tmp,flm_data) {
+tmp$ith_hospital <- as.numeric(substr(tmp$hospital,9,10))
 staff_report <- tmp %>%
   select(sales_rep,
          incentive_factor,
@@ -28,8 +29,11 @@ staff_report <- tmp %>%
 report1_mod1 <- staff_report %>%
   select(sales_rep,
          total_salary) %>%
-  spread(sales_rep,total_salary) %>%
-  mutate(rowname="总薪酬(元)")
+  spread(sales_rep,total_salary) 
+
+rownames(report1_mod1) <- "总薪酬(元)"
+# %>%
+#   mutate(rowname="总薪酬(元)")
 
 
 report1_mod2 <- staff_report %>%
@@ -51,6 +55,10 @@ report1_mod2 <- report1_mod2 %>%
   gather(variable,value,-`销售代表`) %>%
   spread(`销售代表`,value) 
 
+rownames(report1_mod2) <- report1_mod2$variable
+report1_mod2 <- report1_mod2 %>%select(-variable)
+
+
 report1_mod3 <- staff_report %>%
   select(sales_rep,
          product_knowledge_index,
@@ -63,6 +71,9 @@ colnames(report1_mod3) <- c("销售代表",
 report1_mod3 <- report1_mod3 %>%
   gather(variable,value,-`销售代表`) %>%
   spread(`销售代表`,value)
+
+rownames(report1_mod3) <- report1_mod3$variable
+report1_mod3 <- report1_mod3 %>% select(-variable)
 
 report1_mod4 <- staff_report %>%
   select(experience_index,
@@ -79,6 +90,11 @@ report1_mod4 <- report1_mod4 %>%
   gather(variable,value,-`销售代表`) %>%
   spread(`销售代表`,value)
 
+rownames(report1_mod4) <- report1_mod4$variable
+report1_mod4 <- report1_mod4 %>% select(-variable)
+
+
+
 
 report1_mod5 <- staff_report %>%
   select(sales_rep,
@@ -92,6 +108,10 @@ colnames(report1_mod5) <- c("销售代表",
 report1_mod5 <- report1_mod5 %>%
   gather(variable,value,-`销售代表`) %>%
   spread(`销售代表`,value)
+
+rownames(report1_mod5) <- report1_mod5$variable
+report1_mod5 <- report1_mod5 %>% select(-variable)
+
 
 
 ## flm report
@@ -121,28 +141,39 @@ colnames(report2_mod2) <- c("销售培训(天)",
 report2_mod2 <- report2_mod2 %>%
   gather(variable,value)
 
+rownames(report2_mod2) <- report2_mod2$variable
+report2_mod2 <- report2_mod2 %>% select(-variable)
+
 
 ## brief time allocation of hospital report
 hospital_report <- tmp %>%
-  select(hospital,
+  select(ith_hospital,
+         hospital,
          product,
          sales_rep,
          sr_time) %>%
   distinct() 
 
-colnames(hospital_report) <- c("医院",
+colnames(hospital_report) <- c("ith_hospital",
+                               "医院",
                                "产品",
                                "销售代表",
                                "时间分配(天)") 
 
 hospital_report <- hospital_report %>%
-  spread(`产品`,`时间分配(天)`)
+  spread(`产品`,`时间分配(天)`) %>%
+  arrange(ith_hospital)
 
+rownames(hospital_report) <- hospital_report$医院
+
+hospital_report <- hospital_report %>%
+  select(-ith_hospital,-`医院`)
 
 
 ## evaluation of decision report
 eva_decision_report <- tmp %>%
-  select(hospital,
+  select(ith_hospital,
+         hospital,
          product,
          sales_rep,
          contact_priority_fit_doc,
@@ -165,7 +196,8 @@ eva_decision_report <- tmp %>%
          total_pp_deployment_quality_index=sum(pp_deployment_quality_index)) %>%
   ungroup() %>%
   select(-product) %>%
-  distinct()
+  distinct() %>%
+  arrange(ith_hospital)
 
 report4_mod1 <- eva_decision_report %>%
   select(hospital,
@@ -173,6 +205,8 @@ report4_mod1 <- eva_decision_report %>%
 
 colnames(report4_mod1) <- c("医院",
                             "销售代表")
+rownames(report4_mod1) <- report4_mod1$医院
+report4_mod1 <- report4_mod1 %>% select(-`医院`)
 
 report4_mod2 <- eva_decision_report %>%
   select(hospital,
@@ -189,6 +223,8 @@ colnames(report4_mod2) <- c("医院",
                             "行政时间分配",
                             "护士时间分配",
                             "总分级匹配度")
+rownames(report4_mod2) <- report4_mod2$医院
+report4_mod2 <- report4_mod2 %>% select(`医院`)
 
 report4_mod3 <- eva_decision_report %>%
   select(hospital,
@@ -209,6 +245,7 @@ colnames(report4_mod3) <- c("医院",
                             "KPI分析(天)",
                             "团队会议(天)",
                             "行政工作(天)")
+
 ## report a
 offer_attractiveness_report <- tmp %>%
   group_by(hospital) %>%

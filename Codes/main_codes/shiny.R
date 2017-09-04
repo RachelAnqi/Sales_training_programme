@@ -59,7 +59,7 @@ shinyApp(ui=dashboardPage(
         tabName = "decision1",
         tabsetPanel(
           #position = "left",
-          tabPanel("Phase1",
+          tabPanel("周期一",
                    actionButton("decision1_phase1_calculator", "calculator"),
                    actionButton("decision1_phase1_submit", "submit"),
                    fluidRow(
@@ -2274,7 +2274,7 @@ shinyApp(ui=dashboardPage(
                    )
           ),
           tabPanel(
-            "Phase2",
+            "周期二",
             actionButton("decision1_phase2_calculator", "calculator"),
             actionButton("decision1_phase2_submit", "submit"),
             fluidRow(
@@ -4729,7 +4729,7 @@ shinyApp(ui=dashboardPage(
             )
           ),
           tabPanel(
-            "Phase3",
+            "周期三",
             actionButton("decision1_phase3_calculator", "calculator"),
             actionButton("decision1_phase3_submit", "submit"),
             fluidRow(
@@ -7184,7 +7184,7 @@ shinyApp(ui=dashboardPage(
             )
           ),
           tabPanel(
-            "Phase4",
+            "周期四",
             actionButton("decision1_phase4_calculator", "calculator"),
             actionButton("decision1_phase4_submit", "submit"),
             fluidRow(
@@ -9644,7 +9644,7 @@ shinyApp(ui=dashboardPage(
         tabName = "decision2",
         tabsetPanel(
           tabPanel(
-            "Phase1",
+            "周期一",
             actionButton("decision2_phase1_submit", "submit"),
             actionButton('save_inputs', 'Save inputs'),
             fluidRow(h3("时间分配"),
@@ -9830,7 +9830,8 @@ shinyApp(ui=dashboardPage(
             )
           ),
           tabPanel(
-            "Phase2",
+            "周期二",
+            actionButton("decision2_phase2_submit","submit"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;margin-left:10px;width:40%;text-align:center;",
@@ -10014,7 +10015,8 @@ shinyApp(ui=dashboardPage(
             )
           ),
           tabPanel(
-            "Phase3",
+            "周期三",
+            actionButton("decision2_phase3_submit","submit"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;margin-left:10px;width:40%;text-align:center;",
@@ -10198,7 +10200,8 @@ shinyApp(ui=dashboardPage(
             )
           ),
           tabPanel(
-            "Phase4",
+            "周期四",
+            actionButton("decision2_phase2_submit","submit"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -10392,93 +10395,239 @@ shinyApp(ui=dashboardPage(
               DT::dataTableOutput("report3_table")),
       tabItem(tabName = "report4",
               tabsetPanel(
-                tabPanel("Phase1",
+                tabPanel("周期一",
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "代表报告"),
                            fluidRow(
                              tags$div(style = "text-align:left;margin-left:3%",
-                                      htmlTableWidgetOutput("p1_report1_1")),
+                                      htmlOutput("p1_report1_1")),
+                             br(),br(),br(),
                              tags$div(style = "text-align:left;margin-left:3%",
-                                      htmlTableWidgetOutput("p1_report1_2")),
+                                      htmlOutput("p1_report1_2")),
+                             br(),br(),br(),
                              tags$div(style = "text-align:left;margin-left:3%",
-                                      htmlTableWidgetOutput("p1_report1_3")),
+                                      htmlOutput("p1_report1_3")),
+                             br(),br(),br(),
                              tags$div(style = "text-align:left;margin-left:3%",
-                                      htmlTableWidgetOutput("p1_report1_4")),
+                                      htmlOutput("p1_report1_4")),
+                             br(),br(),br(),
                              tags$div(style = "text-align:left;margin-left:3%",
-                                      htmlTableWidgetOutput("p1_report1_5")))
+                                      htmlOutput("p1_report1_5")))
                            ),
-                         br(),
+                         br(),br(),br(),br(),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "经理报告"),
-                                  fluidRow(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report2_1")))),
-                                  fluidRow(tags$div(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report2_2")))),
+                           fluidRow(
+                             tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p1_report2_1")),
+                             br(),br(),br(),
+                             tags$div(style = "text-align:left;;margin-left:3%",
+                                             htmlOutput("p1_report2_2")))),
+                         br(),br(),br(),br(),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "分配报告"),
-                                  fluidRow(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report3")))),
+                          fluidRow(
+                              tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p1_report3")))),
+                         br(),br(),br(),br(),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "决策报告"),
-                                  fluidRow(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report4_1"))),
-                                  fluidRow(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report4_2"))),
-                                  fluidRow(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report4_3")))),
+                          fluidRow(       
+                              tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p1_report4_1")),
+                              br(),br(),br(),
+                              tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p1_report4_2")),
+                              br(),br(),br(),
+                              tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p1_report4_3")))),
+                         br(),br(),br(),br(),
                          fluidRow(tags$div(style = "text-align:center;width:100%",
                                            "市场调研报告"),
-                                  fluidRow(tags$div(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report5_1")))),
-                                  fluidRow(
-                                    tags$div(style = "text-align:left;width:100%;margin-left:3%",
-                                             htmlTableWidgetOutput("p1_report5_2"))))
+                                  fluidRow(    
+                                  tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p1_report5_1")),
+                                  br(),br(),br(),
+                                  tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p1_report5_2"))))
                               
                          ),
                 
-                tabPanel("Phase2"),
+                tabPanel("周期二",
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "代表报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report1_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report1_2")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report1_3")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report1_4")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report1_5")))
+                         ),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "经理报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report2_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;;margin-left:3%",
+                                             htmlOutput("p2_report2_2")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "分配报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report3")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "决策报告"),
+                                  fluidRow(       
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report4_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report4_2")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report4_3")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "市场调研报告"),
+                                  fluidRow(    
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report5_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p2_report5_2"))))),
                 
-                tabPanel("Phase3"),
+                tabPanel("周期三",
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "代表报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report1_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report1_2")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report1_3")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report1_4")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report1_5")))
+                         ),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "经理报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report2_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;;margin-left:3%",
+                                             htmlOutput("p3_report2_2")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "分配报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report3")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "决策报告"),
+                                  fluidRow(       
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report4_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report4_2")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report4_3")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "市场调研报告"),
+                                  fluidRow(    
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report5_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p3_report5_2"))))),
                 
-                tabPanel("Phase4")
+                tabPanel("周期四",
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "代表报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report1_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report1_2")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report1_3")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report1_4")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report1_5")))
+                         ),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "经理报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report2_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;;margin-left:3%",
+                                             htmlOutput("p4_report2_2")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "分配报告"),
+                                  fluidRow(
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report3")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "决策报告"),
+                                  fluidRow(       
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report4_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report4_2")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report4_3")))),
+                         br(),br(),br(),br(),
+                         fluidRow(tags$div(style = "text-align:center;width:100%",
+                                           "市场调研报告"),
+                                  fluidRow(    
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report5_1")),
+                                    br(),br(),br(),
+                                    tags$div(style = "text-align:left;margin-left:3%",
+                                             htmlOutput("p4_report5_2")))))
                 
                 ))))),
   
   
          server=function(input, output) {
 
-           htmlTableWidget1 <- function(x, number_of_entries = c(10, 25, 100),
-                                       width = NULL, height = NULL, elementId = NULL,
-                                       ...) {
-
-             rendered_table <- htmlTable(x, ...)
-
-             # forward options and variables using the input list:
-             input <- list(
-               thetable = rendered_table,
-               options = list(lengthChange = F)
-             )
-
-             # create widget
-             htmlwidgets::createWidget(
-               name = 'htmlTableWidget',
-               x = input,
-               width = width,
-               height = height,
-               package = 'htmlTable',
-               elementId = elementId
-             )
-           }
-
-           
-           ##phase1
+         
+          ##phase1
            
            output$p1_total_promotional_budget <- renderText(
              total_promotional_budget$phase1
@@ -10544,46 +10693,497 @@ shinyApp(ui=dashboardPage(
              #left_join(data1_phase1(),pp_info_by_hosp_product_new,by=c("hospital","product"))
            })
            
-           p1_report <- reactive({
-             data1<-get.data1(input,1)
-             data2<-get.data2(input,1)
-             tmp <- calculation(pp_info_by_hosp_product,
-                                sr_info_initial_value,
-                                data1,
-                                data2)
+           tmp <- reactive({
+             pp_data1 <- pp_info_by_hosp_product
+             pp_data2 <- sr_info_initial_value
+             cp_data1 <- get.data1(input,1)
+             cp_data2 <- get.data2(input,1)
+             tmp <- calculation(pp_data1,
+                                pp_data2,
+                                cp_data1,
+                                cp_data2)})
+           
+           p1_report<- reactive({
              flm_data <- get.data3(input,1)
-             p1_report <- report_data(tmp,flm_data)})
+             p1_report <- report_data(tmp(),flm_data)})
            
            output$p1_report1_1 <-
-             renderHtmlTableWidget(htmlTableWidget1(p1_report()$report1_mod1,
-                                                   caption="职员成本"))
+             renderText(htmlTable(p1_report()$report1_mod1,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px"))
+           
            output$p1_report1_2 <- 
-             renderHtmlTableWidget(htmlTableWidget1(p1_report()$report1_mod2,
-                                                   caption="时间分配"))
+             renderText(htmlTable(p1_report()$report1_mod2,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px;"))
+           
            output$p1_report1_3 <- 
-             renderHtmlTableWidget(htmlTableWidget(p1_report()$report1_mod3,
-                                                   caption="产品知识"))
+             renderText(htmlTable(p1_report()$report1_mod3,
+                                  caption="产品知识",
+                                  css.cell = "padding: 10px 50px;"))
            
            output$p1_report1_4 <- 
-             renderHtmlTableWidget(htmlTableWidget(p1_report()$report1_mod4,
-                                                   caption="经验"))
+             renderText(htmlTable(p1_report()$report1_mod4,
+                                  caption="经验",
+                                  css.cell = "padding: 10px 50px;"))
            output$p1_report1_5 <- 
-             renderHtmlTableWidget(htmlTableWidget(p1_report()$report1_mod5,
-                                                   caption="销售技巧"))
-           # 
-           # output$p1_report2_1 <- renderTable(p1_report()$report2_mod1)
-           # output$p1_report2_2 <- renderTable(p1_report()$report2_mod2)
-           # 
-           # output$p1_report3 <- renderTable(p1_report()$hospital_report)
-           # 
-           # output$p1_report4_1 <- renderTable(p1_report()$report4_mod1)
-           # output$p1_report4_2 <- renderTable(p1_report()$report4_mod2)
-           # output$p1_report4_3 <- renderTable(p1_report()$report4_mod3)
-           # output$p1_report5_1 <- renderTable(p1_report()$report5_mod1)
-           # output$p1_report5_2 <- renderTable(p1_report()$report5_mod2)
+             renderText(htmlTable(p1_report()$report1_mod5,
+                                  caption="销售技巧",
+                                  css.cell = "padding: 10px 50px;"))
+
+           output$p1_report2_1 <- 
+             renderText(htmlTable(p1_report()$report2_mod1,
+                                  caption="职员成本",
+                                  css.cell = "padding: 10px 50px;"))
+           
+           output$p1_report2_2 <- 
+             renderText(htmlTable(p1_report()$report2_mod2,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px;"))
+
+           output$p1_report3 <- 
+             renderText(htmlTable(p1_report()$hospital_report,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px;"))
+
+           output$p1_report4_1 <- 
+             renderText(htmlTable(p1_report()$report4_mod1,
+                                  caption="总体的分配情况",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p1_report4_2 <- 
+             renderText(htmlTable(p1_report()$report4_mod2,
+                                  caption="分级匹配度",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p1_report4_3 <- 
+             renderText(htmlTable(p1_report()$report4_mod3,
+                                  caption="决策质量",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p1_report5_1 <- 
+             renderText(htmlTable(p1_report()$report5_mod1,
+                                  caption="商业价值",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p1_report5_2 <- 
+             renderText(htmlTable(p1_report()$report5_mod2,
+                                  caption="总市场概述",
+                                  css.cell = "padding: 10px 50px;"))
            
            
            
+           ##phase2
+           
+           output$p2_total_promotional_budget <- renderText(
+             total_promotional_budget$phase2
+           )
+           
+           
+           p2_calculator_result <- eventReactive(input$decision1_phase2_calculator,{
+             calculator(input,2)
+           })
+           
+           
+           output$p2_arranged_promotional_budget <- renderText(p2_calculator_result()[1]) 
+           output$p2_arranged_time_of_sr1 <- renderText(p2_calculator_result()[2])
+           output$p2_arranged_time_of_sr2 <- renderText(p2_calculator_result()[3])
+           output$p2_arranged_time_of_sr3 <- renderText(p2_calculator_result()[4])
+           output$p2_arranged_time_of_sr4 <- renderText(p2_calculator_result()[5])
+           output$p2_arranged_time_of_sr5 <- renderText(p2_calculator_result()[6])
+           
+           
+           observeEvent(input$decision1_phase2_submit, {
+             disable("p2_discount_hosp1_1")
+             disable("p2_discount_hosp1_2")
+             output$p2_decison1_summary_hosp1 <- renderText({12})
+             output$p2_decison1_summary_hosp2 <- renderText({12})
+           })
+           
+           output$p2_total_sales_training <-renderText(sales_training(input,2))
+           output$p2_flm_sales_training <- renderText(sales_training(input,2))
+           output$p2_total_field_work <-renderText(field_work(input,2))
+           output$p2_flm_field_work <- renderText(field_work(input,2))
+           output$p2_total_team_meeting <- renderText(input$p2_flm_team_meeting)
+           output$p2_total_kpi_analysis <- renderText(input$p2_flm_kpi_analysis)
+           output$p2_total_strategy_planning <- renderText(input$p2_flm_strategy_planning)
+           output$p2_total_admin_work <- renderText(input$p2_flm_admin_work)
+           output$p2_total_management <- renderText(total_management(input,2))
+           
+           p2_flm_data <- reactive(get.data3(input,2))
+           
+           tmp2 <- reactive({
+             pp_data1 <- tmp() %>% select(hospital,
+                                        product,
+                                        real_sales,
+                                        sr_sales_performance,
+                                        deployment_quality_index,
+                                        customer_relationship_index,
+                                        promotional_support_index,
+                                        sales_performance,
+                                        offer_attractiveness,
+                                        acc_offer_attractiveness) %>%
+               distinct()
+             
+             colnames(pp_data1)[3:10] <- paste("pp_",colnames(pp_data1)[3:10],sep="")
+             
+             pp_data2 <- tmp() %>% select(sales_rep,
+                                        sales_level,
+                                        acc_revenue,
+                                        sales_skills_index,
+                                        product_knowledge_index,
+                                        motivation_index,
+                                        acc_field_work) %>%
+               distinct()
+             
+             colnames(pp_data2)[3:7] <- paste("pp_",colnames(pp_data2)[3:7],sep="")
+             cp_data1 <- get.data1(input,2)
+             cp_data2 <- get.data2(input,2)
+             tmp <- calculation(pp_data1,
+                                pp_data2,
+                                cp_data1,
+                                cp_data2)})
+           
+           p2_report<- reactive({
+             flm_data <- get.data3(input,2)
+             p2_report <- report_data(tmp2(),flm_data)})
+           
+           
+           
+           observeEvent(input$decision2_phase2_submit, {
+             
+           output$p2_report1_1 <-
+             renderText(htmlTable(p2_report()$report1_mod1,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px"))
+           
+           output$p2_report1_2 <- 
+             renderText(htmlTable(p2_report()$report1_mod2,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px;"))
+           
+           output$p2_report1_3 <- 
+             renderText(htmlTable(p2_report()$report1_mod3,
+                                  caption="产品知识",
+                                  css.cell = "padding: 10px 50px;"))
+           
+           output$p2_report1_4 <- 
+             renderText(htmlTable(p2_report()$report1_mod4,
+                                  caption="经验",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p2_report1_5 <- 
+             renderText(htmlTable(p2_report()$report1_mod5,
+                                  caption="销售技巧",
+                                  css.cell = "padding: 10px 50px;"))
+           
+           output$p2_report2_1 <- 
+             renderText(htmlTable(p2_report()$report2_mod1,
+                                  caption="职员成本",
+                                  css.cell = "padding: 10px 50px;"))
+           
+           output$p2_report2_2 <- 
+             renderText(htmlTable(p2_report()$report2_mod2,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px;"))
+           
+           output$p2_report3 <- 
+             renderText(htmlTable(p2_report()$hospital_report,
+                                  caption="时间分配",
+                                  css.cell = "padding: 10px 50px;"))
+           
+           output$p2_report4_1 <- 
+             renderText(htmlTable(p2_report()$report4_mod1,
+                                  caption="总体的分配情况",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p2_report4_2 <- 
+             renderText(htmlTable(p2_report()$report4_mod2,
+                                  caption="分级匹配度",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p2_report4_3 <- 
+             renderText(htmlTable(p2_report()$report4_mod3,
+                                  caption="决策质量",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p2_report5_1 <- 
+             renderText(htmlTable(p2_report()$report5_mod1,
+                                  caption="商业价值",
+                                  css.cell = "padding: 10px 50px;"))
+           output$p2_report5_2 <- 
+             renderText(htmlTable(p2_report()$report5_mod2,
+                                  caption="总市场概述",
+                                  css.cell = "padding: 10px 50px;"))})
+           
+           ##phase3
+           
+           output$p3_total_promotional_budget <- renderText(
+             total_promotional_budget$phase3
+           )
+           
+           
+           p3_calculator_result <- eventReactive(input$decision1_phase3_calculator,{
+             calculator(input,3)
+           })
+           
+           
+           output$p3_arranged_promotional_budget <- renderText(p3_calculator_result()[1]) 
+           output$p3_arranged_time_of_sr1 <- renderText(p3_calculator_result()[2])
+           output$p3_arranged_time_of_sr2 <- renderText(p3_calculator_result()[3])
+           output$p3_arranged_time_of_sr3 <- renderText(p3_calculator_result()[4])
+           output$p3_arranged_time_of_sr4 <- renderText(p3_calculator_result()[5])
+           output$p3_arranged_time_of_sr5 <- renderText(p3_calculator_result()[6])
+           
+           
+           observeEvent(input$decision1_phase3_submit, {
+             disable("p3_discount_hosp1_1")
+             disable("p3_discount_hosp1_2")
+             output$p3_decison1_summary_hosp1 <- renderText({12})
+             output$p3_decison1_summary_hosp2 <- renderText({12})
+           })
+           
+           output$p3_total_sales_training <-renderText(sales_training(input,3))
+           output$p3_flm_sales_training <- renderText(sales_training(input,3))
+           output$p3_total_field_work <-renderText(field_work(input,3))
+           output$p3_flm_field_work <- renderText(field_work(input,3))
+           output$p3_total_team_meeting <- renderText(input$p3_flm_team_meeting)
+           output$p3_total_kpi_analysis <- renderText(input$p3_flm_kpi_analysis)
+           output$p3_total_strategy_planning <- renderText(input$p3_flm_strategy_planning)
+           output$p3_total_admin_work <- renderText(input$p3_flm_admin_work)
+           output$p3_total_management <- renderText(total_management(input,3))
+           
+           p3_flm_data <- reactive(get.data3(input,3))
+           
+           tmp3 <- reactive({
+             pp_data1 <- tmp2() %>% select(hospital,
+                                          product,
+                                          real_sales,
+                                          sr_sales_performance,
+                                          deployment_quality_index,
+                                          customer_relationship_index,
+                                          promotional_support_index,
+                                          sales_performance,
+                                          offer_attractiveness,
+                                          acc_offer_attractiveness) %>%
+               distinct()
+             
+             colnames(pp_data1)[3:10] <- paste("pp_",colnames(pp_data1)[3:10],sep="")
+             
+             pp_data2 <- tmp2() %>% select(sales_rep,
+                                          sales_level,
+                                          acc_revenue,
+                                          sales_skills_index,
+                                          product_knowledge_index,
+                                          motivation_index,
+                                          acc_field_work) %>%
+               distinct()
+             
+             colnames(pp_data2)[3:7] <- paste("pp_",colnames(pp_data2)[3:7],sep="")
+             cp_data1 <- get.data1(input,3)
+             cp_data2 <- get.data2(input,3)
+             tmp <- calculation(pp_data1,
+                                pp_data2,
+                                cp_data1,
+                                cp_data2)})
+           
+           p3_report<- reactive({
+             flm_data <- get.data3(input,3)
+             p3_report <- report_data(tmp3(),flm_data)})
+           
+           
+           
+           observeEvent(input$decision2_phase3_submit, {
+             
+             output$p3_report1_1 <-
+               renderText(htmlTable(p3_report()$report1_mod1,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px"))
+             
+             output$p3_report1_2 <- 
+               renderText(htmlTable(p3_report()$report1_mod2,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p3_report1_3 <- 
+               renderText(htmlTable(p3_report()$report1_mod3,
+                                    caption="产品知识",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p3_report1_4 <- 
+               renderText(htmlTable(p3_report()$report1_mod4,
+                                    caption="经验",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p3_report1_5 <- 
+               renderText(htmlTable(p3_report()$report1_mod5,
+                                    caption="销售技巧",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p3_report2_1 <- 
+               renderText(htmlTable(p3_report()$report2_mod1,
+                                    caption="职员成本",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p3_report2_2 <- 
+               renderText(htmlTable(p3_report()$report2_mod2,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p3_report3 <- 
+               renderText(htmlTable(p3_report()$hospital_report,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p3_report4_1 <- 
+               renderText(htmlTable(p3_report()$report4_mod1,
+                                    caption="总体的分配情况",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p3_report4_2 <- 
+               renderText(htmlTable(p3_report()$report4_mod2,
+                                    caption="分级匹配度",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p3_report4_3 <- 
+               renderText(htmlTable(p3_report()$report4_mod3,
+                                    caption="决策质量",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p3_report5_1 <- 
+               renderText(htmlTable(p3_report()$report5_mod1,
+                                    caption="商业价值",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p3_report5_2 <- 
+               renderText(htmlTable(p3_report()$report5_mod2,
+                                    caption="总市场概述",
+                                    css.cell = "padding: 10px 50px;"))})
+           
+           ## phase 4
+           output$p4_total_promotional_budget <- renderText(
+             total_promotional_budget$phase4
+           )
+           
+           
+           p4_calculator_result <- eventReactive(input$decision1_phase4_calculator,{
+             calculator(input,4)
+           })
+           
+           
+           output$p4_arranged_promotional_budget <- renderText(p4_calculator_result()[1]) 
+           output$p4_arranged_time_of_sr1 <- renderText(p4_calculator_result()[2])
+           output$p4_arranged_time_of_sr2 <- renderText(p4_calculator_result()[3])
+           output$p4_arranged_time_of_sr3 <- renderText(p4_calculator_result()[4])
+           output$p4_arranged_time_of_sr4 <- renderText(p4_calculator_result()[5])
+           output$p4_arranged_time_of_sr5 <- renderText(p4_calculator_result()[6])
+           
+           
+           observeEvent(input$decision1_phase4_submit, {
+             disable("p4_discount_hosp1_1")
+             disable("p4_discount_hosp1_2")
+             output$p4_decison1_summary_hosp1 <- renderText({12})
+             output$p4_decison1_summary_hosp2 <- renderText({12})
+           })
+           
+           output$p4_total_sales_training <-renderText(sales_training(input,4))
+           output$p4_flm_sales_training <- renderText(sales_training(input,4))
+           output$p4_total_field_work <-renderText(field_work(input,4))
+           output$p4_flm_field_work <- renderText(field_work(input,4))
+           output$p4_total_team_meeting <- renderText(input$p4_flm_team_meeting)
+           output$p4_total_kpi_analysis <- renderText(input$p4_flm_kpi_analysis)
+           output$p4_total_strategy_planning <- renderText(input$p4_flm_strategy_planning)
+           output$p4_total_admin_work <- renderText(input$p4_flm_admin_work)
+           output$p4_total_management <- renderText(total_management(input,4))
+           
+           p4_flm_data <- reactive(get.data3(input,4))
+           
+           tmp4 <- reactive({
+             pp_data1 <- tmp3() %>% select(hospital,
+                                          product,
+                                          real_sales,
+                                          sr_sales_performance,
+                                          deployment_quality_index,
+                                          customer_relationship_index,
+                                          promotional_support_index,
+                                          sales_performance,
+                                          offer_attractiveness,
+                                          acc_offer_attractiveness) %>%
+               distinct()
+             
+             colnames(pp_data1)[3:10] <- paste("pp_",colnames(pp_data1)[3:10],sep="")
+             
+             pp_data2 <- tmp3() %>% select(sales_rep,
+                                          sales_level,
+                                          acc_revenue,
+                                          sales_skills_index,
+                                          product_knowledge_index,
+                                          motivation_index,
+                                          acc_field_work) %>%
+               distinct()
+             
+             colnames(pp_data2)[3:7] <- paste("pp_",colnames(pp_data2)[3:7],sep="")
+             cp_data1 <- get.data1(input,2)
+             cp_data2 <- get.data2(input,2)
+             tmp4 <- calculation(pp_data1,
+                                pp_data2,
+                                cp_data1,
+                                cp_data2)})
+           
+           p2_report<- reactive({
+             flm_data <- get.data3(input,2)
+             p2_report <- report_data(tmp4(),flm_data)})
+           
+           
+           
+           observeEvent(input$decision2_phase4_submit, {
+             
+             output$p4_report1_1 <-
+               renderText(htmlTable(p4_report()$report1_mod1,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px"))
+             
+             output$p4_report1_2 <- 
+               renderText(htmlTable(p4_report()$report1_mod2,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p4_report1_3 <- 
+               renderText(htmlTable(p4_report()$report1_mod3,
+                                    caption="产品知识",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p4_report1_4 <- 
+               renderText(htmlTable(p4_report()$report1_mod4,
+                                    caption="经验",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p4_report1_5 <- 
+               renderText(htmlTable(p4_report()$report1_mod5,
+                                    caption="销售技巧",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p4_report2_1 <- 
+               renderText(htmlTable(p4_report()$report2_mod1,
+                                    caption="职员成本",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p4_report2_2 <- 
+               renderText(htmlTable(p4_report()$report2_mod2,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p4_report3 <- 
+               renderText(htmlTable(p4_report()$hospital_report,
+                                    caption="时间分配",
+                                    css.cell = "padding: 10px 50px;"))
+             
+             output$p4_report4_1 <- 
+               renderText(htmlTable(p4_report()$report4_mod1,
+                                    caption="总体的分配情况",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p4_report4_2 <- 
+               renderText(htmlTable(p4_report()$report4_mod2,
+                                    caption="分级匹配度",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p4_report4_3 <- 
+               renderText(htmlTable(p4_report()$report4_mod3,
+                                    caption="决策质量",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p4_report5_1 <- 
+               renderText(htmlTable(p4_report()$report5_mod1,
+                                    caption="商业价值",
+                                    css.cell = "padding: 10px 50px;"))
+             output$p4_report5_2 <- 
+               renderText(htmlTable(p4_report()$report5_mod2,
+                                    caption="总市场概述",
+                                    css.cell = "padding: 10px 50px;"))})
            
            
            

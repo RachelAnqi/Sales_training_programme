@@ -97,11 +97,11 @@ calculation <- function(pp_data1,
            sr_time_total=sum(sr_time,na.rm=T)) %>%
     ungroup %>%
     dplyr::mutate(acc_revenue = sr_revenue+pp_acc_revenue,
-                  experience_index = sapply(acc_revenue, function(x) curve(curve11,x)),
+                  experience_index = sapply(acc_revenue, function(x) round(curve(curve11,x),2)),
                   acc_field_work = pp_acc_field_work+field_work,
                   overhead_factor = sapply(pp_motivation_index,function(x) curve(curve12,x)),
                   overhead_time = overhead_factor*overhead,
-                  pp_experience_index = sapply(pp_acc_revenue,function(x) curve(curve11,x)),
+                  pp_experience_index = sapply(pp_acc_revenue,function(x) round(curve(curve11,x),2)),
                   sales_target_realization = sr_sales_target/sr_revenue*100,
                   incentive_factor = sapply(sales_target_realization,function(x) curve(curve10,x)),
                   contact_priority_fit_doc = time_on_doc*0.5,

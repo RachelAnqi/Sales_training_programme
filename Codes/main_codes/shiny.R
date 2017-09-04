@@ -1,3 +1,11 @@
+library(shiny)
+library(shinydashboard)
+library(shinyjs)
+library(DT)
+library(plyr)
+library(dplyr)
+
+
 shinyApp(ui=dashboardPage(
   dashboardHeader(title = "销售培训"),
   dashboardSidebar(

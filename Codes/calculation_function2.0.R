@@ -35,8 +35,8 @@ calculator <- function(input,phase){
                available_srs[4]) {
       phase1_total_time_arrangement4 <- 
         phase1_total_time_arrangement4 +tmp
-    } else if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-               available_srs[5]) {
+    } else (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
+              available_srs[5]) {
       phase1_total_time_arrangement5 <- 
         phase1_total_time_arrangement5 +tmp
     }
@@ -89,6 +89,7 @@ calculation <- function(pp_data1,
   tmp2 <- left_join(cp_data2,pp_data2,by=c("sales_rep"))
   
   tmp <- left_join(tmp1,tmp2,by=c("phase","sales_rep")) %>%
+    distinct() %>%
     group_by(phase,sales_rep) %>%
     mutate(no.hospitals = n_distinct(hospital),
            sr_revenue = sum(real_sales,na.rm=T),
@@ -129,15 +130,7 @@ calculation <- function(pp_data1,
                   m_sales_target_realization_delta = sapply(sales_target_realization,function(x)curve(curve16,x)),
                   m_sales_training_delta = sapply(sales_training,function(x)curve(curve17,x)),
                   m_admin_work_delta = sapply(admin_work,function(x)curve(curve18,x)))%>%
-                  
-               
-    
-    
-    
-    
-    
-    
-    mutate(sales_skills_index = 
+                  mutate(sales_skills_index = 
       ss_accumulated_field_work_delta*((weightage$sales_skills)$field_work)+
       ss_accumulated_sales_training_delta*((weightage$sales_skills)$sales_training)+
       ss_experience_index_pp*((weightage$sales_skills)$experience),

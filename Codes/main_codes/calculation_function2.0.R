@@ -1,6 +1,17 @@
 library(plyr)
 library(dplyr)
 
+
+
+decision1_summary <- function(input,phase,hospital){
+  total <- sum(c(
+    as.numeric(input[[paste("p",phase,"_hosp",hospital,"_worktime_doc",sep="")]]),
+    as.numeric(input[[paste("p",phase,"_hosp",hospital,"_worktime_diet",sep="")]]),
+    as.numeric(input[[paste("p",phase,"_hosp",hospital,"_worktime_admin",sep="")]]),
+    as.numeric(input[[paste("p",phase,"_hosp",hospital,"_worktime_nurs",sep="")]])),na.rm=T)
+  total
+}
+
 calculator <- function(input,phase){
   phase1_promotional_budget=0
   phase1_total_time_arrangement1 <- 0 
@@ -130,15 +141,7 @@ calculation <- function(pp_data1,
                   m_sales_target_realization_delta = sapply(sales_target_realization,function(x)curve(curve16,x)),
                   m_sales_training_delta = sapply(sales_training,function(x)curve(curve17,x)),
                   m_admin_work_delta = sapply(admin_work,function(x)curve(curve18,x)))%>%
-                  
-               
-    
-    
-    
-    
-    
-    
-    mutate(sales_skills_index = 
+   mutate(sales_skills_index = 
       ss_accumulated_field_work_delta*((weightage$sales_skills)$field_work)+
       ss_accumulated_sales_training_delta*((weightage$sales_skills)$sales_training)+
       ss_experience_index_pp*((weightage$sales_skills)$experience),
@@ -158,11 +161,11 @@ calculation <- function(pp_data1,
            srsp_sales_skills_factor = sapply(sales_skills_index,function(x)curve(curve34,x)),
            srsp_product_knowledge_factor = sapply(product_knowledge_index,function(x)curve(curve33,x)),
            srsp_time_with_account_factor = 
-             mapply(function(x,y){if (x=="product1"){
+             mapply(function(x,y){if (x==as.character(product_info_initial$name2[1])){
              curve(curve35,y)} else if(
-               x=="product2"){
+               x==as.character(product_info_initial$name2[2])){
                curve(curve36,y)} else if (
-                 x=="product3") {
+                 x==as.character(product_info_initial$name2[3])) {
                  curve(curve37,y)} else {
                    curve(curve38,y)}},
              product,sr_time)) %>%
@@ -218,11 +221,11 @@ calculation <- function(pp_data1,
                    cr_pp_customer_relationship_index*
                      (weightage$customer_relaitonship)$past_relationship) %>%
     mutate(oa_customer_relationship_factor = 
-             mapply(function(x,y){if (x=="product1"){
+             mapply(function(x,y){if (x==as.character(product_info_initial$name2[1])){
       curve(curve19,y)} else if(
-        x=="product2"){
+        x==as.character(product_info_initial$name2[2])){
         curve(curve20,y)} else if (
-          x=="product3") {
+          x==as.character(product_info_initial$name2[3])) {
           curve(curve21,y)} else {
             curve(curve22,y)}},
       product,customer_relationship_index),

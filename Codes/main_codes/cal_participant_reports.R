@@ -223,13 +223,13 @@ report4_mod2 <- eva_decision_report %>%
   distinct()
 
 colnames(report4_mod2) <- c("医院",
-                            "医生时间分配",
-                            "营养师时间分配",
-                            "行政时间分配",
-                            "护士时间分配",
+                            "1级医生时间分配",
+                            "2级医时间分配",
+                            "3级医时间分配",
+                            "4级医时间分配",
                             "总分级匹配度")
 rownames(report4_mod2) <- report4_mod2$医院
-report4_mod2 <- report4_mod2 %>% select(`医院`)
+report4_mod2 <- report4_mod2 %>% select(-`医院`)
 
 report4_mod3 <- eva_decision_report %>%
   select(hospital,
@@ -310,13 +310,13 @@ rownames(report5_mod1) <- report5_mod1$variable
 report5_mod1 <- report5_mod1 %>% select(-variable)
 
 report5_mod2 <- tmp %>%
-  arrange(ith_hospital) %>%
-  select(hospital,product,real_sales) %>%
-  group_by(hospital) %>%
+  select(ith_hospital,hospital,product,real_sales) %>%
+  group_by(ith_hospital,hospital) %>%
   dplyr::summarise(hospital_revenue = round(sum(real_sales),2)) %>%
   ungroup() %>%
   mutate(market_revenue=round(sum(hospital_revenue),2),
          market_share=round(hospital_revenue/market_revenue*100,2)) %>%
+  arrange(ith_hospital) %>%
   select(hospital,
          hospital_revenue,
          market_share) %>%

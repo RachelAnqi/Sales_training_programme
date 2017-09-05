@@ -2594,33 +2594,6 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
                          (potential_sales_product4$hospital2)$phase2)
               ),
-              br(),
-              tags$div(
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         "目前的销售情况"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         (current_sales_product1$hospital2)$phase2),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         (current_sales_product2$hospital2)$phase2),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         (current_sales_product3$hospital2)$phase2),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         (current_sales_product4$hospital2)$phase2)
-              ),
-              br(),
-              tags$div(
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         "销售指标"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p2_hosp2_sales_target_1",label = NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p2_hosp2_sales_target_2",label = NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p2_hosp2_sales_target_3",label = NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p2_hosp2_sales_target_4",label = NULL))
-              ),
-              br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
                          "折扣(%)"),
@@ -2638,6 +2611,20 @@ shinyApp(ui=dashboardPage(
                                      NULL))
               ),
               br(),
+              br(),
+              tags$div(
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         (current_sales_product1$hospital2)$phase2),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         (current_sales_product2$hospital2)$phase2),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         (current_sales_product3$hospital2)$phase2),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         (current_sales_product4$hospital2)$phase2)
+              ),
+              br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
                          "推广预算分配(%)"),
@@ -2648,15 +2635,28 @@ shinyApp(ui=dashboardPage(
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p2_hosp2_sales_target_1",label = NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p2_hosp2_sales_target_2",label = NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p2_hosp2_sales_target_3",label = NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p2_hosp2_sales_target_4",label = NULL))
+              ),
+              br(),
+              
+              
+              tags$div(
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
                          "销售代表"),
                 tags$div(
                   style = "display:inline-block;width:18%;text-align:center",
                   selectizeInput(
                     "p2_sr_hosp2",
-                    label =
-                      NULL,
-                    choices =
-                      available_srs,
+                    label =NULL,
+                    choices =available_srs,
                     selected = NULL
                   )
                 )
@@ -2669,56 +2669,40 @@ shinyApp(ui=dashboardPage(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_1",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label =NULL,
+                    value =NULL,
+                    min =0,
+                    max =100
                   )
                 ),
                 tags$div(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_2",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label = NULL,
+                    value =NULL,
+                    min = 0,
+                    max = 100
                   )
                 ),
                 tags$div(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_3",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label = NULL,
+                    value = NULL,
+                    min = 0,
+                    max = 100
                   )
                 ),
                 tags$div(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_4",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label = NULL,
+                    value = NULL,
+                    min = 0,
+                    max = 100
                   )
                 )
               ),
@@ -2730,14 +2714,10 @@ shinyApp(ui=dashboardPage(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_doc",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label = NULL,
+                    value = NULL,
+                    min = 0,
+                    max = 100
                   )
                 )
               ),
@@ -2749,14 +2729,10 @@ shinyApp(ui=dashboardPage(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_diet",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label = NULL,
+                    value = NULL,
+                    min = 0,
+                    max = 100
                   )
                 )
               ),
@@ -2768,14 +2744,10 @@ shinyApp(ui=dashboardPage(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_admin",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label =  NULL,
+                    value = NULL,
+                    min =  0,
+                    max = 100
                   )
                 )
               ),
@@ -2787,14 +2759,10 @@ shinyApp(ui=dashboardPage(
                   style = "display:inline-block;width:18%;text-align:center",
                   numericInput(
                     "p2_hosp2_worktime_nurs",
-                    label =
-                      NULL,
-                    value =
-                      NULL,
-                    min =
-                      0,
-                    max =
-                      100
+                    label = NULL,
+                    value =  NULL,
+                    min = 0,
+                    max = 100
                   )
                 )
               ),
@@ -5052,6 +5020,31 @@ shinyApp(ui=dashboardPage(
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         "折扣(%)"),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p3_discount_hosp2_1", label =
+                                     NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p3_discount_hosp2_2", label =
+                                     NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p3_discount_hosp2_3", label =
+                                     NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p3_discount_hosp2_4", label =
+                                     NULL))
+              ),
+              br(),
+              tags$div(
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         "推广预算分配(%)"),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p3_promotional_budget_hosp2", label =
+                                     NULL))
+              ),
+              br(),
+              tags$div(
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
                          "目前的销售情况"),
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
                          (current_sales_product1$hospital2)$phase3),
@@ -5076,31 +5069,8 @@ shinyApp(ui=dashboardPage(
                          textInput("p3_hosp2_sales_target_4",label = NULL))
               ),
               br(),
-              tags$div(
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         "折扣(%)"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p3_discount_hosp2_1", label =
-                                     NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p3_discount_hosp2_2", label =
-                                     NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p3_discount_hosp2_3", label =
-                                     NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p3_discount_hosp2_4", label =
-                                     NULL))
-              ),
-              br(),
-              tags$div(
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p3_promotional_budget_hosp2", label =
-                                     NULL))
-              ),
-              br(),
+              
+              
               tags$div(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
                          "销售代表"),
@@ -7520,19 +7490,6 @@ shinyApp(ui=dashboardPage(
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         "销售指标"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p4_hosp2_sales_target_1",label = NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p4_hosp2_sales_target_2",label = NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p4_hosp2_sales_target_3",label = NULL)),
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
-                         textInput("p4_hosp2_sales_target_4",label = NULL))
-              ),
-              br(),
-              tags$div(
-                tags$div(style = "display:inline-block;width:18%;text-align:center",
                          "折扣(%)"),
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
                          textInput("p4_discount_hosp2_1", label =
@@ -7556,6 +7513,21 @@ shinyApp(ui=dashboardPage(
                                      NULL))
               ),
               br(),
+              tags$div(
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p4_hosp2_sales_target_1",label = NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p4_hosp2_sales_target_2",label = NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p4_hosp2_sales_target_3",label = NULL)),
+                tags$div(style = "display:inline-block;width:18%;text-align:center",
+                         textInput("p4_hosp2_sales_target_4",label = NULL))
+              ),
+              br(),
+              
+              
               tags$div(
                 tags$div(style = "display:inline-block;width:18%;text-align:center",
                          "销售代表"),
@@ -9647,6 +9619,7 @@ shinyApp(ui=dashboardPage(
             "周期一",
             actionButton("decision2_phase1_submit", "submit"),
             actionButton('save_inputs', 'Save inputs'),
+            actionButton("load_inputs", "Load inputs"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;text-align:center;width:15%",
@@ -9936,9 +9909,9 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;text-align:center;width:15%",
                          "战略和周期计划"),
                 tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p2_total_stategy_planning")),
+                         verbatimTextOutput("p2_total_strategy_planning")),
                 tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
-                         textInput("p2_p2_flm_stategy_planning", label =
+                         textInput("p2_flm_strategy_planning", label =
                                      NULL))
               ),
               tags$div(
@@ -10121,9 +10094,9 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;text-align:center;width:15%",
                          "战略和周期计划"),
                 tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p3_total_stategy_planning")),
+                         verbatimTextOutput("p3_total_strategy_planning")),
                 tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
-                         textInput("p3_p3_flm_stategy_planning", label =
+                         textInput("p3_flm_strategy_planning", label =
                                      NULL))
               ),
               tags$div(
@@ -10306,9 +10279,9 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;text-align:center;width:15%",
                          "战略和周期计划"),
                 tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p4_total_stategy_planning")),
+                         verbatimTextOutput("p4_total_strategy_planning")),
                 tags$div(style = "display:inline-block;text-align:center;margin-left:2%;width:8%;margin-right:1%",
-                         textInput("p4_p4_flm_stategy_planning", label =
+                         textInput("p4_flm_strategy_planning", label =
                                      NULL))
               ),
               tags$div(
@@ -10624,7 +10597,7 @@ shinyApp(ui=dashboardPage(
                 ))))),
   
   
-         server=function(input, output) {
+         server=function(input, output,session) {
 
          
           ##phase1
@@ -10664,6 +10637,18 @@ shinyApp(ui=dashboardPage(
            })
            
            observeEvent(input$save_inputs,{saveRDS( reactiveValuesToList(input) , file = 'inputs.RDS')})
+           observeEvent(input$load_inputs,{   
+             
+             if(!file.exists('inputs.RDS')) {return(NULL)}
+             
+             savedInputs <- readRDS('inputs.RDS')
+             
+             inputIDs      <- names(savedInputs) 
+             inputvalues   <- unlist(savedInputs) 
+             for (i in 1:length(savedInputs)) { 
+               session$sendInputMessage(inputIDs[i],  list(value=inputvalues[[i]]) )
+             }
+           })
            
            output$report1_table <- renderDataTable(data1_phase1())
            output$report2_table <- renderDataTable(data2_phase1())
@@ -10677,7 +10662,8 @@ shinyApp(ui=dashboardPage(
            output$p1_total_kpi_analysis <- renderText(input$p1_flm_kpi_analysis)
            output$p1_total_strategy_planning <- renderText(input$p1_flm_strategy_planning)
            output$p1_total_admin_work <- renderText(input$p1_flm_admin_work)
-           output$p1_total_management <- renderText(total_management(input,phase))
+           output$p1_total_management <- renderText(total_management(input,1))
+           output$p1_flm_management <- renderText(total_management(input,1))
            
            p1_flm_data <- reactive(get.data3(input,1))
            
@@ -10805,6 +10791,7 @@ shinyApp(ui=dashboardPage(
            output$p2_total_strategy_planning <- renderText(input$p2_flm_strategy_planning)
            output$p2_total_admin_work <- renderText(input$p2_flm_admin_work)
            output$p2_total_management <- renderText(total_management(input,2))
+           output$p2_flm_management <- renderText(total_management(input,2))
            
            p2_flm_data <- reactive(get.data3(input,2))
            
@@ -10944,6 +10931,7 @@ shinyApp(ui=dashboardPage(
            output$p3_total_strategy_planning <- renderText(input$p3_flm_strategy_planning)
            output$p3_total_admin_work <- renderText(input$p3_flm_admin_work)
            output$p3_total_management <- renderText(total_management(input,3))
+           output$p3_flm_management <- renderText(total_management(input,3))
            
            p3_flm_data <- reactive(get.data3(input,3))
            
@@ -11082,6 +11070,7 @@ shinyApp(ui=dashboardPage(
            output$p4_total_strategy_planning <- renderText(input$p4_flm_strategy_planning)
            output$p4_total_admin_work <- renderText(input$p4_flm_admin_work)
            output$p4_total_management <- renderText(total_management(input,4))
+           output$p4_flm_management <- renderText(total_management(input,4))
            
            p4_flm_data <- reactive(get.data3(input,4))
            

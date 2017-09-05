@@ -29,6 +29,7 @@ staff_report <- tmp %>%
 report1_mod1 <- staff_report %>%
   select(sales_rep,
          total_salary) %>%
+  distinct() %>%
   spread(sales_rep,total_salary) 
 
 rownames(report1_mod1) <- "总薪酬(元)"
@@ -42,7 +43,8 @@ report1_mod2 <- staff_report %>%
          sales_rep,
          product_training,
          sales_training,
-         meetings_with_team) 
+         meetings_with_team) %>%
+  distinct()
 
 colnames(report1_mod2) <- c("总工作时间(天)",
                             "医院拜访(天)",
@@ -62,7 +64,8 @@ report1_mod2 <- report1_mod2 %>%select(-variable)
 report1_mod3 <- staff_report %>%
   select(sales_rep,
          product_knowledge_index,
-         product_training) 
+         product_training) %>%
+  distinct()
 
 colnames(report1_mod3) <- c("销售代表",
                             "产品知识(指数)",
@@ -80,7 +83,8 @@ report1_mod4 <- staff_report %>%
          acc_revenue,
          sr_revenue,
          pp_experience_index,
-         sales_rep) 
+         sales_rep) %>%
+  distinct()
 colnames(report1_mod4) <- c("当期经验",
                             "累计总销售(元)",
                             "当期销售(元)",
@@ -99,7 +103,8 @@ report1_mod5 <- staff_report %>%
   select(sales_rep,
          pp_sales_skills_index,
          sales_skills_index,
-         field_work)
+         field_work) %>%
+  distinct()
 colnames(report1_mod5) <- c("销售代表",
                             "前期销售技巧(指数)",
                             "当期销售技巧(指数)",
@@ -179,10 +184,6 @@ eva_decision_report <- tmp %>%
          hospital,
          product,
          sales_rep,
-         contact_priority_fit_doc,
-         contact_priority_fit_diet,
-         contact_priority_fit_admin,
-         contact_priority_fit_nurs,
          time_on_doc,
          time_on_diet,
          time_on_admin,
@@ -204,7 +205,8 @@ eva_decision_report <- tmp %>%
 
 report4_mod1 <- eva_decision_report %>%
   select(hospital,
-         sales_rep) 
+         sales_rep) %>%
+  distinct()
 
 colnames(report4_mod1) <- c("医院",
                             "销售代表")
@@ -213,11 +215,11 @@ report4_mod1 <- report4_mod1 %>% select(-`医院`)
 
 report4_mod2 <- eva_decision_report %>%
   select(hospital,
-         contact_priority_fit_doc,
-         contact_priority_fit_diet,
-         contact_priority_fit_admin,
-         contact_priority_fit_nurs,
-         total_deployment_quality_index) %>%
+         time_on_doc,
+         time_on_diet,
+         time_on_admin,
+         time_on_nurs,
+         contact_priority_fit_index) %>%
   distinct()
 
 colnames(report4_mod2) <- c("医院",

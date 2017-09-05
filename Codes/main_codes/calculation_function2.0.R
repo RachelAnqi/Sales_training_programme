@@ -286,10 +286,18 @@ get.data1 <- function(input,phase){
         discount = value.discount,
         promotional_budget = value.promotional_budget,
         sr_time = value.sr_time,
-        time_on_doc = value.time_on_doc,
-        time_on_diet = value.time_on_diet,
-        time_on_admin = value.time_on_admin,
-        time_on_nurs = value.time_on_nurs
+        time_on_doc = as.numeric(
+          input[[paste("p",phase,"_hosp",j,"_worktime_doc",sep="")]]),
+        time_on_diet = as.numeric(
+          input[[paste("p",phase,"_hosp",j,"_worktime_diet",sep="")]]),
+        time_on_admin = as.numeric(
+          input[[paste("p",phase,"_hosp",j,"_worktime_admin",sep="")]]),
+        time_on_nurs = as.numeric(
+          input[[paste("p",phase,"_hosp",j,"_worktime_nurs",sep="")]])
+        # time_on_doc = value.time_on_doc,
+        # time_on_diet = value.time_on_diet,
+        # time_on_admin = value.time_on_admin,
+        # time_on_nurs = value.time_on_nurs
       ))
     }}
   data_decision

@@ -7,7 +7,6 @@ library(dplyr)
 library(tidyr)
 library(htmlTable)
 library(htmlwidgets)
-options(scipen=200)
 
 
 shinyApp(ui=dashboardPage(
@@ -67,15 +66,15 @@ shinyApp(ui=dashboardPage(
                      h3("总推广预算"),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "总推广预算(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                                "总推广预算"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                                 verbatimTextOutput("p1_total_promotional_budget"))
                      ),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "已分配的推广预算(元)"),
+                                "已分配的推广预算"),
                        tags$div(
-                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p1_arranged_promotional_budget")
                        )
                      )
@@ -85,84 +84,83 @@ shinyApp(ui=dashboardPage(
                      h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表1(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                                "时间分配 销售代表1"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                                 verbatimTextOutput("p1_arranged_time_of_sr1"))
                      ),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表2(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                                "时间分配 销售代表2"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                                 verbatimTextOutput("p1_arranged_time_of_sr2"))
                      ),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表3(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                                "时间分配 销售代表3"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                                 verbatimTextOutput("p1_arranged_time_of_sr3"))
                      ),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表4(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                                "时间分配 销售代表4"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                                 verbatimTextOutput("p1_arranged_time_of_sr4"))
                      ),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表5(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                                "时间分配 销售代表5"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                                 verbatimTextOutput("p1_arranged_time_of_sr5"))
                      )
-                     
                    ),
                    br(),
                    fluidRow(
                      h3("决策-医院1"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp1_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp1_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp1_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp1_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp1_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp1_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp1_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp1_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp1_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp1_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp1_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp1_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp1", 
                                           label = NULL,
                                           value="5"))
@@ -170,35 +168,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp1_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp1_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp1_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp1_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp1_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp1_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp1_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp1_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp1",
                            label = NULL,
@@ -209,10 +207,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_1",
                            label = NULL,
@@ -220,7 +218,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_2",
                            label = NULL,
@@ -229,7 +227,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_3",
                            label = NULL,
@@ -238,7 +236,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_4",
                            label = NULL,
@@ -249,10 +247,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_doc",
                            label = NULL,
@@ -262,10 +260,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_diet",
                            label = NULL,
@@ -276,10 +274,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_admin",
                            label = NULL,
@@ -289,10 +287,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp1_worktime_nurs",
                            label = NULL,
@@ -304,7 +302,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp1"))
                      )
                    ),
@@ -312,50 +310,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院2"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp2_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp2_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp2_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp2_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp2_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp2_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp2_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp2_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp2_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp2_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp2_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp2_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp2", 
                                           label = NULL,
                                           value="5"))
@@ -363,35 +361,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp2_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp2_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp2_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp2_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp2_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp2_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp2_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp2_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp2",
                            label = NULL,
@@ -402,10 +400,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_1",
                            label = NULL,
@@ -413,7 +411,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_2",
                            label = NULL,
@@ -422,7 +420,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_3",
                            label = NULL,
@@ -431,7 +429,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_4",
                            label = NULL,
@@ -442,10 +440,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_doc",
                            label = NULL,
@@ -455,10 +453,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_diet",
                            label = NULL,
@@ -469,10 +467,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_admin",
                            label = NULL,
@@ -482,10 +480,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp2_worktime_nurs",
                            label = NULL,
@@ -497,7 +495,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp2"))
                      )
                    ),
@@ -505,50 +503,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院3"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp3_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp3_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp3_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp3_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp3_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp3_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp3_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp3_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp3_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp3_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp3_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp3_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp3", 
                                           label = NULL,
                                           value="5"))
@@ -556,35 +554,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp3_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp3_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp3_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp3_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp3_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp3_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp3_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp3_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp3",
                            label = NULL,
@@ -595,10 +593,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_1",
                            label = NULL,
@@ -606,7 +604,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_2",
                            label = NULL,
@@ -615,7 +613,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_3",
                            label = NULL,
@@ -624,7 +622,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_4",
                            label = NULL,
@@ -635,10 +633,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_doc",
                            label = NULL,
@@ -648,10 +646,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_diet",
                            label = NULL,
@@ -662,10 +660,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_admin",
                            label = NULL,
@@ -675,10 +673,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp3_worktime_nurs",
                            label = NULL,
@@ -690,7 +688,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp3"))
                      )
                    ),
@@ -698,50 +696,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院4"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp4_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp4_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp4_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp4_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp4_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp4_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp4_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp4_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp4_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp4_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp4_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp4_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp4", 
                                           label = NULL,
                                           value="5"))
@@ -749,35 +747,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp4_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp4_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp4_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp4_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp4_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp4_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp4_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp4_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp4",
                            label = NULL,
@@ -788,10 +786,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_1",
                            label = NULL,
@@ -799,7 +797,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_2",
                            label = NULL,
@@ -808,7 +806,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_3",
                            label = NULL,
@@ -817,7 +815,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_4",
                            label = NULL,
@@ -828,10 +826,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_doc",
                            label = NULL,
@@ -841,10 +839,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_diet",
                            label = NULL,
@@ -855,10 +853,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_admin",
                            label = NULL,
@@ -868,10 +866,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp4_worktime_nurs",
                            label = NULL,
@@ -883,7 +881,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp4"))
                      )
                    ),
@@ -891,50 +889,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院5"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp5_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp5_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp5_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp5_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp5_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp5_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp5_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp5_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp5_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp5_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp5_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp5_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp5", 
                                           label = NULL,
                                           value="5"))
@@ -942,35 +940,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp5_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp5_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp5_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp5_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp5_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp5_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp5_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp5_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp5",
                            label = NULL,
@@ -981,10 +979,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_1",
                            label = NULL,
@@ -992,7 +990,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_2",
                            label = NULL,
@@ -1001,7 +999,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_3",
                            label = NULL,
@@ -1010,7 +1008,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_4",
                            label = NULL,
@@ -1021,10 +1019,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_doc",
                            label = NULL,
@@ -1034,10 +1032,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_diet",
                            label = NULL,
@@ -1048,10 +1046,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_admin",
                            label = NULL,
@@ -1061,10 +1059,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp5_worktime_nurs",
                            label = NULL,
@@ -1076,7 +1074,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp5"))
                      )
                    ),
@@ -1085,50 +1083,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院6"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp6_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp6_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp6_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp6_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp6_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp6_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp6_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp6_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp6_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp6_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp6_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp6_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp6", 
                                           label = NULL,
                                           value="5"))
@@ -1136,35 +1134,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp6_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp6_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp6_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp6_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp6_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp6_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp6_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp6_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp6",
                            label = NULL,
@@ -1175,10 +1173,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_1",
                            label = NULL,
@@ -1186,7 +1184,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_2",
                            label = NULL,
@@ -1195,7 +1193,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_3",
                            label = NULL,
@@ -1204,7 +1202,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_4",
                            label = NULL,
@@ -1215,10 +1213,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_doc",
                            label = NULL,
@@ -1228,10 +1226,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_diet",
                            label = NULL,
@@ -1242,10 +1240,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_admin",
                            label = NULL,
@@ -1255,10 +1253,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp6_worktime_nurs",
                            label = NULL,
@@ -1268,9 +1266,9 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp6"))
                      )
                    ),
@@ -1278,50 +1276,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院7"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp7_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp7_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp7_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp7_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp7_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp7_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp7_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp7_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp7_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp7_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp7_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp7_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp7", 
                                           label = NULL,
                                           value="5"))
@@ -1329,35 +1327,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp7_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp7_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp7_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp7_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp7_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp7_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp7_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp7_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp7",
                            label = NULL,
@@ -1368,10 +1366,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_1",
                            label = NULL,
@@ -1379,7 +1377,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_2",
                            label = NULL,
@@ -1388,7 +1386,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_3",
                            label = NULL,
@@ -1397,7 +1395,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_4",
                            label = NULL,
@@ -1408,10 +1406,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_doc",
                            label = NULL,
@@ -1421,10 +1419,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_diet",
                            label = NULL,
@@ -1435,10 +1433,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_admin",
                            label = NULL,
@@ -1448,10 +1446,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp7_worktime_nurs",
                            label = NULL,
@@ -1463,7 +1461,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp7"))
                      )
                    ),
@@ -1472,50 +1470,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院8"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp8_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp8_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp8_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp8_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp8_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp8_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp8_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp8_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp8_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp8_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp8_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp8_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp8", 
                                           label = NULL,
                                           value="5"))
@@ -1523,35 +1521,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp8_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp8_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp8_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp8_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp8_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp8_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp8_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp8_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp8",
                            label = NULL,
@@ -1562,10 +1560,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_1",
                            label = NULL,
@@ -1573,7 +1571,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_2",
                            label = NULL,
@@ -1582,7 +1580,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_3",
                            label = NULL,
@@ -1591,7 +1589,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_4",
                            label = NULL,
@@ -1602,10 +1600,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_doc",
                            label = NULL,
@@ -1615,10 +1613,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_diet",
                            label = NULL,
@@ -1629,10 +1627,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_admin",
                            label = NULL,
@@ -1642,10 +1640,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp8_worktime_nurs",
                            label = NULL,
@@ -1657,7 +1655,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp8"))
                      )
                    ),
@@ -1665,50 +1663,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院9"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp9_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp9_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp9_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp9_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp9_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp9_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp9_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp9_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp9_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp9_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp9_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp9_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp9", 
                                           label = NULL,
                                           value="5"))
@@ -1716,35 +1714,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp9_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp9_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp9_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp9_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp9_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp9_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp9_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp9_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp9",
                            label = NULL,
@@ -1755,10 +1753,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_1",
                            label = NULL,
@@ -1766,7 +1764,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_2",
                            label = NULL,
@@ -1775,7 +1773,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_3",
                            label = NULL,
@@ -1784,7 +1782,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_4",
                            label = NULL,
@@ -1795,10 +1793,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_doc",
                            label = NULL,
@@ -1808,10 +1806,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_diet",
                            label = NULL,
@@ -1822,10 +1820,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_admin",
                            label = NULL,
@@ -1835,10 +1833,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp9_worktime_nurs",
                            label = NULL,
@@ -1850,7 +1848,7 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp9"))
                      )
                    ),
@@ -1859,50 +1857,50 @@ shinyApp(ui=dashboardPage(
                    fluidRow(
                      h3("决策-医院10"),
                      tags$div(
-                       tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                                "product1"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product2"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product3"),
-                       tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                                "product4")
+                       tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                                htmlOutput("p1_hosp10_1")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp10_2")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp10_3")),
+                       tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                                htmlOutput("p1_hosp10_4"))
                      ),
                      br(),
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "客户潜力(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "客户潜力"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp10_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp10_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp10_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_potential_sales_hosp10_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "折扣(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp10_1", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp10_2", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp10_3", label =
                                             NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_discount_hosp10_4", label =
                                             NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "推广预算分配(%)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_promotional_budget_hosp10", 
                                           label = NULL,
                                           value="5"))
@@ -1910,35 +1908,35 @@ shinyApp(ui=dashboardPage(
                      
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "目前的销售情况(元)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                                "目前的销售情况"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp10_1")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp10_2")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp10_3")),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_current_sales_hosp10_4"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                                "销售指标(元)"),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                                "销售指标"),
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp10_sales_target_1",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp10_sales_target_2",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp10_sales_target_3",label = NULL, value="5")),
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                 textInput("p1_hosp10_sales_target_4",label = NULL, value="5"))
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "销售代表"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          selectizeInput(
                            "p1_sr_hosp10",
                            label = NULL,
@@ -1949,10 +1947,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "代表的客户工作时间(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_1",
                            label = NULL,
@@ -1960,7 +1958,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_2",
                            label = NULL,
@@ -1969,7 +1967,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_3",
                            label = NULL,
@@ -1978,7 +1976,7 @@ shinyApp(ui=dashboardPage(
                          )
                        ),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_4",
                            label = NULL,
@@ -1989,10 +1987,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 A级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_doc",
                            label = NULL,
@@ -2002,10 +2000,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 B级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_diet",
                            label = NULL,
@@ -2016,10 +2014,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 C级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_admin",
                            label = NULL,
@@ -2029,10 +2027,10 @@ shinyApp(ui=dashboardPage(
                      ),
                      
                      tags$div(
-                       tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "时间被分配到 D级客户(%)"),
                        tags$div(
-                         style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                         style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput(
                            "p1_hosp10_worktime_nurs",
                            label = NULL,
@@ -2044,11 +2042,10 @@ shinyApp(ui=dashboardPage(
                      tags$div(
                        tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                 "总体(%)"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                                 verbatimTextOutput("p1_decison1_summary_hosp10"))
                      )
                    )
-                   
                    
                    
                    
@@ -2063,15 +2060,15 @@ shinyApp(ui=dashboardPage(
               h3("总推广预算"),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "总推广预算(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                         "总推广预算"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p2_total_promotional_budget"))
               ),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "已分配的推广预算(元)"),
+                         "已分配的推广预算"),
                 tags$div(
-                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                   verbatimTextOutput("p2_arranged_promotional_budget")
                 )
               )
@@ -2081,32 +2078,32 @@ shinyApp(ui=dashboardPage(
               h3("时间分配"),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表1(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                         "时间分配 销售代表1"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p2_arranged_time_of_sr1"))
               ),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表2(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                         "时间分配 销售代表2"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p2_arranged_time_of_sr2"))
               ),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表3(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                         "时间分配 销售代表3"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p2_arranged_time_of_sr3"))
               ),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表4(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                         "时间分配 销售代表4"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p2_arranged_time_of_sr4"))
               ),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表5(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center",
+                         "时间分配 销售代表5"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p2_arranged_time_of_sr5"))
               )
             ),
@@ -2114,50 +2111,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院1"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp1_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp1_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp1_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp1_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp1_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp1_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp1_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp1_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp1_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp1_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp1_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp1_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp1", 
                                    label = NULL,
                                    value="5"))
@@ -2165,35 +2162,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp1_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp1_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp1_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp1_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp1_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp1_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp1_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp1_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp1",
                     label = NULL,
@@ -2204,10 +2201,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_1",
                     label = NULL,
@@ -2215,7 +2212,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_2",
                     label = NULL,
@@ -2224,7 +2221,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_3",
                     label = NULL,
@@ -2233,7 +2230,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_4",
                     label = NULL,
@@ -2244,10 +2241,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_doc",
                     label = NULL,
@@ -2257,10 +2254,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_diet",
                     label = NULL,
@@ -2271,10 +2268,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_admin",
                     label = NULL,
@@ -2284,10 +2281,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp1_worktime_nurs",
                     label = NULL,
@@ -2299,7 +2296,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp1"))
               )
             ),
@@ -2307,50 +2304,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院2"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp2_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp2_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp2_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp2_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp2_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp2_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp2_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp2_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp2_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp2_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp2_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp2_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp2", 
                                    label = NULL,
                                    value="5"))
@@ -2358,35 +2355,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp2_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp2_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp2_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp2_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp2_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp2_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp2_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp2_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp2",
                     label = NULL,
@@ -2397,10 +2394,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_1",
                     label = NULL,
@@ -2408,7 +2405,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_2",
                     label = NULL,
@@ -2417,7 +2414,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_3",
                     label = NULL,
@@ -2426,7 +2423,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_4",
                     label = NULL,
@@ -2437,10 +2434,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_doc",
                     label = NULL,
@@ -2450,10 +2447,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_diet",
                     label = NULL,
@@ -2464,10 +2461,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_admin",
                     label = NULL,
@@ -2477,10 +2474,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp2_worktime_nurs",
                     label = NULL,
@@ -2492,7 +2489,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp2"))
               )
             ),
@@ -2500,50 +2497,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院3"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp3_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp3_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp3_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp3_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp3_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp3_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp3_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp3_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp3_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp3_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp3_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp3_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp3", 
                                    label = NULL,
                                    value="5"))
@@ -2551,35 +2548,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp3_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp3_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp3_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp3_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp3_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp3_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp3_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp3_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp3",
                     label = NULL,
@@ -2590,10 +2587,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_1",
                     label = NULL,
@@ -2601,7 +2598,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_2",
                     label = NULL,
@@ -2610,7 +2607,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_3",
                     label = NULL,
@@ -2619,7 +2616,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_4",
                     label = NULL,
@@ -2630,10 +2627,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_doc",
                     label = NULL,
@@ -2643,10 +2640,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_diet",
                     label = NULL,
@@ -2657,10 +2654,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_admin",
                     label = NULL,
@@ -2670,10 +2667,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp3_worktime_nurs",
                     label = NULL,
@@ -2685,7 +2682,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp3"))
               )
             ),
@@ -2693,50 +2690,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院4"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp4_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp4_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp4_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp4_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp4_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp4_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp4_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp4_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp4_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp4_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp4_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp4_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp4", 
                                    label = NULL,
                                    value="5"))
@@ -2744,35 +2741,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp4_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp4_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp4_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp4_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp4_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp4_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp4_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp4_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp4",
                     label = NULL,
@@ -2783,10 +2780,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_1",
                     label = NULL,
@@ -2794,7 +2791,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_2",
                     label = NULL,
@@ -2803,7 +2800,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_3",
                     label = NULL,
@@ -2812,7 +2809,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_4",
                     label = NULL,
@@ -2823,10 +2820,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_doc",
                     label = NULL,
@@ -2836,10 +2833,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_diet",
                     label = NULL,
@@ -2850,10 +2847,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_admin",
                     label = NULL,
@@ -2863,10 +2860,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp4_worktime_nurs",
                     label = NULL,
@@ -2878,7 +2875,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp4"))
               )
             ),
@@ -2886,50 +2883,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院5"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp5_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp5_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp5_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp5_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp5_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp5_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp5_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp5_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp5_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp5_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp5_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp5_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp5", 
                                    label = NULL,
                                    value="5"))
@@ -2937,35 +2934,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp5_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp5_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp5_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp5_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp5_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp5_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp5_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp5_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp5",
                     label = NULL,
@@ -2976,10 +2973,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_1",
                     label = NULL,
@@ -2987,7 +2984,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_2",
                     label = NULL,
@@ -2996,7 +2993,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_3",
                     label = NULL,
@@ -3005,7 +3002,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_4",
                     label = NULL,
@@ -3016,10 +3013,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_doc",
                     label = NULL,
@@ -3029,10 +3026,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_diet",
                     label = NULL,
@@ -3043,10 +3040,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_admin",
                     label = NULL,
@@ -3056,10 +3053,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp5_worktime_nurs",
                     label = NULL,
@@ -3071,7 +3068,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp5"))
               )
             ),
@@ -3080,50 +3077,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院6"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp6_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp6_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp6_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp6_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp6_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp6_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp6_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp6_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp6_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp6_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp6_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp6_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp6", 
                                    label = NULL,
                                    value="5"))
@@ -3131,35 +3128,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp6_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp6_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp6_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp6_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp6_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp6_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp6_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp6_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp6",
                     label = NULL,
@@ -3170,10 +3167,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_1",
                     label = NULL,
@@ -3181,7 +3178,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_2",
                     label = NULL,
@@ -3190,7 +3187,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_3",
                     label = NULL,
@@ -3199,7 +3196,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_4",
                     label = NULL,
@@ -3210,10 +3207,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_doc",
                     label = NULL,
@@ -3223,10 +3220,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_diet",
                     label = NULL,
@@ -3237,10 +3234,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_admin",
                     label = NULL,
@@ -3250,10 +3247,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp6_worktime_nurs",
                     label = NULL,
@@ -3265,7 +3262,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp6"))
               )
             ),
@@ -3273,50 +3270,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院7"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp7_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp7_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp7_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp7_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp7_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp7_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp7_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp7_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp7_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp7_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp7_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp7_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp7", 
                                    label = NULL,
                                    value="5"))
@@ -3324,35 +3321,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp7_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp7_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp7_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp7_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp7_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp7_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp7_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp7_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp7",
                     label = NULL,
@@ -3363,10 +3360,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_1",
                     label = NULL,
@@ -3374,7 +3371,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_2",
                     label = NULL,
@@ -3383,7 +3380,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_3",
                     label = NULL,
@@ -3392,7 +3389,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_4",
                     label = NULL,
@@ -3403,10 +3400,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_doc",
                     label = NULL,
@@ -3416,10 +3413,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_diet",
                     label = NULL,
@@ -3430,10 +3427,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_admin",
                     label = NULL,
@@ -3443,10 +3440,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp7_worktime_nurs",
                     label = NULL,
@@ -3458,7 +3455,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp7"))
               )
             ),
@@ -3467,50 +3464,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院8"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp8_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp8_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp8_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp8_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp8_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp8_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp8_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp8_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp8_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp8_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp8_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp8_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp8", 
                                    label = NULL,
                                    value="5"))
@@ -3518,35 +3515,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp8_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp8_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp8_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp8_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp8_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp8_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp8_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp8_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp8",
                     label = NULL,
@@ -3557,10 +3554,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_1",
                     label = NULL,
@@ -3568,7 +3565,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_2",
                     label = NULL,
@@ -3577,7 +3574,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_3",
                     label = NULL,
@@ -3586,7 +3583,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_4",
                     label = NULL,
@@ -3597,10 +3594,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_doc",
                     label = NULL,
@@ -3610,10 +3607,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_diet",
                     label = NULL,
@@ -3624,10 +3621,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_admin",
                     label = NULL,
@@ -3637,10 +3634,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp8_worktime_nurs",
                     label = NULL,
@@ -3652,7 +3649,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp8"))
               )
             ),
@@ -3660,50 +3657,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院9"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp9_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp9_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp9_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp9_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp9_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp9_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp9_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp9_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp9_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp9_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp9_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp9_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp9", 
                                    label = NULL,
                                    value="5"))
@@ -3711,35 +3708,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp9_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp9_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp9_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp9_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp9_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp9_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp9_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp9_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp9",
                     label = NULL,
@@ -3750,10 +3747,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_1",
                     label = NULL,
@@ -3761,7 +3758,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_2",
                     label = NULL,
@@ -3770,7 +3767,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_3",
                     label = NULL,
@@ -3779,7 +3776,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_4",
                     label = NULL,
@@ -3790,10 +3787,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_doc",
                     label = NULL,
@@ -3803,10 +3800,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_diet",
                     label = NULL,
@@ -3817,10 +3814,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_admin",
                     label = NULL,
@@ -3830,10 +3827,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp9_worktime_nurs",
                     label = NULL,
@@ -3845,7 +3842,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp9"))
               )
             ),
@@ -3854,50 +3851,50 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院10"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p2_hosp10_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp10_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp10_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p2_hosp10_4"))
               ),
               br(),
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp10_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp10_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp10_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_potential_sales_hosp10_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp10_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp10_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp10_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_discount_hosp10_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_promotional_budget_hosp10", 
                                    label = NULL,
                                    value="5"))
@@ -3905,35 +3902,35 @@ shinyApp(ui=dashboardPage(
               
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp10_1")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp10_2")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp10_3")),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_current_sales_hosp10_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp10_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp10_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp10_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p2_hosp10_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p2_sr_hosp10",
                     label = NULL,
@@ -3944,10 +3941,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp10_worktime_1",
                     label = NULL,
@@ -3955,7 +3952,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp10_worktime_2",
                     label = NULL,
@@ -3964,7 +3961,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp10_worktime_3",
                     label = NULL,
@@ -3973,7 +3970,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp10_worktime_4",
                     label = NULL,
@@ -3984,10 +3981,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p2_hosp10_worktime_doc",
                     label = NULL,
@@ -4039,7 +4036,7 @@ shinyApp(ui=dashboardPage(
               tags$div(
                 tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p2_decison1_summary_hosp10"))
               )
             )
@@ -4057,16 +4054,16 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("总推广预算"),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "总推广预算(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "总推广预算"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p3_total_promotional_budget"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "已分配的推广预算(元)"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "已分配的推广预算"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                   verbatimTextOutput("p3_arranged_promotional_budget")
                 )
               )
@@ -4075,33 +4072,33 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("时间分配"),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表1(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表1"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p3_arranged_time_of_sr1"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表2(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表2"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p3_arranged_time_of_sr2"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表3(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表3"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p3_arranged_time_of_sr3"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表4(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表4"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p3_arranged_time_of_sr4"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表5(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表5"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p3_arranged_time_of_sr5"))
               )
             ),
@@ -4109,86 +4106,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院1"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp1_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp1_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp1_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp1_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp1_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp1_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp1_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp1_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp1_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp1_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp1_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp1_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp1", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp1_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp1_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp1_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp1_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp1_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp1_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp1_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp1_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp1",
                     label = NULL,
@@ -4199,10 +4196,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_1",
                     label = NULL,
@@ -4210,7 +4207,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_2",
                     label = NULL,
@@ -4219,7 +4216,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_3",
                     label = NULL,
@@ -4228,7 +4225,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_4",
                     label = NULL,
@@ -4239,10 +4236,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_doc",
                     label = NULL,
@@ -4252,10 +4249,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_diet",
                     label = NULL,
@@ -4266,10 +4263,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_admin",
                     label = NULL,
@@ -4279,10 +4276,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp1_worktime_nurs",
                     label = NULL,
@@ -4292,9 +4289,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp1"))
               )
             ),
@@ -4302,86 +4299,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院2"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp2_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp2_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp2_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp2_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp2_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp2_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp2_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp2_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp2_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp2_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp2_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp2_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp2", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp2_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp2_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp2_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp2_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp2_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp2_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp2_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp2_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp2",
                     label = NULL,
@@ -4392,10 +4389,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_1",
                     label = NULL,
@@ -4403,7 +4400,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_2",
                     label = NULL,
@@ -4412,7 +4409,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_3",
                     label = NULL,
@@ -4421,7 +4418,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_4",
                     label = NULL,
@@ -4432,10 +4429,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_doc",
                     label = NULL,
@@ -4445,10 +4442,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_diet",
                     label = NULL,
@@ -4459,10 +4456,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_admin",
                     label = NULL,
@@ -4472,10 +4469,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp2_worktime_nurs",
                     label = NULL,
@@ -4485,9 +4482,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp2"))
               )
             ),
@@ -4495,86 +4492,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院3"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp3_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp3_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp3_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp3_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp3_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp3_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp3_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp3_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp3_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp3_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp3_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp3_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp3", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp3_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp3_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp3_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp3_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp3_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp3_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp3_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp3_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp3",
                     label = NULL,
@@ -4585,10 +4582,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_1",
                     label = NULL,
@@ -4596,7 +4593,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_2",
                     label = NULL,
@@ -4605,7 +4602,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_3",
                     label = NULL,
@@ -4614,7 +4611,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_4",
                     label = NULL,
@@ -4625,10 +4622,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_doc",
                     label = NULL,
@@ -4638,10 +4635,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_diet",
                     label = NULL,
@@ -4652,10 +4649,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_admin",
                     label = NULL,
@@ -4665,10 +4662,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp3_worktime_nurs",
                     label = NULL,
@@ -4678,9 +4675,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp3"))
               )
             ),
@@ -4688,86 +4685,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院4"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp4_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp4_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp4_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp4_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp4_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp4_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp4_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp4_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp4_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp4_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp4_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp4_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp4", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp4_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp4_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp4_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp4_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp4_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp4_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp4_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp4_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp4",
                     label = NULL,
@@ -4778,10 +4775,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_1",
                     label = NULL,
@@ -4789,7 +4786,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_2",
                     label = NULL,
@@ -4798,7 +4795,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_3",
                     label = NULL,
@@ -4807,7 +4804,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_4",
                     label = NULL,
@@ -4818,10 +4815,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_doc",
                     label = NULL,
@@ -4831,10 +4828,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_diet",
                     label = NULL,
@@ -4845,10 +4842,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_admin",
                     label = NULL,
@@ -4858,10 +4855,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp4_worktime_nurs",
                     label = NULL,
@@ -4871,9 +4868,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp4"))
               )
             ),
@@ -4881,86 +4878,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院5"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp5_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp5_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp5_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp5_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp5_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp5_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp5_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp5_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp5_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp5_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp5_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp5_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp5", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp5_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp5_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp5_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp5_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp5_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp5_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp5_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp5_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp5",
                     label = NULL,
@@ -4971,10 +4968,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_1",
                     label = NULL,
@@ -4982,7 +4979,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_2",
                     label = NULL,
@@ -4991,7 +4988,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_3",
                     label = NULL,
@@ -5000,7 +4997,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_4",
                     label = NULL,
@@ -5011,10 +5008,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_doc",
                     label = NULL,
@@ -5024,10 +5021,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_diet",
                     label = NULL,
@@ -5038,10 +5035,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_admin",
                     label = NULL,
@@ -5051,10 +5048,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp5_worktime_nurs",
                     label = NULL,
@@ -5064,9 +5061,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp5"))
               )
             ),
@@ -5075,86 +5072,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院6"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp6_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp6_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp6_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp6_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp6_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp6_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp6_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp6_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp6_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp6_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp6_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp6_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp6", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp6_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp6_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp6_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp6_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp6_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp6_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp6_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp6_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp6",
                     label = NULL,
@@ -5165,10 +5162,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_1",
                     label = NULL,
@@ -5176,7 +5173,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_2",
                     label = NULL,
@@ -5185,7 +5182,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_3",
                     label = NULL,
@@ -5194,7 +5191,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_4",
                     label = NULL,
@@ -5205,10 +5202,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_doc",
                     label = NULL,
@@ -5218,10 +5215,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_diet",
                     label = NULL,
@@ -5232,10 +5229,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_admin",
                     label = NULL,
@@ -5245,10 +5242,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp6_worktime_nurs",
                     label = NULL,
@@ -5258,9 +5255,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp6"))
               )
             ),
@@ -5268,86 +5265,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院7"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp7_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp7_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp7_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp7_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp7_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp7_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp7_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp7_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp7_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp7_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp7_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp7_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp7", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp7_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp7_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp7_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp7_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp7_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp7_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp7_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp7_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp7",
                     label = NULL,
@@ -5358,10 +5355,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_1",
                     label = NULL,
@@ -5369,7 +5366,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_2",
                     label = NULL,
@@ -5378,7 +5375,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_3",
                     label = NULL,
@@ -5387,7 +5384,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_4",
                     label = NULL,
@@ -5398,10 +5395,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_doc",
                     label = NULL,
@@ -5411,10 +5408,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_diet",
                     label = NULL,
@@ -5425,10 +5422,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_admin",
                     label = NULL,
@@ -5438,10 +5435,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp7_worktime_nurs",
                     label = NULL,
@@ -5451,9 +5448,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp7"))
               )
             ),
@@ -5462,86 +5459,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院8"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp8_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp8_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp8_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp8_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp8_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp8_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp8_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp8_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp8_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp8_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp8_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp8_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp8", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp8_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp8_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp8_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp8_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp8_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp8_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp8_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp8_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp8",
                     label = NULL,
@@ -5552,10 +5549,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_1",
                     label = NULL,
@@ -5563,7 +5560,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_2",
                     label = NULL,
@@ -5572,7 +5569,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_3",
                     label = NULL,
@@ -5581,7 +5578,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_4",
                     label = NULL,
@@ -5592,10 +5589,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_doc",
                     label = NULL,
@@ -5605,10 +5602,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_diet",
                     label = NULL,
@@ -5619,10 +5616,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_admin",
                     label = NULL,
@@ -5632,10 +5629,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp8_worktime_nurs",
                     label = NULL,
@@ -5645,9 +5642,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp8"))
               )
             ),
@@ -5655,86 +5652,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院9"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp9_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp9_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp9_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp9_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp9_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp9_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp9_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp9_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp9_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp9_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp9_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp9_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp9", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp9_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp9_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp9_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp9_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp9_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp9_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp9_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp9_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp9",
                     label = NULL,
@@ -5745,10 +5742,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_1",
                     label = NULL,
@@ -5756,7 +5753,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_2",
                     label = NULL,
@@ -5765,7 +5762,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_3",
                     label = NULL,
@@ -5774,7 +5771,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_4",
                     label = NULL,
@@ -5785,10 +5782,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_doc",
                     label = NULL,
@@ -5798,10 +5795,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_diet",
                     label = NULL,
@@ -5812,10 +5809,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_admin",
                     label = NULL,
@@ -5825,10 +5822,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp9_worktime_nurs",
                     label = NULL,
@@ -5838,9 +5835,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp9"))
               )
             ),
@@ -5849,86 +5846,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院10"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p3_hosp10_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp10_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp10_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p3_hosp10_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp10_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp10_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp10_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_potential_sales_hosp10_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp10_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp10_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp10_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_discount_hosp10_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_promotional_budget_hosp10", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp10_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp10_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp10_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_current_sales_hosp10_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp10_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp10_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp10_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p3_hosp10_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p3_sr_hosp10",
                     label = NULL,
@@ -5939,10 +5936,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_1",
                     label = NULL,
@@ -5950,7 +5947,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_2",
                     label = NULL,
@@ -5959,7 +5956,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_3",
                     label = NULL,
@@ -5968,7 +5965,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_4",
                     label = NULL,
@@ -5979,10 +5976,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_doc",
                     label = NULL,
@@ -5992,10 +5989,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_diet",
                     label = NULL,
@@ -6006,10 +6003,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_admin",
                     label = NULL,
@@ -6019,10 +6016,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p3_hosp10_worktime_nurs",
                     label = NULL,
@@ -6032,9 +6029,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p3_decison1_summary_hosp10"))
               )
             )
@@ -6052,16 +6049,16 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("总推广预算"),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "总推广预算(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "总推广预算"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p4_total_promotional_budget"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "已分配的推广预算(元)"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "已分配的推广预算"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                   verbatimTextOutput("p4_arranged_promotional_budget")
                 )
               )
@@ -6070,33 +6067,33 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("时间分配"),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表1(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表1"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p4_arranged_time_of_sr1"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表2(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表2"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p4_arranged_time_of_sr2"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表3(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表3"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p4_arranged_time_of_sr3"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表4(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表4"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p4_arranged_time_of_sr4"))
               ),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表5(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "时间分配 销售代表5"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                          verbatimTextOutput("p4_arranged_time_of_sr5"))
               )
             ),
@@ -6104,86 +6101,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院1"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp1_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp1_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp1_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp1_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp1_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp1_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp1_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp1_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp1_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp1_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp1_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp1_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp1", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp1_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp1_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp1_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp1_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp1_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp1_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp1_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp1_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp1",
                     label = NULL,
@@ -6194,10 +6191,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_1",
                     label = NULL,
@@ -6205,7 +6202,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_2",
                     label = NULL,
@@ -6214,7 +6211,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_3",
                     label = NULL,
@@ -6223,7 +6220,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_4",
                     label = NULL,
@@ -6234,10 +6231,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_doc",
                     label = NULL,
@@ -6247,10 +6244,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_diet",
                     label = NULL,
@@ -6261,10 +6258,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_admin",
                     label = NULL,
@@ -6274,10 +6271,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp1_worktime_nurs",
                     label = NULL,
@@ -6287,9 +6284,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp1"))
               )
             ),
@@ -6297,86 +6294,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院2"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp2_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp2_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp2_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp2_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp2_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp2_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp2_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp2_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp2_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp2_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp2_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp2_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp2", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp2_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp2_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp2_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp2_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp2_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp2_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp2_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp2_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp2",
                     label = NULL,
@@ -6387,10 +6384,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_1",
                     label = NULL,
@@ -6398,7 +6395,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_2",
                     label = NULL,
@@ -6407,7 +6404,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_3",
                     label = NULL,
@@ -6416,7 +6413,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_4",
                     label = NULL,
@@ -6427,10 +6424,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_doc",
                     label = NULL,
@@ -6440,10 +6437,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_diet",
                     label = NULL,
@@ -6454,10 +6451,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_admin",
                     label = NULL,
@@ -6467,10 +6464,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp2_worktime_nurs",
                     label = NULL,
@@ -6480,9 +6477,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp2"))
               )
             ),
@@ -6490,86 +6487,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院3"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp3_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp3_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp3_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp3_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp3_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp3_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp3_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp3_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp3_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp3_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp3_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp3_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp3", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp3_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp3_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp3_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp3_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp3_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp3_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp3_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp3_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp3",
                     label = NULL,
@@ -6580,10 +6577,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_1",
                     label = NULL,
@@ -6591,7 +6588,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_2",
                     label = NULL,
@@ -6600,7 +6597,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_3",
                     label = NULL,
@@ -6609,7 +6606,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_4",
                     label = NULL,
@@ -6620,10 +6617,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_doc",
                     label = NULL,
@@ -6633,10 +6630,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_diet",
                     label = NULL,
@@ -6647,10 +6644,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_admin",
                     label = NULL,
@@ -6660,10 +6657,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp3_worktime_nurs",
                     label = NULL,
@@ -6673,9 +6670,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp3"))
               )
             ),
@@ -6683,86 +6680,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院4"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp4_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp4_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp4_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp4_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp4_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp4_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp4_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp4_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp4_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp4_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp4_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp4_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp4", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp4_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp4_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp4_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp4_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp4_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp4_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp4_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp4_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp4",
                     label = NULL,
@@ -6773,10 +6770,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_1",
                     label = NULL,
@@ -6784,7 +6781,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_2",
                     label = NULL,
@@ -6793,7 +6790,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_3",
                     label = NULL,
@@ -6802,7 +6799,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_4",
                     label = NULL,
@@ -6813,10 +6810,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_doc",
                     label = NULL,
@@ -6826,10 +6823,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_diet",
                     label = NULL,
@@ -6840,10 +6837,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_admin",
                     label = NULL,
@@ -6853,10 +6850,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp4_worktime_nurs",
                     label = NULL,
@@ -6866,9 +6863,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp4"))
               )
             ),
@@ -6876,86 +6873,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院5"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp5_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp5_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp5_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp5_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp5_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp5_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp5_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp5_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp5_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp5_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp5_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp5_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp5", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp5_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp5_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp5_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp5_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp5_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp5_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp5_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp5_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp5",
                     label = NULL,
@@ -6966,10 +6963,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_1",
                     label = NULL,
@@ -6977,7 +6974,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_2",
                     label = NULL,
@@ -6986,7 +6983,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_3",
                     label = NULL,
@@ -6995,7 +6992,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_4",
                     label = NULL,
@@ -7006,10 +7003,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_doc",
                     label = NULL,
@@ -7019,10 +7016,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_diet",
                     label = NULL,
@@ -7033,10 +7030,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_admin",
                     label = NULL,
@@ -7046,10 +7043,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp5_worktime_nurs",
                     label = NULL,
@@ -7059,9 +7056,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp5"))
               )
             ),
@@ -7070,86 +7067,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院6"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp6_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp6_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp6_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp6_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp6_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp6_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp6_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp6_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp6_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp6_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp6_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp6_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp6", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp6_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp6_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp6_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp6_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp6_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp6_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp6_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp6_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp6",
                     label = NULL,
@@ -7160,10 +7157,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_1",
                     label = NULL,
@@ -7171,7 +7168,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_2",
                     label = NULL,
@@ -7180,7 +7177,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_3",
                     label = NULL,
@@ -7189,7 +7186,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_4",
                     label = NULL,
@@ -7200,10 +7197,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_doc",
                     label = NULL,
@@ -7213,10 +7210,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_diet",
                     label = NULL,
@@ -7227,10 +7224,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_admin",
                     label = NULL,
@@ -7240,10 +7237,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp6_worktime_nurs",
                     label = NULL,
@@ -7253,9 +7250,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp6"))
               )
             ),
@@ -7263,86 +7260,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院7"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp7_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp7_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp7_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp7_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp7_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp7_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp7_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp7_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp7_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp7_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp7_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp7_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp7", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp7_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp7_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp7_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp7_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp7_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp7_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp7_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp7_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp7",
                     label = NULL,
@@ -7353,10 +7350,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_1",
                     label = NULL,
@@ -7364,7 +7361,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_2",
                     label = NULL,
@@ -7373,7 +7370,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_3",
                     label = NULL,
@@ -7382,7 +7379,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_4",
                     label = NULL,
@@ -7393,10 +7390,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_doc",
                     label = NULL,
@@ -7406,10 +7403,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_diet",
                     label = NULL,
@@ -7420,10 +7417,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_admin",
                     label = NULL,
@@ -7433,10 +7430,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp7_worktime_nurs",
                     label = NULL,
@@ -7446,9 +7443,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp7"))
               )
             ),
@@ -7457,86 +7454,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院8"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp8_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp8_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp8_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp8_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp8_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp8_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp8_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp8_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp8_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp8_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp8_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp8_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp8", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp8_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp8_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp8_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp8_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp8_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp8_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp8_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp8_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp8",
                     label = NULL,
@@ -7547,10 +7544,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_1",
                     label = NULL,
@@ -7558,7 +7555,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_2",
                     label = NULL,
@@ -7567,7 +7564,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_3",
                     label = NULL,
@@ -7576,7 +7573,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_4",
                     label = NULL,
@@ -7587,10 +7584,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_doc",
                     label = NULL,
@@ -7600,10 +7597,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_diet",
                     label = NULL,
@@ -7614,10 +7611,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_admin",
                     label = NULL,
@@ -7627,10 +7624,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp8_worktime_nurs",
                     label = NULL,
@@ -7640,9 +7637,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp8"))
               )
             ),
@@ -7650,86 +7647,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院9"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp9_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp9_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp9_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp9_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp9_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp9_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp9_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp9_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp9_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp9_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp9_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp9_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp9", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp9_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp9_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp9_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp9_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp9_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp9_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp9_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp9_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp9",
                     label = NULL,
@@ -7740,10 +7737,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_1",
                     label = NULL,
@@ -7751,7 +7748,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_2",
                     label = NULL,
@@ -7760,7 +7757,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_3",
                     label = NULL,
@@ -7769,7 +7766,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_4",
                     label = NULL,
@@ -7780,10 +7777,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_doc",
                     label = NULL,
@@ -7793,10 +7790,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_diet",
                     label = NULL,
@@ -7807,10 +7804,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_admin",
                     label = NULL,
@@ -7820,10 +7817,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp9_worktime_nurs",
                     label = NULL,
@@ -7833,9 +7830,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp9"))
               )
             ),
@@ -7844,86 +7841,86 @@ shinyApp(ui=dashboardPage(
             fluidRow(
               h3("决策-医院10"),
               tags$div(
-                tags$div(style = "display:inline-block;margin-left:18%;width:18%;text-align:center",
-                         "product1"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product2"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product3"),
-                tags$div(style = "display:inline-block;width:18%;text-align:center;margin-left:10px",
-                         "product4")
+                tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
+                         htmlOutput("p4_hosp10_1")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp10_2")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp10_3")),
+                tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
+                         htmlOutput("p4_hosp10_4"))
               ),
               br(),
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "客户潜力(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "客户潜力"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp10_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp10_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp10_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_potential_sales_hosp10_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "折扣(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp10_1", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp10_2", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp10_3", label =
                                      NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_discount_hosp10_4", label =
                                      NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "推广预算分配(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_promotional_budget_hosp10", 
                                    label = NULL,
                                    value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "目前的销售情况(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "目前的销售情况"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp10_1")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp10_2")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp10_3")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_current_sales_hosp10_4"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
-                         "销售指标(元)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
+                         "销售指标"),
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp10_sales_target_1",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp10_sales_target_2",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp10_sales_target_3",label = NULL, value="5")),
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                          textInput("p4_hosp10_sales_target_4",label = NULL, value="5"))
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "销售代表"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   selectizeInput(
                     "p4_sr_hosp10",
                     label = NULL,
@@ -7934,10 +7931,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "代表的客户工作时间(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_1",
                     label = NULL,
@@ -7945,7 +7942,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_2",
                     label = NULL,
@@ -7954,7 +7951,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_3",
                     label = NULL,
@@ -7963,7 +7960,7 @@ shinyApp(ui=dashboardPage(
                   )
                 ),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:20px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_4",
                     label = NULL,
@@ -7974,10 +7971,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 A级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_doc",
                     label = NULL,
@@ -7987,10 +7984,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 B级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_diet",
                     label = NULL,
@@ -8001,10 +7998,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 C级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_admin",
                     label = NULL,
@@ -8014,10 +8011,10 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "时间被分配到 D级客户(%)"),
                 tags$div(
-                  style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                  style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                   textInput(
                     "p4_hosp10_worktime_nurs",
                     label = NULL,
@@ -8027,9 +8024,9 @@ shinyApp(ui=dashboardPage(
               ),
               
               tags$div(
-                tags$div(style = "display:inline-block;width:16%;margin-left:20px;text-align:left;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                          "总体(%)"),
-                tags$div(style = "display:inline-block;width:16%;margin-left:10px;text-align:center;margin-right:10px;",
+                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
                          verbatimTextOutput("p4_decison1_summary_hosp10"))
               )
             )
@@ -8038,8 +8035,9 @@ shinyApp(ui=dashboardPage(
             
             
             
-        )
-      )),
+            
+          )
+        )),
       tabItem(
         tabName = "decision2",
         tabsetPanel(
@@ -8053,7 +8051,7 @@ shinyApp(ui=dashboardPage(
                        tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
                                 "时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                verbatimTextOutput("p1_worktime"))
+                                "100")
                      )),
             hr(),
             fluidRow(
@@ -8178,7 +8176,7 @@ shinyApp(ui=dashboardPage(
             ),
             br(),
             fluidRow(
-              h3("产品培训"),
+              h3("销售指标&产品培训"),
               tags$div(
                 tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:11.5%",
                          "代表1"),
@@ -8222,7 +8220,7 @@ shinyApp(ui=dashboardPage(
                        tags$div(style = "display:inline-block;margin-left:20px;width:13%;text-align:left;",
                                 "时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                verbatimTextOutput("p2_worktime"))
+                                "100")
                      )),
             hr(),
             fluidRow(
@@ -8390,7 +8388,7 @@ shinyApp(ui=dashboardPage(
                        tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
                                 "时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                verbatimTextOutput("p3_worktime"))
+                                "100")
                      )),
             hr(),
             fluidRow(
@@ -8558,7 +8556,7 @@ shinyApp(ui=dashboardPage(
                        tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
                                 "时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                verbatimTextOutput("p4_worktime"))
+                                "100")
                      )),
             hr(),
             fluidRow(
@@ -8953,12 +8951,307 @@ shinyApp(ui=dashboardPage(
                                              dataTableOutput("p4_report5_1")),
                                     br(),br(),br(),
                                     tags$div(style = "text-align:left;margin-left:3%",
-                                             dataTableOutput("p4_report5_2")))))
+                                             dataTableOutput("p4_report5_2"))))),
+                tabPanel("总报告",fluidRow(
+                  tags$div(style = "text-align:left;margin-left:3%",
+                           dataTableOutput("final_report"))))
                 
               ))))),
-  
-  
   server=function(input, output,session) {
+    # output$p1_hosp1 <- renderText(hospital_info_initial$name[1])
+    # output$p1_hosp2 <- renderText(hospital_info_initial$name[2])
+    # output$p1_hosp3 <- renderText(hospital_info_initial$name[3])
+    # output$p1_hosp4 <- renderText(hospital_info_initial$name[4])
+    # output$p1_hosp5 <- renderText(hospital_info_initial$name[5])
+    # output$p1_hosp6 <- renderText(hospital_info_initial$name[6])
+    # output$p1_hosp7 <- renderText(hospital_info_initial$name[7])
+    # output$p1_hosp8 <- renderText(hospital_info_initial$name[8])
+    # output$p1_hosp9 <- renderText(hospital_info_initial$name[9])
+    # output$p1_hosp10 <- renderText(hospital_info_initial$name[10])
+    # 
+    # output$p2_hosp1 <- renderText(hospital_info_initial$name[1])
+    # output$p2_hosp2 <- renderText(hospital_info_initial$name[2])
+    # output$p2_hosp3 <- renderText(hospital_info_initial$name[3])
+    # output$p2_hosp4 <- renderText(hospital_info_initial$name[4])
+    # output$p2_hosp5 <- renderText(hospital_info_initial$name[5])
+    # output$p2_hosp6 <- renderText(hospital_info_initial$name[6])
+    # output$p2_hosp7 <- renderText(hospital_info_initial$name[7])
+    # output$p2_hosp8 <- renderText(hospital_info_initial$name[8])
+    # output$p2_hosp9 <- renderText(hospital_info_initial$name[9])
+    # output$p2_hosp10 <- renderText(hospital_info_initial$name[10])
+    # 
+    # output$p3_hosp1 <- renderText(hospital_info_initial$name[1])
+    # output$p3_hosp2 <- renderText(hospital_info_initial$name[2])
+    # output$p3_hosp3 <- renderText(hospital_info_initial$name[3])
+    # output$p3_hosp4 <- renderText(hospital_info_initial$name[4])
+    # output$p3_hosp5 <- renderText(hospital_info_initial$name[5])
+    # output$p3_hosp6 <- renderText(hospital_info_initial$name[6])
+    # output$p3_hosp7 <- renderText(hospital_info_initial$name[7])
+    # output$p3_hosp8 <- renderText(hospital_info_initial$name[8])
+    # output$p3_hosp9 <- renderText(hospital_info_initial$name[9])
+    # output$p3_hosp10 <- renderText(hospital_info_initial$name[10])
+    # 
+    # output$p4_hosp1 <- renderText(hospital_info_initial$name[1])
+    # output$p4_hosp2 <- renderText(hospital_info_initial$name[2])
+    # output$p4_hosp3 <- renderText(hospital_info_initial$name[3])
+    # output$p4_hosp4 <- renderText(hospital_info_initial$name[4])
+    # output$p4_hosp5 <- renderText(hospital_info_initial$name[5])
+    # output$p4_hosp6 <- renderText(hospital_info_initial$name[6])
+    # output$p4_hosp7 <- renderText(hospital_info_initial$name[7])
+    # output$p4_hosp8 <- renderText(hospital_info_initial$name[8])
+    # output$p4_hosp9 <- renderText(hospital_info_initial$name[9])
+    # output$p4_hosp10 <- renderText(hospital_info_initial$name[10])
+    
+    output$p1_hosp1_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp1_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp1_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp1_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp2_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp2_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp2_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp2_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp3_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp3_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp3_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp3_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp4_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp4_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp4_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp4_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp5_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp5_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp5_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp5_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp6_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp6_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp6_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp6_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp7_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp7_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp7_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp7_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp8_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp8_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp8_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp8_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp9_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp9_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp9_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp9_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p1_hosp10_1 <- renderText(product_info_initial$name2[1])
+    output$p1_hosp10_2 <- renderText(product_info_initial$name2[2])
+    output$p1_hosp10_3 <- renderText(product_info_initial$name2[3])
+    output$p1_hosp10_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp1_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp1_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp1_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp1_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp2_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp2_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp2_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp2_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp3_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp3_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp3_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp3_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp4_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp4_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp4_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp4_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp5_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp5_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp5_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp5_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp6_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp6_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp6_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp6_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp7_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp7_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp7_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp7_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp8_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp8_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp8_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp8_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp9_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp9_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp9_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp9_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp10_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp10_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp10_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp10_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp1_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp1_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp1_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp1_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp2_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp2_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp2_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp2_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp3_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp3_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp3_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp3_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp4_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp4_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp4_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp4_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp5_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp5_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp5_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp5_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp6_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp6_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp6_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp6_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp7_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp7_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp7_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp7_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp8_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp8_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp8_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp8_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp9_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp9_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp9_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp9_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p2_hosp10_1 <- renderText(product_info_initial$name2[1])
+    output$p2_hosp10_2 <- renderText(product_info_initial$name2[2])
+    output$p2_hosp10_3 <- renderText(product_info_initial$name2[3])
+    output$p2_hosp10_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp1_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp1_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp1_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp1_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp2_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp2_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp2_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp2_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp3_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp3_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp3_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp3_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp4_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp4_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp4_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp4_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp5_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp5_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp5_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp5_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp6_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp6_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp6_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp6_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp7_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp7_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp7_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp7_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp8_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp8_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp8_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp8_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp9_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp9_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp9_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp9_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p3_hosp10_1 <- renderText(product_info_initial$name2[1])
+    output$p3_hosp10_2 <- renderText(product_info_initial$name2[2])
+    output$p3_hosp10_3 <- renderText(product_info_initial$name2[3])
+    output$p3_hosp10_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp1_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp1_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp1_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp1_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp2_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp2_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp2_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp2_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp3_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp3_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp3_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp3_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp4_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp4_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp4_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp4_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp5_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp5_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp5_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp5_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp6_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp6_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp6_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp6_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp7_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp7_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp7_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp7_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp8_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp8_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp8_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp8_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp9_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp9_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp9_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp9_4 <- renderText(product_info_initial$name2[4])
+    
+    output$p4_hosp10_1 <- renderText(product_info_initial$name2[1])
+    output$p4_hosp10_2 <- renderText(product_info_initial$name2[2])
+    output$p4_hosp10_3 <- renderText(product_info_initial$name2[3])
+    output$p4_hosp10_4 <- renderText(product_info_initial$name2[4])
+    
     
     output$sales_rep_info <- renderDataTable(sr_info_initial)
     output$products_info <- renderDataTable(product_info_initial)
@@ -8991,96 +9284,327 @@ shinyApp(ui=dashboardPage(
     output$p1_arranged_time_of_sr5 <- renderText(
       ifelse(input$decision1_phase1_calculator==0,0,p1_calculator_result()[6]))
     
-    output$p1_potential_sales_hosp1_1 <- renderText((potential_sales_product1$hospital1)$phase1)
-    output$p1_potential_sales_hosp1_2 <- renderText((potential_sales_product2$hospital1)$phase1)
-    output$p1_potential_sales_hosp1_3 <- renderText((potential_sales_product3$hospital1)$phase1)
-    output$p1_potential_sales_hosp1_4 <- renderText((potential_sales_product4$hospital1)$phase1)
-    output$p1_current_sales_hosp1_1 <- renderText((current_sales_product1$hospital1)$phase1)
-    output$p1_current_sales_hosp1_2 <- renderText((current_sales_product2$hospital1)$phase1)
-    output$p1_current_sales_hosp1_3 <- renderText((current_sales_product3$hospital1)$phase1)
-    output$p1_current_sales_hosp1_4 <- renderText((current_sales_product4$hospital1)$phase1)
+    output$p1_potential_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$current_volume)
+    output$p1_potential_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p1_potential_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p1_potential_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p1_current_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$current_volume)
+    output$p1_current_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$current_volume)
+    output$p1_current_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==3),]$current_volume)
+    output$p1_current_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期1"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$current_volume)
     
-    output$p1_potential_sales_hosp2_1 <- renderText((potential_sales_product1$hospital2)$phase1)
-    output$p1_potential_sales_hosp2_2 <- renderText((potential_sales_product2$hospital2)$phase1)
-    output$p1_potential_sales_hosp2_3 <- renderText((potential_sales_product3$hospital2)$phase1)
-    output$p1_potential_sales_hosp2_4 <- renderText((potential_sales_product4$hospital2)$phase1)
-    output$p1_current_sales_hosp2_1 <- renderText((current_sales_product1$hospital2)$phase1)
-    output$p1_current_sales_hosp2_2 <- renderText((current_sales_product2$hospital2)$phase1)
-    output$p1_current_sales_hosp2_3 <- renderText((current_sales_product3$hospital2)$phase1)
-    output$p1_current_sales_hosp2_4 <- renderText((current_sales_product4$hospital2)$phase1)
-    
-    output$p1_potential_sales_hosp3_1 <- renderText((potential_sales_product1$hospital3)$phase1)
-    output$p1_potential_sales_hosp3_2 <- renderText((potential_sales_product2$hospital3)$phase1)
-    output$p1_potential_sales_hosp3_3 <- renderText((potential_sales_product3$hospital3)$phase1)
-    output$p1_potential_sales_hosp3_4 <- renderText((potential_sales_product4$hospital3)$phase1)
-    output$p1_current_sales_hosp3_1 <- renderText((current_sales_product1$hospital3)$phase1)
-    output$p1_current_sales_hosp3_2 <- renderText((current_sales_product2$hospital3)$phase1)
-    output$p1_current_sales_hosp3_3 <- renderText((current_sales_product3$hospital3)$phase1)
-    output$p1_current_sales_hosp3_4 <- renderText((current_sales_product4$hospital3)$phase1)
-    
-    output$p1_potential_sales_hosp4_1 <- renderText((potential_sales_product1$hospital4)$phase1)
-    output$p1_potential_sales_hosp4_2 <- renderText((potential_sales_product2$hospital4)$phase1)
-    output$p1_potential_sales_hosp4_3 <- renderText((potential_sales_product3$hospital4)$phase1)
-    output$p1_potential_sales_hosp4_4 <- renderText((potential_sales_product4$hospital4)$phase1)
-    output$p1_current_sales_hosp4_1 <- renderText((current_sales_product1$hospital4)$phase1)
-    output$p1_current_sales_hosp4_2 <- renderText((current_sales_product2$hospital4)$phase1)
-    output$p1_current_sales_hosp4_3 <- renderText((current_sales_product3$hospital4)$phase1)
-    output$p1_current_sales_hosp4_4 <- renderText((current_sales_product4$hospital4)$phase1)
-    
-    output$p1_potential_sales_hosp5_1 <- renderText((potential_sales_product1$hospital5)$phase1)
-    output$p1_potential_sales_hosp5_2 <- renderText((potential_sales_product2$hospital5)$phase1)
-    output$p1_potential_sales_hosp5_3 <- renderText((potential_sales_product3$hospital5)$phase1)
-    output$p1_potential_sales_hosp5_4 <- renderText((potential_sales_product4$hospital5)$phase1)
-    output$p1_current_sales_hosp5_1 <- renderText((current_sales_product1$hospital5)$phase1)
-    output$p1_current_sales_hosp5_2 <- renderText((current_sales_product2$hospital5)$phase1)
-    output$p1_current_sales_hosp5_3 <- renderText((current_sales_product3$hospital5)$phase1)
-    output$p1_current_sales_hosp5_4 <- renderText((current_sales_product4$hospital5)$phase1)
-    
-    output$p1_potential_sales_hosp6_1 <- renderText((potential_sales_product1$hospital6)$phase1)
-    output$p1_potential_sales_hosp6_2 <- renderText((potential_sales_product2$hospital6)$phase1)
-    output$p1_potential_sales_hosp6_3 <- renderText((potential_sales_product3$hospital6)$phase1)
-    output$p1_potential_sales_hosp6_4 <- renderText((potential_sales_product4$hospital6)$phase1)
-    output$p1_current_sales_hosp6_1 <- renderText((current_sales_product1$hospital6)$phase1)
-    output$p1_current_sales_hosp6_2 <- renderText((current_sales_product2$hospital6)$phase1)
-    output$p1_current_sales_hosp6_3 <- renderText((current_sales_product3$hospital6)$phase1)
-    output$p1_current_sales_hosp6_4 <- renderText((current_sales_product4$hospital6)$phase1)
-    
-    output$p1_potential_sales_hosp7_1 <- renderText((potential_sales_product1$hospital7)$phase1)
-    output$p1_potential_sales_hosp7_2 <- renderText((potential_sales_product2$hospital7)$phase1)
-    output$p1_potential_sales_hosp7_3 <- renderText((potential_sales_product3$hospital7)$phase1)
-    output$p1_potential_sales_hosp7_4 <- renderText((potential_sales_product4$hospital7)$phase1)
-    output$p1_current_sales_hosp7_1 <- renderText((current_sales_product1$hospital7)$phase1)
-    output$p1_current_sales_hosp7_2 <- renderText((current_sales_product2$hospital7)$phase1)
-    output$p1_current_sales_hosp7_3 <- renderText((current_sales_product3$hospital7)$phase1)
-    output$p1_current_sales_hosp7_4 <- renderText((current_sales_product4$hospital7)$phase1)
-    
-    output$p1_potential_sales_hosp8_1 <- renderText((potential_sales_product1$hospital8)$phase1)
-    output$p1_potential_sales_hosp8_2 <- renderText((potential_sales_product2$hospital8)$phase1)
-    output$p1_potential_sales_hosp8_3 <- renderText((potential_sales_product3$hospital8)$phase1)
-    output$p1_potential_sales_hosp8_4 <- renderText((potential_sales_product4$hospital8)$phase1)
-    output$p1_current_sales_hosp8_1 <- renderText((current_sales_product1$hospital8)$phase1)
-    output$p1_current_sales_hosp8_2 <- renderText((current_sales_product2$hospital8)$phase1)
-    output$p1_current_sales_hosp8_3 <- renderText((current_sales_product3$hospital8)$phase1)
-    output$p1_current_sales_hosp8_4 <- renderText((current_sales_product4$hospital8)$phase1)
-    
-    output$p1_potential_sales_hosp9_1 <- renderText((potential_sales_product1$hospital9)$phase1)
-    output$p1_potential_sales_hosp9_2 <- renderText((potential_sales_product2$hospital9)$phase1)
-    output$p1_potential_sales_hosp9_3 <- renderText((potential_sales_product3$hospital9)$phase1)
-    output$p1_potential_sales_hosp9_4 <- renderText((potential_sales_product4$hospital9)$phase1)
-    output$p1_current_sales_hosp9_1 <- renderText((current_sales_product1$hospital9)$phase1)
-    output$p1_current_sales_hosp9_2 <- renderText((current_sales_product2$hospital9)$phase1)
-    output$p1_current_sales_hosp9_3 <- renderText((current_sales_product3$hospital9)$phase1)
-    output$p1_current_sales_hosp9_4 <- renderText((current_sales_product4$hospital9)$phase1)
-    
-    output$p1_potential_sales_hosp10_1 <- renderText((potential_sales_product1$hospital10)$phase1)
-    output$p1_potential_sales_hosp10_2 <- renderText((potential_sales_product2$hospital10)$phase1)
-    output$p1_potential_sales_hosp10_3 <- renderText((potential_sales_product3$hospital10)$phase1)
-    output$p1_potential_sales_hosp10_4 <- renderText((potential_sales_product4$hospital10)$phase1)
-    output$p1_current_sales_hosp10_1 <- renderText((current_sales_product1$hospital10)$phase1)
-    output$p1_current_sales_hosp10_2 <- renderText((current_sales_product2$hospital10)$phase1)
-    output$p1_current_sales_hosp10_3 <- renderText((current_sales_product3$hospital10)$phase1)
-    output$p1_current_sales_hosp10_4 <- renderText((current_sales_product4$hospital10)$phase1)
-  
     
     output$p1_decison1_summary_hosp1 <- renderText(decision1_summary(input,1,1))
     output$p1_decison1_summary_hosp2 <- renderText(decision1_summary(input,1,2))
@@ -9550,97 +10074,330 @@ shinyApp(ui=dashboardPage(
     output$p2_arranged_time_of_sr5 <- renderText(
       ifelse(input$decision1_phase2_calculator==0,0,p2_calculator_result()[6]))
     
-    output$p2_potential_sales_hosp1_1 <- renderText((potential_sales_product1$hospital1)$phase2)
-    output$p2_potential_sales_hosp1_2 <- renderText((potential_sales_product2$hospital1)$phase2)
-    output$p2_potential_sales_hosp1_3 <- renderText((potential_sales_product3$hospital1)$phase2)
-    output$p2_potential_sales_hosp1_4 <- renderText((potential_sales_product4$hospital1)$phase2)
-    output$p2_current_sales_hosp1_1 <- renderText((current_sales_product1$hospital1)$phase2)
-    output$p2_current_sales_hosp1_2 <- renderText((current_sales_product2$hospital1)$phase2)
-    output$p2_current_sales_hosp1_3 <- renderText((current_sales_product3$hospital1)$phase2)
-    output$p2_current_sales_hosp1_4 <- renderText((current_sales_product4$hospital1)$phase2)
+    output$p2_potential_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$current_volume)
+    output$p2_potential_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p2_potential_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p2_potential_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p2_current_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$current_volume)
+    output$p2_current_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$current_volume)
+    output$p2_current_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==3),]$current_volume)
+    output$p2_current_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期2"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$current_volume)
     
-    output$p2_potential_sales_hosp2_1 <- renderText((potential_sales_product1$hospital2)$phase2)
-    output$p2_potential_sales_hosp2_2 <- renderText((potential_sales_product2$hospital2)$phase2)
-    output$p2_potential_sales_hosp2_3 <- renderText((potential_sales_product3$hospital2)$phase2)
-    output$p2_potential_sales_hosp2_4 <- renderText((potential_sales_product4$hospital2)$phase2)
-    output$p2_current_sales_hosp2_1 <- renderText((current_sales_product1$hospital2)$phase2)
-    output$p2_current_sales_hosp2_2 <- renderText((current_sales_product2$hospital2)$phase2)
-    output$p2_current_sales_hosp2_3 <- renderText((current_sales_product3$hospital2)$phase2)
-    output$p2_current_sales_hosp2_4 <- renderText((current_sales_product4$hospital2)$phase2)
     
-    output$p2_potential_sales_hosp3_1 <- renderText((potential_sales_product1$hospital3)$phase2)
-    output$p2_potential_sales_hosp3_2 <- renderText((potential_sales_product2$hospital3)$phase2)
-    output$p2_potential_sales_hosp3_3 <- renderText((potential_sales_product3$hospital3)$phase2)
-    output$p2_potential_sales_hosp3_4 <- renderText((potential_sales_product4$hospital3)$phase2)
-    output$p2_current_sales_hosp3_1 <- renderText((current_sales_product1$hospital3)$phase2)
-    output$p2_current_sales_hosp3_2 <- renderText((current_sales_product2$hospital3)$phase2)
-    output$p2_current_sales_hosp3_3 <- renderText((current_sales_product3$hospital3)$phase2)
-    output$p2_current_sales_hosp3_4 <- renderText((current_sales_product4$hospital3)$phase2)
     
-    output$p2_potential_sales_hosp4_1 <- renderText((potential_sales_product1$hospital4)$phase2)
-    output$p2_potential_sales_hosp4_2 <- renderText((potential_sales_product2$hospital4)$phase2)
-    output$p2_potential_sales_hosp4_3 <- renderText((potential_sales_product3$hospital4)$phase2)
-    output$p2_potential_sales_hosp4_4 <- renderText((potential_sales_product4$hospital4)$phase2)
-    output$p2_current_sales_hosp4_1 <- renderText((current_sales_product1$hospital4)$phase2)
-    output$p2_current_sales_hosp4_2 <- renderText((current_sales_product2$hospital4)$phase2)
-    output$p2_current_sales_hosp4_3 <- renderText((current_sales_product3$hospital4)$phase2)
-    output$p2_current_sales_hosp4_4 <- renderText((current_sales_product4$hospital4)$phase2)
     
-    output$p2_potential_sales_hosp5_1 <- renderText((potential_sales_product1$hospital5)$phase2)
-    output$p2_potential_sales_hosp5_2 <- renderText((potential_sales_product2$hospital5)$phase2)
-    output$p2_potential_sales_hosp5_3 <- renderText((potential_sales_product3$hospital5)$phase2)
-    output$p2_potential_sales_hosp5_4 <- renderText((potential_sales_product4$hospital5)$phase2)
-    output$p2_current_sales_hosp5_1 <- renderText((current_sales_product1$hospital5)$phase2)
-    output$p2_current_sales_hosp5_2 <- renderText((current_sales_product2$hospital5)$phase2)
-    output$p2_current_sales_hosp5_3 <- renderText((current_sales_product3$hospital5)$phase2)
-    output$p2_current_sales_hosp5_4 <- renderText((current_sales_product4$hospital5)$phase2)
-    
-    output$p2_potential_sales_hosp6_1 <- renderText((potential_sales_product1$hospital6)$phase2)
-    output$p2_potential_sales_hosp6_2 <- renderText((potential_sales_product2$hospital6)$phase2)
-    output$p2_potential_sales_hosp6_3 <- renderText((potential_sales_product3$hospital6)$phase2)
-    output$p2_potential_sales_hosp6_4 <- renderText((potential_sales_product4$hospital6)$phase2)
-    output$p2_current_sales_hosp6_1 <- renderText((current_sales_product1$hospital6)$phase2)
-    output$p2_current_sales_hosp6_2 <- renderText((current_sales_product2$hospital6)$phase2)
-    output$p2_current_sales_hosp6_3 <- renderText((current_sales_product3$hospital6)$phase2)
-    output$p2_current_sales_hosp6_4 <- renderText((current_sales_product4$hospital6)$phase2)
-    
-    output$p2_potential_sales_hosp7_1 <- renderText((potential_sales_product1$hospital7)$phase2)
-    output$p2_potential_sales_hosp7_2 <- renderText((potential_sales_product2$hospital7)$phase2)
-    output$p2_potential_sales_hosp7_3 <- renderText((potential_sales_product3$hospital7)$phase2)
-    output$p2_potential_sales_hosp7_4 <- renderText((potential_sales_product4$hospital7)$phase2)
-    output$p2_current_sales_hosp7_1 <- renderText((current_sales_product1$hospital7)$phase2)
-    output$p2_current_sales_hosp7_2 <- renderText((current_sales_product2$hospital7)$phase2)
-    output$p2_current_sales_hosp7_3 <- renderText((current_sales_product3$hospital7)$phase2)
-    output$p2_current_sales_hosp7_4 <- renderText((current_sales_product4$hospital7)$phase2)
-    
-    output$p2_potential_sales_hosp8_1 <- renderText((potential_sales_product1$hospital8)$phase2)
-    output$p2_potential_sales_hosp8_2 <- renderText((potential_sales_product2$hospital8)$phase2)
-    output$p2_potential_sales_hosp8_3 <- renderText((potential_sales_product3$hospital8)$phase2)
-    output$p2_potential_sales_hosp8_4 <- renderText((potential_sales_product4$hospital8)$phase2)
-    output$p2_current_sales_hosp8_1 <- renderText((current_sales_product1$hospital8)$phase2)
-    output$p2_current_sales_hosp8_2 <- renderText((current_sales_product2$hospital8)$phase2)
-    output$p2_current_sales_hosp8_3 <- renderText((current_sales_product3$hospital8)$phase2)
-    output$p2_current_sales_hosp8_4 <- renderText((current_sales_product4$hospital8)$phase2)
-    
-    output$p2_potential_sales_hosp9_1 <- renderText((potential_sales_product1$hospital9)$phase2)
-    output$p2_potential_sales_hosp9_2 <- renderText((potential_sales_product2$hospital9)$phase2)
-    output$p2_potential_sales_hosp9_3 <- renderText((potential_sales_product3$hospital9)$phase2)
-    output$p2_potential_sales_hosp9_4 <- renderText((potential_sales_product4$hospital9)$phase2)
-    output$p2_current_sales_hosp9_1 <- renderText((current_sales_product1$hospital9)$phase2)
-    output$p2_current_sales_hosp9_2 <- renderText((current_sales_product2$hospital9)$phase2)
-    output$p2_current_sales_hosp9_3 <- renderText((current_sales_product3$hospital9)$phase2)
-    output$p2_current_sales_hosp9_4 <- renderText((current_sales_product4$hospital9)$phase2)
-    
-    output$p2_potential_sales_hosp10_1 <- renderText((potential_sales_product1$hospital10)$phase2)
-    output$p2_potential_sales_hosp10_2 <- renderText((potential_sales_product2$hospital10)$phase2)
-    output$p2_potential_sales_hosp10_3 <- renderText((potential_sales_product3$hospital10)$phase2)
-    output$p2_potential_sales_hosp10_4 <- renderText((potential_sales_product4$hospital10)$phase2)
-    output$p2_current_sales_hosp10_1 <- renderText((current_sales_product1$hospital10)$phase2)
-    output$p2_current_sales_hosp10_2 <- renderText((current_sales_product2$hospital10)$phase2)
-    output$p2_current_sales_hosp10_3 <- renderText((current_sales_product3$hospital10)$phase2)
-    output$p2_current_sales_hosp10_4 <- renderText((current_sales_product4$hospital10)$phase2)
-    
-
     output$p2_decison1_summary_hosp1 <- renderText(decision1_summary(input,2,1))
     output$p2_decison1_summary_hosp2 <- renderText(decision1_summary(input,2,2))
     output$p2_decison1_summary_hosp3 <- renderText(decision1_summary(input,2,3))
@@ -9863,7 +10620,6 @@ shinyApp(ui=dashboardPage(
     tmp2 <- reactive({
       pp_data1 <- tmp() %>% select(hospital,
                                    product,
-                                   real_sales,
                                    sr_sales_performance,
                                    deployment_quality_index,
                                    customer_relationship_index,
@@ -9873,15 +10629,15 @@ shinyApp(ui=dashboardPage(
                                    acc_offer_attractiveness) %>%
         distinct()
       
-      colnames(pp_data1)[3:10] <- paste("pp_",colnames(pp_data1)[3:10],sep="")
+      colnames(pp_data1)[3:9] <- paste("pp_",colnames(pp_data1)[3:9],sep="")
       
       pp_data2 <- tmp() %>% select(sales_rep,
-                                   sales_level,
-                                   acc_revenue,
-                                   sales_skills_index,
-                                   product_knowledge_index,
-                                   motivation_index,
-                                   acc_field_work) %>%
+                                 sales_level,
+                                 sr_acc_revenue,
+                                 sales_skills_index,
+                                 product_knowledge_index,
+                                 motivation_index,
+                                 sr_acc_field_work) %>%
         distinct()
       
       colnames(pp_data2)[3:7] <- paste("pp_",colnames(pp_data2)[3:7],sep="")
@@ -10091,95 +10847,326 @@ shinyApp(ui=dashboardPage(
     output$p3_arranged_time_of_sr5 <- renderText(
       ifelse(input$decision1_phase3_calculator==0,0,p3_calculator_result()[6]))
     
-    output$p3_potential_sales_hosp1_1 <- renderText((potential_sales_product1$hospital1)$phase3)
-    output$p3_potential_sales_hosp1_2 <- renderText((potential_sales_product2$hospital1)$phase3)
-    output$p3_potential_sales_hosp1_3 <- renderText((potential_sales_product3$hospital1)$phase3)
-    output$p3_potential_sales_hosp1_4 <- renderText((potential_sales_product4$hospital1)$phase3)
-    output$p3_current_sales_hosp1_1 <- renderText((current_sales_product1$hospital1)$phase3)
-    output$p3_current_sales_hosp1_2 <- renderText((current_sales_product2$hospital1)$phase3)
-    output$p3_current_sales_hosp1_3 <- renderText((current_sales_product3$hospital1)$phase3)
-    output$p3_current_sales_hosp1_4 <- renderText((current_sales_product4$hospital1)$phase3)
-    
-    output$p3_potential_sales_hosp2_1 <- renderText((potential_sales_product1$hospital2)$phase3)
-    output$p3_potential_sales_hosp2_2 <- renderText((potential_sales_product2$hospital2)$phase3)
-    output$p3_potential_sales_hosp2_3 <- renderText((potential_sales_product3$hospital2)$phase3)
-    output$p3_potential_sales_hosp2_4 <- renderText((potential_sales_product4$hospital2)$phase3)
-    output$p3_current_sales_hosp2_1 <- renderText((current_sales_product1$hospital2)$phase3)
-    output$p3_current_sales_hosp2_2 <- renderText((current_sales_product2$hospital2)$phase3)
-    output$p3_current_sales_hosp2_3 <- renderText((current_sales_product3$hospital2)$phase3)
-    output$p3_current_sales_hosp2_4 <- renderText((current_sales_product4$hospital2)$phase3)
-    
-    output$p3_potential_sales_hosp3_1 <- renderText((potential_sales_product1$hospital3)$phase3)
-    output$p3_potential_sales_hosp3_2 <- renderText((potential_sales_product2$hospital3)$phase3)
-    output$p3_potential_sales_hosp3_3 <- renderText((potential_sales_product3$hospital3)$phase3)
-    output$p3_potential_sales_hosp3_4 <- renderText((potential_sales_product4$hospital3)$phase3)
-    output$p3_current_sales_hosp3_1 <- renderText((current_sales_product1$hospital3)$phase3)
-    output$p3_current_sales_hosp3_2 <- renderText((current_sales_product2$hospital3)$phase3)
-    output$p3_current_sales_hosp3_3 <- renderText((current_sales_product3$hospital3)$phase3)
-    output$p3_current_sales_hosp3_4 <- renderText((current_sales_product4$hospital3)$phase3)
-    
-    output$p3_potential_sales_hosp4_1 <- renderText((potential_sales_product1$hospital4)$phase3)
-    output$p3_potential_sales_hosp4_2 <- renderText((potential_sales_product2$hospital4)$phase3)
-    output$p3_potential_sales_hosp4_3 <- renderText((potential_sales_product3$hospital4)$phase3)
-    output$p3_potential_sales_hosp4_4 <- renderText((potential_sales_product4$hospital4)$phase3)
-    output$p3_current_sales_hosp4_1 <- renderText((current_sales_product1$hospital4)$phase3)
-    output$p3_current_sales_hosp4_2 <- renderText((current_sales_product2$hospital4)$phase3)
-    output$p3_current_sales_hosp4_3 <- renderText((current_sales_product3$hospital4)$phase3)
-    output$p3_current_sales_hosp4_4 <- renderText((current_sales_product4$hospital4)$phase3)
-    
-    output$p3_potential_sales_hosp5_1 <- renderText((potential_sales_product1$hospital5)$phase3)
-    output$p3_potential_sales_hosp5_2 <- renderText((potential_sales_product2$hospital5)$phase3)
-    output$p3_potential_sales_hosp5_3 <- renderText((potential_sales_product3$hospital5)$phase3)
-    output$p3_potential_sales_hosp5_4 <- renderText((potential_sales_product4$hospital5)$phase3)
-    output$p3_current_sales_hosp5_1 <- renderText((current_sales_product1$hospital5)$phase3)
-    output$p3_current_sales_hosp5_2 <- renderText((current_sales_product2$hospital5)$phase3)
-    output$p3_current_sales_hosp5_3 <- renderText((current_sales_product3$hospital5)$phase3)
-    output$p3_current_sales_hosp5_4 <- renderText((current_sales_product4$hospital5)$phase3)
-    
-    output$p3_potential_sales_hosp6_1 <- renderText((potential_sales_product1$hospital6)$phase3)
-    output$p3_potential_sales_hosp6_2 <- renderText((potential_sales_product2$hospital6)$phase3)
-    output$p3_potential_sales_hosp6_3 <- renderText((potential_sales_product3$hospital6)$phase3)
-    output$p3_potential_sales_hosp6_4 <- renderText((potential_sales_product4$hospital6)$phase3)
-    output$p3_current_sales_hosp6_1 <- renderText((current_sales_product1$hospital6)$phase3)
-    output$p3_current_sales_hosp6_2 <- renderText((current_sales_product2$hospital6)$phase3)
-    output$p3_current_sales_hosp6_3 <- renderText((current_sales_product3$hospital6)$phase3)
-    output$p3_current_sales_hosp6_4 <- renderText((current_sales_product4$hospital6)$phase3)
-    
-    output$p3_potential_sales_hosp7_1 <- renderText((potential_sales_product1$hospital7)$phase3)
-    output$p3_potential_sales_hosp7_2 <- renderText((potential_sales_product2$hospital7)$phase3)
-    output$p3_potential_sales_hosp7_3 <- renderText((potential_sales_product3$hospital7)$phase3)
-    output$p3_potential_sales_hosp7_4 <- renderText((potential_sales_product4$hospital7)$phase3)
-    output$p3_current_sales_hosp7_1 <- renderText((current_sales_product1$hospital7)$phase3)
-    output$p3_current_sales_hosp7_2 <- renderText((current_sales_product2$hospital7)$phase3)
-    output$p3_current_sales_hosp7_3 <- renderText((current_sales_product3$hospital7)$phase3)
-    output$p3_current_sales_hosp7_4 <- renderText((current_sales_product4$hospital7)$phase3)
-    
-    output$p3_potential_sales_hosp8_1 <- renderText((potential_sales_product1$hospital8)$phase3)
-    output$p3_potential_sales_hosp8_2 <- renderText((potential_sales_product2$hospital8)$phase3)
-    output$p3_potential_sales_hosp8_3 <- renderText((potential_sales_product3$hospital8)$phase3)
-    output$p3_potential_sales_hosp8_4 <- renderText((potential_sales_product4$hospital8)$phase3)
-    output$p3_current_sales_hosp8_1 <- renderText((current_sales_product1$hospital8)$phase3)
-    output$p3_current_sales_hosp8_2 <- renderText((current_sales_product2$hospital8)$phase3)
-    output$p3_current_sales_hosp8_3 <- renderText((current_sales_product3$hospital8)$phase3)
-    output$p3_current_sales_hosp8_4 <- renderText((current_sales_product4$hospital8)$phase3)
-    
-    output$p3_potential_sales_hosp9_1 <- renderText((potential_sales_product1$hospital9)$phase3)
-    output$p3_potential_sales_hosp9_2 <- renderText((potential_sales_product2$hospital9)$phase3)
-    output$p3_potential_sales_hosp9_3 <- renderText((potential_sales_product3$hospital9)$phase3)
-    output$p3_potential_sales_hosp9_4 <- renderText((potential_sales_product4$hospital9)$phase3)
-    output$p3_current_sales_hosp9_1 <- renderText((current_sales_product1$hospital9)$phase3)
-    output$p3_current_sales_hosp9_2 <- renderText((current_sales_product2$hospital9)$phase3)
-    output$p3_current_sales_hosp9_3 <- renderText((current_sales_product3$hospital9)$phase3)
-    output$p3_current_sales_hosp9_4 <- renderText((current_sales_product4$hospital9)$phase3)
-    
-    output$p3_potential_sales_hosp10_1 <- renderText((potential_sales_product1$hospital10)$phase3)
-    output$p3_potential_sales_hosp10_2 <- renderText((potential_sales_product2$hospital10)$phase3)
-    output$p3_potential_sales_hosp10_3 <- renderText((potential_sales_product3$hospital10)$phase3)
-    output$p3_potential_sales_hosp10_4 <- renderText((potential_sales_product4$hospital10)$phase3)
-    output$p3_current_sales_hosp10_1 <- renderText((current_sales_product1$hospital10)$phase3)
-    output$p3_current_sales_hosp10_2 <- renderText((current_sales_product2$hospital10)$phase3)
-    output$p3_current_sales_hosp10_3 <- renderText((current_sales_product3$hospital10)$phase3)
-    output$p3_current_sales_hosp10_4 <- renderText((current_sales_product4$hospital10)$phase3)
+    output$p3_potential_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$current_volume)
+    output$p3_potential_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p3_potential_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p3_potential_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p3_current_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$current_volume)
+    output$p3_current_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$current_volume)
+    output$p3_current_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==3),]$current_volume)
+    output$p3_current_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期3"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$current_volume)
     
     
     output$p3_decison1_summary_hosp1 <- renderText(decision1_summary(input,3,1))
@@ -10403,26 +11390,25 @@ shinyApp(ui=dashboardPage(
     
     tmp3 <- reactive({
       pp_data1 <- tmp2() %>% select(hospital,
-                                    product,
-                                    real_sales,
-                                    sr_sales_performance,
-                                    deployment_quality_index,
-                                    customer_relationship_index,
-                                    promotional_support_index,
-                                    sales_performance,
-                                    offer_attractiveness,
-                                    acc_offer_attractiveness) %>%
+                                   product,
+                                   sr_sales_performance,
+                                   deployment_quality_index,
+                                   customer_relationship_index,
+                                   promotional_support_index,
+                                   sales_performance,
+                                   offer_attractiveness,
+                                   acc_offer_attractiveness) %>%
         distinct()
       
-      colnames(pp_data1)[3:10] <- paste("pp_",colnames(pp_data1)[3:10],sep="")
+      colnames(pp_data1)[3:9] <- paste("pp_",colnames(pp_data1)[3:9],sep="")
       
       pp_data2 <- tmp2() %>% select(sales_rep,
-                                    sales_level,
-                                    acc_revenue,
-                                    sales_skills_index,
-                                    product_knowledge_index,
-                                    motivation_index,
-                                    acc_field_work) %>%
+                                   sales_level,
+                                   sr_acc_revenue,
+                                   sales_skills_index,
+                                   product_knowledge_index,
+                                   motivation_index,
+                                   sr_acc_field_work) %>%
         distinct()
       
       colnames(pp_data2)[3:7] <- paste("pp_",colnames(pp_data2)[3:7],sep="")
@@ -10627,95 +11613,326 @@ shinyApp(ui=dashboardPage(
     output$p4_arranged_time_of_sr5 <- renderText(
       ifelse(input$decision1_phase4_calculator==0,0,p4_calculator_result()[6]))
     
-    output$p4_potential_sales_hosp1_1 <- renderText((potential_sales_product1$hospital1)$phase4)
-    output$p4_potential_sales_hosp1_2 <- renderText((potential_sales_product2$hospital1)$phase4)
-    output$p4_potential_sales_hosp1_3 <- renderText((potential_sales_product3$hospital1)$phase4)
-    output$p4_potential_sales_hosp1_4 <- renderText((potential_sales_product4$hospital1)$phase4)
-    output$p4_current_sales_hosp1_1 <- renderText((current_sales_product1$hospital1)$phase4)
-    output$p4_current_sales_hosp1_2 <- renderText((current_sales_product2$hospital1)$phase4)
-    output$p4_current_sales_hosp1_3 <- renderText((current_sales_product3$hospital1)$phase4)
-    output$p4_current_sales_hosp1_4 <- renderText((current_sales_product4$hospital1)$phase4)
-    
-    output$p4_potential_sales_hosp2_1 <- renderText((potential_sales_product1$hospital2)$phase4)
-    output$p4_potential_sales_hosp2_2 <- renderText((potential_sales_product2$hospital2)$phase4)
-    output$p4_potential_sales_hosp2_3 <- renderText((potential_sales_product3$hospital2)$phase4)
-    output$p4_potential_sales_hosp2_4 <- renderText((potential_sales_product4$hospital2)$phase4)
-    output$p4_current_sales_hosp2_1 <- renderText((current_sales_product1$hospital2)$phase4)
-    output$p4_current_sales_hosp2_2 <- renderText((current_sales_product2$hospital2)$phase4)
-    output$p4_current_sales_hosp2_3 <- renderText((current_sales_product3$hospital2)$phase4)
-    output$p4_current_sales_hosp2_4 <- renderText((current_sales_product4$hospital2)$phase4)
-    
-    output$p4_potential_sales_hosp3_1 <- renderText((potential_sales_product1$hospital3)$phase4)
-    output$p4_potential_sales_hosp3_2 <- renderText((potential_sales_product2$hospital3)$phase4)
-    output$p4_potential_sales_hosp3_3 <- renderText((potential_sales_product3$hospital3)$phase4)
-    output$p4_potential_sales_hosp3_4 <- renderText((potential_sales_product4$hospital3)$phase4)
-    output$p4_current_sales_hosp3_1 <- renderText((current_sales_product1$hospital3)$phase4)
-    output$p4_current_sales_hosp3_2 <- renderText((current_sales_product2$hospital3)$phase4)
-    output$p4_current_sales_hosp3_3 <- renderText((current_sales_product3$hospital3)$phase4)
-    output$p4_current_sales_hosp3_4 <- renderText((current_sales_product4$hospital3)$phase4)
-    
-    output$p4_potential_sales_hosp4_1 <- renderText((potential_sales_product1$hospital4)$phase4)
-    output$p4_potential_sales_hosp4_2 <- renderText((potential_sales_product2$hospital4)$phase4)
-    output$p4_potential_sales_hosp4_3 <- renderText((potential_sales_product3$hospital4)$phase4)
-    output$p4_potential_sales_hosp4_4 <- renderText((potential_sales_product4$hospital4)$phase4)
-    output$p4_current_sales_hosp4_1 <- renderText((current_sales_product1$hospital4)$phase4)
-    output$p4_current_sales_hosp4_2 <- renderText((current_sales_product2$hospital4)$phase4)
-    output$p4_current_sales_hosp4_3 <- renderText((current_sales_product3$hospital4)$phase4)
-    output$p4_current_sales_hosp4_4 <- renderText((current_sales_product4$hospital4)$phase4)
-    
-    output$p4_potential_sales_hosp5_1 <- renderText((potential_sales_product1$hospital5)$phase4)
-    output$p4_potential_sales_hosp5_2 <- renderText((potential_sales_product2$hospital5)$phase4)
-    output$p4_potential_sales_hosp5_3 <- renderText((potential_sales_product3$hospital5)$phase4)
-    output$p4_potential_sales_hosp5_4 <- renderText((potential_sales_product4$hospital5)$phase4)
-    output$p4_current_sales_hosp5_1 <- renderText((current_sales_product1$hospital5)$phase4)
-    output$p4_current_sales_hosp5_2 <- renderText((current_sales_product2$hospital5)$phase4)
-    output$p4_current_sales_hosp5_3 <- renderText((current_sales_product3$hospital5)$phase4)
-    output$p4_current_sales_hosp5_4 <- renderText((current_sales_product4$hospital5)$phase4)
-    
-    output$p4_potential_sales_hosp6_1 <- renderText((potential_sales_product1$hospital6)$phase4)
-    output$p4_potential_sales_hosp6_2 <- renderText((potential_sales_product2$hospital6)$phase4)
-    output$p4_potential_sales_hosp6_3 <- renderText((potential_sales_product3$hospital6)$phase4)
-    output$p4_potential_sales_hosp6_4 <- renderText((potential_sales_product4$hospital6)$phase4)
-    output$p4_current_sales_hosp6_1 <- renderText((current_sales_product1$hospital6)$phase4)
-    output$p4_current_sales_hosp6_2 <- renderText((current_sales_product2$hospital6)$phase4)
-    output$p4_current_sales_hosp6_3 <- renderText((current_sales_product3$hospital6)$phase4)
-    output$p4_current_sales_hosp6_4 <- renderText((current_sales_product4$hospital6)$phase4)
-    
-    output$p4_potential_sales_hosp7_1 <- renderText((potential_sales_product1$hospital7)$phase4)
-    output$p4_potential_sales_hosp7_2 <- renderText((potential_sales_product2$hospital7)$phase4)
-    output$p4_potential_sales_hosp7_3 <- renderText((potential_sales_product3$hospital7)$phase4)
-    output$p4_potential_sales_hosp7_4 <- renderText((potential_sales_product4$hospital7)$phase4)
-    output$p4_current_sales_hosp7_1 <- renderText((current_sales_product1$hospital7)$phase4)
-    output$p4_current_sales_hosp7_2 <- renderText((current_sales_product2$hospital7)$phase4)
-    output$p4_current_sales_hosp7_3 <- renderText((current_sales_product3$hospital7)$phase4)
-    output$p4_current_sales_hosp7_4 <- renderText((current_sales_product4$hospital7)$phase4)
-    
-    output$p4_potential_sales_hosp8_1 <- renderText((potential_sales_product1$hospital8)$phase4)
-    output$p4_potential_sales_hosp8_2 <- renderText((potential_sales_product2$hospital8)$phase4)
-    output$p4_potential_sales_hosp8_3 <- renderText((potential_sales_product3$hospital8)$phase4)
-    output$p4_potential_sales_hosp8_4 <- renderText((potential_sales_product4$hospital8)$phase4)
-    output$p4_current_sales_hosp8_1 <- renderText((current_sales_product1$hospital8)$phase4)
-    output$p4_current_sales_hosp8_2 <- renderText((current_sales_product2$hospital8)$phase4)
-    output$p4_current_sales_hosp8_3 <- renderText((current_sales_product3$hospital8)$phase4)
-    output$p4_current_sales_hosp8_4 <- renderText((current_sales_product4$hospital8)$phase4)
-    
-    output$p4_potential_sales_hosp9_1 <- renderText((potential_sales_product1$hospital9)$phase4)
-    output$p4_potential_sales_hosp9_2 <- renderText((potential_sales_product2$hospital9)$phase4)
-    output$p4_potential_sales_hosp9_3 <- renderText((potential_sales_product3$hospital9)$phase4)
-    output$p4_potential_sales_hosp9_4 <- renderText((potential_sales_product4$hospital9)$phase4)
-    output$p4_current_sales_hosp9_1 <- renderText((current_sales_product1$hospital9)$phase4)
-    output$p4_current_sales_hosp9_2 <- renderText((current_sales_product2$hospital9)$phase4)
-    output$p4_current_sales_hosp9_3 <- renderText((current_sales_product3$hospital9)$phase4)
-    output$p4_current_sales_hosp9_4 <- renderText((current_sales_product4$hospital9)$phase4)
-    
-    output$p4_potential_sales_hosp10_1 <- renderText((potential_sales_product1$hospital10)$phase4)
-    output$p4_potential_sales_hosp10_2 <- renderText((potential_sales_product2$hospital10)$phase4)
-    output$p4_potential_sales_hosp10_3 <- renderText((potential_sales_product3$hospital10)$phase4)
-    output$p4_potential_sales_hosp10_4 <- renderText((potential_sales_product4$hospital10)$phase4)
-    output$p4_current_sales_hosp10_1 <- renderText((current_sales_product1$hospital10)$phase4)
-    output$p4_current_sales_hosp10_2 <- renderText((current_sales_product2$hospital10)$phase4)
-    output$p4_current_sales_hosp10_3 <- renderText((current_sales_product3$hospital10)$phase4)
-    output$p4_current_sales_hosp10_4 <- renderText((current_sales_product4$hospital10)$phase4)
+    output$p4_potential_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp1_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp1_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp1_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp1_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==1&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp2_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp2_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp2_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp2_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==2&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp3_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp3_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp3_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp3_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==3&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp4_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp4_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp4_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp4_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==4&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp5_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp5_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp5_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp5_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==5&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp6_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp6_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp6_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp6_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==6&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp7_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp7_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp7_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp7_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==7&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp8_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp8_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp8_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp8_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==8&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp9_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp9_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp9_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp9_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==9&
+                          volume_info$product.no==4),]$current_volume)
+    output$p4_potential_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$potential_volume)
+    output$p4_potential_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$potential_volume)
+    output$p4_potential_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$potential_volume)
+    output$p4_current_sales_hosp10_1 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==1),]$current_volume)
+    output$p4_current_sales_hosp10_2 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==2),]$current_volume)
+    output$p4_current_sales_hosp10_3 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==3),]$current_volume)
+    output$p4_current_sales_hosp10_4 <- renderText(
+      volume_info[which(volume_info$phase=="周期4"&
+                          volume_info$hospital.no==10&
+                          volume_info$product.no==4),]$current_volume)
     
     
     
@@ -10937,42 +12154,40 @@ shinyApp(ui=dashboardPage(
     output$p4_flm_management <- renderText(sum(p4_flm_data()))
     
     
-    
     tmp4 <- reactive({
-      pp_data1 <- tmp3() %>% select(hospital,
-                                    product,
-                                    real_sales,
-                                    sr_sales_performance,
-                                    deployment_quality_index,
-                                    customer_relationship_index,
-                                    promotional_support_index,
-                                    sales_performance,
-                                    offer_attractiveness,
-                                    acc_offer_attractiveness) %>%
+      pp_data1 <- tmp() %>% select(hospital,
+                                   product,
+                                   sr_sales_performance,
+                                   deployment_quality_index,
+                                   customer_relationship_index,
+                                   promotional_support_index,
+                                   sales_performance,
+                                   offer_attractiveness,
+                                   acc_offer_attractiveness) %>%
         distinct()
       
-      colnames(pp_data1)[3:10] <- paste("pp_",colnames(pp_data1)[3:10],sep="")
+      colnames(pp_data1)[3:9] <- paste("pp_",colnames(pp_data1)[3:9],sep="")
       
-      pp_data2 <- tmp3() %>% select(sales_rep,
-                                    sales_level,
-                                    acc_revenue,
-                                    sales_skills_index,
-                                    product_knowledge_index,
-                                    motivation_index,
-                                    acc_field_work) %>%
+      pp_data2 <- tmp() %>% select(sales_rep,
+                                   sales_level,
+                                   sr_acc_revenue,
+                                   sales_skills_index,
+                                   product_knowledge_index,
+                                   motivation_index,
+                                   sr_acc_field_work) %>%
         distinct()
       
       colnames(pp_data2)[3:7] <- paste("pp_",colnames(pp_data2)[3:7],sep="")
-      cp_data1 <- get.data1(input,2)
-      cp_data2 <- get.data2(input,2)
-      tmp4 <- calculation(pp_data1,
-                          pp_data2,
-                          cp_data1,
-                          cp_data2)})
+      cp_data1 <- get.data1(input,4)
+      cp_data2 <- get.data2(input,4)
+      tmp <- calculation(pp_data1,
+                         pp_data2,
+                         cp_data1,
+                         cp_data2)})
     
-    p2_report<- reactive({
-      flm_data <- get.data3(input,2)
-      p2_report <- report_data(tmp4(),flm_data)})
+    p4_report<- reactive({
+      flm_data <- get.data3(input,4)
+      p4_report <- report_data(tmp4(),flm_data)})
     
     
     
@@ -11138,12 +12353,31 @@ shinyApp(ui=dashboardPage(
                                            "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
                                            "}"))))
       
+      final_report_data <- reactive({
+        phase1 <- tmp()
+        phase2 <- tmp2()
+        phase3 <- tmp3()
+        phase4 <- tmp4()
+        
+        out <- final_report(phase1,phase2,phase3,phase4)
+        out
+      })
+      
+      output$final_report <-renderDataTable(
+        datatable(final_report_data,
+                                                      caption="总分数",
+                                                      options =
+                                                        list(ordering = F, dom = "t",
+                                                             columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+                                                             initComplete = JS(
+                                                               "function(settings, json) {",
+                                                               "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                                               "}")))
+        ) 
       
       
-    })
-    
-    
-    
-    
-    
-  })
+      
+      
+      
+      
+    }) })

@@ -1,7 +1,6 @@
 library(tidyr)
 library(plyr)
 library(dplyr)
-library(openxlsx)
 options(scipen=200)
 
 
@@ -15,7 +14,7 @@ available_srs <- c("销售代表1",
 pp_info_by_hosp_product <- data.frame(
   hospital = rep(hospital_info_initial$name,each=4),
   product = rep(product_info_initial$name2,times=10),
-  pp_acc_revenue = rep(100000,280),
+  #pp_acc_revenue = rep(100000,280),
   pp_real_sales = rep(100000,40),
   pp_sr_sales_performance = rep(60,40),
   pp_deployment_quality_index = rep(50,40),
@@ -342,13 +341,7 @@ weightage <- list(total_attractiveness = list(pp_offer_attractiveness = 0.35,
                                        average_customer_relationship = 0.09,
                                        average_sales_skills = 0.07,
                                        average_product_knowledge = 0.07,
-                                       average_motivaiton = 0.07),
-                  contact_priority = list(a=0.5,
-                                          b=0.2,
-                                          c=0.15,
-                                          d=0.15),
-                  contribution_margin = list(product_cost=0.6,
-                                             admin_cost=0.1))
+                                       average_motivaiton = 0.07))
 
 total_promotional_budget <- list(phase1 = 10000,
                                  phase2 = 10000,
@@ -691,16 +684,7 @@ current_sales_product4 <- list(hospital1 = list(phase1 = 100000,
 
 
 ###
-production_price = list(product1=10,
-                        product2=10,
-                        product3=10,
-                        product4=10)
 worktime =100
 overhead =2
 basicSalary = 15000
-
-contact_priority_info <- read.xlsx("./02_Inputs/EDAData201707.xlsx", 
-                                   sheet = "contact")
-
-colnames(contact_priority_info) <- tolower(colnames(contact_priority_info))
 

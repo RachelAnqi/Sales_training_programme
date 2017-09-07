@@ -414,17 +414,13 @@ data_filter <- function(data) {
                  (weightage$success_value)$average_product_knowledge*curve(curve47,avarage_product_knowledge_index) +
                  (weightage$success_value)$average_motivaiton*curve(curve46,average_motivation_index),0)) %>%
     select(phase,
-           success_value,
            total_offer_attractiveness,
-           total_acc_offer_attractiveness                      )
+           total_acc_offer_attractiveness,
+           success_value)
   out
 }
 
 final_report <- function(phase1,phase2,phase3,phase4){
-  final.names <- c("综合得分","商业价值","累计商业价值")
-  
-  no.list <- data.frame(number=1:length(final.names),
-                        variable=final.names)
   p1_data <- data_filter(phase1)
   p2_data <- data_filter(phase2)
   p3_data <- data_filter(phase3)
@@ -432,18 +428,9 @@ final_report <- function(phase1,phase2,phase3,phase4){
   data <- rbind(p1_data,
                 p2_data,
                 p3_data,
-                p4_data)
-  
-  #colnames(data)[2:4] <- c("累计商业价值","商业价值","综合得分")
-  colnames(data)[2:4] <- c("综合得分","商业价值","累计商业价值")
-  data <- data %>%
+                p4_data) %>%
     gather(variable,value,-phase) %>%
     spread(phase,value)
-  
-  rownames(data) <- data$variable
-  data <- data %>% left_join(no.list,by="variable") %>%
-    arrange(number) %>%
-    select(-number)
   
   rownames(data) <- data$variable
   data <- data %>% select(-variable)

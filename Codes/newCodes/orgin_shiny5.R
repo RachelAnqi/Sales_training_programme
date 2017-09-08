@@ -37,6 +37,7 @@ shinyApp(ui=dashboardPage(
       )
     )),
   dashboardBody(
+    
     tabItems(
       # First tab content
       tabItem(tabName = "news_and_WAS",
@@ -60,7 +61,7 @@ shinyApp(ui=dashboardPage(
         tabsetPanel(
           #position = "left",
           tabPanel("周期1",
-                   actionButton("decision1_phase1_calculator", "calculator"),
+                   
                    actionButton("decision1_phase1_submit", "submit"),
                    fluidRow(
                      h3("总推广预算"),
@@ -79,43 +80,19 @@ shinyApp(ui=dashboardPage(
                        )
                      )
                    ),
+                   
                    br(),
-                   fluidRow(
-                     h3("时间分配"),
-                     tags$div(
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表1"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                verbatimTextOutput("p1_arranged_time_of_sr1"))
-                     ),
-                     tags$div(
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表2"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                verbatimTextOutput("p1_arranged_time_of_sr2"))
-                     ),
-                     tags$div(
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表3"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                verbatimTextOutput("p1_arranged_time_of_sr3"))
-                     ),
-                     tags$div(
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表4"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                verbatimTextOutput("p1_arranged_time_of_sr4"))
-                     ),
-                     tags$div(
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                "时间分配 销售代表5"),
-                       tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                verbatimTextOutput("p1_arranged_time_of_sr5"))
-                     )
-                   ),
-                   br(),
-                   fluidRow(
-                     h3("决策-医院1"),
+                   box(
+                     title=hospital_info_initial$name[1],
+                     status = "primary",
+                     solidHeader = TRUE,
+                     width="100%",
+                   
+                   #fluidRow(  
+
+                     #h3("决策-医院1"),
+                     #h3(hospital_info_initial$name[1]),
+                     #htmlOutput(),
                      tags$div(
                        tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
                                 htmlOutput("p1_hosp1_1")),
@@ -2054,8 +2031,7 @@ shinyApp(ui=dashboardPage(
           ),
           tabPanel(
             "周期2",
-            actionButton("decision1_phase2_calculator", "calculator"),
-            actionButton("decision1_phase2_submit", "submit"),
+            
             fluidRow(
               h3("总推广预算"),
               tags$div(
@@ -2071,40 +2047,6 @@ shinyApp(ui=dashboardPage(
                   style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
                   verbatimTextOutput("p2_arranged_promotional_budget")
                 )
-              )
-            ),
-            br(),
-            fluidRow(
-              h3("时间分配"),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表1"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p2_arranged_time_of_sr1"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表2"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p2_arranged_time_of_sr2"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表3"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p2_arranged_time_of_sr3"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表4"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p2_arranged_time_of_sr4"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表5"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p2_arranged_time_of_sr5"))
               )
             ),
             br(),
@@ -4049,8 +3991,7 @@ shinyApp(ui=dashboardPage(
           ),
           tabPanel(
             "周期3",
-            actionButton("decision1_phase3_calculator", "calculator"),
-            actionButton("decision1_phase3_submit", "submit"),
+            
             fluidRow(
               h3("总推广预算"),
               tags$div(
@@ -4068,40 +4009,7 @@ shinyApp(ui=dashboardPage(
                 )
               )
             ),
-            br(),
-            fluidRow(
-              h3("时间分配"),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表1"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p3_arranged_time_of_sr1"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表2"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p3_arranged_time_of_sr2"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表3"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p3_arranged_time_of_sr3"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表4"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p3_arranged_time_of_sr4"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表5"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p3_arranged_time_of_sr5"))
-              )
-            ),
+            
             br(),
             fluidRow(
               h3("决策-医院1"),
@@ -6044,8 +5952,7 @@ shinyApp(ui=dashboardPage(
           ),
           tabPanel(
             "周期4",
-            actionButton("decision1_phase4_calculator", "calculator"),
-            actionButton("decision1_phase4_submit", "submit"),
+            
             fluidRow(
               h3("总推广预算"),
               tags$div(
@@ -6063,40 +5970,7 @@ shinyApp(ui=dashboardPage(
                 )
               )
             ),
-            br(),
-            fluidRow(
-              h3("时间分配"),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表1"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p4_arranged_time_of_sr1"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表2"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p4_arranged_time_of_sr2"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表3"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p4_arranged_time_of_sr3"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表4"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p4_arranged_time_of_sr4"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                         "时间分配 销售代表5"),
-                tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                         verbatimTextOutput("p4_arranged_time_of_sr5"))
-              )
-            ),
+            
             br(),
             fluidRow(
               h3("决策-医院1"),
@@ -8040,18 +7914,50 @@ shinyApp(ui=dashboardPage(
         )),
       tabItem(
         tabName = "decision2",
+        
         tabsetPanel(
           tabPanel(
             "周期1",
+            actionButton("decision2_phase1_calculator", "calculator"),
             actionButton("decision2_phase1_submit", "submit"),
             actionButton('save_inputs', 'Save inputs'),
             actionButton("load_inputs", "Load inputs"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
-                                "时间分配(天)"),
+                                "可供时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                "100")
+                                verbatimTextOutput("p1_work_time"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表1(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p1_arranged_time_of_sr1"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表2(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p1_arranged_time_of_sr2"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表3(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p1_arranged_time_of_sr3"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表4(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p1_arranged_time_of_sr4"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表5(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p1_arranged_time_of_sr5"))
                      )),
             hr(),
             fluidRow(
@@ -8214,13 +8120,44 @@ shinyApp(ui=dashboardPage(
           ),
           tabPanel(
             "周期2",
+            actionButton("decision2_phase2_calculator", "calculator"),
             actionButton("decision2_phase2_submit","submit"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;margin-left:20px;width:13%;text-align:left;",
-                                "时间分配(天)"),
+                                "可供时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                "100")
+                                verbatimTextOutput("p2_work_time"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表1(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p2_arranged_time_of_sr1"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表2(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p2_arranged_time_of_sr2"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表3(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p2_arranged_time_of_sr3"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表4(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p2_arranged_time_of_sr4"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表5(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p2_arranged_time_of_sr5"))
                      )),
             hr(),
             fluidRow(
@@ -8382,13 +8319,44 @@ shinyApp(ui=dashboardPage(
           ),
           tabPanel(
             "周期3",
+            actionButton("decision2_phase3_calculator", "calculator"),
             actionButton("decision2_phase3_submit","submit"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
-                                "时间分配(天)"),
+                                "可供时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                "100")
+                                verbatimTextOutput("p3_work_time"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表1(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p3_arranged_time_of_sr1"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表2(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p3_arranged_time_of_sr2"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表3(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p3_arranged_time_of_sr3"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表4(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p3_arranged_time_of_sr4"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表5(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p3_arranged_time_of_sr5"))
                      )),
             hr(),
             fluidRow(
@@ -8550,13 +8518,44 @@ shinyApp(ui=dashboardPage(
           ),
           tabPanel(
             "周期4",
+            actionButton("decision2_phase4_calculator", "calculator"),
             actionButton("decision2_phase4_submit","submit"),
             fluidRow(h3("时间分配"),
                      tags$div(
                        tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
-                                "时间分配(天)"),
+                                "可供时间分配(天)"),
                        tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                                "100")
+                                verbatimTextOutput("p4_work_time"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表1(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p4_arranged_time_of_sr1"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表2(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p4_arranged_time_of_sr2"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表3(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p4_arranged_time_of_sr3"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表4(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p4_arranged_time_of_sr4"))
+                     ),
+                     tags$div(
+                       tags$div(style = "display:inline-block;text-align:left;width:13%;margin-left:20px;",
+                                "已分配时间 销售代表5(天)"),
+                       tags$div(style = "display:inline-block;text-align:center;margin-left:1%;width:8%;margin-right:1%",
+                                verbatimTextOutput("p4_arranged_time_of_sr5"))
                      )),
             hr(),
             fluidRow(
@@ -9122,256 +9121,260 @@ shinyApp(ui=dashboardPage(
     # output$p4_hosp8 <- renderText(hospital_info_initial$name[8])
     # output$p4_hosp9 <- renderText(hospital_info_initial$name[9])
     # output$p4_hosp10 <- renderText(hospital_info_initial$name[10])
+    output$p1_work_time <- renderText(worktime)
+    output$p2_work_time <- renderText(worktime)
+    output$p3_work_time <- renderText(worktime)
+    output$p4_work_time <- renderText(worktime)
     
-    output$p1_hosp1_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp1_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp1_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp1_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp1_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp1_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp1_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp1_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp2_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp2_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp2_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp2_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp2_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp2_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp2_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp2_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp3_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp3_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp3_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp3_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp3_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp3_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp3_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp3_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp4_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp4_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp4_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp4_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp4_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp4_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp4_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp4_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp5_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp5_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp5_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp5_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp5_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp5_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp5_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp5_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp6_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp6_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp6_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp6_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp6_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp6_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp6_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp6_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp7_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp7_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp7_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp7_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp7_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp7_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp7_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp7_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp8_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp8_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp8_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp8_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp8_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp8_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp8_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp8_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp9_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp9_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp9_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp9_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp9_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp9_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp9_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp9_4 <- renderText(product_info_initial$product[4])
     
-    output$p1_hosp10_1 <- renderText(product_info_initial$name2[1])
-    output$p1_hosp10_2 <- renderText(product_info_initial$name2[2])
-    output$p1_hosp10_3 <- renderText(product_info_initial$name2[3])
-    output$p1_hosp10_4 <- renderText(product_info_initial$name2[4])
+    output$p1_hosp10_1 <- renderText(product_info_initial$product[1])
+    output$p1_hosp10_2 <- renderText(product_info_initial$product[2])
+    output$p1_hosp10_3 <- renderText(product_info_initial$product[3])
+    output$p1_hosp10_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp1_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp1_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp1_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp1_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp1_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp1_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp1_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp1_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp2_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp2_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp2_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp2_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp2_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp2_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp2_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp2_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp3_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp3_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp3_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp3_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp3_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp3_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp3_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp3_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp4_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp4_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp4_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp4_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp4_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp4_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp4_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp4_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp5_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp5_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp5_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp5_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp5_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp5_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp5_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp5_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp6_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp6_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp6_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp6_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp6_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp6_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp6_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp6_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp7_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp7_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp7_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp7_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp7_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp7_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp7_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp7_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp8_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp8_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp8_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp8_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp8_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp8_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp8_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp8_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp9_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp9_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp9_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp9_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp9_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp9_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp9_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp9_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp10_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp10_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp10_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp10_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp10_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp10_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp10_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp10_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp1_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp1_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp1_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp1_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp1_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp1_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp1_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp1_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp2_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp2_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp2_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp2_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp2_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp2_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp2_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp2_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp3_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp3_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp3_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp3_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp3_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp3_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp3_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp3_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp4_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp4_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp4_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp4_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp4_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp4_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp4_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp4_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp5_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp5_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp5_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp5_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp5_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp5_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp5_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp5_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp6_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp6_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp6_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp6_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp6_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp6_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp6_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp6_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp7_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp7_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp7_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp7_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp7_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp7_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp7_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp7_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp8_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp8_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp8_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp8_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp8_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp8_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp8_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp8_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp9_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp9_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp9_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp9_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp9_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp9_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp9_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp9_4 <- renderText(product_info_initial$product[4])
     
-    output$p2_hosp10_1 <- renderText(product_info_initial$name2[1])
-    output$p2_hosp10_2 <- renderText(product_info_initial$name2[2])
-    output$p2_hosp10_3 <- renderText(product_info_initial$name2[3])
-    output$p2_hosp10_4 <- renderText(product_info_initial$name2[4])
+    output$p2_hosp10_1 <- renderText(product_info_initial$product[1])
+    output$p2_hosp10_2 <- renderText(product_info_initial$product[2])
+    output$p2_hosp10_3 <- renderText(product_info_initial$product[3])
+    output$p2_hosp10_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp1_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp1_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp1_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp1_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp1_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp1_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp1_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp1_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp2_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp2_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp2_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp2_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp2_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp2_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp2_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp2_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp3_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp3_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp3_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp3_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp3_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp3_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp3_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp3_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp4_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp4_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp4_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp4_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp4_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp4_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp4_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp4_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp5_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp5_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp5_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp5_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp5_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp5_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp5_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp5_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp6_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp6_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp6_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp6_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp6_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp6_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp6_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp6_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp7_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp7_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp7_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp7_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp7_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp7_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp7_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp7_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp8_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp8_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp8_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp8_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp8_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp8_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp8_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp8_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp9_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp9_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp9_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp9_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp9_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp9_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp9_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp9_4 <- renderText(product_info_initial$product[4])
     
-    output$p3_hosp10_1 <- renderText(product_info_initial$name2[1])
-    output$p3_hosp10_2 <- renderText(product_info_initial$name2[2])
-    output$p3_hosp10_3 <- renderText(product_info_initial$name2[3])
-    output$p3_hosp10_4 <- renderText(product_info_initial$name2[4])
+    output$p3_hosp10_1 <- renderText(product_info_initial$product[1])
+    output$p3_hosp10_2 <- renderText(product_info_initial$product[2])
+    output$p3_hosp10_3 <- renderText(product_info_initial$product[3])
+    output$p3_hosp10_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp1_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp1_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp1_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp1_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp1_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp1_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp1_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp1_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp2_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp2_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp2_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp2_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp2_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp2_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp2_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp2_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp3_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp3_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp3_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp3_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp3_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp3_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp3_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp3_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp4_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp4_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp4_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp4_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp4_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp4_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp4_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp4_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp5_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp5_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp5_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp5_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp5_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp5_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp5_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp5_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp6_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp6_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp6_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp6_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp6_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp6_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp6_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp6_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp7_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp7_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp7_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp7_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp7_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp7_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp7_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp7_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp8_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp8_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp8_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp8_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp8_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp8_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp8_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp8_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp9_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp9_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp9_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp9_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp9_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp9_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp9_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp9_4 <- renderText(product_info_initial$product[4])
     
-    output$p4_hosp10_1 <- renderText(product_info_initial$name2[1])
-    output$p4_hosp10_2 <- renderText(product_info_initial$name2[2])
-    output$p4_hosp10_3 <- renderText(product_info_initial$name2[3])
-    output$p4_hosp10_4 <- renderText(product_info_initial$name2[4])
+    output$p4_hosp10_1 <- renderText(product_info_initial$product[1])
+    output$p4_hosp10_2 <- renderText(product_info_initial$product[2])
+    output$p4_hosp10_3 <- renderText(product_info_initial$product[3])
+    output$p4_hosp10_4 <- renderText(product_info_initial$product[4])
     
     
     output$sales_rep_info <- renderDataTable(sr_info_initial)
@@ -9388,22 +9391,26 @@ shinyApp(ui=dashboardPage(
     output$p1_total_promotional_budget <- renderText(total_promotional_budget$phase1)
     
     
-    p1_calculator_result <- eventReactive(input$decision1_phase1_calculator,{
-      calculator(input,1)
+    p1_calculator_result_tmp <- reactive({calculator(input,1)})
+      
+    
+    
+    p1_calculator_result <- eventReactive(input$decision2_phase1_calculator,{
+      p1_calculator_result_tmp()
     })
     
     output$p1_arranged_promotional_budget <- renderText(
-      ifelse(input$decision1_phase1_calculator==0,0,p1_calculator_result()[1])) 
+      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[1])) 
     output$p1_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision1_phase1_calculator==0,0,p1_calculator_result()[2]))
+      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[2]))
     output$p1_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision1_phase1_calculator==0,0,p1_calculator_result()[3]))
+      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[3]))
     output$p1_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision1_phase1_calculator==0,0,p1_calculator_result()[4]))
+      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[4]))
     output$p1_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision1_phase1_calculator==0,0,p1_calculator_result()[5]))
+      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[5]))
     output$p1_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision1_phase1_calculator==0,0,p1_calculator_result()[6]))
+      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[6]))
     
     output$p1_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期1"&
@@ -9740,227 +9747,15 @@ shinyApp(ui=dashboardPage(
     
     
     
-    observeEvent(input$decision1_phase1_submit, {
-      #hosp1
-      disable("p1_discount_hosp1_1")
-      disable("p1_discount_hosp1_2")
-      disable("p1_discount_hosp1_3")
-      disable("p1_discount_hosp1_4")
-      disable("p1_promotional_budget_hosp1")
-      disable("p1_hosp1_sales_target_1")
-      disable("p1_hosp1_sales_target_2")
-      disable("p1_hosp1_sales_target_3")
-      disable("p1_hosp1_sales_target_4")
-      disable("p1_sr_hosp1")
-      disable("p1_hosp1_worktime_1")
-      disable("p1_hosp1_worktime_2")
-      disable("p1_hosp1_worktime_3")
-      disable("p1_hosp1_worktime_4")
-      disable("p1_hosp1_worktime_doc")
-      disable("p1_hosp1_worktime_diet")
-      disable("p1_hosp1_worktime_admin")
-      disable("p1_hosp1_worktime_nurs")
-      ##hosp2
-      disable("p1_discount_hosp2_1")
-      disable("p1_discount_hosp2_2")
-      disable("p1_discount_hosp2_3")
-      disable("p1_discount_hosp2_4")
-      disable("p1_promotional_budget_hosp2")
-      disable("p1_hosp2_sales_target_1")
-      disable("p1_hosp2_sales_target_2")
-      disable("p1_hosp2_sales_target_3")
-      disable("p1_hosp2_sales_target_4")
-      disable("p1_sr_hosp2")
-      disable("p1_hosp2_worktime_1")
-      disable("p1_hosp2_worktime_2")
-      disable("p1_hosp2_worktime_3")
-      disable("p1_hosp2_worktime_4")
-      disable("p1_hosp2_worktime_doc")
-      disable("p1_hosp2_worktime_diet")
-      disable("p1_hosp2_worktime_admin")
-      disable("p1_hosp2_worktime_nurs")
-      ##hosp3
-      disable("p1_discount_hosp3_1")
-      disable("p1_discount_hosp3_2")
-      disable("p1_discount_hosp3_3")
-      disable("p1_discount_hosp3_4")
-      disable("p1_promotional_budget_hosp3")
-      disable("p1_hosp3_sales_target_1")
-      disable("p1_hosp3_sales_target_2")
-      disable("p1_hosp3_sales_target_3")
-      disable("p1_hosp3_sales_target_4")
-      disable("p1_sr_hosp3")
-      disable("p1_hosp3_worktime_1")
-      disable("p1_hosp3_worktime_2")
-      disable("p1_hosp3_worktime_3")
-      disable("p1_hosp3_worktime_4")
-      disable("p1_hosp3_worktime_doc")
-      disable("p1_hosp3_worktime_diet")
-      disable("p1_hosp3_worktime_admin")
-      disable("p1_hosp3_worktime_nurs")
-      ##hosp4
-      disable("p1_discount_hosp4_1")
-      disable("p1_discount_hosp4_2")
-      disable("p1_discount_hosp4_3")
-      disable("p1_discount_hosp4_4")
-      disable("p1_promotional_budget_hosp4")
-      disable("p1_hosp4_sales_target_1")
-      disable("p1_hosp4_sales_target_2")
-      disable("p1_hosp4_sales_target_3")
-      disable("p1_hosp4_sales_target_4")
-      disable("p1_sr_hosp4")
-      disable("p1_hosp4_worktime_1")
-      disable("p1_hosp4_worktime_2")
-      disable("p1_hosp4_worktime_3")
-      disable("p1_hosp4_worktime_4")
-      disable("p1_hosp4_worktime_doc")
-      disable("p1_hosp4_worktime_diet")
-      disable("p1_hosp4_worktime_admin")
-      disable("p1_hosp4_worktime_nurs")
-      ##hosp5
-      disable("p1_discount_hosp5_1")
-      disable("p1_discount_hosp5_2")
-      disable("p1_discount_hosp5_3")
-      disable("p1_discount_hosp5_4")
-      disable("p1_promotional_budget_hosp5")
-      disable("p1_hosp5_sales_target_1")
-      disable("p1_hosp5_sales_target_2")
-      disable("p1_hosp5_sales_target_3")
-      disable("p1_hosp5_sales_target_4")
-      disable("p1_sr_hosp5")
-      disable("p1_hosp5_worktime_1")
-      disable("p1_hosp5_worktime_2")
-      disable("p1_hosp5_worktime_3")
-      disable("p1_hosp5_worktime_4")
-      disable("p1_hosp5_worktime_doc")
-      disable("p1_hosp5_worktime_diet")
-      disable("p1_hosp5_worktime_admin")
-      disable("p1_hosp5_worktime_nurs")
-      ##hosp6
-      disable("p1_discount_hosp6_1")
-      disable("p1_discount_hosp6_2")
-      disable("p1_discount_hosp6_3")
-      disable("p1_discount_hosp6_4")
-      disable("p1_promotional_budget_hosp6")
-      disable("p1_hosp6_sales_target_1")
-      disable("p1_hosp6_sales_target_2")
-      disable("p1_hosp6_sales_target_3")
-      disable("p1_hosp6_sales_target_4")
-      disable("p1_sr_hosp6")
-      disable("p1_hosp6_worktime_1")
-      disable("p1_hosp6_worktime_2")
-      disable("p1_hosp6_worktime_3")
-      disable("p1_hosp6_worktime_4")
-      disable("p1_hosp6_worktime_doc")
-      disable("p1_hosp6_worktime_diet")
-      disable("p1_hosp6_worktime_admin")
-      disable("p1_hosp6_worktime_nurs")
-      ##hosp7
-      disable("p1_discount_hosp7_1")
-      disable("p1_discount_hosp7_2")
-      disable("p1_discount_hosp7_3")
-      disable("p1_discount_hosp7_4")
-      disable("p1_promotional_budget_hosp7")
-      disable("p1_hosp7_sales_target_1")
-      disable("p1_hosp7_sales_target_2")
-      disable("p1_hosp7_sales_target_3")
-      disable("p1_hosp7_sales_target_4")
-      disable("p1_sr_hosp7")
-      disable("p1_hosp7_worktime_1")
-      disable("p1_hosp7_worktime_2")
-      disable("p1_hosp7_worktime_3")
-      disable("p1_hosp7_worktime_4")
-      disable("p1_hosp7_worktime_doc")
-      disable("p1_hosp7_worktime_diet")
-      disable("p1_hosp7_worktime_admin")
-      disable("p1_hosp7_worktime_nurs")
-      ##hosp8
-      disable("p1_discount_hosp8_1")
-      disable("p1_discount_hosp8_2")
-      disable("p1_discount_hosp8_3")
-      disable("p1_discount_hosp8_4")
-      disable("p1_promotional_budget_hosp8")
-      disable("p1_hosp8_sales_target_1")
-      disable("p1_hosp8_sales_target_2")
-      disable("p1_hosp8_sales_target_3")
-      disable("p1_hosp8_sales_target_4")
-      disable("p1_sr_hosp8")
-      disable("p1_hosp8_worktime_1")
-      disable("p1_hosp8_worktime_2")
-      disable("p1_hosp8_worktime_3")
-      disable("p1_hosp8_worktime_4")
-      disable("p1_hosp8_worktime_doc")
-      disable("p1_hosp8_worktime_diet")
-      disable("p1_hosp8_worktime_admin")
-      disable("p1_hosp8_worktime_nurs")
-      ##hosp9
-      disable("p1_discount_hosp9_1")
-      disable("p1_discount_hosp9_2")
-      disable("p1_discount_hosp9_3")
-      disable("p1_discount_hosp9_4")
-      disable("p1_promotional_budget_hosp9")
-      disable("p1_hosp9_sales_target_1")
-      disable("p1_hosp9_sales_target_2")
-      disable("p1_hosp9_sales_target_3")
-      disable("p1_hosp9_sales_target_4")
-      disable("p1_sr_hosp9")
-      disable("p1_hosp9_worktime_1")
-      disable("p1_hosp9_worktime_2")
-      disable("p1_hosp9_worktime_3")
-      disable("p1_hosp9_worktime_4")
-      disable("p1_hosp9_worktime_doc")
-      disable("p1_hosp9_worktime_diet")
-      disable("p1_hosp9_worktime_admin")
-      disable("p1_hosp9_worktime_nurs")
-      ##hosp10
-      disable("p1_discount_hosp10_1")
-      disable("p1_discount_hosp10_2")
-      disable("p1_discount_hosp10_3")
-      disable("p1_discount_hosp10_4")
-      disable("p1_promotional_budget_hosp10")
-      disable("p1_hosp10_sales_target_1")
-      disable("p1_hosp10_sales_target_2")
-      disable("p1_hosp10_sales_target_3")
-      disable("p1_hosp10_sales_target_4")
-      disable("p1_sr_hosp10")
-      disable("p1_hosp10_worktime_1")
-      disable("p1_hosp10_worktime_2")
-      disable("p1_hosp10_worktime_3")
-      disable("p1_hosp10_worktime_4")
-      disable("p1_hosp10_worktime_doc")
-      disable("p1_hosp10_worktime_diet")
-      disable("p1_hosp10_worktime_admin")
-      disable("p1_hosp10_worktime_nurs")})
-    
-    data1_phase1 <- eventReactive(input$decision1_phase1_submit,{
-      get.data1(input,1)
-    })
-    
-    data2_phase1 <- eventReactive(input$decision2_phase1_submit,{
-      get.data2(input,1)
-      
-    })
-    observeEvent(input$decision2_phase1_submit,{
-      disable("p1_sr1_sales_training")
-      disable("p1_sr2_sales_training")
-      disable("p1_sr3_sales_training")
-      disable("p1_sr4_sales_training")
-      disable("p1_sr5_sales_training")
-      disable("p1_sr1_field_work")
-      disable("p1_sr2_field_work")
-      disable("p1_sr3_field_work")
-      disable("p1_sr4_field_work")
-      disable("p1_sr5_field_work")
-      disable("p1_flm_team_meeting")
-      disable("p1_flm_kpi_analysis")
-      disable("p1_flm_strategy_planning")
-      disable("p1_flm_admin_work")
-      disable("p1_sr1_product_training")
-      disable("p1_sr2_product_training")
-      disable("p1_sr3_product_training")
-      disable("p1_sr4_product_training")
-      disable("p1_sr5_product_training")
-    })
+    # data1_phase1 <- eventReactive(input$decision1_phase1_submit,{
+    #   get.data1(input,1)
+    # })
+    # 
+    # data2_phase1 <- eventReactive(input$decision2_phase1_submit,{
+    #   get.data2(input,1)
+    #   
+    # })
+    # 
     observeEvent(input$save_inputs,{saveRDS( reactiveValuesToList(input) , file = 'inputs.RDS')})
     observeEvent(input$load_inputs,{   
       
@@ -9975,8 +9770,8 @@ shinyApp(ui=dashboardPage(
       }
     })
     
-    output$report1_table <- renderDataTable(data1_phase1())
-    output$report2_table <- renderDataTable(data2_phase1())
+    # output$report1_table <- renderDataTable(data1_phase1())
+    # output$report2_table <- renderDataTable(data2_phase1())
     
     p1_flm_data <- reactive(get.data3(input,1))
     
@@ -9996,16 +9791,16 @@ shinyApp(ui=dashboardPage(
     
     
     
-    output$report3_table <- renderDataTable({
-      data1<-data1_phase1()
-      data2<-data2_phase1()
-      calculation(pp_info_by_hosp_product,
-                  sr_info_initial_value,
-                  data1,
-                  data2)
-      
-      #left_join(data1_phase1(),pp_info_by_hosp_product_new,by=c("hospital","product"))
-    })
+    # output$report3_table <- renderDataTable({
+    #   data1<-data1_phase1()
+    #   data2<-data2_phase1()
+    #   calculation(pp_info_by_hosp_product,
+    #               sr_info_initial_value,
+    #               data1,
+    #               data2)
+    #   
+    #   #left_join(data1_phase1(),pp_info_by_hosp_product_new,by=c("hospital","product"))
+    # })
     
     tmp <- reactive({
       pp_data1 <- pp_info_by_hosp_product
@@ -10020,6 +9815,229 @@ shinyApp(ui=dashboardPage(
     p1_report<- reactive({
       flm_data <- get.data3(input,1)
       p1_report <- report_data(tmp(),flm_data)})
+    
+    observeEvent(input$decision2_phase1_submit,{
+      # if (
+      #   p1_calculator_result()[1] >=worktime |
+      #   p1_calculator_result()[2] >=worktime |
+      #   p1_calculator_result()[3] >=worktime |
+      #   p1_calculator_result()[4] >=worktime |
+      #   p1_calculator_result()[5] >=worktime |
+      #   sum(p1_flm_data()) >=worktime
+      # ) {
+      #   session$sendCustomMessage(type = 'testmessage',
+      #                             message = '时间分配超出最大值')
+      # } else{
+        
+        #hosp1
+        disable("p1_discount_hosp1_1")
+        disable("p1_discount_hosp1_2")
+        disable("p1_discount_hosp1_3")
+        disable("p1_discount_hosp1_4")
+        disable("p1_promotional_budget_hosp1")
+        disable("p1_hosp1_sales_target_1")
+        disable("p1_hosp1_sales_target_2")
+        disable("p1_hosp1_sales_target_3")
+        disable("p1_hosp1_sales_target_4")
+        disable("p1_sr_hosp1")
+        disable("p1_hosp1_worktime_1")
+        disable("p1_hosp1_worktime_2")
+        disable("p1_hosp1_worktime_3")
+        disable("p1_hosp1_worktime_4")
+        disable("p1_hosp1_worktime_doc")
+        disable("p1_hosp1_worktime_diet")
+        disable("p1_hosp1_worktime_admin")
+        disable("p1_hosp1_worktime_nurs")
+        ##hosp2
+        disable("p1_discount_hosp2_1")
+        disable("p1_discount_hosp2_2")
+        disable("p1_discount_hosp2_3")
+        disable("p1_discount_hosp2_4")
+        disable("p1_promotional_budget_hosp2")
+        disable("p1_hosp2_sales_target_1")
+        disable("p1_hosp2_sales_target_2")
+        disable("p1_hosp2_sales_target_3")
+        disable("p1_hosp2_sales_target_4")
+        disable("p1_sr_hosp2")
+        disable("p1_hosp2_worktime_1")
+        disable("p1_hosp2_worktime_2")
+        disable("p1_hosp2_worktime_3")
+        disable("p1_hosp2_worktime_4")
+        disable("p1_hosp2_worktime_doc")
+        disable("p1_hosp2_worktime_diet")
+        disable("p1_hosp2_worktime_admin")
+        disable("p1_hosp2_worktime_nurs")
+        ##hosp3
+        disable("p1_discount_hosp3_1")
+        disable("p1_discount_hosp3_2")
+        disable("p1_discount_hosp3_3")
+        disable("p1_discount_hosp3_4")
+        disable("p1_promotional_budget_hosp3")
+        disable("p1_hosp3_sales_target_1")
+        disable("p1_hosp3_sales_target_2")
+        disable("p1_hosp3_sales_target_3")
+        disable("p1_hosp3_sales_target_4")
+        disable("p1_sr_hosp3")
+        disable("p1_hosp3_worktime_1")
+        disable("p1_hosp3_worktime_2")
+        disable("p1_hosp3_worktime_3")
+        disable("p1_hosp3_worktime_4")
+        disable("p1_hosp3_worktime_doc")
+        disable("p1_hosp3_worktime_diet")
+        disable("p1_hosp3_worktime_admin")
+        disable("p1_hosp3_worktime_nurs")
+        ##hosp4
+        disable("p1_discount_hosp4_1")
+        disable("p1_discount_hosp4_2")
+        disable("p1_discount_hosp4_3")
+        disable("p1_discount_hosp4_4")
+        disable("p1_promotional_budget_hosp4")
+        disable("p1_hosp4_sales_target_1")
+        disable("p1_hosp4_sales_target_2")
+        disable("p1_hosp4_sales_target_3")
+        disable("p1_hosp4_sales_target_4")
+        disable("p1_sr_hosp4")
+        disable("p1_hosp4_worktime_1")
+        disable("p1_hosp4_worktime_2")
+        disable("p1_hosp4_worktime_3")
+        disable("p1_hosp4_worktime_4")
+        disable("p1_hosp4_worktime_doc")
+        disable("p1_hosp4_worktime_diet")
+        disable("p1_hosp4_worktime_admin")
+        disable("p1_hosp4_worktime_nurs")
+        ##hosp5
+        disable("p1_discount_hosp5_1")
+        disable("p1_discount_hosp5_2")
+        disable("p1_discount_hosp5_3")
+        disable("p1_discount_hosp5_4")
+        disable("p1_promotional_budget_hosp5")
+        disable("p1_hosp5_sales_target_1")
+        disable("p1_hosp5_sales_target_2")
+        disable("p1_hosp5_sales_target_3")
+        disable("p1_hosp5_sales_target_4")
+        disable("p1_sr_hosp5")
+        disable("p1_hosp5_worktime_1")
+        disable("p1_hosp5_worktime_2")
+        disable("p1_hosp5_worktime_3")
+        disable("p1_hosp5_worktime_4")
+        disable("p1_hosp5_worktime_doc")
+        disable("p1_hosp5_worktime_diet")
+        disable("p1_hosp5_worktime_admin")
+        disable("p1_hosp5_worktime_nurs")
+        ##hosp6
+        disable("p1_discount_hosp6_1")
+        disable("p1_discount_hosp6_2")
+        disable("p1_discount_hosp6_3")
+        disable("p1_discount_hosp6_4")
+        disable("p1_promotional_budget_hosp6")
+        disable("p1_hosp6_sales_target_1")
+        disable("p1_hosp6_sales_target_2")
+        disable("p1_hosp6_sales_target_3")
+        disable("p1_hosp6_sales_target_4")
+        disable("p1_sr_hosp6")
+        disable("p1_hosp6_worktime_1")
+        disable("p1_hosp6_worktime_2")
+        disable("p1_hosp6_worktime_3")
+        disable("p1_hosp6_worktime_4")
+        disable("p1_hosp6_worktime_doc")
+        disable("p1_hosp6_worktime_diet")
+        disable("p1_hosp6_worktime_admin")
+        disable("p1_hosp6_worktime_nurs")
+        ##hosp7
+        disable("p1_discount_hosp7_1")
+        disable("p1_discount_hosp7_2")
+        disable("p1_discount_hosp7_3")
+        disable("p1_discount_hosp7_4")
+        disable("p1_promotional_budget_hosp7")
+        disable("p1_hosp7_sales_target_1")
+        disable("p1_hosp7_sales_target_2")
+        disable("p1_hosp7_sales_target_3")
+        disable("p1_hosp7_sales_target_4")
+        disable("p1_sr_hosp7")
+        disable("p1_hosp7_worktime_1")
+        disable("p1_hosp7_worktime_2")
+        disable("p1_hosp7_worktime_3")
+        disable("p1_hosp7_worktime_4")
+        disable("p1_hosp7_worktime_doc")
+        disable("p1_hosp7_worktime_diet")
+        disable("p1_hosp7_worktime_admin")
+        disable("p1_hosp7_worktime_nurs")
+        ##hosp8
+        disable("p1_discount_hosp8_1")
+        disable("p1_discount_hosp8_2")
+        disable("p1_discount_hosp8_3")
+        disable("p1_discount_hosp8_4")
+        disable("p1_promotional_budget_hosp8")
+        disable("p1_hosp8_sales_target_1")
+        disable("p1_hosp8_sales_target_2")
+        disable("p1_hosp8_sales_target_3")
+        disable("p1_hosp8_sales_target_4")
+        disable("p1_sr_hosp8")
+        disable("p1_hosp8_worktime_1")
+        disable("p1_hosp8_worktime_2")
+        disable("p1_hosp8_worktime_3")
+        disable("p1_hosp8_worktime_4")
+        disable("p1_hosp8_worktime_doc")
+        disable("p1_hosp8_worktime_diet")
+        disable("p1_hosp8_worktime_admin")
+        disable("p1_hosp8_worktime_nurs")
+        ##hosp9
+        disable("p1_discount_hosp9_1")
+        disable("p1_discount_hosp9_2")
+        disable("p1_discount_hosp9_3")
+        disable("p1_discount_hosp9_4")
+        disable("p1_promotional_budget_hosp9")
+        disable("p1_hosp9_sales_target_1")
+        disable("p1_hosp9_sales_target_2")
+        disable("p1_hosp9_sales_target_3")
+        disable("p1_hosp9_sales_target_4")
+        disable("p1_sr_hosp9")
+        disable("p1_hosp9_worktime_1")
+        disable("p1_hosp9_worktime_2")
+        disable("p1_hosp9_worktime_3")
+        disable("p1_hosp9_worktime_4")
+        disable("p1_hosp9_worktime_doc")
+        disable("p1_hosp9_worktime_diet")
+        disable("p1_hosp9_worktime_admin")
+        disable("p1_hosp9_worktime_nurs")
+        ##hosp10
+        disable("p1_discount_hosp10_1")
+        disable("p1_discount_hosp10_2")
+        disable("p1_discount_hosp10_3")
+        disable("p1_discount_hosp10_4")
+        disable("p1_promotional_budget_hosp10")
+        disable("p1_hosp10_sales_target_1")
+        disable("p1_hosp10_sales_target_2")
+        disable("p1_hosp10_sales_target_3")
+        disable("p1_hosp10_sales_target_4")
+        disable("p1_sr_hosp10")
+        disable("p1_hosp10_worktime_1")
+        disable("p1_hosp10_worktime_2")
+        disable("p1_hosp10_worktime_3")
+        disable("p1_hosp10_worktime_4")
+        disable("p1_hosp10_worktime_doc")
+        disable("p1_hosp10_worktime_diet")
+        disable("p1_hosp10_worktime_admin")
+        disable("p1_hosp10_worktime_nurs")
+        disable("p1_sr1_sales_training")
+        disable("p1_sr2_sales_training")
+        disable("p1_sr3_sales_training")
+        disable("p1_sr4_sales_training")
+        disable("p1_sr5_sales_training")
+        disable("p1_sr1_field_work")
+        disable("p1_sr2_field_work")
+        disable("p1_sr3_field_work")
+        disable("p1_sr4_field_work")
+        disable("p1_sr5_field_work")
+        disable("p1_flm_team_meeting")
+        disable("p1_flm_kpi_analysis")
+        disable("p1_flm_strategy_planning")
+        disable("p1_flm_admin_work")
+        disable("p1_sr1_product_training")
+        disable("p1_sr2_product_training")
+        disable("p1_sr3_product_training")
+        disable("p1_sr4_product_training")
+        disable("p1_sr5_product_training")})
     
     
     
@@ -10102,7 +10120,7 @@ shinyApp(ui=dashboardPage(
                                          "}"))))
     
     output$p1_report3 <- 
-      renderDataTable(datatable(p1_report()$hospital_report,
+      renderDataTable(datatable(p1_report()$report3_mod1,
                                 caption="时间分配",
                                 options = 
                                   list(ordering = F, dom = "t",
@@ -10254,22 +10272,22 @@ shinyApp(ui=dashboardPage(
     )
     
     
-    p2_calculator_result <- eventReactive(input$decision1_phase2_calculator,{
+    p2_calculator_result <- eventReactive(input$decision2_phase2_calculator,{
       calculator(input,2)
     })
     
     output$p2_arranged_promotional_budget <- renderText(
-      ifelse(input$decision1_phase2_calculator==0,0,p2_calculator_result()[1])) 
+      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[1])) 
     output$p2_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision1_phase2_calculator==0,0,p2_calculator_result()[2]))
+      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[2]))
     output$p2_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision1_phase2_calculator==0,0,p2_calculator_result()[3]))
+      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[3]))
     output$p2_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision1_phase2_calculator==0,0,p2_calculator_result()[4]))
+      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[4]))
     output$p2_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision1_phase2_calculator==0,0,p2_calculator_result()[5]))
+      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[5]))
     output$p2_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision1_phase2_calculator==0,0,p2_calculator_result()[6]))
+      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[6]))
     
     output$p2_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期2"&
@@ -10607,7 +10625,66 @@ shinyApp(ui=dashboardPage(
     output$p2_decison1_summary_hosp10 <- renderText(decision1_summary(input,2,10))
     
     
-    observeEvent(input$decision1_phase2_submit, {
+    
+    
+    p2_flm_data <- reactive(get.data3(input,2))
+    
+    output$p2_total_sales_training <-renderText(round(sales_training(input,2)/worktime*100))
+    output$p2_flm_sales_training <- renderText(sales_training(input,2))
+    output$p2_total_field_work <-renderText(round(field_work(input,2)/worktime*100))
+    output$p2_flm_field_work <- renderText(field_work(input,2))
+    output$p2_total_team_meeting <- renderText(round(as.numeric(input$p2_flm_team_meeting)/worktime*100))
+    output$p2_total_kpi_analysis <- renderText(round(as.numeric(input$p2_flm_kpi_analysis)/worktime*100))
+    output$p2_total_strategy_planning <- renderText(round(as.numeric(input$p2_flm_strategy_planning)/worktime*100))
+    output$p2_total_admin_work <- renderText(round(as.numeric(input$p2_flm_admin_work)/worktime*100))
+    output$p2_total_management <- renderText(round(sum(p2_flm_data())/worktime*100))
+    output$p2_flm_management <- renderText(sum(p2_flm_data()))
+    
+    
+    
+    tmp2 <- reactive({
+      pp_data1 <- tmp() %>% select(hospital,
+                                   product,
+                                   real_revenue,
+                                   real_volume,
+                                   sr_sales_performance,
+                                   deployment_quality_index,
+                                   customer_relationship_index,
+                                   promotional_support_index,
+                                   sales_performance,
+                                   offer_attractiveness,
+                                   acc_offer_attractiveness) %>%
+        distinct()
+      
+      colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
+      
+      pp_data2 <- tmp() %>% select(sales_rep,
+                                 sales_level,
+                                 sr_revenue,
+                                 sr_volume,
+                                 sr_acc_revenue,
+                                 sales_skills_index,
+                                 product_knowledge_index,
+                                 motivation_index,
+                                 sr_acc_field_work) %>%
+        distinct()
+      
+      colnames(pp_data2)[3:9] <- paste("pp_",colnames(pp_data2)[3:9],sep="")
+      cp_data1 <- get.data1(input,2)
+      cp_data2 <- get.data2(input,2)
+      tmp <- calculation(pp_data1,
+                         pp_data2,
+                         cp_data1,
+                         cp_data2)})
+    
+    p2_report<- reactive({
+      flm_data <- get.data3(input,2)
+      p2_report <- report_data(tmp2(),flm_data)})
+    
+    
+    
+    observeEvent(input$decision2_phase2_submit, {
+      
       #hosp1
       disable("p2_discount_hosp1_1")
       disable("p2_discount_hosp1_2")
@@ -10797,65 +10874,7 @@ shinyApp(ui=dashboardPage(
       disable("p2_hosp10_worktime_doc")
       disable("p2_hosp10_worktime_diet")
       disable("p2_hosp10_worktime_admin")
-      disable("p2_hosp10_worktime_nurs")})
-    
-    p2_flm_data <- reactive(get.data3(input,2))
-    
-    output$p2_total_sales_training <-renderText(round(sales_training(input,2)/worktime*100))
-    output$p2_flm_sales_training <- renderText(sales_training(input,2))
-    output$p2_total_field_work <-renderText(round(field_work(input,2)/worktime*100))
-    output$p2_flm_field_work <- renderText(field_work(input,2))
-    output$p2_total_team_meeting <- renderText(round(as.numeric(input$p2_flm_team_meeting)/worktime*100))
-    output$p2_total_kpi_analysis <- renderText(round(as.numeric(input$p2_flm_kpi_analysis)/worktime*100))
-    output$p2_total_strategy_planning <- renderText(round(as.numeric(input$p2_flm_strategy_planning)/worktime*100))
-    output$p2_total_admin_work <- renderText(round(as.numeric(input$p2_flm_admin_work)/worktime*100))
-    output$p2_total_management <- renderText(round(sum(p2_flm_data())/worktime*100))
-    output$p2_flm_management <- renderText(sum(p2_flm_data()))
-    
-    
-    
-    tmp2 <- reactive({
-      pp_data1 <- tmp() %>% select(hospital,
-                                   product,
-                                   real_revenue,
-                                   real_volume,
-                                   sr_sales_performance,
-                                   deployment_quality_index,
-                                   customer_relationship_index,
-                                   promotional_support_index,
-                                   sales_performance,
-                                   offer_attractiveness,
-                                   acc_offer_attractiveness) %>%
-        distinct()
-      
-      colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
-      
-      pp_data2 <- tmp() %>% select(sales_rep,
-                                 sales_level,
-                                 sr_revenue,
-                                 sr_volume,
-                                 sr_acc_revenue,
-                                 sales_skills_index,
-                                 product_knowledge_index,
-                                 motivation_index,
-                                 sr_acc_field_work) %>%
-        distinct()
-      
-      colnames(pp_data2)[3:9] <- paste("pp_",colnames(pp_data2)[3:9],sep="")
-      cp_data1 <- get.data1(input,2)
-      cp_data2 <- get.data2(input,2)
-      tmp <- calculation(pp_data1,
-                         pp_data2,
-                         cp_data1,
-                         cp_data2)})
-    
-    p2_report<- reactive({
-      flm_data <- get.data3(input,2)
-      p2_report <- report_data(tmp2(),flm_data)})
-    
-    
-    
-    observeEvent(input$decision2_phase2_submit, {
+      disable("p2_hosp10_worktime_nurs")
       
       disable("p2_sr1_sales_training")
       disable("p2_sr2_sales_training")
@@ -10957,7 +10976,7 @@ shinyApp(ui=dashboardPage(
                                            "}"))))
       
       output$p2_report3 <- 
-        renderDataTable(datatable(p2_report()$hospital_report,
+        renderDataTable(datatable(p2_report()$report3_mod1,
                                   caption="时间分配",
                                   options = 
                                     list(ordering = F, dom = "t",
@@ -11107,22 +11126,22 @@ shinyApp(ui=dashboardPage(
     )
     
     
-    p3_calculator_result <- eventReactive(input$decision1_phase3_calculator,{
+    p3_calculator_result <- eventReactive(input$decision2_phase3_calculator,{
       calculator(input,3)
     })
     
     output$p3_arranged_promotional_budget <- renderText(
-      ifelse(input$decision1_phase3_calculator==0,0,p3_calculator_result()[1])) 
+      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[1])) 
     output$p3_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision1_phase3_calculator==0,0,p3_calculator_result()[2]))
+      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[2]))
     output$p3_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision1_phase3_calculator==0,0,p3_calculator_result()[3]))
+      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[3]))
     output$p3_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision1_phase3_calculator==0,0,p3_calculator_result()[4]))
+      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[4]))
     output$p3_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision1_phase3_calculator==0,0,p3_calculator_result()[5]))
+      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[5]))
     output$p3_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision1_phase3_calculator==0,0,p3_calculator_result()[6]))
+      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[6]))
     
     output$p3_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期3"&
@@ -11458,7 +11477,65 @@ shinyApp(ui=dashboardPage(
     output$p3_decison1_summary_hosp10 <- renderText(decision1_summary(input,3,10))
     
     
-    observeEvent(input$decision1_phase3_submit, {
+  
+    
+    p3_flm_data <- reactive(get.data3(input,3))
+    
+    output$p3_total_sales_training <-renderText(round(sales_training(input,3)/worktime*100))
+    output$p3_flm_sales_training <- renderText(sales_training(input,3))
+    output$p3_total_field_work <-renderText(round(field_work(input,3)/worktime*100))
+    output$p3_flm_field_work <- renderText(field_work(input,3))
+    output$p3_total_team_meeting <- renderText(round(as.numeric(input$p3_flm_team_meeting)/worktime*100))
+    output$p3_total_kpi_analysis <- renderText(round(as.numeric(input$p3_flm_kpi_analysis)/worktime*100))
+    output$p3_total_strategy_planning <- renderText(round(as.numeric(input$p3_flm_strategy_planning)/worktime*100))
+    output$p3_total_admin_work <- renderText(round(as.numeric(input$p3_flm_admin_work)/worktime*100))
+    output$p3_total_management <- renderText(round(sum(p3_flm_data())/worktime*100))
+    output$p3_flm_management <- renderText(round(sum(p3_flm_data())/worktime*100))
+    
+    
+    
+    tmp3 <- reactive({
+      pp_data1 <- tmp2() %>% select(hospital,
+                                   product,
+                                   real_revenue,
+                                   real_volume,
+                                   sr_sales_performance,
+                                   deployment_quality_index,
+                                   customer_relationship_index,
+                                   promotional_support_index,
+                                   sales_performance,
+                                   offer_attractiveness,
+                                   acc_offer_attractiveness) %>%
+        distinct()
+      
+      colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
+      
+      pp_data2 <- tmp2() %>% select(sales_rep,
+                                   sales_level,
+                                   sr_revenue,
+                                   sr_volume,
+                                   sr_acc_revenue,
+                                   sales_skills_index,
+                                   product_knowledge_index,
+                                   motivation_index,
+                                   sr_acc_field_work) %>%
+        distinct()
+      
+      colnames(pp_data2)[3:9] <- paste("pp_",colnames(pp_data2)[3:9],sep="")
+      cp_data1 <- get.data1(input,3)
+      cp_data2 <- get.data2(input,3)
+      tmp <- calculation(pp_data1,
+                         pp_data2,
+                         cp_data1,
+                         cp_data2)})
+    
+    p3_report<- reactive({
+      flm_data <- get.data3(input,3)
+      p3_report <- report_data(tmp3(),flm_data)})
+    
+    
+    
+    observeEvent(input$decision2_phase3_submit, {
       #hosp1
       disable("p3_discount_hosp1_1")
       disable("p3_discount_hosp1_2")
@@ -11648,65 +11725,7 @@ shinyApp(ui=dashboardPage(
       disable("p3_hosp10_worktime_doc")
       disable("p3_hosp10_worktime_diet")
       disable("p3_hosp10_worktime_admin")
-      disable("p3_hosp10_worktime_nurs")})
-    
-    p3_flm_data <- reactive(get.data3(input,3))
-    
-    output$p3_total_sales_training <-renderText(round(sales_training(input,3)/worktime*100))
-    output$p3_flm_sales_training <- renderText(sales_training(input,3))
-    output$p3_total_field_work <-renderText(round(field_work(input,3)/worktime*100))
-    output$p3_flm_field_work <- renderText(field_work(input,3))
-    output$p3_total_team_meeting <- renderText(round(as.numeric(input$p3_flm_team_meeting)/worktime*100))
-    output$p3_total_kpi_analysis <- renderText(round(as.numeric(input$p3_flm_kpi_analysis)/worktime*100))
-    output$p3_total_strategy_planning <- renderText(round(as.numeric(input$p3_flm_strategy_planning)/worktime*100))
-    output$p3_total_admin_work <- renderText(round(as.numeric(input$p3_flm_admin_work)/worktime*100))
-    output$p3_total_management <- renderText(round(sum(p3_flm_data())/worktime*100))
-    output$p3_flm_management <- renderText(round(sum(p3_flm_data())/worktime*100))
-    
-    
-    
-    tmp3 <- reactive({
-      pp_data1 <- tmp2() %>% select(hospital,
-                                   product,
-                                   real_revenue,
-                                   real_volume,
-                                   sr_sales_performance,
-                                   deployment_quality_index,
-                                   customer_relationship_index,
-                                   promotional_support_index,
-                                   sales_performance,
-                                   offer_attractiveness,
-                                   acc_offer_attractiveness) %>%
-        distinct()
-      
-      colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
-      
-      pp_data2 <- tmp2() %>% select(sales_rep,
-                                   sales_level,
-                                   sr_revenue,
-                                   sr_volume,
-                                   sr_acc_revenue,
-                                   sales_skills_index,
-                                   product_knowledge_index,
-                                   motivation_index,
-                                   sr_acc_field_work) %>%
-        distinct()
-      
-      colnames(pp_data2)[3:9] <- paste("pp_",colnames(pp_data2)[3:9],sep="")
-      cp_data1 <- get.data1(input,3)
-      cp_data2 <- get.data2(input,3)
-      tmp <- calculation(pp_data1,
-                         pp_data2,
-                         cp_data1,
-                         cp_data2)})
-    
-    p3_report<- reactive({
-      flm_data <- get.data3(input,3)
-      p3_report <- report_data(tmp3(),flm_data)})
-    
-    
-    
-    observeEvent(input$decision2_phase3_submit, {
+      disable("p3_hosp10_worktime_nurs")
       disable("p3_sr1_sales_training")
       disable("p3_sr2_sales_training")
       disable("p3_sr3_sales_training")
@@ -11806,7 +11825,7 @@ shinyApp(ui=dashboardPage(
                                            "}"))))
       
       output$p3_report3 <- 
-        renderDataTable(datatable(p3_report()$hospital_report,
+        renderDataTable(datatable(p3_report()$report3_mod1,
                                   caption="时间分配",
                                   options = 
                                     list(ordering = F, dom = "t",
@@ -11953,22 +11972,22 @@ shinyApp(ui=dashboardPage(
     )
     
     
-    p4_calculator_result <- eventReactive(input$decision1_phase4_calculator,{
+    p4_calculator_result <- eventReactive(input$decision2_phase4_calculator,{
       calculator(input,4)
     })
     
     output$p4_arranged_promotional_budget <- renderText(
-      ifelse(input$decision1_phase4_calculator==0,0,p4_calculator_result()[1])) 
+      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[1])) 
     output$p4_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision1_phase4_calculator==0,0,p4_calculator_result()[2]))
+      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[2]))
     output$p4_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision1_phase4_calculator==0,0,p4_calculator_result()[3]))
+      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[3]))
     output$p4_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision1_phase4_calculator==0,0,p4_calculator_result()[4]))
+      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[4]))
     output$p4_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision1_phase4_calculator==0,0,p4_calculator_result()[5]))
+      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[5]))
     output$p4_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision1_phase4_calculator==0,0,p4_calculator_result()[6]))
+      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[6]))
     
     output$p4_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期4"&
@@ -12305,7 +12324,64 @@ shinyApp(ui=dashboardPage(
     output$p4_decison1_summary_hosp10 <- renderText(decision1_summary(input,4,10))
     
     
-    observeEvent(input$decision1_phase4_submit, {
+  
+    p4_flm_data <- reactive(get.data3(input,4))
+    
+    output$p4_total_sales_training <-renderText(round(sales_training(input,4)/worktime*100))
+    output$p4_flm_sales_training <- renderText(sales_training(input,4))
+    output$p4_total_field_work <-renderText(round(field_work(input,4)/worktime*100))
+    output$p4_flm_field_work <- renderText(field_work(input,4))
+    output$p4_total_team_meeting <- renderText(round(as.numeric(input$p4_flm_team_meeting)/worktime*100))
+    output$p4_total_kpi_analysis <- renderText(round(as.numeric(input$p4_flm_kpi_analysis)/worktime*100))
+    output$p4_total_strategy_planning <- renderText(round(as.numeric(input$p4_flm_strategy_planning)/worktime*100))
+    output$p4_total_admin_work <- renderText(round(as.numeric(input$p4_flm_admin_work)/worktime*100))
+    output$p4_total_management <- renderText(round(sum(p4_flm_data())/worktime*100))
+    output$p4_flm_management <- renderText(sum(p4_flm_data()))
+    
+    
+    tmp4 <- reactive({
+      pp_data1 <- tmp() %>% select(hospital,
+                                   product,
+                                   real_revenue,
+                                   real_volume,
+                                   sr_sales_performance,
+                                   deployment_quality_index,
+                                   customer_relationship_index,
+                                   promotional_support_index,
+                                   sales_performance,
+                                   offer_attractiveness,
+                                   acc_offer_attractiveness) %>%
+        distinct()
+      
+      colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
+      
+      pp_data2 <- tmp() %>% select(sales_rep,
+                                   sales_level,
+                                   sr_revenue,
+                                   sr_volume,
+                                   sr_acc_revenue,
+                                   sales_skills_index,
+                                   product_knowledge_index,
+                                   motivation_index,
+                                   sr_acc_field_work) %>%
+        distinct()
+      
+      colnames(pp_data2)[3:9] <- paste("pp_",colnames(pp_data2)[3:9],sep="")
+      cp_data1 <- get.data1(input,4)
+      cp_data2 <- get.data2(input,4)
+      tmp <- calculation(pp_data1,
+                         pp_data2,
+                         cp_data1,
+                         cp_data2)})
+    
+    p4_report<- reactive({
+      flm_data <- get.data3(input,4)
+      p4_report <- report_data(tmp4(),flm_data)})
+    
+    
+    
+    observeEvent(input$decision2_phase4_submit, {
+      
       #hosp1
       disable("p4_discount_hosp1_1")
       disable("p4_discount_hosp1_2")
@@ -12495,64 +12571,7 @@ shinyApp(ui=dashboardPage(
       disable("p4_hosp10_worktime_doc")
       disable("p4_hosp10_worktime_diet")
       disable("p4_hosp10_worktime_admin")
-      disable("p4_hosp10_worktime_nurs")})
-    
-    p4_flm_data <- reactive(get.data3(input,4))
-    
-    output$p4_total_sales_training <-renderText(round(sales_training(input,4)/worktime*100))
-    output$p4_flm_sales_training <- renderText(sales_training(input,4))
-    output$p4_total_field_work <-renderText(round(field_work(input,4)/worktime*100))
-    output$p4_flm_field_work <- renderText(field_work(input,4))
-    output$p4_total_team_meeting <- renderText(round(as.numeric(input$p4_flm_team_meeting)/worktime*100))
-    output$p4_total_kpi_analysis <- renderText(round(as.numeric(input$p4_flm_kpi_analysis)/worktime*100))
-    output$p4_total_strategy_planning <- renderText(round(as.numeric(input$p4_flm_strategy_planning)/worktime*100))
-    output$p4_total_admin_work <- renderText(round(as.numeric(input$p4_flm_admin_work)/worktime*100))
-    output$p4_total_management <- renderText(round(sum(p4_flm_data())/worktime*100))
-    output$p4_flm_management <- renderText(sum(p4_flm_data()))
-    
-    
-    tmp4 <- reactive({
-      pp_data1 <- tmp() %>% select(hospital,
-                                   product,
-                                   real_revenue,
-                                   real_volume,
-                                   sr_sales_performance,
-                                   deployment_quality_index,
-                                   customer_relationship_index,
-                                   promotional_support_index,
-                                   sales_performance,
-                                   offer_attractiveness,
-                                   acc_offer_attractiveness) %>%
-        distinct()
-      
-      colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
-      
-      pp_data2 <- tmp() %>% select(sales_rep,
-                                   sales_level,
-                                   sr_revenue,
-                                   sr_volume,
-                                   sr_acc_revenue,
-                                   sales_skills_index,
-                                   product_knowledge_index,
-                                   motivation_index,
-                                   sr_acc_field_work) %>%
-        distinct()
-      
-      colnames(pp_data2)[3:9] <- paste("pp_",colnames(pp_data2)[3:9],sep="")
-      cp_data1 <- get.data1(input,4)
-      cp_data2 <- get.data2(input,4)
-      tmp <- calculation(pp_data1,
-                         pp_data2,
-                         cp_data1,
-                         cp_data2)})
-    
-    p4_report<- reactive({
-      flm_data <- get.data3(input,4)
-      p4_report <- report_data(tmp4(),flm_data)})
-    
-    
-    
-    observeEvent(input$decision2_phase4_submit, {
+      disable("p4_hosp10_worktime_nurs")
       
       disable("p4_sr1_sales_training")
       disable("p4_sr2_sales_training")
@@ -12653,7 +12672,7 @@ shinyApp(ui=dashboardPage(
                                            "}"))))
       
       output$p4_report3 <- 
-        renderDataTable(datatable(p4_report()$hospital_report,
+        renderDataTable(datatable(p4_report()$report3_mod1,
                                   caption="时间分配",
                                   options = 
                                     list(ordering = F, dom = "t",

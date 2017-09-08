@@ -180,6 +180,12 @@ report2_mod2 <- report2_mod2 %>% select(-variable)
 
 
 ## brief time allocation of hospital report
+report3_rank1 <- data.frame(
+  variable=c("销售代表","计划时间分配(天)","实际时间分配(天)"),
+  rank=1:3,
+  stringsAsFactors =F
+)
+
 report3_mod1 <- tmp %>%
   select(no.hospitals,
          hospital,
@@ -190,7 +196,7 @@ report3_mod1 <- tmp %>%
   distinct() %>%
   mutate(real_time = 
            round(sr_time-overhead_time/no.hospitals,2)) %>%
-  select(-no.hospitals,-overhead_time)
+  select(-no.hospitals,-overhead_time) 
 
 colnames(report3_mod1) <- c("医院",
                                "产品",
@@ -198,6 +204,15 @@ colnames(report3_mod1) <- c("医院",
                                "计划时间分配(天)",
                                "实际时间分配(天)") 
 
+report3_mod1 <- report3_mod1 %>%
+  gather(variable,value,-`医院`,-`产品`) %>%
+  spread(`产品`,value) %>%
+  left_join(report3_rank1,by="variable") %>%
+  arrange(`医院`,rank) %>%
+  select(-rank)
+
+
+ 
 
 
 
@@ -221,8 +236,8 @@ eva_decision_report <- tmp %>%
   mutate(total_deployment_quality_index= round(sum(deployment_quality_index),2),
          total_pp_deployment_quality_index=round(sum(pp_deployment_quality_index),2)) %>%
   ungroup() %>%
-  select(-product) %>%
-  distinct() 
+  select(-product) 
+
 
 report4_mod1 <- eva_decision_report %>%
   select(hospital,
@@ -241,7 +256,21 @@ report4_mod2 <- eva_decision_report %>%
          time_on_admin,
          time_on_nurs,
          contact_priority_fit_index) %>%
+  group_by(hospital) %>%
+  mutate(time_on_doc_hosp=sum(time_on_doc),
+         time_on_diet_hosp=sum(time_on_diet),
+         time_on_admin_hosp=sum(time_on_admin),
+         time_on_nurs_hosp=sum(time_on_nurs),
+         contact_priority_fit_index_hosp=sum(contact_priority_fit_index)) %>%
+  ungroup() %>%
+  select(hospital,
+         time_on_doc_hosp,
+         time_on_diet_hosp,
+         time_on_admin_hosp,
+         time_on_nurs_hosp,
+         contact_priority_fit_index_hosp) %>%
   distinct()
+  
 
 colnames(report4_mod2) <- c("医院",
                             "A级客户时间分配",
@@ -249,7 +278,11 @@ colnames(report4_mod2) <- c("医院",
                             "C级客户时间分配",
                             "D级客户时间分配",
                             "总分级匹配度")
+
+
 rownames(report4_mod2) <- report4_mod2$医院
+
+
 report4_mod2 <- report4_mod2 %>% select(-`医院`)
 
 report4_mod3 <- eva_decision_report %>%
@@ -332,7 +365,8 @@ report5_mod2 <- tmp %>%
   group_by(product) %>%
   mutate(production_cost = sapply(product,function(x)production_price[which(production_price$product==x),]$cost),
          real_revenue_by_product = sum(real_revenue),
-         real_revenue_by_product_per = real_revenue_by_product/real_volume,
+         real_revenue_by_volume = sum(real_volume),
+         real_revenue_by_product_per = real_revenue_by_product/real_revenue_by_volume,
          production_fee_per = real_revenue_by_product_per*production_cost,
          profit1 = real_revenue_by_product_per - production_fee_per,
          production_fee_percent = round(production_fee_per/real_revenue_by_product_per*100,2),
@@ -342,7 +376,8 @@ report5_mod2 <- tmp %>%
          -real_revenue,
          -real_volume,
          -production_cost,
-         -real_revenue_by_product) %>%
+         -real_revenue_by_product,
+         -real_revenue_by_volume) %>%
   distinct() 
 colnames(report5_mod2) <- c("产品",
                             "销售金额(元)",
@@ -547,7 +582,7 @@ report5_mod3_2 <- report5_mod3 %>%
    gather(variable,value,-`医院`,-`产品`) %>%
    spread(`产品`,value) %>%
    left_join(report6_rank,by="variable") %>%
-   group_by(hospital) %>%
+   group_by(`医院`) %>%
    arrange(rank) %>%
    select(-rank)
  
@@ -609,12 +644,15 @@ report5_mod3_2 <- report5_mod3 %>%
           pp_sr_revenue,
           sr_volume,
           pp_sr_volume) %>%
+   distinct() %>%
    mutate(sr_revenue_increase=sr_revenue-pp_sr_revenue,
           sr_volume_increase=sr_volume-pp_sr_volume) %>%
    do(plyr::rbind.fill(.,data.frame(sales_rep="总体",
                                     sr_revenue=sum(.$sr_revenue),
+                                    pp_sr_revenue =sum(.$pp_sr_revenue),
                                     sr_revenue_increase=sum(.$sr_revenue_increase),
                                     sr_volume=sum(.$sr_volume),
+                                    pp_sr_volume=sum(.$pp_sr_volume),
                                     sr_volume_increase=sum(.$sr_volume_increase)))) %>%
    mutate(sr_revenue_increase_ratio = round(sr_revenue_increase/pp_sr_revenue*100,2),
           sr_volume_increase_ratio = round(sr_volume_increase/pp_sr_volume*100,2)) %>%
@@ -657,7 +695,7 @@ report5_mod3_2 <- report5_mod3 %>%
                     real_volume_by_product = round(sum(real_volume),2),
                     pp_real_volume_by_product = round(sum(pp_real_volume),2),
                     real_volume_increase = real_volume_by_product - pp_real_volume_by_product) %>%
-   do(plyr::rbind.fill(.,data.frame(hospital="总体",
+   do(plyr::rbind.fill(.,data.frame(product="总体",
                                     real_revenue_by_product=sum(.$real_revenue_by_product),
                                     pp_real_revenue_by_product=sum(.$pp_real_revenue_by_product),
                                     real_revenue_increase=sum(.$real_revenue_increase),
@@ -695,14 +733,11 @@ report5_mod3_2 <- report5_mod3 %>%
 
 ## report a
 offer_attractiveness_report <- tmp %>%
-  arrange(ith_hospital) %>%
   group_by(hospital) %>%
-  mutate(hospital_revenue = round(sum(real_sales),2),
+  mutate(hospital_revenue = round(sum(real_revenue),2),
          hospital_offer_attractiveness = round(sum(offer_attractiveness),2),
-         hospital_acc_offer_attractiveness =round(sum(acc_offer_attractiveness),2),
-         hospital_profit = round(hospital_revenue-promotional_budget,2))%>%
+         hospital_acc_offer_attractiveness =round(sum(acc_offer_attractiveness),2))%>%
   ungroup() %>%
-  mutate(hospital_profit = round(hospital_revenue-promotional_budget,2)) %>%
   select(sales_rep,
          hospital,
          incentive_factor,
@@ -710,31 +745,31 @@ offer_attractiveness_report <- tmp %>%
          sales_skills_index,
          customer_relationship_index,
          motivation_index,
-         sr_revenue,
          hospital_revenue,
-         hospital_profit,
          hospital_offer_attractiveness,
          hospital_acc_offer_attractiveness) %>%
   distinct() %>%
   mutate(total_revenue = round(sum(hospital_revenue),2),
-         total_profit = round(sum(hospital_profit),2),
          total_offer_attractiveness = round(sum(hospital_offer_attractiveness),2),
          total_acc_offer_attractiveness = round(sum(hospital_acc_offer_attractiveness),2),
          average_customer_relationship_index = round(mean(customer_relationship_index),2),
          average_sales_skills_index = round(mean(sales_skills_index),2),
          average_product_knowledge_index = round(mean(product_knowledge_index),2),
-         average_motivation_index = round(mean(motivation_index),2))
+         average_motivation_index = round(mean(motivation_index),2)) 
   
 
 report8_mod1 <- offer_attractiveness_report %>%
+  ungroup() %>%
+  dplyr::mutate(profit3=as.numeric(report5_mod3[8,1])) %>%
   select(total_revenue,
-         total_profit,
+         profit3,
          average_customer_relationship_index,
          average_sales_skills_index,
          average_product_knowledge_index,
          average_motivation_index,
          total_offer_attractiveness,
          total_acc_offer_attractiveness) %>%
+
   distinct()
 
 colnames(report8_mod1) <- c("总销售(元)",
@@ -750,13 +785,12 @@ rownames(report8_mod1) <- report8_mod1$variable
 report8_mod1 <- report8_mod1 %>% select(-variable)
 
 report8_mod2 <- tmp %>%
-  select(ith_hospital,hospital,product,real_sales) %>%
-  group_by(ith_hospital,hospital) %>%
-  dplyr::summarise(hospital_revenue = round(sum(real_sales),2)) %>%
+  select(hospital,product,real_revenue) %>%
+  group_by(hospital) %>%
+  dplyr::summarise(hospital_revenue = round(sum(real_revenue),2)) %>%
   ungroup() %>%
   mutate(market_revenue=round(sum(hospital_revenue),2),
          market_share=round(hospital_revenue/market_revenue*100,2)) %>%
-  arrange(ith_hospital) %>%
   select(hospital,
          hospital_revenue,
          market_share) %>%

@@ -218,9 +218,9 @@ overhead =2
 basicSalary = 15000
 admin_fee_weight =0.1
 
-setwd("D:\\Rachel\\WorkMaterial\\Poject\\sales_training_programme\\newCodes")
+setwd("D:\\Rachel\\WorkMaterial\\git\\Sales_training_programme\\Codes\\newCodes")
 
-contact_priority_info <- read.xlsx(".\\input\\contact_priorty_info.xlsx", 
+contact_priority_info <- read.xlsx(".\\contact_priorty_info.xlsx", 
                                    sheet = "contact")
 contact_priority_info <- contact_priority_info %>%
   left_join(hospital_code,by="hospital.no") 
@@ -228,13 +228,13 @@ contact_priority_info <- contact_priority_info %>%
 
 
 
-volume_info <- read.xlsx(".\\input\\contact_priorty_info.xlsx",
+volume_info <- read.xlsx(".\\contact_priorty_info.xlsx",
                          sheet="volume") 
 volume_info <- volume_info %>% 
   left_join(hospital_code,by="hospital.no") %>%
   left_join(product_code,by="product.no")
 
-pp_info_by_hosp_product <-read.xlsx(".\\input\\contact_priorty_info.xlsx",
+pp_info_by_hosp_product <-read.xlsx(".\\contact_priorty_info.xlsx",
                                     sheet="pp_hospital")
 pp_info_by_hosp_product <- pp_info_by_hosp_product %>%
   left_join(hospital_code,by="hospital.no") %>%

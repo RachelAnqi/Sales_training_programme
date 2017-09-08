@@ -3,6 +3,16 @@ library(dplyr)
 
 
 
+contact_fit <- function(input,best){
+  if (input>=best ) {
+    out <- 1
+  } else {
+    out<-round(input/best,2)
+  }
+  out
+}
+
+
 decision1_summary <- function(input,phase,hospital){
   total <- sum(c(
     as.numeric(input[[paste("p",phase,"_hosp",hospital,"_worktime_doc",sep="")]]),
@@ -25,10 +35,10 @@ calculator <- function(input,phase){
       sum(c(phase1_promotional_budget, 
             as.numeric(input[[paste("p",phase,"_promotional_budget_hosp",i,sep="")]])),
           na.rm = TRUE)
-    tmp <- sum(c(as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_1",sep="")]]),
-                 as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_2",sep="")]]),
-                 as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_3",sep="")]]),
-                 as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_4",sep="")]])),
+    tmp <- sum(c(as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_1",sep="")]])/100*worktime,
+                 as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_2",sep="")]])/100*worktime,
+                 as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_3",sep="")]])/100*worktime,
+                 as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_4",sep="")]])/100*worktime),
                na.rm = TRUE)
     if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
         available_srs[1]){
@@ -52,6 +62,34 @@ calculator <- function(input,phase){
         phase1_total_time_arrangement5 +tmp
     }
   }
+  
+  team_meeting <- as.numeric(input[[paste("p",phase,"_flm_team_meeting",sep="")]])
+  
+  phase1_total_time_arrangement1 <- phase1_total_time_arrangement1 +
+    as.numeric(input[[paste("p",phase,"_sr1_sales_training",sep="")]]) +
+    as.numeric(input[[paste("p",phase,"_sr1_product_training",sep="")]]) +
+    team_meeting
+  
+  phase1_total_time_arrangement2 <- phase1_total_time_arrangement2 +
+    as.numeric(input[[paste("p",phase,"_sr2_sales_training",sep="")]]) +
+    as.numeric(input[[paste("p",phase,"_sr2_product_training",sep="")]]) +
+    team_meeting
+  
+  phase1_total_time_arrangement3 <- phase1_total_time_arrangement3 +
+    as.numeric(input[[paste("p",phase,"_sr3_sales_training",sep="")]]) +
+    as.numeric(input[[paste("p",phase,"_sr3_product_training",sep="")]]) +
+    team_meeting
+  
+  phase1_total_time_arrangement4 <- phase1_total_time_arrangement4 +
+    as.numeric(input[[paste("p",phase,"_sr4_sales_training",sep="")]]) +
+    as.numeric(input[[paste("p",phase,"_sr4_product_training",sep="")]]) +
+    team_meeting
+  
+  phase1_total_time_arrangement5 <- phase1_total_time_arrangement5 +
+    as.numeric(input[[paste("p",phase,"_sr5_sales_training",sep="")]]) +
+    as.numeric(input[[paste("p",phase,"_sr5_product_training",sep="")]]) +
+    team_meeting
+    
   data <- c(phase1_promotional_budget,
             phase1_total_time_arrangement1,
             phase1_total_time_arrangement2,
@@ -121,18 +159,26 @@ calculation <- function(pp_data1,
                   pp_experience_index = sapply(pp_sr_acc_revenue,function(x) round(curve(curve11,x),2)),
                   sales_target_realization = round(sr_target_revenue/sr_revenue*100,0),
                   incentive_factor = sapply(sales_target_realization,function(x) curve(curve10,x)),
-                  contact_priority_fit_doc = time_on_doc/(
-                    contact_priority_info[which(contact_priority_info$phase==phase&
-                                                  contact_priority_info$hospital==hospital),]$type.a),
-                  contact_priority_fit_diet = time_on_diet/(
-                    contact_priority_info[which(contact_priority_info$phase==phase&
-                                                  contact_priority_info$hospital==hospital),]$type.b),
-                  contact_priority_fit_admin = time_on_admin/(
-                    contact_priority_info[which(contact_priority_info$phase==phase&
-                                                  contact_priority_info$hospital==hospital),]$type.c),
-                  contact_priority_fit_nurs = time_on_nurs/(
-                    contact_priority_info[which(contact_priority_info$phase==phase&
-                                                  contact_priority_info$hospital==hospital),]$type.d),
+                  contact_priority_fit_doc = 
+                    mapply(function(x,y,z) contact_fit(
+                      z,contact_priority_info[which(contact_priority_info$phase==x&
+                                                      contact_priority_info$hospital==y),]$type.a),
+                      phase,hospital,time_on_doc),
+                  contact_priority_fit_diet =
+                    mapply(function(x,y,z) contact_fit(
+                      z,contact_priority_info[which(contact_priority_info$phase==x&
+                                                      contact_priority_info$hospital==y),]$type.b),
+                      phase,hospital,time_on_diet),
+                  contact_priority_fit_admin =
+                    mapply(function(x,y,z) contact_fit(
+                      z,contact_priority_info[which(contact_priority_info$phase==x&
+                                                      contact_priority_info$hospital==y),]$type.c),
+                      phase,hospital,time_on_admin),
+                  contact_priority_fit_nurs =
+                    mapply(function(x,y,z) contact_fit(
+                      z,contact_priority_info[which(contact_priority_info$phase==x&
+                                                      contact_priority_info$hospital==y),]$type.d),
+                      phase,hospital,time_on_nurs),
                   contact_priority_fit_index = contact_priority_fit_doc*weightage$contact_priority$a+
                     contact_priority_fit_diet*weightage$contact_priority$b+
                     contact_priority_fit_admin*weightage$contact_priority$c+
@@ -383,15 +429,14 @@ get.data3 <- function(input,phase){
   
 }
 
-data_filter <- function(data) {
+data_filter <- function(data,contribution_margin) {
   out <- data %>%
     select(phase,
            hospital,
            product,
            offer_attractiveness,
            acc_offer_attractiveness,
-           real_sales,
-           promotional_budget,
+           real_revenue,
            customer_relationship_index,
            sales_skills_index,
            product_knowledge_index,
@@ -400,15 +445,13 @@ data_filter <- function(data) {
     group_by(phase,hospital) %>%
     mutate(hospital_offer_attractiveness = sum(offer_attractiveness),
            hospital_acc_offer_attractiveness = sum(acc_offer_attractiveness),
-           hospital_real_sales = sum(real_sales),
-           hospital_contribution_margin = hospital_real_sales-promotional_budget,
+           hospital_real_revenue = sum(real_revenue),
            hospital_customer_relationship_index = sum(customer_relationship_index)) %>%
     ungroup() %>%
     select(phase,hospital,
            hospital_offer_attractiveness,
            hospital_acc_offer_attractiveness,
-           hospital_real_sales,
-           hospital_contribution_margin,
+           hospital_real_revenue,
            hospital_customer_relationship_index,
            sales_skills_index,
            product_knowledge_index,
@@ -417,16 +460,16 @@ data_filter <- function(data) {
     group_by(phase) %>%
     dplyr::summarise(total_offer_attractiveness=round(sum(hospital_offer_attractiveness)),
                      total_acc_offer_attractiveness = round(sum(hospital_acc_offer_attractiveness)),
-                     total_revenue = sum(hospital_real_sales),
-                     total_contribution_margin = sum(hospital_contribution_margin),
+                     total_revenue = sum(hospital_real_revenue),
                      average_customer_relationship_index = mean(hospital_customer_relationship_index),
                      average_sales_skills_index = mean(sales_skills_index),
                      avarage_product_knowledge_index = mean(product_knowledge_index),
                      average_motivation_index = mean(motivation_index)) %>%
-    mutate(success_value = 
+    mutate(contribution_margin_III=contribution_margin,
+           success_value = 
              round(
                (weightage$success_value)$total_sales*curve(curve50,total_revenue) +
-                 (weightage$success_value)$contribution_margin*curve(curve49,total_contribution_margin) +
+                 (weightage$success_value)$contribution_margin*curve(curve49,contribution_margin_III) +
                  (weightage$success_value)$average_customer_relationship*curve(curve45,average_customer_relationship_index) +
                  (weightage$success_value)$average_sales_skills*curve(curve48,average_sales_skills_index) +
                  (weightage$success_value)$average_product_knowledge*curve(curve47,avarage_product_knowledge_index) +
@@ -443,14 +486,11 @@ final_report <- function(phase1,phase2,phase3,phase4){
   
   no.list <- data.frame(number=1:length(final.names),
                         variable=final.names)
-  p1_data <- data_filter(phase1)
-  p2_data <- data_filter(phase2)
-  p3_data <- data_filter(phase3)
-  p4_data <- data_filter(phase4)
-  data <- rbind(p1_data,
-                p2_data,
-                p3_data,
-                p4_data)
+
+  data <- rbind(phase1,
+                phase2,
+                phase3,
+                phase4)
   
   #colnames(data)[2:4] <- c("累计商业价值","商业价值","综合得分")
   colnames(data)[2:4] <- c("综合得分","商业价值","累计商业价值")

@@ -324,7 +324,7 @@ get.data1 <- function(input,phase){
   for (j in 1:10) {
     for (q in 1:4){
       name.phase = as.character(paste("周期",phase,sep=""))
-      name.hospital = as.character(hospital_info_initial$name[j])
+      name.hospital = as.character(hospital_info$hospital[j])
       name.product = as.character(product_info_initial$product[q])
       name.sales_rep <- as.character(input[[paste("p",phase,"_sr_hosp",j,sep="")]])
       value.sales_target <- as.numeric(input[[paste("p",phase,"_hosp",j,"_sales_target_",q,sep="")]])
@@ -386,7 +386,7 @@ get.data2 <- function(input,phase){
   )
   
   for (j in 1:5) {
-    name.sales_rep <- as.character(sr_info_initial$sales_name[j])
+    name.sales_rep <- as.character(sr_info_initial_value$sales_rep[j])
     value.sales_training <- as.numeric(
       input[[paste("p",phase,"_sr",j,"_sales_training",sep="")]])
     value.product_training <- as.numeric(

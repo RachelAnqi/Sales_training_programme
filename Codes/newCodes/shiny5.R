@@ -37,30 +37,139 @@ shinyApp(ui=dashboardPage(
       )
     )),
   dashboardBody(
-    
+   
     tabItems(
       # First tab content
       tabItem(tabName = "news_and_WAS",
               tabsetPanel(
                 tabPanel("客户信息",
-                         dataTableOutput("hospital_info")),
-                tabPanel("新闻")
-              )),
+                         br(),
+                        
+                         box(width = 3,
+                             title = "周期列表",
+                             solidHeader = TRUE, status = "primary",
+                             
+                                actionButton(inputId="phase1_hospital_info", label="周期1:  客户信息",
+                                             style="width:150px"),
+                             br(),br(),
+                             disabled(actionButton(inputId="phase2_hospital_info", label="周期2:  客户信息",
+                                                   style="width:150px")),
+                             br(),br(),
+                             disabled(actionButton(inputId="phase3_hospital_info", label="周期3:  客户信息",
+                                                   style="width:150px")),
+                             br(),br(),
+                             disabled(actionButton(inputId="phase4_hospital_info", label="周期4:  客户信息",
+                                                   style="width:150px"))),
+                         
+                                div(id="phase1_hospital_info_box",
+                                      box(width = 8,
+                                        title = "客户信息",
+                                        solidHeader = TRUE, status = "primary",
+                                        dataTableOutput("hospital_info"))),
+                                hidden(
+                                  div(id="phase2_hospital_info_box",
+                                      box(
+                                        title = "客户信息",
+                                        solidHeader = TRUE, status = "primary",
+                                        "客户信息2"
+                                      )
+                                  )),
+                                hidden(
+                                  div(id="phase3_hospital_info_box",
+                                      box(
+                                        title = "客户信息",
+                                        solidHeader = TRUE, status = "primary",
+                                        "客户信息3"
+
+                                      )
+                                  )),
+                                hidden(
+                                  div(id="phase4_hospital_info_box",
+                                      box(
+                                        title = "客户信息",
+                                        solidHeader = TRUE, status = "primary",
+                                        "客户信息4"
+
+                                      )
+                                  ))
+                         ),
+                tabPanel("新闻",
+                         br(),
+                         box(width = 3,
+                             title = "周期列表",
+                             solidHeader = TRUE, status = "primary",
+                             
+                                actionButton(inputId="phase1_WAS_info", label="周期1:  新闻快报",
+                                             style="width:150px"),
+                             br(),br(),
+                                disabled(
+                                  actionButton(inputId="phase2_WAS_info", label="周期2:  新闻快报",
+                                               style="width:150px")),
+                             br(),br(),
+                                disabled(
+                                  actionButton(inputId="phase3_WAS_info", label="周期3:  新闻快报",
+                                               style="width:150px")),
+                             br(),br(),
+                                disabled(
+                                  actionButton(inputId="phase4_WAS_info", label="周期4:  新闻快报",
+                                               style="width:150px"))),
+                         
+                                div(id="phase1_WAS_info_box",
+                                    box(width = 8,
+                                      title = "新闻快报",
+                                      solidHeader = TRUE, status = "primary",
+                                      "新闻快报1")),
+                                hidden(
+                                  div(id="phase2_WAS_info_box",
+                                      box(width = 8,
+                                        title = "新闻快报",
+                                        solidHeader = TRUE, status = "primary",
+                                        "新闻快报2"
+                                      )
+                                  )),
+                                hidden(
+                                  div(id="phase3_WAS_info_box",
+                                      box(width = 8,
+                                        title = "新闻快报",
+                                        solidHeader = TRUE, status = "primary",
+                                        "新闻快报3"
+                                      )
+                                  )),
+                                hidden(
+                                  div(id="phase4_WAS_info_box",
+                                      box(width = 8,
+                                        title = "新闻快报",
+                                        solidHeader = TRUE, status = "primary",
+                                        "新闻快报4"
+                                      )
+                                  ))
+                                ))),
       
       # First tab content
       tabItem(tabName = "sr",
-              dataTableOutput("sales_rep_info")),
+              box(title = "销售代表介绍",
+                  solidHeader = TRUE, status = "primary",
+                  width = 12,
+                  dataTableOutput("sales_rep_info"))
+              ),
       
       # First tab content
       tabItem(tabName = "products",
-              dataTableOutput("products_info")),
+              box(title = "销售产品介绍",
+                  solidHeader = TRUE, status = "primary",
+                  width = 12,
+                  dataTableOutput("products_info"))
+              ),
       
       # First tab content
       tabItem(
         tabName = "decision1",
         tabsetPanel(
           #position = "left",
+          
+          
           tabPanel("周期1",
+                   value="phase1",
                    
                    actionButton("decision1_phase1_submit", "submit"),
                    #fluidRow(
@@ -2079,12 +2188,19 @@ shinyApp(ui=dashboardPage(
                    
                    
           ),
+          
+            
+          
           tabPanel(
             "周期2",
+            value="phase2",
             
             # fluidRow(
             #   h3("总推广预算"),
-            box(
+            br(),
+            hidden(
+            div(id="decision1_phase2",
+              box(
               title="总推广预算",
               status = "primary",
               solidHeader = TRUE,
@@ -4087,18 +4203,16 @@ shinyApp(ui=dashboardPage(
                          verbatimTextOutput("p2_decison1_summary_hosp10"))
               )
             )
-            
-            
-            
-            
-            
-            
-          ),
+            )
+        )),
           tabPanel(
             "周期3",
             
             # fluidRow(
             #   h3("总推广预算"),
+            br(),
+            hidden(
+              div(id="decision1_phase3",
             box(
               title="总推广预算",
               status = "primary",
@@ -6104,18 +6218,15 @@ shinyApp(ui=dashboardPage(
                          verbatimTextOutput("p3_decison1_summary_hosp10"))
               )
             )
-            
-            
-            
-            
-            
-            
-          ),
+         ))),
           tabPanel(
             "周期4",
             
             # fluidRow(
             #   h3("总推广预算"),
+            br(),
+            hidden(
+              div(id="decision1_phase4",
             box(
               title="总推广预算",
               status = "primary",
@@ -8126,7 +8237,7 @@ shinyApp(ui=dashboardPage(
             
             
             
-          )
+          )))
         )),
       tabItem(
         tabName = "decision2",
@@ -8134,7 +8245,7 @@ shinyApp(ui=dashboardPage(
         tabsetPanel(
           tabPanel(
             "周期1",
-            actionButton("decision2_phase1_calculator", "calculator"),
+            
             actionButton("decision2_phase1_submit", "submit"),
             actionButton('save_inputs', 'Save inputs'),
             actionButton("load_inputs", "Load inputs"),
@@ -8194,15 +8305,15 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
                          "经理"),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               tags$div(
@@ -8316,15 +8427,15 @@ shinyApp(ui=dashboardPage(
               width="100%",
               tags$div(
                 tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               
@@ -8351,7 +8462,9 @@ shinyApp(ui=dashboardPage(
           ),
           tabPanel(
             "周期2",
-            actionButton("decision2_phase2_calculator", "calculator"),
+            hidden(
+              div(id="decision2_phase2",
+            
             actionButton("decision2_phase2_submit","submit"),
             #fluidRow(h3("时间分配"),
             box(
@@ -8409,15 +8522,15 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
                          "经理"),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               tags$div(
@@ -8531,15 +8644,15 @@ shinyApp(ui=dashboardPage(
               width="100%",
               tags$div(
                 tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               tags$div(
@@ -8561,11 +8674,13 @@ shinyApp(ui=dashboardPage(
                          textInput("p2_sr5_product_training", label =
                                      NULL))
               )
-            )
+            )))
           ),
           tabPanel(
             "周期3",
-            actionButton("decision2_phase3_calculator", "calculator"),
+            hidden(
+              div(id="decision2_phase3",
+            
             actionButton("decision2_phase3_submit","submit"),
             #fluidRow(h3("时间分配"),
             box(
@@ -8623,15 +8738,15 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
                          "经理"),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               tags$div(
@@ -8745,15 +8860,15 @@ shinyApp(ui=dashboardPage(
               width="100%",
               tags$div(
                 tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               tags$div(
@@ -8775,11 +8890,13 @@ shinyApp(ui=dashboardPage(
                          textInput("p3_sr5_product_training", label =
                                      NULL))
               )
-            )
+            )))
           ),
           tabPanel(
             "周期4",
-            actionButton("decision2_phase4_calculator", "calculator"),
+            hidden(
+              div(id="decision2_phase4",
+           
             actionButton("decision2_phase4_submit","submit"),
             #fluidRow(h3("时间分配"),
             box(
@@ -8837,15 +8954,15 @@ shinyApp(ui=dashboardPage(
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
                          "经理"),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               tags$div(
@@ -8959,15 +9076,15 @@ shinyApp(ui=dashboardPage(
               width="100%",
               tags$div(
                 tags$div(style = "display:inline-block;margin-left:15%;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[1]),
+                         sr_info_initial_value$sales_rep[1]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[2]),
+                         sr_info_initial_value$sales_rep[2]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[3]),
+                         sr_info_initial_value$sales_rep[3]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[4]),
+                         sr_info_initial_value$sales_rep[4]),
                 tags$div(style = "display:inline-block;text-align:center;width:11.5%",
-                         sr_info_initial$sales_name[5])
+                         sr_info_initial_value$sales_rep[5])
               ),
               br(),
               tags$div(
@@ -8993,7 +9110,7 @@ shinyApp(ui=dashboardPage(
             )
           )
         )
-      ),
+      ))),
       tabItem(tabName = "report1",
               DT::dataTableOutput("report1_table")),
       tabItem(tabName = "report2",
@@ -9354,49 +9471,62 @@ shinyApp(ui=dashboardPage(
                 
               ))))),
   server=function(input, output,session) {
-    # output$p1_hosp1 <- renderText(hospital_info_initial$name[1])
-    # output$p1_hosp2 <- renderText(hospital_info_initial$name[2])
-    # output$p1_hosp3 <- renderText(hospital_info_initial$name[3])
-    # output$p1_hosp4 <- renderText(hospital_info_initial$name[4])
-    # output$p1_hosp5 <- renderText(hospital_info_initial$name[5])
-    # output$p1_hosp6 <- renderText(hospital_info_initial$name[6])
-    # output$p1_hosp7 <- renderText(hospital_info_initial$name[7])
-    # output$p1_hosp8 <- renderText(hospital_info_initial$name[8])
-    # output$p1_hosp9 <- renderText(hospital_info_initial$name[9])
-    # output$p1_hosp10 <- renderText(hospital_info_initial$name[10])
-    # 
-    # output$p2_hosp1 <- renderText(hospital_info_initial$name[1])
-    # output$p2_hosp2 <- renderText(hospital_info_initial$name[2])
-    # output$p2_hosp3 <- renderText(hospital_info_initial$name[3])
-    # output$p2_hosp4 <- renderText(hospital_info_initial$name[4])
-    # output$p2_hosp5 <- renderText(hospital_info_initial$name[5])
-    # output$p2_hosp6 <- renderText(hospital_info_initial$name[6])
-    # output$p2_hosp7 <- renderText(hospital_info_initial$name[7])
-    # output$p2_hosp8 <- renderText(hospital_info_initial$name[8])
-    # output$p2_hosp9 <- renderText(hospital_info_initial$name[9])
-    # output$p2_hosp10 <- renderText(hospital_info_initial$name[10])
-    # 
-    # output$p3_hosp1 <- renderText(hospital_info_initial$name[1])
-    # output$p3_hosp2 <- renderText(hospital_info_initial$name[2])
-    # output$p3_hosp3 <- renderText(hospital_info_initial$name[3])
-    # output$p3_hosp4 <- renderText(hospital_info_initial$name[4])
-    # output$p3_hosp5 <- renderText(hospital_info_initial$name[5])
-    # output$p3_hosp6 <- renderText(hospital_info_initial$name[6])
-    # output$p3_hosp7 <- renderText(hospital_info_initial$name[7])
-    # output$p3_hosp8 <- renderText(hospital_info_initial$name[8])
-    # output$p3_hosp9 <- renderText(hospital_info_initial$name[9])
-    # output$p3_hosp10 <- renderText(hospital_info_initial$name[10])
-    # 
-    # output$p4_hosp1 <- renderText(hospital_info_initial$name[1])
-    # output$p4_hosp2 <- renderText(hospital_info_initial$name[2])
-    # output$p4_hosp3 <- renderText(hospital_info_initial$name[3])
-    # output$p4_hosp4 <- renderText(hospital_info_initial$name[4])
-    # output$p4_hosp5 <- renderText(hospital_info_initial$name[5])
-    # output$p4_hosp6 <- renderText(hospital_info_initial$name[6])
-    # output$p4_hosp7 <- renderText(hospital_info_initial$name[7])
-    # output$p4_hosp8 <- renderText(hospital_info_initial$name[8])
-    # output$p4_hosp9 <- renderText(hospital_info_initial$name[9])
-    # output$p4_hosp10 <- renderText(hospital_info_initial$name[10])
+    observeEvent(input$phase1_hospital_info,{
+      shinyjs::show(id="phase1_hospital_info_box")
+      shinyjs::hide(id="phase2_hospital_info_box")
+      shinyjs::hide(id="phase3_hospital_info_box")
+      shinyjs::hide(id="phase4_hospital_info_box")
+    })
+    
+    observeEvent(input$phase2_hospital_info,{
+      shinyjs::hide(id="phase1_hospital_info_box")
+      shinyjs::show(id="phase2_hospital_info_box")
+      shinyjs::hide(id="phase3_hospital_info_box")
+      shinyjs::hide(id="phase4_hospital_info_box")
+    })
+    
+    observeEvent(input$phase3_hospital_info,{
+      shinyjs::hide(id="phase1_hospital_info_box")
+      shinyjs::hide(id="phase2_hospital_info_box")
+      shinyjs::show(id="phase3_hospital_info_box")
+      shinyjs::hide(id="phase4_hospital_info_box")
+    })
+    
+    observeEvent(input$phase4_hospital_info,{
+      shinyjs::hide(id="phase1_hospital_info_box")
+      shinyjs::hide(id="phase2_hospital_info_box")
+      shinyjs::hide(id="phase3_hospital_info_box")
+      shinyjs::show(id="phase4_hospital_info_box")
+    })
+    
+    observeEvent(input$phase1_WAS_info,{
+      shinyjs::show(id="phase1_WAS_info_box")
+      shinyjs::hide(id="phase2_WAS_info_box")
+      shinyjs::hide(id="phase3_WAS_info_box")
+      shinyjs::hide(id="phase4_WAS_info_box")
+    })
+    
+    observeEvent(input$phase2_WAS_info,{
+      shinyjs::hide(id="phase1_WAS_info_box")
+      shinyjs::show(id="phase2_WAS_info_box")
+      shinyjs::hide(id="phase3_WAS_info_box")
+      shinyjs::hide(id="phase4_WAS_info_box")
+    })
+    
+    observeEvent(input$phase3_WAS_info,{
+      shinyjs::hide(id="phase1_WAS_info_box")
+      shinyjs::hide(id="phase2_WAS_info_box")
+      shinyjs::show(id="phase3_WAS_info_box")
+      shinyjs::hide(id="phase4_WAS_info_box")
+    })
+    
+    observeEvent(input$phase4_WAS_info,{
+      shinyjs::hide(id="phase1_WAS_info_box")
+      shinyjs::hide(id="phase2_WAS_info_box")
+      shinyjs::hide(id="phase3_WAS_info_box")
+      shinyjs::show(id="phase4_WAS_info_box")
+    })
+   
     output$p1_work_time <- renderText(worktime)
     output$p2_work_time <- renderText(worktime)
     output$p3_work_time <- renderText(worktime)
@@ -9667,26 +9797,17 @@ shinyApp(ui=dashboardPage(
     output$p1_total_promotional_budget <- renderText(total_promotional_budget$phase1)
     
     
-    p1_calculator_result_tmp <- reactive({calculator(input,1)})
+    p1_calculator_result <- reactive({calculator(input,1)})
       
     
     
-    p1_calculator_result <- eventReactive(input$decision2_phase1_calculator,{
-      p1_calculator_result_tmp()
-    })
-    
-    output$p1_arranged_promotional_budget <- renderText(
-      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[1])) 
-    output$p1_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[2]))
-    output$p1_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[3]))
-    output$p1_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[4]))
-    output$p1_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[5]))
-    output$p1_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision2_phase1_calculator==0,0,p1_calculator_result()[6]))
+  
+    output$p1_arranged_promotional_budget <- renderText(p1_calculator_result()[1]) 
+    output$p1_arranged_time_of_sr1 <- renderText(p1_calculator_result()[2])
+    output$p1_arranged_time_of_sr2 <- renderText(p1_calculator_result()[3])
+    output$p1_arranged_time_of_sr3 <- renderText(p1_calculator_result()[4])
+    output$p1_arranged_time_of_sr4 <- renderText(p1_calculator_result()[5])
+    output$p1_arranged_time_of_sr5 <- renderText(p1_calculator_result()[6])
     
     output$p1_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期1"&
@@ -10111,23 +10232,47 @@ shinyApp(ui=dashboardPage(
                          cp_data1,
                          cp_data2)})
     
-    p1_report<- reactive({
-      flm_data <- get.data3(input,1)
-      p1_report <- report_data(tmp(),flm_data)})
     
+    
+    
+    
+    p1_report <- eventReactive(input$decision2_phase1_submit,{
+    if (
+
+        p1_calculator_result()[1] <=100 &
+        p1_calculator_result()[2] <=worktime &
+        p1_calculator_result()[3] <=worktime &
+        p1_calculator_result()[4] <=worktime &
+        p1_calculator_result()[5] <=worktime &
+        p1_calculator_result()[6] <=worktime &
+        sum(p1_flm_data()) <=worktime
+      ) {
+        p1_report <- report_data(tmp(),p1_flm_data())
+        return(p1_report)
+      } 
+
+    })
+    
+
     observeEvent(input$decision2_phase1_submit,{
-      # if (
-      #   p1_calculator_result()[1] >=worktime |
-      #   p1_calculator_result()[2] >=worktime |
-      #   p1_calculator_result()[3] >=worktime |
-      #   p1_calculator_result()[4] >=worktime |
-      #   p1_calculator_result()[5] >=worktime |
-      #   sum(p1_flm_data()) >=worktime
-      # ) {
-      #   session$sendCustomMessage(type = 'testmessage',
-      #                             message = '时间分配超出最大值')
-      # } else{
-        
+    if (
+      p1_calculator_result()[1] >100 |
+      p1_calculator_result()[2] >worktime |
+      p1_calculator_result()[3] >worktime |
+      p1_calculator_result()[4] >worktime |
+      p1_calculator_result()[5] >worktime |
+      p1_calculator_result()[6] >worktime |
+      sum(p1_flm_data()) >=worktime
+    ) {
+      shinyjs::alert("Something Wrong!!")
+
+    } else{
+      
+        shinyjs::show(id="decision1_phase2",anim=T)
+        shinyjs::show(id="decision2_phase2",anim=T)
+        shinyjs::enable(id="phase2_hospital_info")
+        shinyjs::enable(id="phase2_WAS_info")
+     
         #hosp1
         disable("p1_discount_hosp1_1")
         disable("p1_discount_hosp1_2")
@@ -10336,7 +10481,9 @@ shinyApp(ui=dashboardPage(
         disable("p1_sr2_product_training")
         disable("p1_sr3_product_training")
         disable("p1_sr4_product_training")
-        disable("p1_sr5_product_training")})
+        disable("p1_sr5_product_training")}
+        })
+  
     
     
     
@@ -10422,7 +10569,8 @@ shinyApp(ui=dashboardPage(
       renderDataTable(datatable(p1_report()$report3_mod1,
                                 caption="时间分配",
                                 options = 
-                                  list(ordering = F, dom = "t",
+                                  list(pageLength = 20,
+                                       ordering = F, dom = "t",
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
@@ -10571,22 +10719,16 @@ shinyApp(ui=dashboardPage(
     )
     
     
-    p2_calculator_result <- eventReactive(input$decision2_phase2_calculator,{
-      calculator(input,2)
-    })
+    p2_calculator_result <- reactive(calculator(input,2))
+      
     
-    output$p2_arranged_promotional_budget <- renderText(
-      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[1])) 
-    output$p2_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[2]))
-    output$p2_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[3]))
-    output$p2_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[4]))
-    output$p2_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[5]))
-    output$p2_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision2_phase2_calculator==0,0,p2_calculator_result()[6]))
+    
+    output$p2_arranged_promotional_budget <- renderText(p2_calculator_result()[1])
+    output$p2_arranged_time_of_sr1 <- renderText(p2_calculator_result()[2])
+    output$p2_arranged_time_of_sr2 <- renderText(p2_calculator_result()[3])
+    output$p2_arranged_time_of_sr3 <- renderText(p2_calculator_result()[4])
+    output$p2_arranged_time_of_sr4 <- renderText(p2_calculator_result()[5])
+    output$p2_arranged_time_of_sr5 <- renderText(p2_calculator_result()[6])
     
     output$p2_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期2"&
@@ -10999,13 +11141,46 @@ shinyApp(ui=dashboardPage(
                          cp_data1,
                          cp_data2)})
     
-    p2_report<- reactive({
-      flm_data <- get.data3(input,2)
-      p2_report <- report_data(tmp2(),flm_data)})
+    
+    
+    p2_report<- eventReactive(input$decision2_phase2_submit,{
+      if (
+        
+        p2_calculator_result()[1] <=100 &
+        p2_calculator_result()[2] <=worktime &
+        p2_calculator_result()[3] <=worktime &
+        p2_calculator_result()[4] <=worktime &
+        p2_calculator_result()[5] <=worktime &
+        p2_calculator_result()[6] <=worktime &
+        sum(p2_flm_data()) <=worktime
+      ) {
+        p2_report <- report_data(tmp2(),p2_flm_data())
+        return(p2_report)
+      } 
+      
+    })
     
     
     
     observeEvent(input$decision2_phase2_submit, {
+      
+      if (
+        p2_calculator_result()[1] >100 |
+        p2_calculator_result()[2] >worktime |
+        p2_calculator_result()[3] >worktime |
+        p2_calculator_result()[4] >worktime |
+        p2_calculator_result()[5] >worktime |
+        p2_calculator_result()[6] >worktime |
+        sum(p2_flm_data()) >worktime
+      ) {
+        shinyjs::alert("Something Wrong!!")
+        
+      } else{
+        
+      shinyjs::show(id="decision1_phase3")
+      shinyjs::show(id="decision2_phase3")
+      shinyjs::enable(id="phase3_hospital_info")
+      shinyjs::enable(id="phase3_WAS_info")
       
       #hosp1
       disable("p2_discount_hosp1_1")
@@ -11216,7 +11391,8 @@ shinyApp(ui=dashboardPage(
       disable("p2_sr2_product_training")
       disable("p2_sr3_product_training")
       disable("p2_sr4_product_training")
-      disable("p2_sr5_product_training")
+      disable("p2_sr5_product_training")}
+    })
       
       
       output$p2_report1_1 <-
@@ -11439,7 +11615,7 @@ shinyApp(ui=dashboardPage(
       
       
       
-    })
+   
     
     ##phase3
     
@@ -11448,22 +11624,14 @@ shinyApp(ui=dashboardPage(
     )
     
     
-    p3_calculator_result <- eventReactive(input$decision2_phase3_calculator,{
-      calculator(input,3)
-    })
+    p3_calculator_result <- reactive(calculator(input,3))
     
-    output$p3_arranged_promotional_budget <- renderText(
-      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[1])) 
-    output$p3_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[2]))
-    output$p3_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[3]))
-    output$p3_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[4]))
-    output$p3_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[5]))
-    output$p3_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision2_phase3_calculator==0,0,p3_calculator_result()[6]))
+    output$p3_arranged_promotional_budget <- renderText(p3_calculator_result()[1])
+    output$p3_arranged_time_of_sr1 <- renderText(p3_calculator_result()[2])
+    output$p3_arranged_time_of_sr2 <- renderText(p3_calculator_result()[3])
+    output$p3_arranged_time_of_sr3 <- renderText(p3_calculator_result()[4])
+    output$p3_arranged_time_of_sr4 <- renderText(p3_calculator_result()[5])
+    output$p3_arranged_time_of_sr5 <- renderText(p3_calculator_result()[6])
     
     output$p3_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期3"&
@@ -11874,13 +12042,42 @@ shinyApp(ui=dashboardPage(
                          cp_data1,
                          cp_data2)})
     
-    p3_report<- reactive({
-      flm_data <- get.data3(input,3)
-      p3_report <- report_data(tmp3(),flm_data)})
+    p3_report<- eventReactive(input$decision2_phase3_submit,{
+      if (
+        
+        p3_calculator_result()[1] <=100 &
+        p3_calculator_result()[2] <=worktime &
+        p3_calculator_result()[3] <=worktime &
+        p3_calculator_result()[4] <=worktime &
+        p3_calculator_result()[5] <=worktime &
+        p3_calculator_result()[6] <=worktime &
+        sum(p3_flm_data()) <=worktime
+      ) {
+        p3_report <- report_data(tmp3(),p3_flm_data())
+        return(p3_report)
+      } 
+      
+    })
     
     
     
     observeEvent(input$decision2_phase3_submit, {
+      if (
+        p3_calculator_result()[1] >100 |
+        p3_calculator_result()[2] >worktime |
+        p3_calculator_result()[3] >worktime |
+        p3_calculator_result()[4] >worktime |
+        p3_calculator_result()[5] >worktime |
+        p3_calculator_result()[6] >worktime |
+        sum(p3_flm_data()) >=worktime
+      ) {
+        shinyjs::alert("Something Wrong!!")
+        
+      } else{
+      shinyjs::show(id="decision1_phase4")
+      shinyjs::show(id="decision2_phase4")
+      shinyjs::enable(id="phase4_hospital_info")
+      shinyjs::enable(id="phase4_WAS_info")  
       #hosp1
       disable("p3_discount_hosp1_1")
       disable("p3_discount_hosp1_2")
@@ -12089,7 +12286,8 @@ shinyApp(ui=dashboardPage(
       disable("p3_sr2_product_training")
       disable("p3_sr3_product_training")
       disable("p3_sr4_product_training")
-      disable("p3_sr5_product_training")
+      disable("p3_sr5_product_training")}
+    })
       
       output$p3_report1_1 <-
         renderDataTable(datatable(p3_report()$report1_mod1,
@@ -12309,7 +12507,7 @@ shinyApp(ui=dashboardPage(
       
       
       
-    })
+   
     
     ##phase4
     output$p4_total_promotional_budget <- renderText(
@@ -12317,22 +12515,14 @@ shinyApp(ui=dashboardPage(
     )
     
     
-    p4_calculator_result <- eventReactive(input$decision2_phase4_calculator,{
-      calculator(input,4)
-    })
-    
-    output$p4_arranged_promotional_budget <- renderText(
-      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[1])) 
-    output$p4_arranged_time_of_sr1 <- renderText(
-      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[2]))
-    output$p4_arranged_time_of_sr2 <- renderText(
-      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[3]))
-    output$p4_arranged_time_of_sr3 <- renderText(
-      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[4]))
-    output$p4_arranged_time_of_sr4 <- renderText(
-      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[5]))
-    output$p4_arranged_time_of_sr5 <- renderText(
-      ifelse(input$decision2_phase4_calculator==0,0,p4_calculator_result()[6]))
+    p4_calculator_result <- reactive(calculator(input,4))
+     
+    output$p4_arranged_promotional_budget <- renderText(p4_calculator_result()[1])
+    output$p4_arranged_time_of_sr1 <- renderText(p4_calculator_result()[2])
+    output$p4_arranged_time_of_sr2 <- renderText(p4_calculator_result()[3])
+    output$p4_arranged_time_of_sr3 <- renderText(p4_calculator_result()[4])
+    output$p4_arranged_time_of_sr4 <- renderText(p4_calculator_result()[5])
+    output$p4_arranged_time_of_sr5 <- renderText(p4_calculator_result()[6])
     
     output$p4_potential_sales_hosp1_1 <- renderText(
       volume_info[which(volume_info$phase=="周期4"&
@@ -12742,13 +12932,38 @@ shinyApp(ui=dashboardPage(
                          cp_data1,
                          cp_data2)})
     
-    p4_report<- reactive({
-      flm_data <- get.data3(input,4)
-      p4_report <- report_data(tmp4(),flm_data)})
+    p4_report<- eventReactive(input$decision2_phase4_submit,{
+      if (
+        
+        p4_calculator_result()[1] <=100 &
+        p4_calculator_result()[2] <=worktime &
+        p4_calculator_result()[3] <=worktime &
+        p4_calculator_result()[4] <=worktime &
+        p4_calculator_result()[5] <=worktime &
+        p4_calculator_result()[6] <=worktime &
+        sum(p4_flm_data()) <=worktime
+      ) {
+        p4_report <- report_data(tmp4(),p4_flm_data())
+        return(p4_report)
+      } 
+      
+    })
     
     
     
     observeEvent(input$decision2_phase4_submit, {
+      if (
+        p4_calculator_result()[1] >100 |
+        p4_calculator_result()[2] >worktime |
+        p4_calculator_result()[3] >worktime |
+        p4_calculator_result()[4] >worktime |
+        p4_calculator_result()[5] >worktime |
+        p4_calculator_result()[6] >worktime |
+        sum(p4_flm_data()) >worktime
+      ) {
+        shinyjs::alert("Something Wrong!!")
+        
+      } else{
       
       #hosp1
       disable("p4_discount_hosp1_1")
@@ -12959,7 +13174,8 @@ shinyApp(ui=dashboardPage(
       disable("p4_sr2_product_training")
       disable("p4_sr3_product_training")
       disable("p4_sr4_product_training")
-      disable("p4_sr5_product_training")
+      disable("p4_sr5_product_training")}
+    })
       
       output$p4_report1_1 <-
         renderDataTable(datatable(p4_report()$report1_mod1,
@@ -13194,7 +13410,7 @@ shinyApp(ui=dashboardPage(
       })
       
       output$final_report <-renderDataTable(
-        datatable(final_report_data,
+        datatable(final_report_data(),
                   caption="总分数",
                   options =list(ordering = F, dom = "t",
                                 columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
@@ -13209,4 +13425,4 @@ shinyApp(ui=dashboardPage(
       
       
       
-    }) })
+     })

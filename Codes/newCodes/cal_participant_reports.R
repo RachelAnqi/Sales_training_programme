@@ -46,8 +46,8 @@ colnames(report1_mod1) <- c("销售代表",
                             "总薪酬(元)")
 
 report1_mod1 <- report1_mod1 %>%
-  gather(variable,value,-`销售代表`) %>%
-  spread(`销售代表`,value) 
+  gather(variable,`值`,-`销售代表`) %>%
+  spread(`销售代表`,`值`) 
 
 rownames(report1_mod1) <- report1_mod1$variable
 report1_mod1 <- report1_mod1 %>% select(-variable)
@@ -73,8 +73,8 @@ colnames(report1_mod2) <- c("日常事物(天)",
                             "销售代表")
 
 report1_mod2 <- report1_mod2 %>%
-  gather(variable,value,-`销售代表`) %>%
-  spread(`销售代表`,value) 
+  gather(variable,`值`,-`销售代表`) %>%
+  spread(`销售代表`,`值`) 
 
 rownames(report1_mod2) <- report1_mod2$variable
 report1_mod2 <- report1_mod2 %>%select(-variable)
@@ -93,8 +93,8 @@ colnames(report1_mod3) <- c("销售代表",
                             "产品培训(天)")
 
 report1_mod3 <- report1_mod3 %>%
-  gather(variable,value,-`销售代表`) %>%
-  spread(`销售代表`,value)
+  gather(variable,`值`,-`销售代表`) %>%
+  spread(`销售代表`,`值`)
 
 rownames(report1_mod3) <- report1_mod3$variable
 report1_mod3 <- report1_mod3 %>% select(-variable)
@@ -112,8 +112,8 @@ colnames(report1_mod4) <- c("前期经验",
                             "当期经验",
                             "销售代表")
 report1_mod4 <- report1_mod4 %>%
-  gather(variable,value,-`销售代表`) %>%
-  spread(`销售代表`,value)
+  gather(variable,`值`,-`销售代表`) %>%
+  spread(`销售代表`,`值`)
 
 rownames(report1_mod4) <- report1_mod4$variable
 report1_mod4 <- report1_mod4 %>% select(-variable)
@@ -131,8 +131,8 @@ colnames(report1_mod5) <- c("销售代表",
                             "当期销售技巧(指数)",
                             "经理医院随访(天)")
 report1_mod5 <- report1_mod5 %>%
-  gather(variable,value,-`销售代表`) %>%
-  spread(`销售代表`,value)
+  gather(variable,`值`,-`销售代表`) %>%
+  spread(`销售代表`,`值`)
 
 rownames(report1_mod5) <- report1_mod5$variable
 report1_mod5 <- report1_mod5 %>% select(-variable)
@@ -158,7 +158,7 @@ report2_mod1 <- flm_report%>%
   select(all_sr_salary) %>%
   mutate(variable="总薪酬(元)")
 rownames(report2_mod1) <- report2_mod1$variable
-colnames(report2_mod1)[1] <- "value" 
+colnames(report2_mod1)[1] <- "值" 
 report2_mod1 <- report2_mod1 %>%
   select(-variable)
 
@@ -173,7 +173,7 @@ colnames(report2_mod2) <- c("销售培训(天)",
                            "行政工作(天)",
                            "总工作时间(天)")
 report2_mod2 <- report2_mod2 %>%
-  gather(variable,value)
+  gather(variable,`值`)
 
 rownames(report2_mod2) <- report2_mod2$variable
 report2_mod2 <- report2_mod2 %>% select(-variable)
@@ -181,7 +181,7 @@ report2_mod2 <- report2_mod2 %>% select(-variable)
 
 ## brief time allocation of hospital report
 report3_rank1 <- data.frame(
-  variable=c("销售代表","计划时间分配(天)","实际时间分配(天)"),
+  "因素"=c("销售代表","计划时间分配(天)","实际时间分配(天)"),
   rank=1:3,
   stringsAsFactors =F
 )
@@ -205,9 +205,9 @@ colnames(report3_mod1) <- c("医院",
                                "实际时间分配(天)") 
 
 report3_mod1 <- report3_mod1 %>%
-  gather(variable,value,-`医院`,-`产品`) %>%
+  gather(`因素`,value,-`医院`,-`产品`) %>%
   spread(`产品`,value) %>%
-  left_join(report3_rank1,by="variable") %>%
+  left_join(report3_rank1,by="因素") %>%
   arrange(`医院`,rank) %>%
   select(-rank)
 
@@ -334,28 +334,28 @@ colnames(report5_mod1) <- c("产品",
                             "生产成本(%)",
                             "利润贡献I(%)")
 report5_mod1 <- report5_mod1 %>%
-  gather(variable,value,-`产品`) %>%
+  gather(`因素`,value,-`产品`) %>%
   spread(`产品`,value)
 
 report5_rank1 <- data.frame(
-  variable= c("销售金额(元)",
+  "因素"= c("销售金额(元)",
               "生产成本(元)",
               "生产成本(%)",
               "利润贡献I(元)",
               "利润贡献I(%)"),
-  rank=1:length(report5_mod1$variable),
+  rank=1:length(report5_mod1$因素),
   stringsAsFactors = F
 )
 
 report5_mod1 <- report5_mod1 %>%
-  left_join(report5_rank1,by="variable") %>%
+  left_join(report5_rank1,by="因素") %>%
   distinct() %>%
   arrange(rank) %>%
   select(-rank)
 
-rownames(report5_mod1) <- report5_mod1$variable
+rownames(report5_mod1) <- report5_mod1$因素
 
-report5_mod1 <- report5_mod1 %>% select(-variable)  
+report5_mod1 <- report5_mod1 %>% select(-`因素`)  
 
 report5_mod2 <- tmp %>%
   select(hospital,
@@ -386,18 +386,18 @@ colnames(report5_mod2) <- c("产品",
                             "生产成本(%)",
                             "利润贡献I(%)")
 report5_mod2 <- report5_mod2 %>%
-  gather(variable,value,-`产品`) %>%
+  gather(`因素`,value,-`产品`) %>%
   spread(`产品`,value)
 
 report5_mod2 <- report5_mod2 %>%
-  left_join(report5_rank1,by="variable") %>%
+  left_join(report5_rank1,by="因素") %>%
   distinct() %>%
   arrange(rank) %>%
   select(-rank)
 
-rownames(report5_mod2) <- report5_mod2$variable
+rownames(report5_mod2) <- report5_mod2$因素
 
-report5_mod2 <- report5_mod2 %>% select(-variable)  
+report5_mod2 <- report5_mod2 %>% select(-`因素`)  
 
 report5_mod3 <- tmp %>%
   select(hospital,
@@ -425,7 +425,7 @@ report5_mod3 <- tmp %>%
          total_discount_fee = round(sum(discount_fee),2),
          total_promotional_budget = round(sum(promotional_budget),2),
          total_changeable_fee = total_discount_fee+total_promotional_budget,
-         total_salary=round(report2_mod1$value,2),
+         total_salary=round(report2_mod1$值,2),
          total_admin_fee=round(total_revenue*admin_fee_weight,2)) %>%
   select(-hospital,
          -total_discount_fee,
@@ -582,8 +582,7 @@ report5_mod3_2 <- report5_mod3 %>%
    gather(variable,value,-`医院`,-`产品`) %>%
    spread(`产品`,value) %>%
    left_join(report6_rank,by="variable") %>%
-   group_by(`医院`) %>%
-   arrange(rank) %>%
+   arrange(`医院`,rank) %>%
    select(-rank)
  
 
@@ -780,7 +779,7 @@ colnames(report8_mod1) <- c("总销售(元)",
                              "平均动力值(指数)",
                              "商业价值(指数)",
                              "累计商业价值(指数)") 
-report8_mod1 <- report8_mod1 %>% gather(variable,value)
+report8_mod1 <- report8_mod1 %>% gather(variable,`值`)
 rownames(report8_mod1) <- report8_mod1$variable
 report8_mod1 <- report8_mod1 %>% select(-variable)
 

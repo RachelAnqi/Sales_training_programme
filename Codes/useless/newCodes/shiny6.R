@@ -167,6 +167,7 @@ shinyApp(ui=dashboardPage(
           
           tabPanel("周期1",
                    value="phase1",
+                   br(),
                    
                    #fluidRow(
                    # h3("总推广预算"),
@@ -10341,7 +10342,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#003333', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report1_2 <- 
@@ -10353,7 +10354,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#003366', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report1_3 <- 
@@ -10364,7 +10365,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#006666', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report1_4 <- 
@@ -10375,7 +10376,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                          "}"))))
     output$p1_report1_5 <- 
       renderDataTable(datatable(p1_report()$report1_mod5,
@@ -10385,7 +10386,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#425066', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report2_1 <- 
@@ -10396,7 +10397,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F2F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report2_2 <- 
@@ -10407,7 +10408,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report3 <- 
@@ -10420,7 +10421,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report4_1 <- 
@@ -10431,7 +10432,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p1_report4_2 <- 
       renderDataTable(datatable(p1_report()$report4_mod2,
@@ -10441,7 +10442,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p1_report4_3 <- 
       renderDataTable(datatable(p1_report()$report4_mod3,
@@ -10451,7 +10452,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p1_report5_1 <- 
       renderDataTable(datatable(p1_report()$report5_mod1,
@@ -10461,7 +10462,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p1_report5_2 <- 
       renderDataTable(datatable(p1_report()$report5_mod2,
@@ -10471,7 +10472,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report5_3 <- 
@@ -10482,7 +10483,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report6_1 <- 
@@ -10495,7 +10496,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report7_1 <- 
@@ -10506,7 +10507,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report7_2 <- 
@@ -10517,7 +10518,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report7_3 <- 
@@ -10528,7 +10529,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p1_report8_1 <- 
@@ -10539,7 +10540,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p1_report8_2 <- 
       renderDataTable(datatable(p1_report()$report8_mod2,
@@ -10549,7 +10550,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     
@@ -11252,7 +11253,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report1_2 <- 
@@ -11264,7 +11265,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report1_3 <- 
@@ -11275,7 +11276,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report1_4 <- 
@@ -11286,7 +11287,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p2_report1_5 <- 
       renderDataTable(datatable(p2_report()$report1_mod5,
@@ -11296,7 +11297,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report2_1 <- 
@@ -11307,7 +11308,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report2_2 <- 
@@ -11318,7 +11319,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report3 <- 
@@ -11331,7 +11332,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report4_1 <- 
@@ -11342,7 +11343,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p2_report4_2 <- 
       renderDataTable(datatable(p2_report()$report4_mod2,
@@ -11352,7 +11353,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p2_report4_3 <- 
       renderDataTable(datatable(p2_report()$report4_mod3,
@@ -11362,7 +11363,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p2_report5_1 <- 
       renderDataTable(datatable(p2_report()$report5_mod1,
@@ -11372,7 +11373,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p2_report5_2 <- 
       renderDataTable(datatable(p2_report()$report5_mod2,
@@ -11382,7 +11383,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report5_3 <- 
@@ -11393,7 +11394,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report6_1 <- 
@@ -11406,7 +11407,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report7_1 <- 
@@ -11417,7 +11418,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report7_2 <- 
@@ -11428,7 +11429,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report7_3 <- 
@@ -11439,7 +11440,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p2_report8_1 <- 
@@ -11450,7 +11451,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p2_report8_2 <- 
       renderDataTable(datatable(p2_report()$report8_mod2,
@@ -11460,7 +11461,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     
@@ -12150,7 +12151,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report1_2 <- 
@@ -12162,7 +12163,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report1_3 <- 
@@ -12173,7 +12174,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report1_4 <- 
@@ -12184,7 +12185,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p3_report1_5 <- 
       renderDataTable(datatable(p3_report()$report1_mod5,
@@ -12194,7 +12195,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report2_1 <- 
@@ -12205,7 +12206,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report2_2 <- 
@@ -12216,7 +12217,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report3 <- 
@@ -12229,7 +12230,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report4_1 <- 
@@ -12240,7 +12241,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p3_report4_2 <- 
       renderDataTable(datatable(p3_report()$report4_mod2,
@@ -12250,7 +12251,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p3_report4_3 <- 
       renderDataTable(datatable(p3_report()$report4_mod3,
@@ -12260,7 +12261,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p3_report5_1 <- 
       renderDataTable(datatable(p3_report()$report5_mod1,
@@ -12270,7 +12271,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p3_report5_2 <- 
       renderDataTable(datatable(p3_report()$report5_mod2,
@@ -12280,7 +12281,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report5_3 <- 
@@ -12291,7 +12292,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report6_1 <- 
@@ -12304,7 +12305,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report7_1 <- 
@@ -12315,7 +12316,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report7_2 <- 
@@ -12326,7 +12327,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report7_3 <- 
@@ -12337,7 +12338,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p3_report8_1 <- 
@@ -12348,7 +12349,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p3_report8_2 <- 
       renderDataTable(datatable(p3_report()$report8_mod2,
@@ -12358,7 +12359,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     
@@ -13042,7 +13043,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report1_2 <- 
@@ -13054,7 +13055,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report1_3 <- 
@@ -13065,7 +13066,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report1_4 <- 
@@ -13076,7 +13077,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p4_report1_5 <- 
       renderDataTable(datatable(p4_report()$report1_mod5,
@@ -13086,7 +13087,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report2_1 <- 
@@ -13097,7 +13098,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report2_2 <- 
@@ -13108,7 +13109,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report3 <- 
@@ -13121,7 +13122,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report4_1 <- 
@@ -13132,7 +13133,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p4_report4_2 <- 
       renderDataTable(datatable(p4_report()$report4_mod2,
@@ -13142,7 +13143,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p4_report4_3 <- 
       renderDataTable(datatable(p4_report()$report4_mod3,
@@ -13152,7 +13153,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p4_report5_1 <- 
       renderDataTable(datatable(p4_report()$report5_mod1,
@@ -13162,7 +13163,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p4_report5_2 <- 
       renderDataTable(datatable(p4_report()$report5_mod2,
@@ -13172,7 +13173,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report5_3 <- 
@@ -13183,7 +13184,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report6_1 <- 
@@ -13196,7 +13197,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report7_1 <- 
@@ -13207,7 +13208,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report7_2 <- 
@@ -13218,7 +13219,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report7_3 <- 
@@ -13229,7 +13230,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     output$p4_report8_1 <- 
@@ -13240,7 +13241,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     output$p4_report8_2 <- 
       renderDataTable(datatable(p4_report()$report8_mod2,
@@ -13250,7 +13251,7 @@ shinyApp(ui=dashboardPage(
                                        columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                                        initComplete = JS(
                                          "function(settings, json) {",
-                                         "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                         "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                          "}"))))
     
     
@@ -13276,7 +13277,7 @@ shinyApp(ui=dashboardPage(
                               columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
                               initComplete = JS(
                                 "function(settings, json) {",
-                                "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                "$(this.api().table().header()).css({'background-color': '#2F4F4F', 'color': '#fff'});",
                                 "}")))
     ) 
     

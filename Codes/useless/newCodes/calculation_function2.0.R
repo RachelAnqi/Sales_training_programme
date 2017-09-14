@@ -333,13 +333,13 @@ get.data1 <- function(input,phase){
         total_promotional_budget[[paste("phase",phase,sep="")]]
       value.sr_time <- as.numeric(input[[paste("p",phase,"_hosp",j,"_worktime_",q,sep="")]])/100*worktime
       value.time_on_doc <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_doc",sep="")]])*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_doc",sep="")]])/100*value.sr_time
       value.time_on_diet <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_diet",sep="")]])*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_diet",sep="")]])/100*value.sr_time
       value.time_on_admin <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_admin",sep="")]])*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_admin",sep="")]])/100*value.sr_time
       value.time_on_nurs <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_nurs",sep="")]])*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_nurs",sep="")]])/100*value.sr_time
       
       data_decision <- plyr::rbind.fill(data_decision,data.frame(
         phase = name.phase,

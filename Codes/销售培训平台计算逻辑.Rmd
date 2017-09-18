@@ -28,7 +28,7 @@ classoption: "hyperref,"
     + 团队会议 
     + 医院拜访
 - **产品知识**： 当期产品知识
-    + 上期产品知识的过度值(curve28) 
+    + 上期产品知识的过渡值(curve28) 
     + 当期产品培训产生的额外值(curve26)
 - **经验**: 当期经验 = 销售代表的累计销售额(curve11)
 - **销售技巧**：当期销售技巧
@@ -76,7 +76,7 @@ classoption: "hyperref,"
 
 ##利润贡献(总体)
 - **利润贡献I(每产品)** 
-    + 销售数量：潜力销售数量 \* (1+volume factore) 与上期sales performance相关curve31
+    + 销售数量：潜力销售数量 \* (1+volume factor) 与上期sales performance相关curve31
     + 销售额：每件价格*潜力销售数量 
     + 生产成本：每件生产成本(预设) * 销售数量
     + 利润贡献I：销售额-生产成本

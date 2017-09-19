@@ -234,7 +234,7 @@ total_promotional_budget <- list(phase1 = 10000,
 ###
 production_price = data.frame(
   product=product_code$product,
-  price=c(50,50,50,50),
+  price=c(50,70,45,100),
   cost=c(0.6,0.6,0.6,0.6),
   stringsAsFactors = F
 )
@@ -261,12 +261,16 @@ volume_info <- volume_info %>%
   left_join(hospital_code,by="hospital.no") %>%
   left_join(product_code,by="product.no")
 
+volume_info$potential_volume <- round(volume_info$potential_volume)
+volume_info$current_volume <- round(volume_info$current_volume)
+
 pp_info_by_hosp_product <-read.xlsx("contact_priorty_info.xlsx",
                                     sheet="pp_hospital")
 pp_info_by_hosp_product <- pp_info_by_hosp_product %>%
   left_join(hospital_code,by="hospital.no") %>%
-  left_join(product_code,by="product.no") %>%
-  select(-hospital.no,-product.no)
+  left_join(product_code,by="product.no")
+
+pp_info_by_hosp_product$pp_real_volume <- round(pp_info_by_hosp_product$pp_real_volume)
   
 
 

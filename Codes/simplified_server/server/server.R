@@ -275,7 +275,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp1",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info_initial_value$sales_rep,
                          selected = NULL
                        )
                      )
@@ -473,7 +473,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp2",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info_initial_value$sales_rep,
                          selected = NULL
                        )
                      )
@@ -671,7 +671,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp3",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info_initial_value$sales_rep,
                          selected = NULL
                        )
                      )
@@ -901,7 +901,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp1",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -1099,7 +1099,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp2",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -1297,7 +1297,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp3",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -1525,7 +1525,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp1",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -1724,7 +1724,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp2",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -1922,7 +1922,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp3",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -2151,7 +2151,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp1",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -2349,7 +2349,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp2",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -2547,7 +2547,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp3",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info_initial_value$sales_rep,
                         selected = NULL
                       )
                     )
@@ -2672,6 +2672,7 @@ mainbody <- div(
           actionButton("decision2_phase1_submit", "提交"),
           actionButton('save_inputs', '保存输入'),
           actionButton("load_inputs", "加载输入"),
+          selectInput(inputId = "select_file",label = "filename",choices = list.files(pattern="\\.RDS$"),selected=NULL),
           #fluidRow(h3("时间分配"),
           box(
             title="时间分配",
@@ -3943,6 +3944,7 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期1"&
                         volume_info$hospital.no==1&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p1_current_sales_hosp1_1 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
                         volume_info$hospital.no==1&
@@ -3993,35 +3995,35 @@ server=function(input, output, session) {
                         volume_info$product.no==4),]$current_volume)
   output$p1_potential_sales_hosp3_1 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==1),]$potential_volume)
   output$p1_potential_sales_hosp3_2 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==1),]$potential_volume)
   output$p1_potential_sales_hosp3_3 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==2),]$potential_volume)
   output$p1_potential_sales_hosp3_4 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==4),]$potential_volume)
   output$p1_current_sales_hosp3_1 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==1),]$current_volume)
   output$p1_current_sales_hosp3_2 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==2),]$current_volume)
   output$p1_current_sales_hosp3_3 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==3),]$current_volume)
   output$p1_current_sales_hosp3_4 <- renderText(
     volume_info[which(volume_info$phase=="周期1"&
-                        volume_info$hospital.no==2&
+                        volume_info$hospital.no==3&
                         volume_info$product.no==4),]$current_volume)
   
   
@@ -4035,16 +4037,16 @@ server=function(input, output, session) {
     time <- gsub("-","_",Sys.Date())
     saveRDS( reactiveValuesToList(input) ,
              file = paste(input$user_name,"_",time,'.RDS',sep=""))})
+  
   observeEvent(input$load_inputs,{   
     
-    if(!file.exists('inputs.RDS')) {return(NULL)}
+    if(!file.exists(input$select_file)) {return(NULL)}
     
-    savedInputs <- readRDS('inputs.RDS')
+    savedInputs <- readRDS(input$select_file)
     
-    inputIDs      <- names(savedInputs) 
-    inputvalues   <- unlist(savedInputs) 
+   
     for (i in 1:length(savedInputs)) { 
-      session$sendInputMessage(inputIDs[i],  list(value=inputvalues[[i]]) )
+      session$sendInputMessage(names(savedInputs)[i],  list(value=savedInputs[[i]]) )
     }
   })
   
@@ -4184,6 +4186,19 @@ server=function(input, output, session) {
       disable("p1_hosp3_worktime_diet")
       disable("p1_hosp3_worktime_admin")
       disable("p1_hosp3_worktime_nurs")
+      disable("p1_sr1_sales_training")
+      disable("p1_sr2_sales_training")
+      disable("p1_sr3_sales_training")
+      disable("p1_sr4_sales_training")
+      disable("p1_sr5_sales_training")
+      disable("p1_sr1_field_work")
+      disable("p1_sr2_field_work")
+      disable("p1_flm_team_meeting")
+      disable("p1_flm_kpi_analysis")
+      disable("p1_flm_strategy_planning")
+      disable("p1_flm_admin_work")
+      disable("p1_sr1_product_training")
+      disable("p1_sr2_product_training")
       }
   })
   
@@ -4474,22 +4489,24 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期2"&
                         volume_info$hospital.no==1&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p2_current_sales_hosp1_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==1),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==1&
+                        tmp()$product.no==1),]$real_volume)
   output$p2_current_sales_hosp1_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==2),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==1&
+                        tmp()$product.no==2),]$real_volume)
   output$p2_current_sales_hosp1_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==3),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==1&
+                        tmp()$product.no==3),]$real_volume)
   output$p2_current_sales_hosp1_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==4),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==1&
+                        tmp()$product.no==4),]$real_volume)
+  
   output$p2_potential_sales_hosp2_1 <- renderText(
     volume_info[which(volume_info$phase=="周期2"&
                         volume_info$hospital.no==2&
@@ -4506,22 +4523,24 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期2"&
                         volume_info$hospital.no==2&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p2_current_sales_hosp2_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==1),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==2&
+                        tmp()$product.no==1),]$real_volume)
   output$p2_current_sales_hosp2_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==2),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==2&
+                        tmp()$product.no==2),]$real_volume)
   output$p2_current_sales_hosp2_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==3),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==2&
+                        tmp()$product.no==3),]$real_volume)
   output$p2_current_sales_hosp2_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==4),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==2&
+                        tmp()$product.no==4),]$real_volume)
+  
   output$p2_potential_sales_hosp3_1 <- renderText(
     volume_info[which(volume_info$phase=="周期2"&
                         volume_info$hospital.no==3&
@@ -4538,22 +4557,23 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期2"&
                         volume_info$hospital.no==3&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p2_current_sales_hosp3_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==3&
-                        volume_info$product.no==1),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==3&
+                        tmp()$product.no==1),]$real_volume)
   output$p2_current_sales_hosp3_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==3&
-                        volume_info$product.no==2),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==3&
+                        tmp()$product.no==2),]$real_volume)
   output$p2_current_sales_hosp3_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==3&
-                        volume_info$product.no==3),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==3&
+                        tmp()$product.no==3),]$real_volume)
   output$p2_current_sales_hosp3_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期2"&
-                        volume_info$hospital.no==3&
-                        volume_info$product.no==4),]$current_volume)
+    tmp()[which(tmp()$phase=="周期1"&
+                        tmp()$hospital.no==3&
+                        tmp()$product.no==4),]$real_volume)
   
   
   
@@ -4594,7 +4614,10 @@ server=function(input, output, session) {
   
   tmp2 <- reactive({
     pp_data1 <- tmp() %>% select(hospital,
+                                 hospital.no,
                                  product,
+                                 product.no,
+                                 market_share,
                                  real_revenue,
                                  real_volume,
                                  sr_sales_performance,
@@ -4606,7 +4629,7 @@ server=function(input, output, session) {
                                  acc_offer_attractiveness) %>%
       distinct()
     
-    colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
+    colnames(pp_data1)[5:14] <- paste("pp_",colnames(pp_data1)[5:14],sep="")
     
     pp_data2 <- tmp() %>% select(sales_rep,
                                  sales_level,
@@ -4719,7 +4742,17 @@ server=function(input, output, session) {
       disable("p2_hosp3_worktime_diet")
       disable("p2_hosp3_worktime_admin")
       disable("p2_hosp3_worktime_nurs")
-      }
+      disable("p2_sr1_sales_training")
+      disable("p2_sr2_sales_training")
+      disable("p2_sr1_field_work")
+      disable("p2_sr2_field_work")
+      disable("p2_flm_team_meeting")
+      disable("p2_flm_kpi_analysis")
+      disable("p2_flm_strategy_planning")
+      disable("p2_flm_admin_work")
+      disable("p2_sr1_product_training")
+      disable("p2_sr2_product_training")
+       }
   })
   
   
@@ -5001,22 +5034,24 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期3"&
                         volume_info$hospital.no==1&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p3_current_sales_hosp1_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==1),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==1&
+                        tmp2()$product.no==1),]$real_volume)
   output$p3_current_sales_hosp1_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==2),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==1&
+                        tmp2()$product.no==2),]$real_volume)
   output$p3_current_sales_hosp1_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==3),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==1&
+                        tmp2()$product.no==3),]$real_volume)
   output$p3_current_sales_hosp1_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==4),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==1&
+                        tmp2()$product.no==4),]$real_volume)
+  
   output$p3_potential_sales_hosp2_1 <- renderText(
     volume_info[which(volume_info$phase=="周期3"&
                         volume_info$hospital.no==2&
@@ -5033,22 +5068,23 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期3"&
                         volume_info$hospital.no==2&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p3_current_sales_hosp2_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==1),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==2&
+                        tmp2()$product.no==1),]$real_volume)
   output$p3_current_sales_hosp2_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==2),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==2&
+                        tmp2()$product.no==2),]$real_volume)
   output$p3_current_sales_hosp2_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==3),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==2&
+                        tmp2()$product.no==3),]$real_volume)
   output$p3_current_sales_hosp2_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==4),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                        tmp2()$hospital.no==2&
+                        tmp2()$product.no==4),]$real_volume)
   output$p3_potential_sales_hosp3_1 <- renderText(
     volume_info[which(volume_info$phase=="周期3"&
                         volume_info$hospital.no==3&
@@ -5065,22 +5101,23 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期3"&
                         volume_info$hospital.no==3&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p3_current_sales_hosp3_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==1),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                   tmp2()$hospital.no==3&
+                   tmp2()$product.no==1),]$real_volume)
   output$p3_current_sales_hosp3_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==2),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                   tmp2()$hospital.no==3&
+                   tmp2()$product.no==2),]$real_volume)
   output$p3_current_sales_hosp3_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==3),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                   tmp2()$hospital.no==3&
+                   tmp2()$product.no==3),]$real_volume)
   output$p3_current_sales_hosp3_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==4),]$current_volume)
+    tmp2()[which(tmp2()$phase=="周期2"&
+                   tmp2()$hospital.no==3&
+                   tmp2()$product.no==4),]$real_volume)
   
   
   
@@ -5120,7 +5157,10 @@ server=function(input, output, session) {
   
   tmp3 <- reactive({
     pp_data1 <- tmp2() %>% select(hospital,
+                                  hospital.no,
                                   product,
+                                  product.no,
+                                  market_share,
                                   real_revenue,
                                   real_volume,
                                   sr_sales_performance,
@@ -5132,7 +5172,7 @@ server=function(input, output, session) {
                                   acc_offer_attractiveness) %>%
       distinct()
     
-    colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
+    colnames(pp_data1)[5:14] <- paste("pp_",colnames(pp_data1)[5:14],sep="")
     
     pp_data2 <- tmp2() %>% select(sales_rep,
                                   sales_level,
@@ -5240,6 +5280,16 @@ server=function(input, output, session) {
       disable("p3_hosp3_worktime_diet")
       disable("p3_hosp3_worktime_admin")
       disable("p3_hosp3_worktime_nurs")
+      disable("p3_sr1_sales_training")
+      disable("p3_sr2_sales_training")
+      disable("p3_sr1_field_work")
+      disable("p3_sr2_field_work")
+      disable("p3_flm_team_meeting")
+      disable("p3_flm_kpi_analysis")
+      disable("p3_flm_strategy_planning")
+      disable("p3_flm_admin_work")
+      disable("p3_sr1_product_training")
+      disable("p3_sr2_product_training")
       }
   })
   
@@ -5518,22 +5568,24 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期4"&
                         volume_info$hospital.no==1&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p4_current_sales_hosp1_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==1),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==1&
+                   tmp3()$product.no==1),]$real_volume)
   output$p4_current_sales_hosp1_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==2),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                        tmp3()$hospital.no==1&
+                        tmp3()$product.no==2),]$real_volume)
   output$p4_current_sales_hosp1_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==3),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                        tmp3()$hospital.no==1&
+                        tmp3()$product.no==3),]$real_volume)
   output$p4_current_sales_hosp1_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==1&
-                        volume_info$product.no==4),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                        tmp3()$hospital.no==1&
+                        tmp3()$product.no==4),]$real_volume)
+  
   output$p4_potential_sales_hosp2_1 <- renderText(
     volume_info[which(volume_info$phase=="周期4"&
                         volume_info$hospital.no==2&
@@ -5550,22 +5602,24 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期4"&
                         volume_info$hospital.no==2&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p4_current_sales_hosp2_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==1),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==2&
+                   tmp3()$product.no==1),]$real_volume)
   output$p4_current_sales_hosp2_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==2),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==2&
+                   tmp3()$product.no==2),]$real_volume)
   output$p4_current_sales_hosp2_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==3),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==2&
+                   tmp3()$product.no==3),]$real_volume)
   output$p4_current_sales_hosp2_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期4"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==4),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==2&
+                   tmp3()$product.no==4),]$real_volume)
+  
   output$p4_potential_sales_hosp3_1 <- renderText(
     volume_info[which(volume_info$phase=="周期4"&
                         volume_info$hospital.no==3&
@@ -5582,22 +5636,23 @@ server=function(input, output, session) {
     volume_info[which(volume_info$phase=="周期4"&
                         volume_info$hospital.no==3&
                         volume_info$product.no==4),]$potential_volume)
+  
   output$p4_current_sales_hosp3_1 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==1),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==3&
+                   tmp3()$product.no==1),]$real_volume)
   output$p4_current_sales_hosp3_2 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==2),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==3&
+                   tmp3()$product.no==2),]$real_volume)
   output$p4_current_sales_hosp3_3 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==3),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==3&
+                   tmp3()$product.no==3),]$real_volume)
   output$p4_current_sales_hosp3_4 <- renderText(
-    volume_info[which(volume_info$phase=="周期3"&
-                        volume_info$hospital.no==2&
-                        volume_info$product.no==4),]$current_volume)
+    tmp3()[which(tmp3()$phase=="周期3"&
+                   tmp3()$hospital.no==3&
+                   tmp3()$product.no==4),]$real_volume)
   
   
   
@@ -5636,8 +5691,11 @@ server=function(input, output, session) {
   
   
   tmp4 <- reactive({
-    pp_data1 <- tmp() %>% select(hospital,
+    pp_data1 <- tmp3() %>% select(hospital,
+                                  hospital.no,
                                  product,
+                                 product.no,
+                                 market_share,
                                  real_revenue,
                                  real_volume,
                                  sr_sales_performance,
@@ -5649,9 +5707,9 @@ server=function(input, output, session) {
                                  acc_offer_attractiveness) %>%
       distinct()
     
-    colnames(pp_data1)[3:11] <- paste("pp_",colnames(pp_data1)[3:11],sep="")
+    colnames(pp_data1)[5:14] <- paste("pp_",colnames(pp_data1)[5:14],sep="")
     
-    pp_data2 <- tmp() %>% select(sales_rep,
+    pp_data2 <- tmp3() %>% select(sales_rep,
                                  sales_level,
                                  sr_revenue,
                                  sr_volume,
@@ -5676,9 +5734,6 @@ server=function(input, output, session) {
       p4_calculator_result()[1] <=100 &
       p4_calculator_result()[2] <=worktime &
       p4_calculator_result()[3] <=worktime &
-      p4_calculator_result()[4] <=worktime &
-      p4_calculator_result()[5] <=worktime &
-      p4_calculator_result()[6] <=worktime &
       sum(p4_flm_data()) <=worktime
     ) {
       p4_report <- report_data(tmp4(),p4_flm_data())
@@ -5694,9 +5749,6 @@ server=function(input, output, session) {
       p4_calculator_result()[1] >100 |
       p4_calculator_result()[2] >worktime |
       p4_calculator_result()[3] >worktime |
-      p4_calculator_result()[4] >worktime |
-      p4_calculator_result()[5] >worktime |
-      p4_calculator_result()[6] >worktime |
       sum(p4_flm_data()) >worktime
     ) {
       shinyjs::alert("推广预算分配或是时间分配超出最大值！！")
@@ -5759,7 +5811,19 @@ server=function(input, output, session) {
       disable("p4_hosp3_worktime_doc")
       disable("p4_hosp3_worktime_diet")
       disable("p4_hosp3_worktime_admin")
-      disable("p4_hosp3_worktime_nurs")}
+      disable("p4_hosp3_worktime_nurs")
+      
+      disable("p4_sr1_sales_training")
+      disable("p4_sr2_sales_training")
+      disable("p4_sr1_field_work")
+      disable("p4_sr2_field_work")
+      disable("p4_flm_team_meeting")
+      disable("p4_flm_kpi_analysis")
+      disable("p4_flm_strategy_planning")
+      disable("p4_flm_admin_work")
+      disable("p4_sr1_product_training")
+      disable("p4_sr2_product_training")
+      }
   })
   
   output$p4_report1_1 <-

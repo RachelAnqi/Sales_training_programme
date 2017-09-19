@@ -68,11 +68,11 @@ calculator <- function(input,phase){
                  as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_4",sep="")]])/100*worktime),
                na.rm = TRUE)
     if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-        available_srs[1]){
+        sr_info_initial_value$sales_rep[1]){
       phase1_total_time_arrangement1 <- 
         phase1_total_time_arrangement1 +tmp
     } else if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-               available_srs[2]) {
+               sr_info_initial_value$sales_rep[2]) {
       phase1_total_time_arrangement2 <- 
         phase1_total_time_arrangement2 +tmp
     } 
@@ -101,13 +101,13 @@ calculator <- function(input,phase){
 
 sales_training <- function(input,phase){sum(c(
   as.numeric(input[[paste("p",phase,"_sr1_sales_training",sep = "")]]),
-  as.numeric(input[[paste("p",phase,"_sr2_sales_training",sep = "")]]),
-  na.rm = T))}
+  as.numeric(input[[paste("p",phase,"_sr2_sales_training",sep = "")]])),
+  na.rm = T)}
 
 field_work <- function(input,phase){sum(c(
   as.numeric(input[[paste("p",phase,"_sr1_field_work",sep = "")]]),
-  as.numeric(input[[paste("p",phase,"_sr2_field_work",sep = "")]]),
-  na.rm = T))}
+  as.numeric(input[[paste("p",phase,"_sr2_field_work",sep = "")]])),
+  na.rm = T)}
 
 total_management <- function(input,phase){sum(c(
   sales_training(input,phase),
@@ -131,20 +131,22 @@ calculation <- function(pp_data1,
   tmp <- left_join(tmp1,tmp2,by=c("phase","sales_rep")) %>%
     group_by(hospital) %>%
     mutate(pp_sales_performance_by_hosp=sum(pp_sales_performance),
-           time_on_doc=sum(time_on_doc.tmp),
-           time_on_diet=sum(time_on_diet.tmp),
-           time_on_admin=sum(time_on_admin.tmp),
-           time_on_nurs=sum(time_on_nurs.tmp)) %>%
+           sr_time_by_hosp=sum(sr_time,na.rm=T),
+           time_on_doc=time_on_doc.tmp/100*sr_time_by_hosp,
+           time_on_diet=time_on_diet.tmp/100*sr_time_by_hosp,
+           time_on_admin=time_on_admin.tmp/100*sr_time_by_hosp,
+           time_on_nurs=time_on_nurs.tmp/100*sr_time_by_hosp) %>%
     ungroup() %>%
     mutate(volume_factor=sapply(pp_sales_performance_by_hosp,function(x) curve(curve31,x)),
-           real_volume=(1+volume_factor)*potential_volume,
+           market_share=(1+volume_factor)*pp_market_share,
+           real_volume=round(market_share*potential_volume),
            product_price = sapply(product,function(x) production_price[which(production_price$product==x),]$price),
            real_revenue= real_volume*product_price,
            target_revenue= sales_target*product_price) %>%
     group_by(phase,sales_rep) %>%
     mutate(no.hospitals = n_distinct(hospital),
            sr_revenue = round(sum(real_revenue,na.rm=T),2),
-           sr_volume = round(sum(real_volume,na.rm=T),2),
+           sr_volume = round(sum(real_volume,na.rm=T)),
            sr_target_revenue = sum(target_revenue,na.rm=T),
            sr_time_total=sum(sr_time,na.rm=T)) %>%
     ungroup %>%
@@ -153,6 +155,7 @@ calculation <- function(pp_data1,
                   sr_acc_field_work = pp_sr_acc_field_work+field_work,
                   overhead_factor = sapply(pp_motivation_index,function(x) curve(curve12,x)),
                   overhead_time = round(overhead_factor*overhead,0),
+                  real_sr_time = round(sr_time-overhead_time/no.hospitals/4),
                   pp_experience_index = sapply(pp_sr_acc_revenue,function(x) round(curve(curve11,x),2)),
                   sales_target_realization = round(sr_target_revenue/sr_revenue*100,0),
                   incentive_factor = sapply(sales_target_realization,function(x) curve(curve10,x)),
@@ -160,22 +163,22 @@ calculation <- function(pp_data1,
                     mapply(function(x,y,z) contact_fit(
                       z,contact_priority_info[which(contact_priority_info$phase==x&
                                                       contact_priority_info$hospital==y),]$type.a),
-                      phase,hospital,time_on_doc),
+                      phase,hospital,time_on_doc.tmp),
                   contact_priority_fit_diet =
                     mapply(function(x,y,z) contact_fit(
                       z,contact_priority_info[which(contact_priority_info$phase==x&
                                                       contact_priority_info$hospital==y),]$type.b),
-                      phase,hospital,time_on_diet),
+                      phase,hospital,time_on_diet.tmp),
                   contact_priority_fit_admin =
                     mapply(function(x,y,z) contact_fit(
                       z,contact_priority_info[which(contact_priority_info$phase==x&
                                                       contact_priority_info$hospital==y),]$type.c),
-                      phase,hospital,time_on_admin),
+                      phase,hospital,time_on_admin.tmp),
                   contact_priority_fit_nurs =
                     mapply(function(x,y,z) contact_fit(
                       z,contact_priority_info[which(contact_priority_info$phase==x&
                                                       contact_priority_info$hospital==y),]$type.d),
-                      phase,hospital,time_on_nurs),
+                      phase,hospital,time_on_nurs.tmp),
                   contact_priority_fit_index = contact_priority_fit_doc*weightage$contact_priority$a+
                     contact_priority_fit_diet*weightage$contact_priority$b+
                     contact_priority_fit_admin*weightage$contact_priority$c+
@@ -225,7 +228,7 @@ calculation <- function(pp_data1,
                    x==as.character(product_code$product[3])) {
                    curve(curve37,y)} else {
                      curve(curve38,y)}},
-               product,sr_time)) %>%
+               product,real_sr_time)) %>%
     mutate(sr_sales_performance = 
              srsp_motivation_factor*pp_sr_sales_performance*
              ((weightage$sr_sales_performance)$motivation)+
@@ -317,7 +320,7 @@ get.data1 <- function(input,phase){
     time_on_diet.tmp = NULL,
     time_on_admin.tmp = NULL,
     time_on_nurs.tmp = NULL
-  )
+      )
   for (j in 1:3) {
     for (q in 1:4){
       name.phase = as.character(paste("周期",phase,sep=""))
@@ -330,13 +333,13 @@ get.data1 <- function(input,phase){
         total_promotional_budget[[paste("phase",phase,sep="")]]
       value.sr_time <- as.numeric(input[[paste("p",phase,"_hosp",j,"_worktime_",q,sep="")]])/100*worktime
       value.time_on_doc <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_doc",sep="")]])/100*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_doc",sep="")]])
       value.time_on_diet <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_diet",sep="")]])/100*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_diet",sep="")]])
       value.time_on_admin <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_admin",sep="")]])/100*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_admin",sep="")]])
       value.time_on_nurs <- as.numeric(
-        input[[paste("p",phase,"_hosp",j,"_worktime_nurs",sep="")]])/100*value.sr_time
+        input[[paste("p",phase,"_hosp",j,"_worktime_nurs",sep="")]])
       
       data_decision <- plyr::rbind.fill(data_decision,data.frame(
         phase = name.phase,
@@ -1111,10 +1114,10 @@ report_data <- function(tmp,flm_data) {
     group_by(hospital) %>%
     dplyr::summarise(real_revenue_by_hosp = round(sum(real_revenue),2),
                      pp_real_revenue_by_hosp = round(sum(pp_real_revenue),2),
-                     real_revenue_increase = real_revenue_by_hosp - pp_real_revenue_by_hosp,
+                     real_revenue_increase = round(real_revenue_by_hosp - pp_real_revenue_by_hosp,2),
                      real_volume_by_hosp = round(sum(real_volume),2),
                      pp_real_volume_by_hosp = round(sum(pp_real_volume),2),
-                     real_volume_increase = real_volume_by_hosp - pp_real_volume_by_hosp) %>%
+                     real_volume_increase = round(real_volume_by_hosp - pp_real_volume_by_hosp,2)) %>%
     do(plyr::rbind.fill(.,data.frame(hospital="总体",
                                      real_revenue_by_hosp=sum(.$real_revenue_by_hosp),
                                      pp_real_revenue_by_hosp=sum(.$pp_real_revenue_by_hosp),

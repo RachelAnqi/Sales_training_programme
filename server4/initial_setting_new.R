@@ -10,6 +10,12 @@ sr_info <- read.xlsx("pre_info.xlsx",
 
 sr_info_ui <- sr_info[,1:4]
 
+sr_info_list <- data.frame(
+  sales_rep = sr_info$业务代表,
+  sr_info[,5:13],
+  stringsAsFactors = F
+)
+
 worktime =100
 overhead =2
 
@@ -19,6 +25,12 @@ product_info <- read.xlsx("pre_info.xlsx",
 
 product_info_ui <- product_info[,-1]
 
+product_info_list <- data.frame(
+  product = product_info$类别,
+  prod_code = product_info$prod_code,
+  stringsAsFactors = F
+)
+
 ## hospital information
 hospital_info <- read.xlsx("pre_info.xlsx",
                            sheet="hospital")
@@ -26,9 +38,21 @@ hospital_info<- gather(hospital_info,phase,"潜力",c("周期1","周期2","周�
 
 hospital_info_ui <- hospital_info[,c(1,3,4,5,7,8)]
 
+hospital_info_list <- unique(data.frame(
+  hospital = hospital_info$名称,
+  hosp_code = hospital_info$hosp_code,
+  stringsAsFactors = F
+))
+
+
+
 ## previous period
 pp_info <- read.xlsx("pre_info.xlsx",
                      sheet="pp_info")
+
+pp_info <- pp_info %>%
+  left_join(hospital_info_list,by="hosp_code") %>%
+  left_join(product_info_list,by="prod_code")
 
 ## weightage
 weightage <- list(total_attractiveness = list(pp_offer_attractiveness = 0.35,
@@ -69,4 +93,34 @@ total_promotional_budget <- list(phase1 = 2000,
                                  phase4 = 2000)
 
 ## 
+null_report8 <- data.frame(
+  phase=c("周期1","周期2","周期3","周期4"),
+  "total_revenue"=rep("",4),
+  "profit"=rep("",4),
+  "average_customer_relationship_index"=rep("",4),
+  "team_capability"=rep("",4),
+  "total_offer_attractiveness"=rep("",4),
+  "total_acc_offer_attractiveness"=rep("",4),
+  "success_value"=rep("",4),
+  stringsAsFactors = F
+)
+
+report8_mod1_rank <- data.frame(
+  variable=c("total_revenue",
+             "profit",
+             "average_customer_relationship_index",
+             "team_capability",
+             "total_offer_attractiveness",
+             "total_acc_offer_attractiveness",
+             "success_value"),
+  name = c("总销售(元)",
+           "总利润(元)",
+           "客户关系的平均水平(指数)",
+           "团队能力(指数)",
+           "商业价值(指数)",
+           "累计商业价值(指数)",
+           "得分"),
+  rank=1:7
+  
+)
 

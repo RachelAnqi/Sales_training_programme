@@ -202,13 +202,13 @@ mainbody <- div(
                    #htmlOutput(),
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -269,7 +269,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp1",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -325,13 +325,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -392,7 +392,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp2",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -448,13 +448,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -514,7 +514,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp3",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -583,13 +583,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -650,7 +650,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp4",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -706,13 +706,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -773,7 +773,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp5",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -830,13 +830,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -897,7 +897,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp6",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -953,13 +953,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -1020,7 +1020,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp7",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -1077,13 +1077,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -1144,7 +1144,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp8",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -1200,13 +1200,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -1267,7 +1267,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp9",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -1324,13 +1324,13 @@ mainbody <- div(
                    width="100%",
                    tags$div(
                      tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                              product_info_initial$product[1]),
+                              product_info$类别[1]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[2]),
+                              product_info$类别[2]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[3]),
+                              product_info$类别[3]),
                      tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                              product_info_initial$product[4])
+                              product_info$类别[4])
                    ),
                    br(),
                    tags$div(
@@ -1391,7 +1391,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp10",
                          label = NULL,
-                         choices = available_srs,
+                         choices = sr_info$业务代表,
                          selected = NULL
                        )
                      )
@@ -1488,13 +1488,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -1554,7 +1554,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp1",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -1610,13 +1610,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -1676,7 +1676,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp2",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -1732,13 +1732,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -1799,7 +1799,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp3",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -1855,13 +1855,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -1922,7 +1922,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp4",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -1978,13 +1978,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2045,7 +2045,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp5",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2102,13 +2102,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2169,7 +2169,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp6",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2225,13 +2225,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2291,7 +2291,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp7",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2348,13 +2348,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2413,7 +2413,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp8",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2469,13 +2469,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2534,7 +2534,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp9",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2591,13 +2591,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2656,7 +2656,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp10",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2751,13 +2751,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2816,7 +2816,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp1",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2873,13 +2873,13 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -2938,7 +2938,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp2",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -2994,13 +2994,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3059,7 +3059,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp3",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -3115,13 +3115,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3180,7 +3180,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp4",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -3236,13 +3236,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3301,7 +3301,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp5",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -3358,13 +3358,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3423,7 +3423,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp6",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -3479,13 +3479,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3544,7 +3544,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp7",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -3601,13 +3601,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3666,7 +3666,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp8",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -3722,13 +3722,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3787,7 +3787,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp9",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -3844,13 +3844,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -3909,7 +3909,7 @@ mainbody <- div(
                       selectizeInput(
                         "p3_sr_hosp10",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4003,13 +4003,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4068,7 +4068,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp1",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4124,13 +4124,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4191,7 +4191,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp2",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4247,13 +4247,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4312,7 +4312,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp3",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4368,13 +4368,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4433,7 +4433,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp4",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4489,13 +4489,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4554,7 +4554,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp5",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4611,13 +4611,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4676,7 +4676,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp6",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4732,13 +4732,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4797,7 +4797,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp7",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4854,13 +4854,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -4919,7 +4919,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp8",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -4975,13 +4975,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -5040,7 +5040,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp9",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -5097,13 +5097,13 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                             product_info_initial$product[1]),
+                             product_info$类别[1]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[2]),
+                             product_info$类别[2]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[3]),
+                             product_info$类别[3]),
                     tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                             product_info_initial$product[4])
+                             product_info$类别[4])
                   ),
                   br(),
                   tags$div(
@@ -5162,7 +5162,7 @@ mainbody <- div(
                       selectizeInput(
                         "p4_sr_hosp10",
                         label = NULL,
-                        choices = available_srs,
+                        choices = sr_info$业务代表,
                         selected = NULL
                       )
                     )
@@ -5241,31 +5241,31 @@ mainbody <- div(
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                       paste("已分配时间 ",sr_info_initial_value$sales_rep[1],"(天)",sep="")),
+                       paste("已分配时间 ",sr_info$业务代表[1],"(天)",sep="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                        verbatimTextOutput("p1_arranged_time_of_sr1"))
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                       paste("已分配时间 ",sr_info_initial_value$sales_rep[2],"(天)",sep="")),
+                       paste("已分配时间 ",sr_info$业务代表[2],"(天)",sep="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                        verbatimTextOutput("p1_arranged_time_of_sr2"))
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                       paste("已分配时间 ",sr_info_initial_value$sales_rep[3],"(天)",sep="")),
+                       paste("已分配时间 ",sr_info$业务代表[3],"(天)",sep="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                        verbatimTextOutput("p1_arranged_time_of_sr3"))
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                       paste("已分配时间 ",sr_info_initial_value$sales_rep[4],"(天)",sep="")),
+                       paste("已分配时间 ",sr_info$业务代表[4],"(天)",sep="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                        verbatimTextOutput("p1_arranged_time_of_sr4"))
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                       paste("已分配时间 ",sr_info_initial_value$sales_rep[5],"(天)",sep="")),
+                       paste("已分配时间 ",sr_info$业务代表[5],"(天)",sep="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                        verbatimTextOutput("p1_arranged_time_of_sr5"))
             )),
@@ -5283,15 +5283,15 @@ mainbody <- div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
                        "经理"),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                       sr_info_initial_value$sales_rep[1]),
+                       sr_info$业务代表[1]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                       sr_info_initial_value$sales_rep[2]),
+                       sr_info$业务代表[2]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                       sr_info_initial_value$sales_rep[3]),
+                       sr_info$业务代表[3]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                       sr_info_initial_value$sales_rep[4]),
+                       sr_info$业务代表[4]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;width:10%",
-                       sr_info_initial_value$sales_rep[5])
+                       sr_info$业务代表[5])
             ),
             br(),
             tags$div(
@@ -5405,15 +5405,15 @@ mainbody <- div(
             width="100%",
             tags$div(
               tags$div(style = "display:inline-block;margin-left:15%;vertical-align:middle;text-align:center;width:11.5%",
-                       sr_info_initial_value$sales_rep[1]),
+                       sr_info$业务代表[1]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
-                       sr_info_initial_value$sales_rep[2]),
+                       sr_info$业务代表[2]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                       sr_info_initial_value$sales_rep[3]),
+                       sr_info$业务代表[3]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                       sr_info_initial_value$sales_rep[4]),
+                       sr_info$业务代表[4]),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                       sr_info_initial_value$sales_rep[5])
+                       sr_info$业务代表[5])
             ),
             br(),
             
@@ -5464,31 +5464,31 @@ mainbody <- div(
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[1],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[1],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p2_arranged_time_of_sr1"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[2],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[2],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p2_arranged_time_of_sr2"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[3],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[3],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p2_arranged_time_of_sr3"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[4],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[4],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p2_arranged_time_of_sr4"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[5],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[5],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p2_arranged_time_of_sr5"))
                   )),
@@ -5506,15 +5506,15 @@ mainbody <- div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
                              "经理"),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                             sr_info_initial_value$sales_rep[1]),
+                             sr_info$业务代表[1]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                             sr_info_initial_value$sales_rep[2]),
+                             sr_info$业务代表[2]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[3]),
+                             sr_info$业务代表[3]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[4]),
+                             sr_info$业务代表[4]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;width:10%",
-                             sr_info_initial_value$sales_rep[5])
+                             sr_info$业务代表[5])
                   ),
                   br(),
                   tags$div(
@@ -5628,15 +5628,15 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;margin-left:15%;vertical-align:middle;text-align:center;width:11.5%",
-                             sr_info_initial_value$sales_rep[1]),
+                             sr_info$业务代表[1]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
-                             sr_info_initial_value$sales_rep[2]),
+                             sr_info$业务代表[2]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                             sr_info_initial_value$sales_rep[3]),
+                             sr_info$业务代表[3]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                             sr_info_initial_value$sales_rep[4]),
+                             sr_info$业务代表[4]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[5])
+                             sr_info$业务代表[5])
                   ),
                   br(),
                   tags$div(
@@ -5686,31 +5686,31 @@ mainbody <- div(
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[1],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[1],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p3_arranged_time_of_sr1"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[2],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[2],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p3_arranged_time_of_sr2"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[3],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[3],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p3_arranged_time_of_sr3"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[4],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[4],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p3_arranged_time_of_sr4"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[5],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[5],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p3_arranged_time_of_sr5"))
                   )),
@@ -5728,15 +5728,15 @@ mainbody <- div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
                              "经理"),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                             sr_info_initial_value$sales_rep[1]),
+                             sr_info$业务代表[1]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                             sr_info_initial_value$sales_rep[2]),
+                             sr_info$业务代表[2]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[3]),
+                             sr_info$业务代表[3]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[4]),
+                             sr_info$业务代表[4]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;width:10%",
-                             sr_info_initial_value$sales_rep[5])
+                             sr_info$业务代表[5])
                   ),
                   br(),
                   tags$div(
@@ -5850,15 +5850,15 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;margin-left:15%;vertical-align:middle;text-align:center;width:11.5%",
-                             sr_info_initial_value$sales_rep[1]),
+                             sr_info$业务代表[1]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
-                             sr_info_initial_value$sales_rep[2]),
+                             sr_info$业务代表[2]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                             sr_info_initial_value$sales_rep[3]),
+                             sr_info$业务代表[3]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                             sr_info_initial_value$sales_rep[4]),
+                             sr_info$业务代表[4]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[5])
+                             sr_info$业务代表[5])
                   ),
                   br(),
                   tags$div(
@@ -5908,31 +5908,31 @@ mainbody <- div(
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[1],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[1],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p4_arranged_time_of_sr1"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[2],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[2],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p4_arranged_time_of_sr2"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[3],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[3],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p4_arranged_time_of_sr3"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[4],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[4],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p4_arranged_time_of_sr4"))
                   ),
                   tags$div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                             paste("已分配时间 ",sr_info_initial_value$sales_rep[5],"(天)",sep="")),
+                             paste("已分配时间 ",sr_info$业务代表[5],"(天)",sep="")),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
                              verbatimTextOutput("p4_arranged_time_of_sr5"))
                   )),
@@ -5950,15 +5950,15 @@ mainbody <- div(
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
                              "经理"),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                             sr_info_initial_value$sales_rep[1]),
+                             sr_info$业务代表[1]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                             sr_info_initial_value$sales_rep[2]),
+                             sr_info$业务代表[2]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[3]),
+                             sr_info$业务代表[3]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[4]),
+                             sr_info$业务代表[4]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;width:10%",
-                             sr_info_initial_value$sales_rep[5])
+                             sr_info$业务代表[5])
                   ),
                   br(),
                   tags$div(
@@ -6072,15 +6072,15 @@ mainbody <- div(
                   width="100%",
                   tags$div(
                     tags$div(style = "display:inline-block;margin-left:15%;vertical-align:middle;text-align:center;width:11.5%",
-                             sr_info_initial_value$sales_rep[1]),
+                             sr_info$业务代表[1]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
-                             sr_info_initial_value$sales_rep[2]),
+                             sr_info$业务代表[2]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                             sr_info_initial_value$sales_rep[3]),
+                             sr_info$业务代表[3]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                             sr_info_initial_value$sales_rep[4]),
+                             sr_info$业务代表[4]),
                     tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                             sr_info_initial_value$sales_rep[5])
+                             sr_info$业务代表[5])
                   ),
                   br(),
                   tags$div(
@@ -6834,11 +6834,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp1_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                           hospital_info$hosp_code==1&
-                          hospital_info$prod_code==1),]$潜力)
+                          hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp1_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==1&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp1_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==1&
@@ -6865,11 +6865,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp2_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==2&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp2_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==2&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp2_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==2&
@@ -6895,11 +6895,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp3_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==3&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp3_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==3&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp3_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==3&
@@ -6925,11 +6925,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp4_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==4&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp4_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==4&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp4_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==4&
@@ -6955,11 +6955,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp5_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==5&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp5_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==5&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp5_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==5&
@@ -6985,11 +6985,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp6_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==6&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp6_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==6&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp6_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==6&
@@ -7015,11 +7015,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp7_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==7&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp7_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==7&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp7_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==7&
@@ -7045,11 +7045,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp8_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==8&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp8_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==8&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp8_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==8&
@@ -7075,11 +7075,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp9_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==9&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp9_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==9&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp9_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==9&
@@ -7105,11 +7105,11 @@ server=function(input, output, session) {
   output$p1_potential_sales_hosp10_2 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==10&
-                        hospital_info$prod_code==1),]$潜力)
+                        hospital_info$prod_code==2),]$潜力)
   output$p1_potential_sales_hosp10_3 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==10&
-                        hospital_info$prod_code==2),]$潜力)
+                        hospital_info$prod_code==3),]$潜力)
   output$p1_potential_sales_hosp10_4 <- renderText(
     hospital_info[which(hospital_info$phase=="周期1"&
                         hospital_info$hosp_code==10&
@@ -7206,8 +7206,8 @@ server=function(input, output, session) {
   
   
   tmp <- reactive({
-    pp_data1 <- pp_info_by_hosp_product
-    pp_data2 <- sr_info_initial_value
+    pp_data1 <- pp_info
+    pp_data2 <- sr_info_list
     cp_data1 <- get.data1(input,1)
     cp_data2 <- get.data2(input,1)
     tmp <- calculation(pp_data1,
@@ -7230,7 +7230,7 @@ server=function(input, output, session) {
       p1_calculator_result()[6] <=worktime &
       sum(p1_flm_data()) <=worktime
     ) {
-      p1_report <- report_data(tmp(),p1_flm_data())
+      p1_report <- report_data(tmp(),p1_flm_data(),null_report8)
       return(p1_report)
     } 
     
@@ -8135,7 +8135,7 @@ server=function(input, output, session) {
                                  product_knowledge_index,
                                  motivation_index,
                                  sr_acc_field_work,
-                                 target_volume_realization_by_sr) %>%
+                                 target_revenue_realization_by_sr) %>%
       distinct()
     
     colnames(pp_data2)[3:10] <- paste("pp_",colnames(pp_data2)[3:10],sep="")
@@ -9064,7 +9064,7 @@ server=function(input, output, session) {
                                   product_knowledge_index,
                                   motivation_index,
                                   sr_acc_field_work,
-                                  target_volume_realization_by_sr) %>%
+                                  target_revenue_realization_by_sr) %>%
       distinct()
     
     colnames(pp_data2)[3:10] <- paste("pp_",colnames(pp_data2)[3:10],sep="")
@@ -9984,7 +9984,7 @@ server=function(input, output, session) {
                                   product_knowledge_index,
                                   motivation_index,
                                   sr_acc_field_work,
-                                  target_volume_realization_by_sr) %>%
+                                  target_revenue_realization_by_sr) %>%
       distinct()
     
     colnames(pp_data2)[3:10] <- paste("pp_",colnames(pp_data2)[3:10],sep="")

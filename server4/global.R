@@ -7,7 +7,7 @@ library(dplyr)
 library(tidyr)
 library(digest)
 
-load("initial_setting2.RData")
+load("initial_setting.RData")
 
 ## curve funcion
 curve <- function(name,input_x){
@@ -50,23 +50,23 @@ calculator <- function(input,phase){
                  as.numeric(input[[paste("p",phase,"_hosp",i,"_worktime_4",sep="")]])/100*worktime),
                na.rm = TRUE)
     if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-        sr_info_initial_value$sales_rep[1]){
+        sr_info_list$sales_rep[1]){
       phase1_total_time_arrangement1 <- 
         phase1_total_time_arrangement1 +tmp
     } else if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-               sr_info_initial_value$sales_rep[2]) {
+               sr_info_list$sales_rep[2]) {
       phase1_total_time_arrangement2 <- 
         phase1_total_time_arrangement2 +tmp
     } else if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-               sr_info_initial_value$sales_rep[3]) {
+               sr_info_list$sales_rep[3]) {
       phase1_total_time_arrangement3 <- 
         phase1_total_time_arrangement3 +tmp
     } else if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-               sr_info_initial_value$sales_rep[4]) {
+               sr_info_list$sales_rep[4]) {
       phase1_total_time_arrangement4 <- 
         phase1_total_time_arrangement4 +tmp
     } else if (input[[paste("p",phase,"_sr_hosp",i,sep = "")]]==
-               sr_info_initial_value$sales_rep[5]) {
+               sr_info_list$sales_rep[5]) {
       phase1_total_time_arrangement5 <- 
         phase1_total_time_arrangement5 +tmp
     }
@@ -145,8 +145,9 @@ calculation <- function(pp_data1,
   tmp2 <- left_join(cp_data2,pp_data2,by=c("sales_rep"))
   
   tmp <- left_join(tmp1,tmp2,by=c("phase","sales_rep")) %>%
-    mutate(product_price = sapply(product,function(x) production_price[which(production_price$product==x),]$price),
-           target_revenue= sales_target*product_price) %>%
+    mutate(product_price = sapply(product,function(x) product_info[which(product_info$类别==x),]$`单价（公司考核价）`),
+           target_revenue= sales_target,
+           target_volume = round(target_revenue/product_price)) %>%
     group_by(phase,sales_rep) %>%
     mutate(no.hospitals = n_distinct(hospital),
            sr_time_total=sum(sr_time,na.rm=T)) %>%
@@ -170,7 +171,7 @@ calculation <- function(pp_data1,
                     } else {curve(curve15,y)}
                   },sales_level,
                   meetings_with_team,SIMPLIFY=T),
-                  m_sales_target_realization_delta = sapply(pp_target_volume_realization_by_sr,function(x)curve(curve16,x)),
+                  m_sales_target_realization_delta = sapply(pp_target_revenue_realization_by_sr,function(x)curve(curve16,x)),
                   m_sales_training_delta = sapply(sales_training,function(x)curve(curve17,x)),
                   m_admin_work_delta = sapply(admin_work,function(x)curve(curve18,x)))%>%
     mutate(sales_skills_index = round(
@@ -193,11 +194,11 @@ calculation <- function(pp_data1,
            srsp_sales_skills_factor = sapply(sales_skills_index,function(x)curve(curve34,x)),
            srsp_product_knowledge_factor = sapply(product_knowledge_index,function(x)curve(curve33,x)),
            srsp_time_with_account_factor = 
-             mapply(function(x,y){if (x==as.character(product_code$product[1])){
+             mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
                curve(curve35,y)} else if(
-                 x==as.character(product_code$product[2])){
+                 x==as.character(product_info_list$product[2])){
                  curve(curve36,y)} else if (
-                   x==as.character(product_code$product[3])) {
+                   x==as.character(product_info_list$product[3])) {
                    curve(curve37,y)} else {
                      curve(curve38,y)}},
                product,real_sr_time)) %>%
@@ -245,11 +246,11 @@ calculation <- function(pp_data1,
         cr_pp_customer_relationship_index*
         (weightage$customer_relaitonship)$past_relationship)) %>%
     mutate(oa_customer_relationship_factor = 
-             mapply(function(x,y){if (x==as.character(product_code$product[1])){
+             mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
                curve(curve19,y)} else if(
-                 x==as.character(product_code$product[2])){
+                 x==as.character(product_info_list$product[2])){
                  curve(curve20,y)} else if (
-                   x==as.character(product_code$product[3])) {
+                   x==as.character(product_info_list$product[3])) {
                    curve(curve21,y)} else {
                      curve(curve22,y)}},
                product,customer_relationship_index),
@@ -263,16 +264,16 @@ calculation <- function(pp_data1,
                                           pp_offer_attractiveness*(weightage$total_attractiveness)$pp_offer_attractiveness),
            acc_offer_attractiveness = round(pp_acc_offer_attractiveness+offer_attractiveness),
            market_share = sapply(offer_attractiveness, function(x) curve(curve51,x)),
-           real_volume = round(market_share*potential_volume),
-           real_revenue = round(real_volume*product_price)) %>%
+           real_revenue = round(market_share*potential_revenue),
+           real_volume = round(real_revenue/product_price)) %>%
     group_by(sales_rep) %>%
     mutate(target_revenue_by_sr = sum(target_revenue,na.rm=T),
            real_revenue_by_sr = sum(real_revenue,na.rm=T),
            target_revenue_realization_by_sr = round(real_revenue_by_sr/target_revenue_by_sr*100,2),
-           target_volume_by_sr = sum(sales_target,na.rm=T),
+           target_volume_by_sr = sum(target_volume,na.rm=T),
            real_volume_by_sr = sum(real_volume,na.rm=T),
            target_volume_realization_by_sr = round(real_volume_by_sr/target_volume_by_sr*100,2),
-           incentive_factor = sapply(target_volume_realization_by_sr, function(x) curve(curve10,x)),
+           incentive_factor = sapply(target_revenue_realization_by_sr, function(x) curve(curve10,x)),
            bonus = round(incentive_factor*0.03*target_revenue_by_sr),
            sr_acc_revenue = real_revenue_by_sr+pp_sr_acc_revenue,
            experience_index = sapply(sr_acc_revenue, function(x) round(curve(curve11,x),2))) %>%
@@ -290,7 +291,7 @@ get.data1 <- function(input,phase){
     sales_rep = NULL,
     product = NULL,
     sales_target = NULL,
-    potential_volume = NULL,
+    potential_revenue = NULL,
     promotional_budget = NULL,
     sr_time = NULL,
     stringsAsFactors = F)
@@ -298,7 +299,7 @@ get.data1 <- function(input,phase){
   for (j in 1:10) {
     for (q in 1:4){
       name.phase = as.character(paste("周期",phase,sep=""))
-      name.hospital = as.character(hospital_info$名称[j])
+      name.hospital = as.character(unique(hospital_info$名称)[j])
       name.product = as.character(product_info$类别[q])
       name.sales_rep <- as.character(input[[paste("p",phase,"_sr_hosp",j,sep="")]])
       value.sales_target <- as.numeric(input[[paste("p",phase,"_hosp",j,"_sales_target_",q,sep="")]])
@@ -313,7 +314,7 @@ get.data1 <- function(input,phase){
         sales_rep = name.sales_rep, 
         product = name.product,
         sales_target = value.sales_target,
-        potential_volume = hospital_info[which(hospital_info$phase==name.phase&
+        potential_revenue = hospital_info[which(hospital_info$phase==name.phase&
                                                  hospital_info$名称==name.hospital&
                                                  hospital_info$产品==name.product),]$潜力,
         promotional_budget = value.promotional_budget,
@@ -338,7 +339,7 @@ get.data2 <- function(input,phase){
   )
   
   for (j in 1:5) {
-    name.sales_rep <- as.character(sr_info_initial_value$sales_rep[j])
+    name.sales_rep <- as.character(sr_info_list$sales_rep[j])
     value.sales_training <- as.numeric(
       input[[paste("p",phase,"_sr",j,"_sales_training",sep="")]])
     value.product_training <- as.numeric(
@@ -383,7 +384,7 @@ get.data3 <- function(input,phase){
 report_data <- function(tmp,flm_data,null_report) {
   report1_mod2 <- tmp %>%
     group_by(sales_rep) %>%
-    mutate(visit_time=sum(real_sr_time)) %>%
+    mutate(visit_time=sum(real_sr_time,na.rm=T)) %>%
     ungroup() %>%
     select(overhead_time,
            product_training,
@@ -584,8 +585,8 @@ report_data <- function(tmp,flm_data,null_report) {
   ## evaluation of decision report
   report4_mod3 <- tmp %>%
     group_by(hospital) %>%
-    mutate(total_deployment_quality_index= round(sum(deployment_quality_index),2),
-           total_pp_deployment_quality_index=round(sum(pp_deployment_quality_index),2)) %>%
+    mutate(total_deployment_quality_index= round(sum(deployment_quality_index,na.rm=T),2),
+           total_pp_deployment_quality_index=round(sum(pp_deployment_quality_index,na.rm=T),2)) %>%
     ungroup() %>%
     select(hospital,
            total_pp_deployment_quality_index,
@@ -609,18 +610,22 @@ report_data <- function(tmp,flm_data,null_report) {
   report5_mod1 <- tmp %>%
     select(hospital,
            product,
-           real_revenue) %>%
+           real_revenue,
+           real_volume) %>%
     group_by(product) %>%
-    mutate(real_revenue_by_product=round(sum(real_revenue)),
-           production_cost = sapply(product,function(x)production_price[which(production_price$product==x),]$cost),
-           production_fee = real_revenue_by_product*production_cost,
+    mutate(real_revenue_by_product=round(sum(real_revenue,na.rm=T)),
+           real_volume_by_product=round(sum(real_volume,na.rm=T)),
+           production_cost = sapply(product,function(x) product_info[which(product_info$类别==x),]$单位成本),
+           production_fee = real_volume_by_product*production_cost,
            profit = real_revenue_by_product - production_fee,
            production_fee_percent = round(production_fee/real_revenue_by_product*100,2),
            profit_percent = round(profit/real_revenue_by_product*100,2)) %>%
     ungroup() %>%
     select(-hospital,
            -production_cost,
-           -real_revenue) %>%
+           -real_revenue,
+           -real_volume,
+           -real_volume_by_product) %>%
     distinct() 
   
   
@@ -661,11 +666,11 @@ report_data <- function(tmp,flm_data,null_report) {
            real_volume,
            promotional_budget,
            product) %>%
-    mutate(production_cost = sapply(product,function(x)production_price[which(production_price$product==x),]$cost),
-           production_fee = production_cost*real_revenue,
-           total_revenue =round(sum(real_revenue)),
-           total_production_fee =round(sum(production_fee)),
-           total_promotional_budget = round(sum(promotional_budget)),
+    mutate(production_cost = sapply(product,function(x)product_info[which(product_info$类别==x),]$单位成本),
+           production_fee = round(production_cost*real_volume),
+           total_revenue =round(sum(real_revenue,na.rm=T)),
+           total_production_fee =round(sum(production_fee,na.rm=T)),
+           total_promotional_budget = round(sum(promotional_budget,na.rm=T)),
            total_salary=round(report2_mod1$值))  %>%
     select(total_revenue,
            total_production_fee,
@@ -751,8 +756,8 @@ report_data <- function(tmp,flm_data,null_report) {
            promotional_budget) %>%
     group_by(hospital,product) %>%
     mutate(no.product=n_distinct(product),
-           production_cost = sapply(product,function(x)production_price[which(production_price$product==x),]$cost),
-           production_fee = round(production_cost*real_revenue),
+           production_cost = sapply(product,function(x)product_info[which(product_info$类别==x),]$单位成本),
+           production_fee = round(production_cost*real_volume),
            promotion_fee = round(promotional_budget/no.product),
            profit = round(real_revenue-production_fee-promotion_fee)) %>%
     ungroup() %>%
@@ -765,10 +770,10 @@ report_data <- function(tmp,flm_data,null_report) {
     group_by(hospital) %>%
     do(plyr::rbind.fill(.,data.frame(hospital=first(.$hospital),
                                      product="总体",
-                                     real_revenue = sum(.$real_revenue),
-                                     production_fee = sum(.$production_fee),
-                                     promotion_fee = sum(.$promotion_fee),
-                                     profit = sum(.$profit)))) %>%
+                                     real_revenue = sum(.$real_revenue,na.rm=T),
+                                     production_fee = sum(.$production_fee,na.rm=T),
+                                     promotion_fee = sum(.$promotion_fee,na.rm=T),
+                                     profit = sum(.$profit,na.rm=T)))) %>%
     ungroup() %>%
     mutate(production_fee_percent = round(production_fee/real_revenue*100,2),
            promotion_fee_percent = round(promotion_fee/real_revenue*100,2),
@@ -802,24 +807,24 @@ report_data <- function(tmp,flm_data,null_report) {
            pp_real_revenue,
            real_volume,
            pp_real_volume,
-           sales_target,
+           target_volume,
            target_revenue)%>%
     group_by(hospital) %>%
-    dplyr::summarise(real_revenue_by_hosp = round(sum(real_revenue),2),
-                     pp_real_revenue_by_hosp = round(sum(pp_real_revenue),2),
+    dplyr::summarise(real_revenue_by_hosp = round(sum(real_revenue,na.rm=T),2),
+                     pp_real_revenue_by_hosp = round(sum(pp_real_revenue,na.rm=T),2),
                      real_revenue_increase = round(real_revenue_by_hosp - pp_real_revenue_by_hosp,2),
-                     real_volume_by_hosp = round(sum(real_volume),2),
-                     pp_real_volume_by_hosp = round(sum(pp_real_volume),2),
+                     real_volume_by_hosp = round(sum(real_volume,na.rm=T),2),
+                     pp_real_volume_by_hosp = round(sum(pp_real_volume,na.rm=T),2),
                      real_volume_increase = round(real_volume_by_hosp - pp_real_volume_by_hosp,2),
                      target_revenue_by_hosp = sum(target_revenue,na.rm=T),
-                     target_volume_by_hosp =sum(sales_target,na.rm=T)) %>%
+                     target_volume_by_hosp =sum(target_volume,na.rm=T)) %>%
     do(plyr::rbind.fill(.,data.frame(hospital="总体",
-                                     real_revenue_by_hosp=sum(.$real_revenue_by_hosp),
-                                     pp_real_revenue_by_hosp=sum(.$pp_real_revenue_by_hosp),
-                                     real_revenue_increase=sum(.$real_revenue_increase),
-                                     real_volume_by_hosp=sum(.$real_volume_by_hosp),
-                                     pp_real_volume_by_hosp=sum(.$pp_real_volume_by_hosp),
-                                     real_volume_increase=sum(.$real_volume_increase),
+                                     real_revenue_by_hosp=sum(.$real_revenue_by_hosp,na.rm=T),
+                                     pp_real_revenue_by_hosp=sum(.$pp_real_revenue_by_hosp,na.rm=T),
+                                     real_revenue_increase=sum(.$real_revenue_increase,na.rm=T),
+                                     real_volume_by_hosp=sum(.$real_volume_by_hosp,na.rm=T),
+                                     pp_real_volume_by_hosp=sum(.$pp_real_volume_by_hosp,na.rm=T),
+                                     real_volume_increase=sum(.$real_volume_increase,na.rm=T),
                                      target_revenue_by_hosp = sum(.$target_revenue_by_hosp,na.rm=T),
                                      target_volume_by_hosp = sum(.$target_volume_by_hosp,na.rm=T)))) %>%
     mutate(real_revenue_increase_ratio = round(real_revenue_increase/pp_real_revenue_by_hosp*100,2),
@@ -868,14 +873,14 @@ report_data <- function(tmp,flm_data,null_report) {
     mutate(sr_revenue_increase=real_revenue_by_sr-pp_real_revenue_by_sr,
            sr_volume_increase=real_volume_by_sr-pp_real_volume_by_sr) %>%
     do(plyr::rbind.fill(.,data.frame(sales_rep="总体",
-                                     real_revenue_by_sr=sum(.$real_revenue_by_sr),
-                                     pp_real_revenue_by_sr =sum(.$pp_real_revenue_by_sr),
-                                     sr_revenue_increase=sum(.$sr_revenue_increase),
-                                     real_volume_by_sr=sum(.$real_volume_by_sr),
-                                     pp_real_volume_by_sr=sum(.$pp_real_volume_by_sr),
-                                     sr_volume_increase=sum(.$sr_volume_increase),
-                                     target_revenue_by_sr=sum(.$target_revenue_by_sr),
-                                     target_volume_by_sr=sum(.$target_volume_by_sr)))) %>%
+                                     real_revenue_by_sr=sum(.$real_revenue_by_sr,na.rm=T),
+                                     pp_real_revenue_by_sr =sum(.$pp_real_revenue_by_sr,na.rm=T),
+                                     sr_revenue_increase=sum(.$sr_revenue_increase,na.rm=T),
+                                     real_volume_by_sr=sum(.$real_volume_by_sr,na.rm=T),
+                                     pp_real_volume_by_sr=sum(.$pp_real_volume_by_sr,na.rm=T),
+                                     sr_volume_increase=sum(.$sr_volume_increase,na.rm=T),
+                                     target_revenue_by_sr=sum(.$target_revenue_by_sr,na.rm=T),
+                                     target_volume_by_sr=sum(.$target_volume_by_sr,na.rm=T)))) %>%
     mutate(sr_revenue_increase_ratio = round(sr_revenue_increase/pp_real_revenue_by_sr*100,2),
            sr_volume_increase_ratio = round(sr_volume_increase/pp_real_volume_by_sr*100,2),
            sr_target_revenue_realization = round(real_revenue_by_sr/target_revenue_by_sr*100,2),
@@ -918,25 +923,25 @@ report_data <- function(tmp,flm_data,null_report) {
            real_volume,
            pp_real_volume,
            target_revenue,
-           sales_target) %>%
+           target_volume) %>%
     group_by(product) %>%
-    dplyr::summarise(real_revenue_by_product = round(sum(real_revenue)),
-                     pp_real_revenue_by_product = round(sum(pp_real_revenue)),
+    dplyr::summarise(real_revenue_by_product = round(sum(real_revenue,na.rm=T)),
+                     pp_real_revenue_by_product = round(sum(pp_real_revenue,na.rm=T)),
                      real_revenue_increase = round(real_revenue_by_product - pp_real_revenue_by_product),
-                     real_volume_by_product = round(sum(real_volume)),
-                     pp_real_volume_by_product = round(sum(pp_real_volume)),
+                     real_volume_by_product = round(sum(real_volume,na.rm=T)),
+                     pp_real_volume_by_product = round(sum(pp_real_volume,na.rm=T)),
                      real_volume_increase = round(real_volume_by_product - pp_real_volume_by_product),
                      target_revenue_by_product = round(sum(target_revenue.na.rm=T)),
-                     target_volume_by_product = round(sum(sales_target,na.rm=T))) %>%
+                     target_volume_by_product = round(sum(target_volume,na.rm=T))) %>%
     do(plyr::rbind.fill(.,data.frame(product="总体",
-                                     real_revenue_by_product=round(sum(.$real_revenue_by_product)),
-                                     pp_real_revenue_by_product=round(sum(.$pp_real_revenue_by_product)),
-                                     real_revenue_increase=sum(.$real_revenue_increase),
-                                     real_volume_by_product=round(sum(.$real_volume_by_product)),
-                                     pp_real_volume_by_product=round(sum(.$pp_real_volume_by_product)),
-                                     real_volume_increase=round(sum(.$real_volume_increase)),
-                                     target_revenue_by_product=round(sum(.$target_revenue_by_product)),
-                                     target_volume_by_product=round(sum(.$target_volume_by_product))))) %>%
+                                     real_revenue_by_product=round(sum(.$real_revenue_by_product,na.rm=T)),
+                                     pp_real_revenue_by_product=round(sum(.$pp_real_revenue_by_product,na.rm=T)),
+                                     real_revenue_increase=sum(.$real_revenue_increase,na.rm=T),
+                                     real_volume_by_product=round(sum(.$real_volume_by_product,na.rm=T)),
+                                     pp_real_volume_by_product=round(sum(.$pp_real_volume_by_product,na.rm=T)),
+                                     real_volume_increase=round(sum(.$real_volume_increase,na.rm=T)),
+                                     target_revenue_by_product=round(sum(.$target_revenue_by_product,na.rm=T)),
+                                     target_volume_by_product=round(sum(.$target_volume_by_product,na.rm=T))))) %>%
     mutate(real_revenue_increase_ratio = round(real_revenue_increase/pp_real_revenue_by_product*100,2),
            real_volume_increase_ratio = round(real_volume_increase/pp_real_volume_by_product*100,2),
            target_revenue_realization_by_product = round(real_revenue_by_product/target_revenue_by_product*100,2),
@@ -986,13 +991,13 @@ report_data <- function(tmp,flm_data,null_report) {
            offer_attractiveness,
            acc_offer_attractiveness) %>%
     distinct() %>%
-    mutate(total_revenue = round(sum(real_revenue),2),
-           total_offer_attractiveness = round(sum(offer_attractiveness),2),
-           total_acc_offer_attractiveness = round(sum(acc_offer_attractiveness),2),
-           average_customer_relationship_index = round(mean(customer_relationship_index),2),
-           average_sales_skills_index = round(mean(sales_skills_index),2),
-           average_product_knowledge_index = round(mean(product_knowledge_index),2),
-           average_motivation_index = round(mean(motivation_index),2),
+    mutate(total_revenue = round(sum(real_revenue,na.rm=T),2),
+           total_offer_attractiveness = round(sum(offer_attractiveness,na.rm=T),2),
+           total_acc_offer_attractiveness = round(sum(acc_offer_attractiveness,na.rm=T),2),
+           average_customer_relationship_index = round(mean(customer_relationship_index,na.rm=T),2),
+           average_sales_skills_index = round(mean(sales_skills_index,na.rm=T),2),
+           average_product_knowledge_index = round(mean(product_knowledge_index,na.rm=T),2),
+           average_motivation_index = round(mean(motivation_index,na.rm=T),2),
            team_capability = average_motivation_index +
              average_product_knowledge_index +
              average_sales_skills_index) %>%
@@ -1036,9 +1041,9 @@ report_data <- function(tmp,flm_data,null_report) {
   report8_mod2 <- tmp %>%
     select(hospital,product,real_revenue) %>%
     group_by(hospital) %>%
-    dplyr::summarise(hospital_revenue = round(sum(real_revenue))) %>%
+    dplyr::summarise(hospital_revenue = round(sum(real_revenue,na.rm=T))) %>%
     ungroup() %>%
-    mutate(market_revenue=round(sum(hospital_revenue)),
+    mutate(market_revenue=round(sum(hospital_revenue,na.rm=T)),
            market_share=round(hospital_revenue/market_revenue*100,2)) %>%
     select(hospital,
            hospital_revenue,

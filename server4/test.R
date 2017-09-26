@@ -1,9 +1,10 @@
-input <- readRDS("admin1_2017_09_26.RDS")  
+input <- readRDS("admin5
+                 _2017_09_26.RDS")  
 
 pp_data1 <- pp_info
   pp_data2 <- sr_info_list
-  cp_data1 <- get.data1(input,1)
-  cp_data2 <- get.data2(input,1)
+  cp_data1 <- get.data1(input,0)
+  cp_data2 <- get.data2(input,0)
   tmp <- calculation(pp_data1,
                      pp_data2,
                      cp_data1,
@@ -125,10 +126,27 @@ pp_data1 <- pp_info
                            cp_data1,
                            cp_data2)
         
-        p1_flm_data <- get.data3(input,1)
-        p1_report <- report_data(tmp,p1_flm_data)
+        p0_flm_data <- get.data3(input,0)
+        p0_report <- report_data(tmp,p0_flm_data,null_report8)
         
         
         p4_flm_data <- get.data3(input,4)
         p4_report <- report_data(tmp4,p4_flm_data)
+        
+        
+        report8_mod1 <- p0_report$report8_mod1
+        report8_mod1 <- report8_mod1 %>% 
+          gather(variable,`值`,-phase) %>%
+          spread(phase,`值`)
+        
+        
+        report8_mod1 <- report8_mod1 %>%
+          left_join(report8_mod1_rank,by="variable") %>%
+          arrange(rank) %>%
+          select(-variable,-rank)
+        
+        rownames(report8_mod1) <- report8_mod1$name
+        
+        report8_mod1 <- report8_mod1 %>%
+          select(-name)
         

@@ -34,7 +34,7 @@ product_info_list <- data.frame(
 ## hospital information
 hospital_info <- read.xlsx("pre_info.xlsx",
                            sheet="hospital")
-hospital_info<- gather(hospital_info,phase,"潜力",c("周期1","周期2","周期3","周期4"))
+hospital_info<- gather(hospital_info,phase,"潜力",c("周期0","周期1","周期2","周期3","周期4"))
 
 hospital_info_ui <- hospital_info[,c(1,3,4,5,7,8)]
 
@@ -87,21 +87,22 @@ weightage <- list(total_attractiveness = list(pp_offer_attractiveness = 0.35,
 )
 
 ## total promotional budget
-total_promotional_budget <- list(phase1 = 2000,
+total_promotional_budget <- list(phase0 = 2000,
+                                 phase1 = 2000,
                                  phase2 = 2000,
                                  phase3 = 2000,
                                  phase4 = 2000)
 
 ## 
 null_report8 <- data.frame(
-  phase=c("周期1","周期2","周期3","周期4"),
-  "total_revenue"=rep("",4),
-  "profit"=rep("",4),
-  "average_customer_relationship_index"=rep("",4),
-  "team_capability"=rep("",4),
-  "total_offer_attractiveness"=rep("",4),
-  "total_acc_offer_attractiveness"=rep("",4),
-  "success_value"=rep("",4),
+  phase=c("周期0","周期1","周期2","周期3","周期4"),
+  "total_revenue"=rep("",5),
+  "profit"=rep("",5),
+  "average_customer_relationship_index"=rep("",5),
+  "team_capability"=rep("",5),
+  "total_offer_attractiveness"=rep("",5),
+  "total_acc_offer_attractiveness"=rep("",5),
+  "success_value"=rep("",5),
   stringsAsFactors = F
 )
 

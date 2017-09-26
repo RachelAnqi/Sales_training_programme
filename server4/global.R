@@ -6,6 +6,7 @@ library(plyr)
 library(dplyr)
 library(tidyr)
 library(digest)
+options(scipen=200)
 
 load("initial_setting.RData")
 
@@ -130,7 +131,6 @@ total_management <- function(input,phase){sum(c(
   field_work(input,phase),
   as.numeric(input[[paste("p",phase,"_flm_team_meeting",sep = "")]]),
   as.numeric(input[[paste("p",phase,"_flm_kpi_analysis",sep = "")]]),
-  as.numeric(input[[paste("p",phase,"_flm_strategy_planning",sep = "")]]),
   as.numeric(input[[paste("p",phase,"_flm_admin_work",sep = "")]])),
   na.rm = T
 )}
@@ -152,10 +152,16 @@ calculation <- function(pp_data1,
     mutate(no.hospitals = n_distinct(hospital),
            sr_time_total=sum(sr_time,na.rm=T)) %>%
     ungroup %>%
-    dplyr::mutate(sr_acc_field_work = pp_sr_acc_field_work+field_work,
+    group_by(phase,hospital) %>%
+    mutate(sr_time_by_hosp=sum(sr_time,na.rm=T)) %>%
+    ungroup() %>%
+    dplyr::mutate(sr_time_proportion=round(sr_time/sr_time_total,2),
+                  product_time_proportion=round(sr_time/sr_time_by_hosp,2),
+                  promotional_budget = round(promotional_budget*product_time_proportion),
+                  sr_acc_field_work = pp_sr_acc_field_work+field_work,
                   overhead_factor = sapply(pp_motivation_index,function(x) curve(curve12,x)),
                   overhead_time = round(overhead_factor*overhead,0),
-                  real_sr_time = round(sr_time-overhead_time/no.hospitals/4,2),
+                  real_sr_time = round(sr_time-overhead_time*sr_time_proportion,2),
                   pp_experience_index = sapply(pp_sr_acc_revenue,function(x) round(curve(curve11,x),2)),
                   field_work_peraccount = field_work/no.hospitals,
                   product_knowledge_addition_current_period = sapply(product_training,function(x)curve(curve26,x)),
@@ -192,7 +198,8 @@ calculation <- function(pp_data1,
           ((weightage$motivation)$sales_training))) %>%
     mutate(srsp_motivation_factor = sapply(pp_motivation_index,function(x)curve(curve32,x)),
            srsp_sales_skills_factor = sapply(sales_skills_index,function(x)curve(curve34,x)),
-           srsp_product_knowledge_factor = sapply(product_knowledge_index,function(x)curve(curve33,x)),
+           srsp_product_knowledge_factor = sapply(pp_product_knowledge_index-product_knowledge_index,
+                                                  function(x)curve(curve33,x)),
            srsp_time_with_account_factor = 
              mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
                curve(curve35,y)} else if(
@@ -264,7 +271,7 @@ calculation <- function(pp_data1,
                                           pp_offer_attractiveness*(weightage$total_attractiveness)$pp_offer_attractiveness),
            acc_offer_attractiveness = round(pp_acc_offer_attractiveness+offer_attractiveness),
            market_share = sapply(offer_attractiveness, function(x) curve(curve51,x)),
-           real_revenue = round(market_share*potential_revenue),
+           real_revenue = round(market_share/100*potential_revenue),
            real_volume = round(real_revenue/product_price)) %>%
     group_by(sales_rep) %>%
     mutate(target_revenue_by_sr = sum(target_revenue,na.rm=T),
@@ -273,8 +280,10 @@ calculation <- function(pp_data1,
            target_volume_by_sr = sum(target_volume,na.rm=T),
            real_volume_by_sr = sum(real_volume,na.rm=T),
            target_volume_realization_by_sr = round(real_volume_by_sr/target_volume_by_sr*100,2),
-           incentive_factor = sapply(target_revenue_realization_by_sr, function(x) curve(curve10,x)),
-           bonus = round(incentive_factor*0.03*target_revenue_by_sr),
+           #incentive_factor = sapply(target_revenue_realization_by_sr, function(x) curve(curve10,x)),
+           bonus = round(0.03*ifelse(target_revenue_realization_by_sr>=90 & target_revenue_realization_by_sr<=120,
+                                     target_revenue_realization_by_sr,
+                                     0)*real_revenue_by_sr),
            sr_acc_revenue = real_revenue_by_sr+pp_sr_acc_revenue,
            experience_index = sapply(sr_acc_revenue, function(x) round(curve(curve11,x),2))) %>%
     ungroup()
@@ -738,7 +747,7 @@ report_data <- function(tmp,flm_data,null_report) {
   
   ## report c
   report6_rank <- data.frame(
-    variable=c("销售额(元)",
+    "指标"=c("销售额(元)",
                "生产成本(元)",
                "生产成本(%)",
                "推广费用预算(元)",
@@ -790,9 +799,9 @@ report_data <- function(tmp,flm_data,null_report) {
                                            '利润贡献(%)')
   
   report6_mod1 <- product_report_peraccount %>%
-    gather(variable,value,-`医院`,-`产品`) %>%
+    gather(`指标`,value,-`医院`,-`产品`) %>%
     spread(`产品`,value) %>%
-    left_join(report6_rank,by="variable") %>%
+    left_join(report6_rank,by="指标") %>%
     arrange(`医院`,rank) %>%
     select(-rank)
   
@@ -931,7 +940,7 @@ report_data <- function(tmp,flm_data,null_report) {
                      real_volume_by_product = round(sum(real_volume,na.rm=T)),
                      pp_real_volume_by_product = round(sum(pp_real_volume,na.rm=T)),
                      real_volume_increase = round(real_volume_by_product - pp_real_volume_by_product),
-                     target_revenue_by_product = round(sum(target_revenue.na.rm=T)),
+                     target_revenue_by_product = round(sum(target_revenue,na.rm=T)),
                      target_volume_by_product = round(sum(target_volume,na.rm=T))) %>%
     do(plyr::rbind.fill(.,data.frame(product="总体",
                                      real_revenue_by_product=round(sum(.$real_revenue_by_product,na.rm=T)),
@@ -982,7 +991,6 @@ report_data <- function(tmp,flm_data,null_report) {
     select(phase,
            sales_rep,
            hospital,
-           incentive_factor,
            product_knowledge_index,
            sales_skills_index,
            customer_relationship_index,

@@ -5,7 +5,7 @@ library(openxlsx)
 options(scipen=200)
 
 ## sales representative
-sr_info <- read.xlsx("pre_info.xlsx",
+sr_info <- read.xlsx("pre_info_new.xlsx",
                      sheet="sales_rep")
 
 sr_info_ui <- sr_info[,1:4]
@@ -20,7 +20,7 @@ worktime =100
 overhead =2
 
 ## product information
-product_info <- read.xlsx("pre_info.xlsx",
+product_info <- read.xlsx("pre_info_new.xlsx",
                           sheet="product")
 
 product_info_ui <- product_info[,-1]
@@ -32,7 +32,7 @@ product_info_list <- data.frame(
 )
 
 ## hospital information
-hospital_info <- read.xlsx("pre_info.xlsx",
+hospital_info <- read.xlsx("pre_info_new.xlsx",
                            sheet="hospital")
 hospital_info<- gather(hospital_info,phase,"潜力",c("周期0","周期1","周期2","周期3","周期4"))
 
@@ -47,7 +47,7 @@ hospital_info_list <- unique(data.frame(
 
 
 ## previous period
-pp_info <- read.xlsx("pre_info.xlsx",
+pp_info <- read.xlsx("pre_info_new.xlsx",
                      sheet="pp_info")
 
 pp_info <- pp_info %>%
@@ -124,4 +124,9 @@ report8_mod1_rank <- data.frame(
   rank=1:7
   
 )
+
+## news import
+news <- read.xlsx("pre_info_new.xlsx",
+                  sheet="news")
+colnames(news)[1] <- ""
 

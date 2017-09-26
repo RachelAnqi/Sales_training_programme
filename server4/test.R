@@ -1,18 +1,17 @@
-input <- readRDS("admin5
-                 _2017_09_26.RDS")  
+input <- readRDS("admin3_2017_09_26.RDS")  
 
 pp_data1 <- pp_info
   pp_data2 <- sr_info_list
   cp_data1 <- get.data1(input,0)
   cp_data2 <- get.data2(input,0)
-  tmp <- calculation(pp_data1,
+  tmp0 <- calculation(pp_data1,
                      pp_data2,
                      cp_data1,
                      cp_data2)
  
 
  
-    pp_data1 <- tmp %>% select(hospital,
+    pp_data1 <- tmp0 %>% select(hospital,
                                  hosp_code,
                                  product,
                                  prod_code,
@@ -29,7 +28,7 @@ pp_data1 <- pp_info
     
     colnames(pp_data1)[5:13] <- paste("pp_",colnames(pp_data1)[5:13],sep="")
     
-    pp_data2 <- tmp %>% select(sales_rep,
+    pp_data2 <- tmp0 %>% select(sales_rep,
                                  sales_level,
                                  real_revenue_by_sr,
                                  real_volume_by_sr,
@@ -42,9 +41,9 @@ pp_data1 <- pp_info
       distinct()
     
     colnames(pp_data2)[3:10] <- paste("pp_",colnames(pp_data2)[3:10],sep="")
-    cp_data1 <- get.data1(input,2)
-    cp_data2 <- get.data2(input,2)
-    tmp2 <- calculation(pp_data1,
+    cp_data1 <- get.data1(input,1)
+    cp_data2 <- get.data2(input,1)
+    tmp1 <- calculation(pp_data1,
                        pp_data2,
                        cp_data1,
                        cp_data2)

@@ -228,7 +228,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp1", 
                                         label = NULL,
@@ -277,7 +277,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -351,7 +351,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp2", 
                                         label = NULL,
@@ -400,7 +400,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -473,7 +473,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp3", 
                                         label = NULL,
@@ -522,7 +522,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -598,7 +598,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp4", 
                                         label = NULL,
@@ -647,7 +647,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -721,7 +721,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp5", 
                                         label = NULL,
@@ -770,7 +770,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -845,7 +845,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp6", 
                                         label = NULL,
@@ -894,7 +894,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -968,7 +968,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp7", 
                                         label = NULL,
@@ -1017,7 +1017,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -1092,7 +1092,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp8", 
                                         label = NULL,
@@ -1141,7 +1141,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -1215,7 +1215,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp9", 
                                         label = NULL,
@@ -1264,7 +1264,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -1339,7 +1339,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p0_promotional_budget_hosp10", 
                                         label = NULL,
@@ -1388,7 +1388,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -1503,7 +1503,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp1", 
                                         label = NULL,
@@ -1552,7 +1552,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -1626,7 +1626,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp2", 
                                         label = NULL,
@@ -1675,7 +1675,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -1748,7 +1748,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp3", 
                                         label = NULL,
@@ -1797,7 +1797,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -1833,20 +1833,9 @@ mainbody <- div(
                          
                        )
                        ))
-                   ),
-                   
-                   tags$div(
-                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "时间被分配到 A级客户(%)"),
-                     tags$div(
-                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                       textInput(
-                         "p1_hosp3_worktime_doc",
-                         label = NULL,
-                         value = "6"
-                       )
-                     )
                    )
+                   
+                   
                  ),
                  br(),
                  # fluidRow(
@@ -1884,7 +1873,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp4", 
                                         label = NULL,
@@ -1933,7 +1922,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -2007,7 +1996,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp5", 
                                         label = NULL,
@@ -2056,7 +2045,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -2131,7 +2120,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp6", 
                                         label = NULL,
@@ -2180,7 +2169,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -2254,7 +2243,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp7", 
                                         label = NULL,
@@ -2303,7 +2292,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -2378,7 +2367,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp8", 
                                         label = NULL,
@@ -2427,7 +2416,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -2501,7 +2490,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp9", 
                                         label = NULL,
@@ -2550,7 +2539,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -2625,7 +2614,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该医院的总推广预算(%)"),
+                              "批准的总推广预算(%)"),
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                               textInput("p1_promotional_budget_hosp10", 
                                         label = NULL,
@@ -2674,7 +2663,7 @@ mainbody <- div(
                    
                    tags$div(
                      tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                              "批准该代表的拜访时间分配(%)"),
+                              "批准的医院拜访时间(%)"),
                      tags$div(
                        style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                        textInput(
@@ -2788,7 +2777,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp1", 
                                        label = NULL,
@@ -2837,7 +2826,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -2910,7 +2899,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp2", 
                                        label = NULL,
@@ -2959,7 +2948,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3033,7 +3022,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp3", 
                                        label = NULL,
@@ -3082,7 +3071,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3156,7 +3145,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp4", 
                                        label = NULL,
@@ -3205,7 +3194,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3279,7 +3268,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp5", 
                                        label = NULL,
@@ -3328,7 +3317,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3403,7 +3392,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp6", 
                                        label = NULL,
@@ -3452,7 +3441,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3525,7 +3514,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp7", 
                                        label = NULL,
@@ -3574,7 +3563,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3647,7 +3636,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp8", 
                                        label = NULL,
@@ -3696,7 +3685,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3768,7 +3757,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp9", 
                                        label = NULL,
@@ -3817,7 +3806,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -3890,7 +3879,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p2_promotional_budget_hosp10", 
                                        label = NULL,
@@ -3939,7 +3928,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4050,7 +4039,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp1", 
                                        label = NULL,
@@ -4099,7 +4088,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4172,7 +4161,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp2", 
                                        label = NULL,
@@ -4221,7 +4210,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4293,7 +4282,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp3", 
                                        label = NULL,
@@ -4342,7 +4331,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4414,7 +4403,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp4", 
                                        label = NULL,
@@ -4463,7 +4452,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4535,7 +4524,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp5", 
                                        label = NULL,
@@ -4584,7 +4573,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4657,7 +4646,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp6", 
                                        label = NULL,
@@ -4706,7 +4695,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4778,7 +4767,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp7", 
                                        label = NULL,
@@ -4827,7 +4816,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -4900,7 +4889,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp8", 
                                        label = NULL,
@@ -4949,7 +4938,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5021,7 +5010,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp9", 
                                        label = NULL,
@@ -5070,7 +5059,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5143,7 +5132,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p3_promotional_budget_hosp10", 
                                        label = NULL,
@@ -5192,7 +5181,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5302,7 +5291,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp1", 
                                        label = NULL,
@@ -5351,7 +5340,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5425,7 +5414,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp2", 
                                        label = NULL,
@@ -5474,7 +5463,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5546,7 +5535,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp3", 
                                        label = NULL,
@@ -5595,7 +5584,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5667,7 +5656,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp4", 
                                        label = NULL,
@@ -5716,7 +5705,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5788,7 +5777,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp5", 
                                        label = NULL,
@@ -5837,7 +5826,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -5910,7 +5899,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp6", 
                                        label = NULL,
@@ -5959,7 +5948,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -6031,7 +6020,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp7", 
                                        label = NULL,
@@ -6080,7 +6069,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -6153,7 +6142,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp8", 
                                        label = NULL,
@@ -6202,7 +6191,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -6274,7 +6263,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp9", 
                                        label = NULL,
@@ -6323,7 +6312,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -6396,7 +6385,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该医院的总推广预算(%)"),
+                             "批准的总推广预算(%)"),
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                              textInput("p4_promotional_budget_hosp10", 
                                        label = NULL,
@@ -6445,7 +6434,7 @@ mainbody <- div(
                   
                   tags$div(
                     tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                             "批准该代表的拜访时间分配(%)"),
+                             "批准的医院拜访时间(%)"),
                     tags$div(
                       style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                       textInput(
@@ -7588,10 +7577,6 @@ mainbody <- div(
                            status = "primary", 
                            solidHeader = TRUE,
                            
-                           
-                           
-                           
-                           br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
                                     dataTableOutput("p0_report1_2")),
                            br(),br(),br(),
@@ -7705,9 +7690,6 @@ mainbody <- div(
                            solidHeader = TRUE,
                            
                            
-                           
-                           
-                           br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
                                     dataTableOutput("p1_report1_2")),
                            br(),br(),br(),
@@ -8582,6 +8564,54 @@ server=function(input, output, session) {
   output$p3_flm_sales_target <- renderText("待定")
   output$p4_flm_sales_target <- renderText("待定")
   
+  output$p1_was_plan <- renderDataTable(
+    datatable(news[,1:2],
+              rownames = FALSE,
+              caption="",
+              options =list(ordering = F, dom = "t",
+                            columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+                            initComplete = JS(
+                              "function(settings, json) {",
+                              "$(this.api().table().header());",
+                              "}")))
+  )
+  
+  output$p2_was_plan <- renderDataTable(
+    datatable(news[,c(1,3)],
+              rownames = FALSE,
+              caption="",
+              options =list(ordering = F, dom = "t",
+                            columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+                            initComplete = JS(
+                              "function(settings, json) {",
+                              "$(this.api().table().header());",
+                              "}")))
+  )
+  
+  output$p3_was_plan <- renderDataTable(
+    datatable(news[,c(1,4)],
+              rownames = FALSE,
+              caption="",
+              options =list(ordering = F, dom = "t",
+                            columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+                            initComplete = JS(
+                              "function(settings, json) {",
+                              "$(this.api().table().header());",
+                              "}")))
+  )
+  
+  output$p4_was_plan <- renderDataTable(
+    datatable(news[,c(1,5)],
+              rownames = FALSE,
+              caption="",
+              options =list(ordering = F, dom = "t",
+                            columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+                            initComplete = JS(
+                              "function(settings, json) {",
+                              "$(this.api().table().header());",
+                              "}")))
+  )
+  
   
   
   output$sales_rep_info <- renderDataTable(
@@ -9146,7 +9176,7 @@ server=function(input, output, session) {
       p1_calculator_result()[6] <=worktime &
       sum(p1_flm_data()) <=worktime
     ) {
-      p1_report <- report_data(tmp(),p1_flm_data(),null_report8)
+      p1_report <- report_data(tmp(),p1_flm_data(),p0_report()$report8_mod1)
       return(p1_report)
     } 
     
@@ -9221,10 +9251,7 @@ server=function(input, output, session) {
       disable("p1_hosp3_worktime_2")
       disable("p1_hosp3_worktime_3")
       disable("p1_hosp3_worktime_4")
-      disable("p1_hosp3_worktime_doc")
-      disable("p1_hosp3_worktime_diet")
-      disable("p1_hosp3_worktime_admin")
-      disable("p1_hosp3_worktime_nurs")
+
       ##hosp4
       disable("p1_discount_hosp4_1")
       disable("p1_discount_hosp4_2")
@@ -10149,10 +10176,7 @@ server=function(input, output, session) {
       disable("p2_hosp3_worktime_2")
       disable("p2_hosp3_worktime_3")
       disable("p2_hosp3_worktime_4")
-      disable("p2_hosp3_worktime_doc")
-      disable("p2_hosp3_worktime_diet")
-      disable("p2_hosp3_worktime_admin")
-      disable("p2_hosp3_worktime_nurs")
+      
       ##hosp4
       disable("p2_discount_hosp4_1")
       disable("p2_discount_hosp4_2")
@@ -11070,10 +11094,7 @@ server=function(input, output, session) {
       disable("p3_hosp3_worktime_2")
       disable("p3_hosp3_worktime_3")
       disable("p3_hosp3_worktime_4")
-      disable("p3_hosp3_worktime_doc")
-      disable("p3_hosp3_worktime_diet")
-      disable("p3_hosp3_worktime_admin")
-      disable("p3_hosp3_worktime_nurs")
+     
       ##hosp4
       disable("p3_discount_hosp4_1")
       disable("p3_discount_hosp4_2")
@@ -11984,10 +12005,7 @@ server=function(input, output, session) {
       disable("p4_hosp3_worktime_2")
       disable("p4_hosp3_worktime_3")
       disable("p4_hosp3_worktime_4")
-      disable("p4_hosp3_worktime_doc")
-      disable("p4_hosp3_worktime_diet")
-      disable("p4_hosp3_worktime_admin")
-      disable("p4_hosp3_worktime_nurs")
+     
       ##hosp4
       disable("p4_discount_hosp4_1")
       disable("p4_discount_hosp4_2")

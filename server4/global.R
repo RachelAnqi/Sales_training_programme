@@ -115,16 +115,16 @@ sales_training <- function(input,phase){sum(c(
   as.numeric(input[[paste("p",phase,"_sr2_sales_training",sep = "")]]),
   as.numeric(input[[paste("p",phase,"_sr3_sales_training",sep = "")]]),
   as.numeric(input[[paste("p",phase,"_sr4_sales_training",sep = "")]]),
-  as.numeric(input[[paste("p",phase,"_sr5_sales_training",sep = "")]]),
-  na.rm = T))}
+  as.numeric(input[[paste("p",phase,"_sr5_sales_training",sep = "")]])),
+  na.rm = T)}
 
 field_work <- function(input,phase){sum(c(
   as.numeric(input[[paste("p",phase,"_sr1_field_work",sep = "")]]),
   as.numeric(input[[paste("p",phase,"_sr2_field_work",sep = "")]]),
   as.numeric(input[[paste("p",phase,"_sr3_field_work",sep = "")]]),
   as.numeric(input[[paste("p",phase,"_sr4_field_work",sep = "")]]),
-  as.numeric(input[[paste("p",phase,"_sr5_field_work",sep = "")]]),
-  na.rm = T))}
+  as.numeric(input[[paste("p",phase,"_sr5_field_work",sep = "")]])),
+  na.rm = T)}
 
 total_management <- function(input,phase){sum(c(
   sales_training(input,phase),
@@ -155,15 +155,15 @@ calculation <- function(pp_data1,
     group_by(phase,hospital) %>%
     mutate(sr_time_by_hosp=sum(sr_time,na.rm=T)) %>%
     ungroup() %>%
-    dplyr::mutate(sr_time_proportion=round(sr_time/sr_time_total,2),
-                  product_time_proportion=round(sr_time/sr_time_by_hosp,2),
+    dplyr::mutate(sr_time_proportion=round(sr_time/ifelse(sr_time_total==0,0.0001,sr_time_total),2),
+                  product_time_proportion=round(sr_time/ifelse(sr_time_by_hosp==0,0.0001,sr_time_by_hosp),2),
                   promotional_budget = round(promotional_budget*product_time_proportion),
                   sr_acc_field_work = pp_sr_acc_field_work+field_work,
                   overhead_factor = sapply(pp_motivation_index,function(x) curve(curve12,x)),
                   overhead_time = round(overhead_factor*overhead,0),
                   real_sr_time = round(sr_time-overhead_time*sr_time_proportion,2),
                   pp_experience_index = sapply(pp_sr_acc_revenue,function(x) round(curve(curve11,x),2)),
-                  field_work_peraccount = field_work/no.hospitals,
+                  field_work_peraccount = field_work/ifelse(no.hospitals==0,0.0001,no.hospitals),
                   product_knowledge_addition_current_period = sapply(product_training,function(x)curve(curve26,x)),
                   product_knowledge_transfer_value = sapply(pp_product_knowledge_index,function(x)curve(curve28,x)),
                   ss_accumulated_field_work_delta = sapply(sr_acc_field_work,function(x)curve(curve42,x)),
@@ -242,7 +242,9 @@ calculation <- function(pp_data1,
     mutate(cr_product_knowledge_delta = 
              sapply(product_knowledge_index-pp_product_knowledge_index,function(x)curve(curve2,x)),
            cr_promotional_support_delta = 
-             sapply(promotional_support_index/pp_promotional_support_index,function(x)curve(curve3,x)),
+             sapply(ifelse(pp_promotional_support_index==0,
+                           2,
+                           promotional_support_index/pp_promotional_support_index),function(x)curve(curve3,x)),
            cr_pp_customer_relationship_index = 
              sapply(pp_customer_relationship_index,function(x)curve(curve4,x)))%>%
     mutate(customer_relationship_index = round(
@@ -804,6 +806,8 @@ report_data <- function(tmp,flm_data,null_report) {
     left_join(report6_rank,by="指标") %>%
     arrange(`医院`,rank) %>%
     select(-rank)
+  
+  report6_mod1 <- cbind(report6_mod1[,c(1,2,3,4,5,7)],report6_mod1[,6])
   
   
   

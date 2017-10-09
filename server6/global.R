@@ -1040,8 +1040,8 @@ report_data <- function(tmp,flm_data,null_report) {
                   inter4=(weightage$success_value)$team_capability*curve(curve46,team_capability),
                   success_value = round(inter1+inter2+inter3+inter4),
                   acc_success_value = success_value + pp_acc_success_value) %>%
-    #mutate(success_value = ifelse(phase=="周期0","",success_value),
-           #acc_success_value = ifelse(phase=="周期0","",acc_success_value)) %>%
+    mutate(success_value = ifelse(phase=="周期0","",success_value),
+           acc_success_value = ifelse(phase=="周期0","",acc_success_value)) %>%
     select(phase,
            total_revenue,
            profit,

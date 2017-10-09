@@ -5330,7 +5330,7 @@ mainbody <- div(
                   )
                 )
             ))),
-        #hidden(
+        hidden(
           tabPanel(title="周期0",
                         value="phase0",
                         hidden(checkboxInput("hide1", "Show tab2", FALSE)),
@@ -5441,7 +5441,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp1", 
                                                label = NULL,
-                                               value="10"))
+                                               value="22"))
                           ),
                           
                           tags$div(
@@ -5461,11 +5461,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp1_sales_target_1",label = NULL, value="1700000")),
+                                     textInput("p0_hosp1_sales_target_1",label = NULL, value="1500000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp1_sales_target_2",label = NULL, value="340000")),
+                                     textInput("p0_hosp1_sales_target_2",label = NULL, value="200000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp1_sales_target_3",label = NULL, value="323000")),
+                                     textInput("p0_hosp1_sales_target_3",label = NULL, value="270000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      disabled(textInput("p0_hosp1_sales_target_4",label = NULL, value="")))
                           ),
@@ -5492,7 +5492,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp1_worktime_1",
                                 label = NULL,
-                                value = "15"
+                                value = "50"
                               )
                             ),
                             tags$div(
@@ -5500,7 +5500,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp1_worktime_2",
                                 label = NULL,
-                                value = "10"
+                                value = "15"
                                 
                               )
                             ),
@@ -5509,7 +5509,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp1_worktime_3",
                                 label = NULL,
-                                value = "10"
+                                value = "17"
                                 
                               )
                             ),
@@ -5564,7 +5564,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp2", 
                                                label = NULL,
-                                               value="10"))
+                                               value="7"))
                           ),
                           
                           tags$div(
@@ -5584,11 +5584,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp2_sales_target_1",label = NULL, value="510000")),
+                                     textInput("p0_hosp2_sales_target_1",label = NULL, value="470000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp2_sales_target_2",label = NULL, value="170000")),
+                                     textInput("p0_hosp2_sales_target_2",label = NULL, value="205000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp2_sales_target_3",label = NULL, value="51000")),
+                                     textInput("p0_hosp2_sales_target_3",label = NULL, value="83000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      disabled(textInput("p0_hosp2_sales_target_4",label = NULL, value="")))
                           ),
@@ -5602,7 +5602,7 @@ mainbody <- div(
                                 "p0_sr_hosp2",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = "小宋"
+                                selected = "小白"
                               )
                             )
                           ),
@@ -5615,7 +5615,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp2_worktime_1",
                                 label = NULL,
-                                value = "15"
+                                value = "25"
                               )
                             ),
                             tags$div(
@@ -5623,7 +5623,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp2_worktime_2",
                                 label = NULL,
-                                value = "10"
+                                value = "15"
                                 
                               )
                             ),
@@ -5632,7 +5632,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp2_worktime_3",
                                 label = NULL,
-                                value = "8"
+                                value = "5"
                                 
                               )
                             ),
@@ -5686,7 +5686,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp3", 
                                                label = NULL,
-                                               value="10"))
+                                               value="14"))
                           ),
                           
                           tags$div(
@@ -5706,11 +5706,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp3_sales_target_1",label = NULL, value="1020000")),
+                                     textInput("p0_hosp3_sales_target_1",label = NULL, value="895000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp3_sales_target_2",label = NULL, value="204000")),
+                                     textInput("p0_hosp3_sales_target_2",label = NULL, value="148000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp3_sales_target_3",label = NULL, value="51000")),
+                                     textInput("p0_hosp3_sales_target_3",label = NULL, value="36800")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      disabled(textInput("p0_hosp3_sales_target_4",label = NULL, value="")))
                           ),
@@ -5724,7 +5724,7 @@ mainbody <- div(
                                 "p0_sr_hosp3",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = '小兰'
+                                selected = '小青'
                               )
                             )
                           ),
@@ -5737,7 +5737,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp3_worktime_1",
                                 label = NULL,
-                                value = "20"
+                                value = "48"
                               )
                             ),
                             tags$div(
@@ -5745,7 +5745,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp3_worktime_2",
                                 label = NULL,
-                                value = "10"
+                                value = "15"
                                 
                               )
                             ),
@@ -5754,7 +5754,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp3_worktime_3",
                                 label = NULL,
-                                value = "15"
+                                value = "5"
                                 
                               )
                             ),
@@ -5811,7 +5811,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp4", 
                                                label = NULL,
-                                               value="10"))
+                                               value="11"))
                           ),
                           
                           tags$div(
@@ -5831,11 +5831,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp4_sales_target_1",label = NULL, value="850000")),
+                                     textInput("p0_hosp4_sales_target_1",label = NULL, value="940000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp4_sales_target_2",label = NULL, value="204000")),
+                                     textInput("p0_hosp4_sales_target_2",label = NULL, value="180000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp4_sales_target_3",label = NULL, value="108000")),
+                                     textInput("p0_hosp4_sales_target_3",label = NULL, value="90000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      disabled(textInput("p0_hosp4_sales_target_4",label = NULL, value="")))
                           ),
@@ -5849,7 +5849,7 @@ mainbody <- div(
                                 "p0_sr_hosp4",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = "小兰"
+                                selected = "小白"
                               )
                             )
                           ),
@@ -5862,7 +5862,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp4_worktime_1",
                                 label = NULL,
-                                value = "15"
+                                value = "40"
                               )
                             ),
                             tags$div(
@@ -5879,7 +5879,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp4_worktime_3",
                                 label = NULL,
-                                value = "6"
+                                value = "5"
                                 
                               )
                             ),
@@ -5934,7 +5934,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp5", 
                                                label = NULL,
-                                               value="10"))
+                                               value="4"))
                           ),
                           
                           tags$div(
@@ -5954,11 +5954,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp5_sales_target_1",label = NULL, value="306000")),
+                                     textInput("p0_hosp5_sales_target_1",label = NULL, value="265000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp5_sales_target_2",label = NULL, value="102000")),
+                                     textInput("p0_hosp5_sales_target_2",label = NULL, value="105000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp5_sales_target_3",label = NULL, value="34000")),
+                                     textInput("p0_hosp5_sales_target_3",label = NULL, value="33000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      disabled(textInput("p0_hosp5_sales_target_4",label = NULL, value="")))
                           ),
@@ -5972,7 +5972,7 @@ mainbody <- div(
                                 "p0_sr_hosp5",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = "小白"
+                                selected = "小青"
                               )
                             )
                           ),
@@ -5985,7 +5985,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp5_worktime_1",
                                 label = NULL,
-                                value = "15"
+                                value = "16"
                               )
                             ),
                             tags$div(
@@ -6002,7 +6002,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp5_worktime_3",
                                 label = NULL,
-                                value = "10"
+                                value = "6"
                                 
                               )
                             ),
@@ -6058,7 +6058,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp6", 
                                                label = NULL,
-                                               value="10"))
+                                               value="7"))
                           ),
                           
                           tags$div(
@@ -6078,11 +6078,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp6_sales_target_1",label = NULL, value="612000")),
+                                     textInput("p0_hosp6_sales_target_1",label = NULL, value="650000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp6_sales_target_2",label = NULL, value="120000")),
+                                     textInput("p0_hosp6_sales_target_2",label = NULL, value="170000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp6_sales_target_3",label = NULL, value="40000")),
+                                     textInput("p0_hosp6_sales_target_3",label = NULL, value="47000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      textInput("p0_hosp6_sales_target_4",label = NULL, value=""))
                           ),
@@ -6096,7 +6096,7 @@ mainbody <- div(
                                 "p0_sr_hosp6",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = "小白"
+                                selected = "小木"
                               )
                             )
                           ),
@@ -6109,7 +6109,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp6_worktime_1",
                                 label = NULL,
-                                value = "20"
+                                value = "35"
                               )
                             ),
                             tags$div(
@@ -6117,7 +6117,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp6_worktime_2",
                                 label = NULL,
-                                value = "12"
+                                value = "15"
                                 
                               )
                             ),
@@ -6181,7 +6181,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp7", 
                                                label = NULL,
-                                               value="10"))
+                                               value="7"))
                           ),
                           
                           tags$div(
@@ -6232,7 +6232,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp7_worktime_1",
                                 label = NULL,
-                                value = "20"
+                                value = "30"
                               )
                             ),
                             tags$div(
@@ -6249,7 +6249,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp7_worktime_3",
                                 label = NULL,
-                                value = "7"
+                                value = "5"
                                 
                               )
                             ),
@@ -6305,7 +6305,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp8", 
                                                label = NULL,
-                                               value="10"))
+                                               value="2"))
                           ),
                           
                           tags$div(
@@ -6343,7 +6343,7 @@ mainbody <- div(
                                 "p0_sr_hosp8",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = "小木"
+                                selected = "小宋"
                               )
                             )
                           ),
@@ -6356,7 +6356,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp8_worktime_1",
                                 label = NULL,
-                                value = "15"
+                                value = "10"
                               )
                             ),
                             tags$div(
@@ -6364,7 +6364,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp8_worktime_2",
                                 label = NULL,
-                                value = "10"
+                                value = "5"
                                 
                               )
                             ),
@@ -6373,7 +6373,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp8_worktime_3",
                                 label = NULL,
-                                value = "5"
+                                value = "3"
                                 
                               )
                             ),
@@ -6428,7 +6428,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp9", 
                                                label = NULL,
-                                               value="10"))
+                                               value="2"))
                           ),
                           
                           tags$div(
@@ -6448,11 +6448,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp9_sales_target_1",label = NULL, value="120000")),
+                                     textInput("p0_hosp9_sales_target_1",label = NULL, value="170000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      textInput("p0_hosp9_sales_target_2",label = NULL, value="70000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp9_sales_target_3",label = NULL, value="17000")),
+                                     textInput("p0_hosp9_sales_target_3",label = NULL, value="25000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      textInput("p0_hosp9_sales_target_4",label = NULL, value=""))
                           ),
@@ -6466,7 +6466,7 @@ mainbody <- div(
                                 "p0_sr_hosp9",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = "小青"
+                                selected = "小兰"
                               )
                             )
                           ),
@@ -6487,7 +6487,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp9_worktime_2",
                                 label = NULL,
-                                value = "10"
+                                value = "7"
                                 
                               )
                             ),
@@ -6496,7 +6496,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp9_worktime_3",
                                 label = NULL,
-                                value = "5"
+                                value = "3"
                                 
                               )
                             ),
@@ -6552,7 +6552,7 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
                                      textInput("p0_promotional_budget_hosp10", 
                                                label = NULL,
-                                               value="10"))
+                                               value="23"))
                           ),
                           
                           tags$div(
@@ -6572,11 +6572,11 @@ mainbody <- div(
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
                                      "销售指标设定(元)"),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp10_sales_target_1",label = NULL, value="1800000")),
+                                     textInput("p0_hosp10_sales_target_1",label = NULL, value="2000000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp10_sales_target_2",label = NULL, value="22000")),
+                                     textInput("p0_hosp10_sales_target_2",label = NULL, value="200000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp10_sales_target_3",label = NULL, value="170000")),
+                                     textInput("p0_hosp10_sales_target_3",label = NULL, value="225000")),
                             tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
                                      textInput("p0_hosp10_sales_target_4",label = NULL, value=""))
                           ),
@@ -6590,7 +6590,7 @@ mainbody <- div(
                                 "p0_sr_hosp10",
                                 label = NULL,
                                 choices = sr_info$业务代表,
-                                selected = "小青"
+                                selected = "小兰"
                               )
                             )
                           ),
@@ -6603,7 +6603,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp10_worktime_1",
                                 label = NULL,
-                                value = "25"
+                                value = "60"
                               )
                             ),
                             tags$div(
@@ -6611,7 +6611,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp10_worktime_2",
                                 label = NULL,
-                                value = "5"
+                                value = "10"
                                 
                               )
                             ),
@@ -6620,7 +6620,7 @@ mainbody <- div(
                               textInput(
                                 "p0_hosp10_worktime_3",
                                 label = NULL,
-                                value = "15"
+                                value = "10"
                                 
                               )
                             ),
@@ -6634,7 +6634,7 @@ mainbody <- div(
                               )
                             )
                           )
-                       # )
+                       )
         ))
       )),
     tabItem(
@@ -6649,17 +6649,21 @@ mainbody <- div(
           "周期1",
           br(),
           
-          fluidRow(
-            column(width=2,
-                   br(),
-                   br(),
-                   br(),
-                   br(),
-                   actionButton("decision2_phase1_submit", "提交")),
-            column(width=5,textInput(inputId = "filename",label = "保存文件名"),
-                   actionButton('save_inputs', '保存输入')),
-            column(width=5,selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
-                   actionButton("load_inputs", "加载输入"))),
+          # fluidRow(
+          #   column(
+          #      width=2,
+          #           br(),
+          #           br(),
+          #           br(),
+          #           br(),
+          actionButton("decision2_phase1_submit", "提交"),
+          downloadButton("p1_chk_data","下载中间数据"),
+          selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
+          actionButton("load_inputs", "加载输入"),
+          #   column(width=5,textInput(inputId = "filename",label = "保存文件名"),
+          #          actionButton('save_inputs', '保存输入')),
+          #   column(width=5,selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
+          #          actionButton("load_inputs", "加载输入"))),
           br(),
           #fluidRow(h3("时间分配"),
           box(
@@ -6713,19 +6717,19 @@ mainbody <- div(
                        verbatimTextOutput("p1_flm_sales_training")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr1_sales_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr2_sales_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr3_sales_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr4_sales_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr5_sales_training", label =
-                                   NULL,value=5))
+                                   NULL,value=""))
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px;",
@@ -6736,19 +6740,19 @@ mainbody <- div(
                        verbatimTextOutput("p1_flm_field_work")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr1_field_work", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr2_field_work", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr3_field_work", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr4_field_work", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr5_field_work", label =
-                                   NULL,value=5))
+                                   NULL,value=""))
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px;",
@@ -6757,7 +6761,7 @@ mainbody <- div(
                        verbatimTextOutput("p1_total_team_meeting")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                        textInput("p1_flm_team_meeting", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2.5%;width:8%;margin-right:1.5%",
                        verbatimTextOutput("p1_sr1_team_meeting")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2.5%;width:8%;margin-right:1.5%",
@@ -6776,7 +6780,7 @@ mainbody <- div(
                        verbatimTextOutput("p1_total_kpi_analysis")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                        textInput("p1_flm_kpi_analysis", label =
-                                   NULL,value=5))
+                                   NULL,value=""))
             ),
             
             tags$div(
@@ -6786,7 +6790,7 @@ mainbody <- div(
                        verbatimTextOutput("p1_total_admin_work")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                        textInput("p1_flm_admin_work", label =
-                                   NULL,value=5))
+                                   NULL,value=""))
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px",
@@ -6824,19 +6828,19 @@ mainbody <- div(
                        "产品培训"),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:1%;width:8%;margin-right:1%",
                        textInput("p1_sr1_product_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
                        textInput("p1_sr2_product_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr3_product_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr4_product_training", label =
-                                   NULL,value=5)),
+                                   NULL,value="")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
                        textInput("p1_sr5_product_training", label =
-                                   NULL,value=5))
+                                   NULL,value=""))
             )
           )
         ),
@@ -6846,6 +6850,7 @@ mainbody <- div(
             div(id="decision2_phase2",
                 
                 actionButton("decision2_phase2_submit","提交"),
+                downloadButton("p2_chk_data","下载中间数据"),
                 #fluidRow(h3("时间分配"),
                 box(
                   title="时间分配",
@@ -7396,7 +7401,7 @@ mainbody <- div(
           )
         ),
         
-        #hidden(
+        hidden(
           tabPanel(
             title="周期0",
             value="phase0",
@@ -7579,7 +7584,7 @@ mainbody <- div(
                          textInput("p0_sr5_product_training", label =
                                      NULL,value=5))
               )
-            #)
+            )
           ))
         
       )),
@@ -8051,7 +8056,15 @@ mainbody <- div(
                        
               )
               
-            )))
+            ))
+    # tabItem(tabName = "help",
+    #         tabsetPanel(
+    #           tabPanel("周期1",
+    #                    fluidRow(dataTableOutput("p1_chk_data"))),
+    #           tabPanel("周期2",
+    #                    fluidRow(dataTableOutput("p2_chk_data")))
+    #         ))
+    )
 )
 
 mainsidebar <- div(
@@ -8140,18 +8153,19 @@ server=function(input, output, session) {
     stopApp()
   })
   
-  observeEvent(input$save_inputs,{
+  observeEvent(input$save,{
+    if (user_input$authenticated == T) {
     time <- gsub("-","_",Sys.Date())
     saveRDS( reactiveValuesToList(input) ,
-             file = paste(input$user_name,"_",time,'.RDS',sep=""))})
+             file = paste(input$user_name,"_",time,'.RDS',sep=""))}} )
   
   observeEvent(input$load_inputs,{
-    
+
     if(!file.exists(input$select_file)) {return(NULL)}
-    
+
     savedInputs <- readRDS(input$select_file)
-    
-    
+
+
     for (i in 1:length(savedInputs)) {
       session$sendInputMessage(names(savedInputs)[i],  list(value=savedInputs[[i]]) )
     }
@@ -8160,10 +8174,10 @@ server=function(input, output, session) {
   
   # hideTab(inputId = "tab1", target = "周期0")
   # hideTab(inputId = "tab2", target = "周期0")
-  # observe({
-  #   toggle(condition = input$hide1, selector = "#tab1 li a[data-value=phase0]")
-  #   toggle(condition = input$hide2, selector = "#tab2 li a[data-value=phase0]")
-  # })
+  observe({
+    toggle(condition = input$hide1, selector = "#tab1 li a[data-value=phase0]")
+    toggle(condition = input$hide2, selector = "#tab2 li a[data-value=phase0]")
+  })
   
   
   # if(!file.exists("test_data.RDS")) {return(NULL)
@@ -9577,6 +9591,15 @@ server=function(input, output, session) {
   
   
   
+  # output$p1_chk_data <- renderDataTable(datatable(tmp()))
+  
+  output$p1_chk_data <- downloadHandler(
+    filename = function() { paste("phase1", '.csv', sep='') },
+    content = function(file) {
+      write.csv(tmp(), file)
+    }
+  )
+  
   
   output$p1_report1_2 <- 
     renderDataTable(datatable(p1_report()$report1_mod2,
@@ -10502,6 +10525,14 @@ server=function(input, output, session) {
       disable("p2_sr5_product_training")}
   })
   
+  # output$p2_chk_data <- renderDataTable(tmp2())
+  
+  output$p2_chk_data <- downloadHandler(
+    filename = function() { paste("phase2", '.csv', sep='') },
+    content = function(file) {
+      write.csv(tmp2(), file)
+    }
+  )
   
   output$p2_report1_2 <- 
     renderDataTable(datatable(p2_report()$report1_mod2,
@@ -12588,7 +12619,9 @@ server=function(input, output, session) {
   #       is bad (username precedent over pw) or he is locked out. set status value for
   #       error message code below
   observeEvent(input$login_button, {
-    credentials <- readRDS("credentials/credentials.rds")
+    # credentials <- readRDS("credentials/credentials.rds")
+    credentials <-  read.csv("credentials/register_data.csv", sep = ",",
+                             stringsAsFactors = FALSE)
     
     row_username <- which(credentials$user == input$user_name)
     row_password <- which(credentials$pw == digest(input$password)) # digest() makes md5 hash of password
@@ -12614,7 +12647,7 @@ server=function(input, output, session) {
       if (length(row_username) == 1) {
         credentials$locked_out[row_username] <- TRUE
         
-        saveRDS(credentials, "credentials/credentials.rds")
+        write.csv(credentials, "credentials/register_data.csv")
       }
     }
     
@@ -12641,14 +12674,59 @@ server=function(input, output, session) {
   
   # password entry UI componenets:
   #   username and password text fields, login button
+  # output$uiLogin <- renderUI({
+  #   wellPanel(
+  #     textInput("user_name", "User Name:"),
+  #     
+  #     passwordInput("password", "Password:"),
+  #     
+  #     actionButton("login_button", "Log in")
+  #   )
+  # })
   output$uiLogin <- renderUI({
+    fluidRow(
     wellPanel(
-      textInput("user_name", "User Name:"),
       
-      passwordInput("password", "Password:"),
+      textInput("user_name", "用户名"),
       
-      actionButton("login_button", "Log in")
-    )
+      passwordInput("password", "密码"),
+      
+      # actionButton("login_button", "Log in")
+      
+      # tags$div(
+      # 
+      # tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+      #          actionButton(inputId = "login_button",
+      #                       label = "登录",
+      #                       icon = icon("th"))),
+      # tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:140px;text-align:center;margin-right:10px;",
+      #          actionButton(inputId = "Signup_button",
+      #                       label = "注册",
+      #                       icon = icon("th"),
+      #                       onclick ="location.href='http://tm.pharbers.com/register/';"
+      #                       # onclick ="window.open('http://59.110.31.215:3838/register/')"
+      #          )))
+      fluidRow(
+        column(width = 6,
+               offset = 1,
+               #tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                        actionButton(inputId = "login_button",
+                                     label = "登录",
+                                     icon = icon("th"))
+               ),
+        #column(width = 2),
+        column(width = 1,
+               #offset = 1,
+               #tags$div(style = "display:inline-block;width:16%;vertical-align:middle;text-align:left;margin-right:10px;",
+                        actionButton(inputId = "Signup_button",
+                                     label = "注册",
+                                     icon = icon("th"),
+                                     onclick ="location.href='http://tm.pharbers.com/register/';"
+                                     # onclick ="window.open('http://59.110.31.215:3838/register/')"
+                        )
+        )
+      )
+    ))
   })
   
   # red error message if bad credentials

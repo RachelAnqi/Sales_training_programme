@@ -16,9 +16,9 @@ num_fails_to_lockout<-10
 
 
 header <- dashboardHeader(
-  title = "区域管理培训模拟平台",
+  title = "区域管理模拟平台",
   tags$li(class = "dropdown",
-          tags$li(class = "dropdown-toggle", disabled(actionLink(inputId = "save","保存"))),
+          tags$li(class = "dropdown-toggle", actionLink(inputId = "save","保存")),
           tags$li(class = "dropdown-toggle", actionLink(inputId = "exit","退出")))
 )
 

@@ -1,0 +1,9 @@
+user,pw,pw_m,name,corperation,department,title,mobile_phone,email,boarding_date,timestamp,locked_out
+huijijiyi,huijijiyi2004628,huijijiyi2004628,huangxin,pharbers,analysis,manager,18612548370,huangxin@pharbers.com,2016/5/11,1506591459,FALSE
+heracles,ad70300fdaaa02d9090f81acf600d4e8,2c8ee993710acadcfab8823c63f8885e,huangxin,pharbers,analysis,manager,18612548371,huangxin1@pharbers.com,2015/6/11,1506593830,FALSE
+herales,ad70300fdaaa02d9090f81acf600d4e8,2c8ee993710acadcfab8823c63f8885e,huangxin,pharbers,analysis,manager,18612546789,huangxin2@pharbers.com,2016/5/11,1506594092,FALSE
+test,bc5c9dbb888e1ff5fccb42c830865122,79e025635327d4b0650db9ec33cba61e,test,test,test,test,test,test@pharbers.com,2016/5/11,1506609324,FALSE
+"test1","c64d33910f0881deac5bcc7094ff66e1","43a50c78213ef2515f16193ec7a532b2","test2","test2","test2","test2","test2","test2@pharbers.com","2016-05-11","1506611042"
+"test3","8f5cb22ce42f48d114f4a16dcc32f873","9660f0405177b62b984ca167dbea6de2","test3","test3","test3","test3","test3","test3","test3","1506611064"
+"test4","777f028a17a23132225ddc5ebe253f0a","600d686e811cf9f902f94b1737089c47","test4","test4","test4","test4","test4","test4","test4","1506611099"
+"huijijiyi1","bc5c9dbb888e1ff5fccb42c830865122","79e025635327d4b0650db9ec33cba61e","huangxin","Pharbers","Pharbers","Manager","18612548888","huangxin3@pharbers.com","2016-05-11","1506650807"

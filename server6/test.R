@@ -1,4 +1,4 @@
-input <- readRDS("admin4_2017_10_09.RDS")  
+input <- readRDS("trial1_all.RDS")  
 
 ## phase 0
 pp_data1 <- pp_info
@@ -48,3 +48,4 @@ tmp <- calculation(pp_data1,
                    pp_data2,
                    cp_data1,
                    cp_data2)
+

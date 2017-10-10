@@ -77,16 +77,16 @@ pp_info <- pp_info %>%
   left_join(product_info_list,by="prod_code")
 
 ## weightage
-weightage <- list(total_attractiveness = list(pp_offer_attractiveness = 0.35,
-                                              cp_offer_attractiveness = 0.65),
+weightage <- list(total_attractiveness = list(pp_offer_attractiveness = 0.2,
+                                              cp_offer_attractiveness = 0.8),
                   cp_offer_attractiveness = list(sales_performance = 0.6,
                                                  customer_relationship = 0.4),
-                  sales_performance = list(sr_sales_performance = 0.6,
+                  sales_performance = list(sr_sales_performance = 0.7,
                                            field_work = 0.05,
-                                           deployment_quality = 0.35),
-                  customer_relaitonship = list(product_knowledge = 0.05,
-                                               promotional_support = 0.15,
-                                               past_relationship = 0.8),
+                                           deployment_quality = 0.25),
+                  customer_relaitonship = list(product_knowledge = 0.35,
+                                               promotional_support = 0.65,
+                                               past_relationship = 0.6),
                   sr_sales_performance = list(motivation = 0.15,
                                               sales_skills = 0.3,
                                               product_knowledge = 0.05,

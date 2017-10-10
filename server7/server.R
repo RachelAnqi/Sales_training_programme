@@ -6657,10 +6657,10 @@ mainbody <- div(
           #           br(),
           #           br(),
           actionButton("decision2_phase1_submit", "提交"),
-          downloadButton("p0_chk_data","下载周期0中间数据"),
-          downloadButton("p1_chk_data","下载周期1中间数据"),
-          selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
-          actionButton("load_inputs", "加载输入"),
+          # downloadButton("p0_chk_data","下载周期0中间数据"),
+          # downloadButton("p1_chk_data","下载周期1中间数据"),
+          # selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
+          # actionButton("load_inputs", "加载输入"),
           #   column(width=5,textInput(inputId = "filename",label = "保存文件名"),
           #          actionButton('save_inputs', '保存输入')),
           #   column(width=5,selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
@@ -8160,17 +8160,17 @@ server=function(input, output, session) {
     saveRDS( reactiveValuesToList(input) ,
              file = paste(input$user_name,"_",time,'.RDS',sep=""))}} )
   
-  observeEvent(input$load_inputs,{
-
-    if(!file.exists(input$select_file)) {return(NULL)}
-
-    savedInputs <- readRDS(input$select_file)
-
-
-    for (i in 1:length(savedInputs)) {
-      session$sendInputMessage(names(savedInputs)[i],  list(value=savedInputs[[i]]) )
-    }
-  })
+  # observeEvent(input$load_inputs,{
+  # 
+  #   if(!file.exists(input$select_file)) {return(NULL)}
+  # 
+  #   savedInputs <- readRDS(input$select_file)
+  # 
+  # 
+  #   for (i in 1:length(savedInputs)) {
+  #     session$sendInputMessage(names(savedInputs)[i],  list(value=savedInputs[[i]]) )
+  #   }
+  # })
   
   
   # hideTab(inputId = "tab1", target = "周期0")
@@ -8588,12 +8588,12 @@ server=function(input, output, session) {
   })
   
   
-  output$p0_chk_data <- downloadHandler(
-    filename = function() { paste("phase0", '.csv', sep='') },
-    content = function(file) {
-      write.csv(tmp0(), file)
-    }
-  )
+  # output$p0_chk_data <- downloadHandler(
+  #   filename = function() { paste("phase0", '.csv', sep='') },
+  #   content = function(file) {
+  #     write.csv(tmp0(), file)
+  #   }
+  # )
   
   p0_report8_mod1 <- reactive({
     report8_mod1 <- p0_report()$report8_mod1
@@ -9602,12 +9602,12 @@ server=function(input, output, session) {
   
   # output$p1_chk_data <- renderDataTable(datatable(tmp()))
   
-  output$p1_chk_data <- downloadHandler(
-    filename = function() { paste("phase1", '.csv', sep='') },
-    content = function(file) {
-      write.csv(tmp(), file)
-    }
-  )
+  # output$p1_chk_data <- downloadHandler(
+  #   filename = function() { paste("phase1", '.csv', sep='') },
+  #   content = function(file) {
+  #     write.csv(tmp(), file)
+  #   }
+  # )
   
   
   output$p1_report1_2 <- 

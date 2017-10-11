@@ -173,15 +173,6 @@ calculation <- function(pp_data1,
                   ss_accumulated_field_work_delta = sapply(sr_acc_field_work,function(x)curve(curve42,x)),
                   ss_accumulated_sales_training_delta = sapply(sales_training,function(x)curve(curve43,x)),
                   ss_experience_index_pp = sapply(pp_experience_index,function(x)curve(curve44,x)),
-                  m_meeting_with_team_delta =  mapply(function(x,y){
-                    if (x == "junior") {
-                      curve(curve13,y)
-                    } else if(x=="middle"){
-                      curve(curve14,y)
-                    } else {curve(curve15,y)}
-                  },sales_level,
-                  meetings_with_team,SIMPLIFY=T),
-                  m_sales_target_realization_delta = sapply(pp_target_revenue_realization_by_sr,function(x)curve(curve16,x)),
                   m_sales_training_delta = sapply(sales_training,function(x)curve(curve17,x)),
                   m_admin_work_delta = sapply(admin_work,function(x)curve(curve18,x)))%>%
     dplyr::mutate(sales_skills_index = round(
@@ -190,17 +181,9 @@ calculation <- function(pp_data1,
         (ss_experience_index_pp+pp_sales_skills_index)*((weightage$sales_skills)$experience)),
       product_knowledge_index = round(
         product_knowledge_addition_current_period+
-          pp_product_knowledge_index), 
+          pp_product_knowledge_index)
           #product_knowledge_transfer_value),
-      motivation_index = round(
-        (pp_motivation_index+m_admin_work_delta)*
-          ((weightage$motivation)$admin_work)+
-          (pp_motivation_index+m_sales_target_realization_delta)*
-          ((weightage$motivation)$sales_target_realization)+
-          (pp_motivation_index+m_meeting_with_team_delta)*
-          ((weightage$motivation)$meetings_with_team)+
-          (pp_motivation_index+m_sales_training_delta)*
-          ((weightage$motivation)$sales_training))) %>%
+    ) %>%
     dplyr::mutate(srsp_motivation_factor = sapply(pp_motivation_index,function(x)curve(curve32,x)),
            srsp_sales_skills_factor = sapply(sales_skills_index,function(x)curve(curve34,x)),
            srsp_product_knowledge_factor = sapply(product_knowledge_index-pp_product_knowledge_index,
@@ -301,7 +284,25 @@ calculation <- function(pp_data1,
                                      target_revenue_realization_by_sr,
                                      0)/100*real_revenue_by_sr),
            sr_acc_revenue = real_revenue_by_sr+pp_sr_acc_revenue,
-           experience_index = sapply(sr_acc_revenue, function(x) round(curve(curve11,x),2))) %>%
+           experience_index = sapply(sr_acc_revenue, function(x) round(curve(curve11,x),2)),
+           m_meeting_with_team_delta =  mapply(function(x,y){
+             if (x == "junior") {
+               curve(curve13,y)
+             } else if(x=="middle"){
+               curve(curve14,y)
+             } else {curve(curve15,y)}
+           },sales_level,
+           meetings_with_team,SIMPLIFY=T),
+           m_sales_target_realization_delta = sapply(target_revenue_realization_by_sr,function(x)curve(curve16,x)),
+           motivation_index = round(
+             (pp_motivation_index+m_admin_work_delta)*
+               ((weightage$motivation)$admin_work)+
+               (pp_motivation_index+m_sales_target_realization_delta)*
+               ((weightage$motivation)$sales_target_realization)+
+               (pp_motivation_index+m_meeting_with_team_delta)*
+               ((weightage$motivation)$meetings_with_team)+
+               (pp_motivation_index+m_sales_training_delta)*
+               ((weightage$motivation)$sales_training))) %>%
     ungroup()
              
   

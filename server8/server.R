@@ -6734,7 +6734,7 @@ mainbody <- div(
             ),
             tags$div(
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px;",
-                       "实地随访"),
+                       "实地协访"),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:1%;width:8%;margin-right:1%",
                        verbatimTextOutput("p1_total_field_work")),
               tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2%;width:8%;margin-right:1%",
@@ -9356,22 +9356,7 @@ server=function(input, output, session) {
   
   
   
-  p1_report <- eventReactive(input$decision2_phase1_submit,{
-    if (
-      
-      p1_calculator_result()[1] <=100 &
-      p1_calculator_result()[2] <=100 &
-      p1_calculator_result()[3] <=100 &
-      p1_calculator_result()[4] <=100 &
-      p1_calculator_result()[5] <=100 &
-      p1_calculator_result()[6] <=100 &
-      sum(p1_flm_data()) <=worktime
-    ) {
-      p1_report <- report_data(tmp(),p1_flm_data(),p0_report()$report8_mod1)
-      return(p1_report)
-    } 
-    
-  })
+  
   
   
   observeEvent(input$decision2_phase1_submit,{
@@ -9388,7 +9373,7 @@ server=function(input, output, session) {
       
     } else{
       
-      shinyjs::alert("周期1决策已提交，无法再修改。")
+      
       
       shinyjs::show(id="decision1_phase2",anim=T)
       shinyjs::show(id="decision2_phase2",anim=T)
@@ -9406,15 +9391,8 @@ server=function(input, output, session) {
       disable("p1_hosp1_worktime_2")
       disable("p1_hosp1_worktime_3")
       disable("p1_hosp1_worktime_4")
-      disable("p1_hosp1_worktime_doc")
-      disable("p1_hosp1_worktime_diet")
-      disable("p1_hosp1_worktime_admin")
-      disable("p1_hosp1_worktime_nurs")
+
       ##hosp2
-      disable("p1_discount_hosp2_1")
-      disable("p1_discount_hosp2_2")
-      disable("p1_discount_hosp2_3")
-      disable("p1_discount_hosp2_4")
       disable("p1_promotional_budget_hosp2")
       disable("p1_hosp2_sales_target_1")
       disable("p1_hosp2_sales_target_2")
@@ -9425,15 +9403,8 @@ server=function(input, output, session) {
       disable("p1_hosp2_worktime_2")
       disable("p1_hosp2_worktime_3")
       disable("p1_hosp2_worktime_4")
-      disable("p1_hosp2_worktime_doc")
-      disable("p1_hosp2_worktime_diet")
-      disable("p1_hosp2_worktime_admin")
-      disable("p1_hosp2_worktime_nurs")
+
       ##hosp3
-      disable("p1_discount_hosp3_1")
-      disable("p1_discount_hosp3_2")
-      disable("p1_discount_hosp3_3")
-      disable("p1_discount_hosp3_4")
       disable("p1_promotional_budget_hosp3")
       disable("p1_hosp3_sales_target_1")
       disable("p1_hosp3_sales_target_2")
@@ -9446,10 +9417,6 @@ server=function(input, output, session) {
       disable("p1_hosp3_worktime_4")
       
       ##hosp4
-      disable("p1_discount_hosp4_1")
-      disable("p1_discount_hosp4_2")
-      disable("p1_discount_hosp4_3")
-      disable("p1_discount_hosp4_4")
       disable("p1_promotional_budget_hosp4")
       disable("p1_hosp4_sales_target_1")
       disable("p1_hosp4_sales_target_2")
@@ -9460,15 +9427,8 @@ server=function(input, output, session) {
       disable("p1_hosp4_worktime_2")
       disable("p1_hosp4_worktime_3")
       disable("p1_hosp4_worktime_4")
-      disable("p1_hosp4_worktime_doc")
-      disable("p1_hosp4_worktime_diet")
-      disable("p1_hosp4_worktime_admin")
-      disable("p1_hosp4_worktime_nurs")
+
       ##hosp5
-      disable("p1_discount_hosp5_1")
-      disable("p1_discount_hosp5_2")
-      disable("p1_discount_hosp5_3")
-      disable("p1_discount_hosp5_4")
       disable("p1_promotional_budget_hosp5")
       disable("p1_hosp5_sales_target_1")
       disable("p1_hosp5_sales_target_2")
@@ -9479,15 +9439,8 @@ server=function(input, output, session) {
       disable("p1_hosp5_worktime_2")
       disable("p1_hosp5_worktime_3")
       disable("p1_hosp5_worktime_4")
-      disable("p1_hosp5_worktime_doc")
-      disable("p1_hosp5_worktime_diet")
-      disable("p1_hosp5_worktime_admin")
-      disable("p1_hosp5_worktime_nurs")
+
       ##hosp6
-      disable("p1_discount_hosp6_1")
-      disable("p1_discount_hosp6_2")
-      disable("p1_discount_hosp6_3")
-      disable("p1_discount_hosp6_4")
       disable("p1_promotional_budget_hosp6")
       disable("p1_hosp6_sales_target_1")
       disable("p1_hosp6_sales_target_2")
@@ -9498,15 +9451,8 @@ server=function(input, output, session) {
       disable("p1_hosp6_worktime_2")
       disable("p1_hosp6_worktime_3")
       disable("p1_hosp6_worktime_4")
-      disable("p1_hosp6_worktime_doc")
-      disable("p1_hosp6_worktime_diet")
-      disable("p1_hosp6_worktime_admin")
-      disable("p1_hosp6_worktime_nurs")
+
       ##hosp7
-      disable("p1_discount_hosp7_1")
-      disable("p1_discount_hosp7_2")
-      disable("p1_discount_hosp7_3")
-      disable("p1_discount_hosp7_4")
       disable("p1_promotional_budget_hosp7")
       disable("p1_hosp7_sales_target_1")
       disable("p1_hosp7_sales_target_2")
@@ -9517,15 +9463,8 @@ server=function(input, output, session) {
       disable("p1_hosp7_worktime_2")
       disable("p1_hosp7_worktime_3")
       disable("p1_hosp7_worktime_4")
-      disable("p1_hosp7_worktime_doc")
-      disable("p1_hosp7_worktime_diet")
-      disable("p1_hosp7_worktime_admin")
-      disable("p1_hosp7_worktime_nurs")
+
       ##hosp8
-      disable("p1_discount_hosp8_1")
-      disable("p1_discount_hosp8_2")
-      disable("p1_discount_hosp8_3")
-      disable("p1_discount_hosp8_4")
       disable("p1_promotional_budget_hosp8")
       disable("p1_hosp8_sales_target_1")
       disable("p1_hosp8_sales_target_2")
@@ -9536,15 +9475,8 @@ server=function(input, output, session) {
       disable("p1_hosp8_worktime_2")
       disable("p1_hosp8_worktime_3")
       disable("p1_hosp8_worktime_4")
-      disable("p1_hosp8_worktime_doc")
-      disable("p1_hosp8_worktime_diet")
-      disable("p1_hosp8_worktime_admin")
-      disable("p1_hosp8_worktime_nurs")
+
       ##hosp9
-      disable("p1_discount_hosp9_1")
-      disable("p1_discount_hosp9_2")
-      disable("p1_discount_hosp9_3")
-      disable("p1_discount_hosp9_4")
       disable("p1_promotional_budget_hosp9")
       disable("p1_hosp9_sales_target_1")
       disable("p1_hosp9_sales_target_2")
@@ -9555,15 +9487,8 @@ server=function(input, output, session) {
       disable("p1_hosp9_worktime_2")
       disable("p1_hosp9_worktime_3")
       disable("p1_hosp9_worktime_4")
-      disable("p1_hosp9_worktime_doc")
-      disable("p1_hosp9_worktime_diet")
-      disable("p1_hosp9_worktime_admin")
-      disable("p1_hosp9_worktime_nurs")
+
       ##hosp10
-      disable("p1_discount_hosp10_1")
-      disable("p1_discount_hosp10_2")
-      disable("p1_discount_hosp10_3")
-      disable("p1_discount_hosp10_4")
       disable("p1_promotional_budget_hosp10")
       disable("p1_hosp10_sales_target_1")
       disable("p1_hosp10_sales_target_2")
@@ -9574,10 +9499,7 @@ server=function(input, output, session) {
       disable("p1_hosp10_worktime_2")
       disable("p1_hosp10_worktime_3")
       disable("p1_hosp10_worktime_4")
-      disable("p1_hosp10_worktime_doc")
-      disable("p1_hosp10_worktime_diet")
-      disable("p1_hosp10_worktime_admin")
-      disable("p1_hosp10_worktime_nurs")
+
       disable("p1_sr1_sales_training")
       disable("p1_sr2_sales_training")
       disable("p1_sr3_sales_training")
@@ -9595,8 +9517,27 @@ server=function(input, output, session) {
       disable("p1_sr2_product_training")
       disable("p1_sr3_product_training")
       disable("p1_sr4_product_training")
-      disable("p1_sr5_product_training")}
+      disable("p1_sr5_product_training")
+      shinyjs::alert("周期1决策已提交，无法再修改。")}
   })
+  
+  p1_report <- eventReactive(input$decision2_phase1_submit,{
+    if (
+      
+      p1_calculator_result()[1] <=100 &
+      p1_calculator_result()[2] <=100 &
+      p1_calculator_result()[3] <=100 &
+      p1_calculator_result()[4] <=100 &
+      p1_calculator_result()[5] <=100 &
+      p1_calculator_result()[6] <=100 &
+      sum(p1_flm_data()) <=worktime
+    ) {
+      p1_report <- report_data(tmp(),p1_flm_data(),p0_report()$report8_mod1)
+      return(p1_report)
+    } 
+    
+  })
+  
   
   
   
@@ -10321,17 +10262,13 @@ server=function(input, output, session) {
       
     } else{
       
-      shinyjs::alert("周期2决策已提交，无法再修改。")
+      
       shinyjs::show(id="decision1_phase3")
       shinyjs::show(id="decision2_phase3")
       shinyjs::enable(id="phase3_hospital_info")
       shinyjs::enable(id="phase3_WAS_info")
       
       #hosp1
-      disable("p2_discount_hosp1_1")
-      disable("p2_discount_hosp1_2")
-      disable("p2_discount_hosp1_3")
-      disable("p2_discount_hosp1_4")
       disable("p2_promotional_budget_hosp1")
       disable("p2_hosp1_sales_target_1")
       disable("p2_hosp1_sales_target_2")
@@ -10342,15 +10279,8 @@ server=function(input, output, session) {
       disable("p2_hosp1_worktime_2")
       disable("p2_hosp1_worktime_3")
       disable("p2_hosp1_worktime_4")
-      disable("p2_hosp1_worktime_doc")
-      disable("p2_hosp1_worktime_diet")
-      disable("p2_hosp1_worktime_admin")
-      disable("p2_hosp1_worktime_nurs")
+
       ##hosp2
-      disable("p2_discount_hosp2_1")
-      disable("p2_discount_hosp2_2")
-      disable("p2_discount_hosp2_3")
-      disable("p2_discount_hosp2_4")
       disable("p2_promotional_budget_hosp2")
       disable("p2_hosp2_sales_target_1")
       disable("p2_hosp2_sales_target_2")
@@ -10361,15 +10291,8 @@ server=function(input, output, session) {
       disable("p2_hosp2_worktime_2")
       disable("p2_hosp2_worktime_3")
       disable("p2_hosp2_worktime_4")
-      disable("p2_hosp2_worktime_doc")
-      disable("p2_hosp2_worktime_diet")
-      disable("p2_hosp2_worktime_admin")
-      disable("p2_hosp2_worktime_nurs")
+
       ##hosp3
-      disable("p2_discount_hosp3_1")
-      disable("p2_discount_hosp3_2")
-      disable("p2_discount_hosp3_3")
-      disable("p2_discount_hosp3_4")
       disable("p2_promotional_budget_hosp3")
       disable("p2_hosp3_sales_target_1")
       disable("p2_hosp3_sales_target_2")
@@ -10382,10 +10305,6 @@ server=function(input, output, session) {
       disable("p2_hosp3_worktime_4")
       
       ##hosp4
-      disable("p2_discount_hosp4_1")
-      disable("p2_discount_hosp4_2")
-      disable("p2_discount_hosp4_3")
-      disable("p2_discount_hosp4_4")
       disable("p2_promotional_budget_hosp4")
       disable("p2_hosp4_sales_target_1")
       disable("p2_hosp4_sales_target_2")
@@ -10396,15 +10315,8 @@ server=function(input, output, session) {
       disable("p2_hosp4_worktime_2")
       disable("p2_hosp4_worktime_3")
       disable("p2_hosp4_worktime_4")
-      disable("p2_hosp4_worktime_doc")
-      disable("p2_hosp4_worktime_diet")
-      disable("p2_hosp4_worktime_admin")
-      disable("p2_hosp4_worktime_nurs")
+
       ##hosp5
-      disable("p2_discount_hosp5_1")
-      disable("p2_discount_hosp5_2")
-      disable("p2_discount_hosp5_3")
-      disable("p2_discount_hosp5_4")
       disable("p2_promotional_budget_hosp5")
       disable("p2_hosp5_sales_target_1")
       disable("p2_hosp5_sales_target_2")
@@ -10415,15 +10327,8 @@ server=function(input, output, session) {
       disable("p2_hosp5_worktime_2")
       disable("p2_hosp5_worktime_3")
       disable("p2_hosp5_worktime_4")
-      disable("p2_hosp5_worktime_doc")
-      disable("p2_hosp5_worktime_diet")
-      disable("p2_hosp5_worktime_admin")
-      disable("p2_hosp5_worktime_nurs")
+
       ##hosp6
-      disable("p2_discount_hosp6_1")
-      disable("p2_discount_hosp6_2")
-      disable("p2_discount_hosp6_3")
-      disable("p2_discount_hosp6_4")
       disable("p2_promotional_budget_hosp6")
       disable("p2_hosp6_sales_target_1")
       disable("p2_hosp6_sales_target_2")
@@ -10434,15 +10339,8 @@ server=function(input, output, session) {
       disable("p2_hosp6_worktime_2")
       disable("p2_hosp6_worktime_3")
       disable("p2_hosp6_worktime_4")
-      disable("p2_hosp6_worktime_doc")
-      disable("p2_hosp6_worktime_diet")
-      disable("p2_hosp6_worktime_admin")
-      disable("p2_hosp6_worktime_nurs")
+
       ##hosp7
-      disable("p2_discount_hosp7_1")
-      disable("p2_discount_hosp7_2")
-      disable("p2_discount_hosp7_3")
-      disable("p2_discount_hosp7_4")
       disable("p2_promotional_budget_hosp7")
       disable("p2_hosp7_sales_target_1")
       disable("p2_hosp7_sales_target_2")
@@ -10453,15 +10351,8 @@ server=function(input, output, session) {
       disable("p2_hosp7_worktime_2")
       disable("p2_hosp7_worktime_3")
       disable("p2_hosp7_worktime_4")
-      disable("p2_hosp7_worktime_doc")
-      disable("p2_hosp7_worktime_diet")
-      disable("p2_hosp7_worktime_admin")
-      disable("p2_hosp7_worktime_nurs")
+
       ##hosp8
-      disable("p2_discount_hosp8_1")
-      disable("p2_discount_hosp8_2")
-      disable("p2_discount_hosp8_3")
-      disable("p2_discount_hosp8_4")
       disable("p2_promotional_budget_hosp8")
       disable("p2_hosp8_sales_target_1")
       disable("p2_hosp8_sales_target_2")
@@ -10472,15 +10363,8 @@ server=function(input, output, session) {
       disable("p2_hosp8_worktime_2")
       disable("p2_hosp8_worktime_3")
       disable("p2_hosp8_worktime_4")
-      disable("p2_hosp8_worktime_doc")
-      disable("p2_hosp8_worktime_diet")
-      disable("p2_hosp8_worktime_admin")
-      disable("p2_hosp8_worktime_nurs")
+
       ##hosp9
-      disable("p2_discount_hosp9_1")
-      disable("p2_discount_hosp9_2")
-      disable("p2_discount_hosp9_3")
-      disable("p2_discount_hosp9_4")
       disable("p2_promotional_budget_hosp9")
       disable("p2_hosp9_sales_target_1")
       disable("p2_hosp9_sales_target_2")
@@ -10491,15 +10375,8 @@ server=function(input, output, session) {
       disable("p2_hosp9_worktime_2")
       disable("p2_hosp9_worktime_3")
       disable("p2_hosp9_worktime_4")
-      disable("p2_hosp9_worktime_doc")
-      disable("p2_hosp9_worktime_diet")
-      disable("p2_hosp9_worktime_admin")
-      disable("p2_hosp9_worktime_nurs")
+
       ##hosp10
-      disable("p2_discount_hosp10_1")
-      disable("p2_discount_hosp10_2")
-      disable("p2_discount_hosp10_3")
-      disable("p2_discount_hosp10_4")
       disable("p2_promotional_budget_hosp10")
       disable("p2_hosp10_sales_target_1")
       disable("p2_hosp10_sales_target_2")
@@ -10510,10 +10387,7 @@ server=function(input, output, session) {
       disable("p2_hosp10_worktime_2")
       disable("p2_hosp10_worktime_3")
       disable("p2_hosp10_worktime_4")
-      disable("p2_hosp10_worktime_doc")
-      disable("p2_hosp10_worktime_diet")
-      disable("p2_hosp10_worktime_admin")
-      disable("p2_hosp10_worktime_nurs")
+
       
       disable("p2_sr1_sales_training")
       disable("p2_sr2_sales_training")
@@ -10532,7 +10406,8 @@ server=function(input, output, session) {
       disable("p2_sr2_product_training")
       disable("p2_sr3_product_training")
       disable("p2_sr4_product_training")
-      disable("p2_sr5_product_training")}
+      disable("p2_sr5_product_training")
+      shinyjs::alert("周期2决策已提交，无法再修改。")}
   })
   
   # output$p2_chk_data <- renderDataTable(tmp2())
@@ -11250,16 +11125,12 @@ server=function(input, output, session) {
       
     } else{
       
-      shinyjs::alert("周期3决策已提交，无法再修改。")
+      
       shinyjs::show(id="decision1_phase4")
       shinyjs::show(id="decision2_phase4")
       shinyjs::enable(id="phase4_hospital_info")
       shinyjs::enable(id="phase4_WAS_info")  
       #hosp1
-      disable("p3_discount_hosp1_1")
-      disable("p3_discount_hosp1_2")
-      disable("p3_discount_hosp1_3")
-      disable("p3_discount_hosp1_4")
       disable("p3_promotional_budget_hosp1")
       disable("p3_hosp1_sales_target_1")
       disable("p3_hosp1_sales_target_2")
@@ -11270,15 +11141,8 @@ server=function(input, output, session) {
       disable("p3_hosp1_worktime_2")
       disable("p3_hosp1_worktime_3")
       disable("p3_hosp1_worktime_4")
-      disable("p3_hosp1_worktime_doc")
-      disable("p3_hosp1_worktime_diet")
-      disable("p3_hosp1_worktime_admin")
-      disable("p3_hosp1_worktime_nurs")
+
       ##hosp2
-      disable("p3_discount_hosp2_1")
-      disable("p3_discount_hosp2_2")
-      disable("p3_discount_hosp2_3")
-      disable("p3_discount_hosp2_4")
       disable("p3_promotional_budget_hosp2")
       disable("p3_hosp2_sales_target_1")
       disable("p3_hosp2_sales_target_2")
@@ -11289,15 +11153,8 @@ server=function(input, output, session) {
       disable("p3_hosp2_worktime_2")
       disable("p3_hosp2_worktime_3")
       disable("p3_hosp2_worktime_4")
-      disable("p3_hosp2_worktime_doc")
-      disable("p3_hosp2_worktime_diet")
-      disable("p3_hosp2_worktime_admin")
-      disable("p3_hosp2_worktime_nurs")
+
       ##hosp3
-      disable("p3_discount_hosp3_1")
-      disable("p3_discount_hosp3_2")
-      disable("p3_discount_hosp3_3")
-      disable("p3_discount_hosp3_4")
       disable("p3_promotional_budget_hosp3")
       disable("p3_hosp3_sales_target_1")
       disable("p3_hosp3_sales_target_2")
@@ -11310,10 +11167,6 @@ server=function(input, output, session) {
       disable("p3_hosp3_worktime_4")
       
       ##hosp4
-      disable("p3_discount_hosp4_1")
-      disable("p3_discount_hosp4_2")
-      disable("p3_discount_hosp4_3")
-      disable("p3_discount_hosp4_4")
       disable("p3_promotional_budget_hosp4")
       disable("p3_hosp4_sales_target_1")
       disable("p3_hosp4_sales_target_2")
@@ -11324,15 +11177,8 @@ server=function(input, output, session) {
       disable("p3_hosp4_worktime_2")
       disable("p3_hosp4_worktime_3")
       disable("p3_hosp4_worktime_4")
-      disable("p3_hosp4_worktime_doc")
-      disable("p3_hosp4_worktime_diet")
-      disable("p3_hosp4_worktime_admin")
-      disable("p3_hosp4_worktime_nurs")
+
       ##hosp5
-      disable("p3_discount_hosp5_1")
-      disable("p3_discount_hosp5_2")
-      disable("p3_discount_hosp5_3")
-      disable("p3_discount_hosp5_4")
       disable("p3_promotional_budget_hosp5")
       disable("p3_hosp5_sales_target_1")
       disable("p3_hosp5_sales_target_2")
@@ -11343,15 +11189,8 @@ server=function(input, output, session) {
       disable("p3_hosp5_worktime_2")
       disable("p3_hosp5_worktime_3")
       disable("p3_hosp5_worktime_4")
-      disable("p3_hosp5_worktime_doc")
-      disable("p3_hosp5_worktime_diet")
-      disable("p3_hosp5_worktime_admin")
-      disable("p3_hosp5_worktime_nurs")
+
       ##hosp6
-      disable("p3_discount_hosp6_1")
-      disable("p3_discount_hosp6_2")
-      disable("p3_discount_hosp6_3")
-      disable("p3_discount_hosp6_4")
       disable("p3_promotional_budget_hosp6")
       disable("p3_hosp6_sales_target_1")
       disable("p3_hosp6_sales_target_2")
@@ -11362,15 +11201,8 @@ server=function(input, output, session) {
       disable("p3_hosp6_worktime_2")
       disable("p3_hosp6_worktime_3")
       disable("p3_hosp6_worktime_4")
-      disable("p3_hosp6_worktime_doc")
-      disable("p3_hosp6_worktime_diet")
-      disable("p3_hosp6_worktime_admin")
-      disable("p3_hosp6_worktime_nurs")
+
       ##hosp7
-      disable("p3_discount_hosp7_1")
-      disable("p3_discount_hosp7_2")
-      disable("p3_discount_hosp7_3")
-      disable("p3_discount_hosp7_4")
       disable("p3_promotional_budget_hosp7")
       disable("p3_hosp7_sales_target_1")
       disable("p3_hosp7_sales_target_2")
@@ -11381,15 +11213,8 @@ server=function(input, output, session) {
       disable("p3_hosp7_worktime_2")
       disable("p3_hosp7_worktime_3")
       disable("p3_hosp7_worktime_4")
-      disable("p3_hosp7_worktime_doc")
-      disable("p3_hosp7_worktime_diet")
-      disable("p3_hosp7_worktime_admin")
-      disable("p3_hosp7_worktime_nurs")
+
       ##hosp8
-      disable("p3_discount_hosp8_1")
-      disable("p3_discount_hosp8_2")
-      disable("p3_discount_hosp8_3")
-      disable("p3_discount_hosp8_4")
       disable("p3_promotional_budget_hosp8")
       disable("p3_hosp8_sales_target_1")
       disable("p3_hosp8_sales_target_2")
@@ -11400,15 +11225,8 @@ server=function(input, output, session) {
       disable("p3_hosp8_worktime_2")
       disable("p3_hosp8_worktime_3")
       disable("p3_hosp8_worktime_4")
-      disable("p3_hosp8_worktime_doc")
-      disable("p3_hosp8_worktime_diet")
-      disable("p3_hosp8_worktime_admin")
-      disable("p3_hosp8_worktime_nurs")
+
       ##hosp9
-      disable("p3_discount_hosp9_1")
-      disable("p3_discount_hosp9_2")
-      disable("p3_discount_hosp9_3")
-      disable("p3_discount_hosp9_4")
       disable("p3_promotional_budget_hosp9")
       disable("p3_hosp9_sales_target_1")
       disable("p3_hosp9_sales_target_2")
@@ -11419,15 +11237,8 @@ server=function(input, output, session) {
       disable("p3_hosp9_worktime_2")
       disable("p3_hosp9_worktime_3")
       disable("p3_hosp9_worktime_4")
-      disable("p3_hosp9_worktime_doc")
-      disable("p3_hosp9_worktime_diet")
-      disable("p3_hosp9_worktime_admin")
-      disable("p3_hosp9_worktime_nurs")
+
       ##hosp10
-      disable("p3_discount_hosp10_1")
-      disable("p3_discount_hosp10_2")
-      disable("p3_discount_hosp10_3")
-      disable("p3_discount_hosp10_4")
       disable("p3_promotional_budget_hosp10")
       disable("p3_hosp10_sales_target_1")
       disable("p3_hosp10_sales_target_2")
@@ -11438,10 +11249,7 @@ server=function(input, output, session) {
       disable("p3_hosp10_worktime_2")
       disable("p3_hosp10_worktime_3")
       disable("p3_hosp10_worktime_4")
-      disable("p3_hosp10_worktime_doc")
-      disable("p3_hosp10_worktime_diet")
-      disable("p3_hosp10_worktime_admin")
-      disable("p3_hosp10_worktime_nurs")
+
       disable("p3_sr1_sales_training")
       disable("p3_sr2_sales_training")
       disable("p3_sr3_sales_training")
@@ -11459,7 +11267,8 @@ server=function(input, output, session) {
       disable("p3_sr2_product_training")
       disable("p3_sr3_product_training")
       disable("p3_sr4_product_training")
-      disable("p3_sr5_product_training")}
+      disable("p3_sr5_product_training")
+      shinyjs::alert("周期3决策已提交，无法再修改。")}
   })
   
   output$p3_report1_2 <- 
@@ -12170,13 +11979,9 @@ server=function(input, output, session) {
       saveRDS(reactiveValuesToList(input),
               file = paste(input$user_name,"_",time,'.RDS',sep=""))
       
-      shinyjs::alert("周期4决策已提交，无法再修改。")
+      
       
       #hosp1
-      disable("p4_discount_hosp1_1")
-      disable("p4_discount_hosp1_2")
-      disable("p4_discount_hosp1_3")
-      disable("p4_discount_hosp1_4")
       disable("p4_promotional_budget_hosp1")
       disable("p4_hosp1_sales_target_1")
       disable("p4_hosp1_sales_target_2")
@@ -12187,15 +11992,8 @@ server=function(input, output, session) {
       disable("p4_hosp1_worktime_2")
       disable("p4_hosp1_worktime_3")
       disable("p4_hosp1_worktime_4")
-      disable("p4_hosp1_worktime_doc")
-      disable("p4_hosp1_worktime_diet")
-      disable("p4_hosp1_worktime_admin")
-      disable("p4_hosp1_worktime_nurs")
+
       ##hosp2
-      disable("p4_discount_hosp2_1")
-      disable("p4_discount_hosp2_2")
-      disable("p4_discount_hosp2_3")
-      disable("p4_discount_hosp2_4")
       disable("p4_promotional_budget_hosp2")
       disable("p4_hosp2_sales_target_1")
       disable("p4_hosp2_sales_target_2")
@@ -12206,15 +12004,8 @@ server=function(input, output, session) {
       disable("p4_hosp2_worktime_2")
       disable("p4_hosp2_worktime_3")
       disable("p4_hosp2_worktime_4")
-      disable("p4_hosp2_worktime_doc")
-      disable("p4_hosp2_worktime_diet")
-      disable("p4_hosp2_worktime_admin")
-      disable("p4_hosp2_worktime_nurs")
+
       ##hosp3
-      disable("p4_discount_hosp3_1")
-      disable("p4_discount_hosp3_2")
-      disable("p4_discount_hosp3_3")
-      disable("p4_discount_hosp3_4")
       disable("p4_promotional_budget_hosp3")
       disable("p4_hosp3_sales_target_1")
       disable("p4_hosp3_sales_target_2")
@@ -12227,10 +12018,6 @@ server=function(input, output, session) {
       disable("p4_hosp3_worktime_4")
       
       ##hosp4
-      disable("p4_discount_hosp4_1")
-      disable("p4_discount_hosp4_2")
-      disable("p4_discount_hosp4_3")
-      disable("p4_discount_hosp4_4")
       disable("p4_promotional_budget_hosp4")
       disable("p4_hosp4_sales_target_1")
       disable("p4_hosp4_sales_target_2")
@@ -12241,15 +12028,8 @@ server=function(input, output, session) {
       disable("p4_hosp4_worktime_2")
       disable("p4_hosp4_worktime_3")
       disable("p4_hosp4_worktime_4")
-      disable("p4_hosp4_worktime_doc")
-      disable("p4_hosp4_worktime_diet")
-      disable("p4_hosp4_worktime_admin")
-      disable("p4_hosp4_worktime_nurs")
+
       ##hosp5
-      disable("p4_discount_hosp5_1")
-      disable("p4_discount_hosp5_2")
-      disable("p4_discount_hosp5_3")
-      disable("p4_discount_hosp5_4")
       disable("p4_promotional_budget_hosp5")
       disable("p4_hosp5_sales_target_1")
       disable("p4_hosp5_sales_target_2")
@@ -12260,15 +12040,8 @@ server=function(input, output, session) {
       disable("p4_hosp5_worktime_2")
       disable("p4_hosp5_worktime_3")
       disable("p4_hosp5_worktime_4")
-      disable("p4_hosp5_worktime_doc")
-      disable("p4_hosp5_worktime_diet")
-      disable("p4_hosp5_worktime_admin")
-      disable("p4_hosp5_worktime_nurs")
+
       ##hosp6
-      disable("p4_discount_hosp6_1")
-      disable("p4_discount_hosp6_2")
-      disable("p4_discount_hosp6_3")
-      disable("p4_discount_hosp6_4")
       disable("p4_promotional_budget_hosp6")
       disable("p4_hosp6_sales_target_1")
       disable("p4_hosp6_sales_target_2")
@@ -12279,15 +12052,8 @@ server=function(input, output, session) {
       disable("p4_hosp6_worktime_2")
       disable("p4_hosp6_worktime_3")
       disable("p4_hosp6_worktime_4")
-      disable("p4_hosp6_worktime_doc")
-      disable("p4_hosp6_worktime_diet")
-      disable("p4_hosp6_worktime_admin")
-      disable("p4_hosp6_worktime_nurs")
+
       ##hosp7
-      disable("p4_discount_hosp7_1")
-      disable("p4_discount_hosp7_2")
-      disable("p4_discount_hosp7_3")
-      disable("p4_discount_hosp7_4")
       disable("p4_promotional_budget_hosp7")
       disable("p4_hosp7_sales_target_1")
       disable("p4_hosp7_sales_target_2")
@@ -12298,15 +12064,8 @@ server=function(input, output, session) {
       disable("p4_hosp7_worktime_2")
       disable("p4_hosp7_worktime_3")
       disable("p4_hosp7_worktime_4")
-      disable("p4_hosp7_worktime_doc")
-      disable("p4_hosp7_worktime_diet")
-      disable("p4_hosp7_worktime_admin")
-      disable("p4_hosp7_worktime_nurs")
+
       ##hosp8
-      disable("p4_discount_hosp8_1")
-      disable("p4_discount_hosp8_2")
-      disable("p4_discount_hosp8_3")
-      disable("p4_discount_hosp8_4")
       disable("p4_promotional_budget_hosp8")
       disable("p4_hosp8_sales_target_1")
       disable("p4_hosp8_sales_target_2")
@@ -12317,15 +12076,8 @@ server=function(input, output, session) {
       disable("p4_hosp8_worktime_2")
       disable("p4_hosp8_worktime_3")
       disable("p4_hosp8_worktime_4")
-      disable("p4_hosp8_worktime_doc")
-      disable("p4_hosp8_worktime_diet")
-      disable("p4_hosp8_worktime_admin")
-      disable("p4_hosp8_worktime_nurs")
+
       ##hosp9
-      disable("p4_discount_hosp9_1")
-      disable("p4_discount_hosp9_2")
-      disable("p4_discount_hosp9_3")
-      disable("p4_discount_hosp9_4")
       disable("p4_promotional_budget_hosp9")
       disable("p4_hosp9_sales_target_1")
       disable("p4_hosp9_sales_target_2")
@@ -12336,15 +12088,8 @@ server=function(input, output, session) {
       disable("p4_hosp9_worktime_2")
       disable("p4_hosp9_worktime_3")
       disable("p4_hosp9_worktime_4")
-      disable("p4_hosp9_worktime_doc")
-      disable("p4_hosp9_worktime_diet")
-      disable("p4_hosp9_worktime_admin")
-      disable("p4_hosp9_worktime_nurs")
+
       ##hosp10
-      disable("p4_discount_hosp10_1")
-      disable("p4_discount_hosp10_2")
-      disable("p4_discount_hosp10_3")
-      disable("p4_discount_hosp10_4")
       disable("p4_promotional_budget_hosp10")
       disable("p4_hosp10_sales_target_1")
       disable("p4_hosp10_sales_target_2")
@@ -12355,11 +12100,7 @@ server=function(input, output, session) {
       disable("p4_hosp10_worktime_2")
       disable("p4_hosp10_worktime_3")
       disable("p4_hosp10_worktime_4")
-      disable("p4_hosp10_worktime_doc")
-      disable("p4_hosp10_worktime_diet")
-      disable("p4_hosp10_worktime_admin")
-      disable("p4_hosp10_worktime_nurs")
-      
+
       disable("p4_sr1_sales_training")
       disable("p4_sr2_sales_training")
       disable("p4_sr3_sales_training")
@@ -12377,7 +12118,9 @@ server=function(input, output, session) {
       disable("p4_sr2_product_training")
       disable("p4_sr3_product_training")
       disable("p4_sr4_product_training")
-      disable("p4_sr5_product_training")}
+      disable("p4_sr5_product_training")
+      
+      shinyjs::alert("周期4决策已提交，无法再修改。")}
   })
   
   output$p4_report1_2 <- 

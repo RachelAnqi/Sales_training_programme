@@ -101,10 +101,10 @@ weightage <- list(total_attractiveness = list(pp_offer_attractiveness = 0.2,
                                     sales_target_realization =0.4,
                                     meetings_with_team = 0.25,
                                     sales_training = 0.25),
-                  success_value = list(total_sales = 0.3,
-                                       contribution_margin = 0.35,
-                                       average_customer_relationship = 0.15,
-                                       team_capability = 0.2)
+                  success_value = list(total_sales = 0.6,
+                                       #contribution_margin = 0.35,
+                                       #average_customer_relationship = 0.15,
+                                       team_capability = 0.4)
                   
 )
 
@@ -118,7 +118,7 @@ null_report8 <- data.frame(
   phase=c("周期0","周期1","周期2","周期3","周期4"),
   "total_revenue"=rep("",5),
   "profit"=rep("",5),
-  "average_customer_relationship_index"=rep("",5),
+  #"average_customer_relationship_index"=rep("",5),
   "team_capability"=rep("",5),
   "success_value"=rep("",5),
   "acc_success_value"=rep("",5),
@@ -128,17 +128,17 @@ null_report8 <- data.frame(
 report8_mod1_rank <- data.frame(
   variable=c("total_revenue",
              "profit",
-             "average_customer_relationship_index",
+            # "average_customer_relationship_index",
              "team_capability",
              "success_value",
              "acc_success_value"),
   name = c("总销售(元)",
            "总利润(元)",
-           "客户关系均值(指数)",
+           #"客户关系均值(指数)",
            "团队能力(指数)",
            "得分",
            "累计得分"),
-  rank=1:6
+  rank=1:5
   
 )
 

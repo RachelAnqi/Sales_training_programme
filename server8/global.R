@@ -1033,9 +1033,9 @@ report_data <- function(tmp,flm_data,null_report) {
            average_sales_skills_index = round(mean(sales_skills_index,na.rm=T),2),
            average_product_knowledge_index = round(mean(product_knowledge_index,na.rm=T),2),
            average_motivation_index = round(mean(motivation_index,na.rm=T),2),
-           team_capability = average_motivation_index +
+           team_capability = round(average_motivation_index +
              average_product_knowledge_index +
-             average_sales_skills_index) %>%
+             average_sales_skills_index)/3) %>%
     select(phase,
            total_revenue,
            average_customer_relationship_index,
@@ -1044,17 +1044,17 @@ report_data <- function(tmp,flm_data,null_report) {
     distinct() %>%
     dplyr::mutate(profit=as.numeric(report5_mod3[5,1]),
                   inter1=(weightage$success_value)$total_sales*curve(curve50,total_revenue),
-                  inter2=(weightage$success_value)$contribution_margin*curve(curve49,profit),
-                  inter3=(weightage$success_value)$average_customer_relationship*curve(curve45,average_customer_relationship_index),
+                  #inter2=(weightage$success_value)$contribution_margin*curve(curve49,profit),
+                  #inter3=(weightage$success_value)$average_customer_relationship*curve(curve45,average_customer_relationship_index),
                   inter4=(weightage$success_value)$team_capability*curve(curve46,team_capability),
-                  success_value = round(inter1+inter2+inter3+inter4),
+                  success_value = round(inter1+inter4),
                   acc_success_value = success_value + pp_acc_success_value) %>%
     dplyr::mutate(success_value = ifelse(phase=="周期0","",success_value),
            acc_success_value = ifelse(phase=="周期0","",acc_success_value)) %>%
     select(phase,
            total_revenue,
            profit,
-           average_customer_relationship_index,
+           #average_customer_relationship_index,
            team_capability,
            success_value,
            acc_success_value) %>%
@@ -1066,13 +1066,13 @@ report_data <- function(tmp,flm_data,null_report) {
   colnames(report8_mod1) <- c("phase",
                               "总销售(元)",
                               "总利润(元)",
-                              "客户关系均值(指数)",
+                              #"客户关系均值(指数)",
                               "团队能力(指数)",
                               "得分",
                               "累计得分") 
   report8_mod1_tmp <- null_report
   
-  report8_mod1_tmp[which(report8_mod1_tmp$phase==report8_mod1$phase),2:7] <- report8_mod1[1,2:7]
+  report8_mod1_tmp[which(report8_mod1_tmp$phase==report8_mod1$phase),2:6] <- report8_mod1[1,2:6]
   
   report8_mod1 <- report8_mod1_tmp
   

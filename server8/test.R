@@ -1,4 +1,4 @@
-input <- readRDS("trial1_all.RDS")  
+input <- readRDS("phase2_test1.RDS")  
 
 ## phase 0
 pp_data1 <- pp_info

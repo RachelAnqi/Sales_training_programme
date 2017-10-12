@@ -10228,22 +10228,7 @@ server=function(input, output, session) {
   
   
   
-  p2_report<- eventReactive(input$decision2_phase2_submit,{
-    if (
-      
-      p2_calculator_result()[1] <=100 &
-      p2_calculator_result()[2] <=100 &
-      p2_calculator_result()[3] <=100 &
-      p2_calculator_result()[4] <=100 &
-      p2_calculator_result()[5] <=100 &
-      p2_calculator_result()[6] <=100 &
-      sum(p2_flm_data(),na.rm=T) <=worktime
-    ) {
-      p2_report <- report_data(tmp2(),p2_flm_data(),p1_report()$report8_mod1)
-      return(p2_report)
-    } 
-    
-  })
+  
   
   
   
@@ -10408,6 +10393,23 @@ server=function(input, output, session) {
       disable("p2_sr4_product_training")
       disable("p2_sr5_product_training")
       shinyjs::alert("周期2决策已提交，无法再修改。")}
+  })
+  
+  p2_report<- eventReactive(input$decision2_phase2_submit,{
+    if (
+      
+      p2_calculator_result()[1] <=100 &
+      p2_calculator_result()[2] <=100 &
+      p2_calculator_result()[3] <=100 &
+      p2_calculator_result()[4] <=100 &
+      p2_calculator_result()[5] <=100 &
+      p2_calculator_result()[6] <=100 &
+      sum(p2_flm_data(),na.rm=T) <=worktime
+    ) {
+      p2_report <- report_data(tmp2(),p2_flm_data(),p1_report()$report8_mod1)
+      return(p2_report)
+    } 
+    
   })
   
   # output$p2_chk_data <- renderDataTable(tmp2())

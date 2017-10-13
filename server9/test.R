@@ -9,9 +9,6 @@ tmp0 <- calculation(pp_data1,
                     pp_data2,
                     cp_data1,
                     cp_data2)
-p0_flm_data <- get.data3(input,0)
-p0_report <- report_data(tmp0,p0_flm_data,null_report8)
-
 
 ## phase 1
 pp_data1 <- tmp0 %>% select(hospital,
@@ -27,10 +24,10 @@ pp_data1 <- tmp0 %>% select(hospital,
                               sales_performance,
                               offer_attractiveness,
                               acc_offer_attractiveness) %>%
-  mutate(acc_success_value = ifelse(p0_report$acc_success_value=="",0,p0_report$acc_success_value))%>%
+  #mutate(acc_success_value = ifelse(p0_report()$acc_success_value=="",0,p0_report()$acc_success_value))%>%
   distinct()
 
-colnames(pp_data1)[5:14] <- paste("pp_",colnames(pp_data1)[5:14],sep="")
+colnames(pp_data1)[5:13] <- paste("pp_",colnames(pp_data1)[5:13],sep="")
 
 pp_data2 <- tmp0 %>% select(sales_rep,
                               sales_level,
@@ -51,25 +48,4 @@ tmp <- calculation(pp_data1,
                    pp_data2,
                    cp_data1,
                    cp_data2)
-
-p1_flm_data <- get.data3(input,1)
-p1_report <- report_data(tmp,p1_flm_data,p0_report$report8_mod1)
-
-
-report8_mod1 <- p1_report$report8_mod1
-report8_mod1 <- report8_mod1 %>% 
-  gather(variable,`值`,-phase) %>%
-  spread(phase,`值`)
-
-
-report8_mod1 <- report8_mod1 %>%
-  left_join(report8_mod1_rank,by="variable") %>%
-  arrange(rank) %>%
-  select(-variable,-rank)
-
-rownames(report8_mod1) <- report8_mod1$name
-
-report8_mod1 <- report8_mod1 %>%
-  select(-name)
-
 

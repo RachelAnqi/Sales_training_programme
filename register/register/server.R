@@ -90,7 +90,9 @@ server = function(input, output, session) {
     
     tryCatch({
       saveData(formData())
-      system("cp /srv/shiny-server/register/data/* /srv/shiny-server/sales_training_platform_beta1/credentials/")
+      system("cp /srv/shiny-server/register/data/* /srv/shiny-server/stp/credentials/")
+      dir_name <- formData()[,1]
+      system(paste("mkdir -p /srv/shiny-server/stp/users/",dir_name,sep=""))
       shinyjs::reset("form")
       shinyjs::hide("form")
       shinyjs::show("thankyou_msg")

@@ -25,6 +25,13 @@ mainbody <- div(
   
   
   tabItems(
+    # tabItem(tabName = "introduction",
+    #         br(),
+    #         box(
+    #           title = "介绍",
+    #           solidHeader = TRUE, status = "primary"
+    #           
+    #         )),
     # First tab content
     tabItem(tabName = "news_and_WAS",
             tabsetPanel(
@@ -32,7 +39,7 @@ mainbody <- div(
               tabPanel("新闻",
                        br(),
                        fluidRow(
-                         box(width = 2,
+                         column(width = 2,
                              title = "周期列表",
                              solidHeader = TRUE, status = "primary",
                              
@@ -54,7 +61,7 @@ mainbody <- div(
                                    title = "新闻快报",
                                    solidHeader = TRUE, status = "primary",
                                    dataTableOutput("p2_was_plan")
-                               )
+                                   )
                            ))
                          )
               ),
@@ -74,13 +81,13 @@ mainbody <- div(
                          
                          div(id="phase1_hospital_info_box",
                              box(width = 10,
-                                 title = "客户信息",
+                                 title = "客户潜力信息",
                                  solidHeader = TRUE, status = "primary",
                                  dataTableOutput("p1_hospital_info"))),
                          hidden(
                            div(id="phase2_hospital_info_box",
                                box(width = 10,
-                                   title = "客户信息",
+                                   title = "客户潜力信息",
                                    solidHeader = TRUE, status = "primary",
                                    dataTableOutput("p2_hospital_info")
                                )
@@ -94,6 +101,7 @@ mainbody <- div(
               box(title = "业务代表介绍",
                   solidHeader = TRUE, status = "primary",
                   width = 12,
+                  h4(strong("团队能力指数：59")),
                   dataTableOutput("sales_rep_info")))
     ),
     
@@ -4046,10 +4054,13 @@ mainbody <- div(
           #           br(),
           #           br(),
           actionButton("decision2_phase1_submit", "提交"),
+          div(
+            id="admin",
+            selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
+            actionButton("load_inputs", "加载输入")),
           downloadButton("p0_chk_data","下载周期0中间数据"),
           downloadButton("p1_chk_data","下载周期1中间数据"),
-          selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
-          actionButton("load_inputs", "加载输入"),
+          
           #   column(width=5,textInput(inputId = "filename",label = "保存文件名"),
           #          actionButton('save_inputs', '保存输入')),
           #   column(width=5,selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
@@ -4611,22 +4622,22 @@ mainbody <- div(
     tabItem(tabName = "reports",
             tabsetPanel(
               
-              tabPanel("周期0",
-                       
-                       br(),
-                       box(title="市场销售报告",
-                           width="100%",
-                           status = "primary", solidHeader = TRUE,
-                           
-                           
-                           tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p0_report8_1")),
-                           br(),br(),br(),
-                           tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p0_report8_2")))
-                       
-                       
-              ),
+              # tabPanel("周期0",
+              #          
+              #          br(),
+              #          box(title="市场销售报告",
+              #              width="100%",
+              #              status = "primary", solidHeader = TRUE,
+              #              
+              #              
+              #              tags$div(style = "text-align:left;margin-left:3%",
+              #                       dataTableOutput("p0_report8_1")),
+              #              br(),br(),br(),
+              #              tags$div(style = "text-align:left;margin-left:3%",
+              #                       dataTableOutput("p0_report8_2")))
+              #          
+              #          
+              # ),
               
               tabPanel("周期1",
                        
@@ -4948,8 +4959,15 @@ server=function(input, output, session) {
   
   observe({
     if (user_input$authenticated == T) {
-      enable("save")
+      shinyjs::enable("save")
       enable("exit")
+    }
+  })
+  
+  observeEvent(input$login_button,{
+    if (input$user_name=="admin2"){
+      shinyjs::show(id="admin",anim=T)
+      
     }
   })
   
@@ -5382,47 +5400,47 @@ server=function(input, output, session) {
     }
   )
   
-  p0_report8_mod1 <- reactive({
-    report8_mod1 <- p0_report()$report8_mod1
-    report8_mod1 <- report8_mod1 %>% 
-      gather(variable,`值`,-phase) %>%
-      spread(phase,`值`)
-    
-    
-    report8_mod1 <- report8_mod1 %>%
-      left_join(report8_mod1_rank,by="variable") %>%
-      arrange(rank) %>%
-      select(-variable,-rank)
-    
-    rownames(report8_mod1) <- report8_mod1$name
-    
-    report8_mod1 <- report8_mod1 %>%
-      select(-name)
-    
-    
-  })
+  # p0_report8_mod1 <- reactive({
+  #   report8_mod1 <- p0_report()$report8_mod1
+  #   report8_mod1 <- report8_mod1 %>% 
+  #     gather(variable,`值`,-phase) %>%
+  #     spread(phase,`值`)
+  #   
+  #   
+  #   report8_mod1 <- report8_mod1 %>%
+  #     left_join(report8_mod1_rank,by="variable") %>%
+  #     arrange(rank) %>%
+  #     select(-variable,-rank)
+  #   
+  #   rownames(report8_mod1) <- report8_mod1$name
+  #   
+  #   report8_mod1 <- report8_mod1 %>%
+  #     select(-name)
+  #   
+  #   
+  # })
   
-  output$p0_report8_1 <- 
-    renderDataTable(datatable(p0_report8_mod1(),
-                              caption="商业价值",
-                              options = 
-                                list(ordering = F, dom = "t",
-                                     columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-                                     initComplete = JS(
-                                       "function(settings, json) {",
-                                       "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-                                       "}"))))
-  output$p0_report8_2 <- 
-    renderDataTable(datatable(p0_report()$report8_mod2,
-                              caption="销售业绩",
-                              options = 
-                                list(ordering = F, dom = "t",
-                                     columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-                                     initComplete = JS(
-                                       "function(settings, json) {",
-                                       "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-                                       "}"))))
-  
+  # output$p0_report8_1 <- 
+  #   renderDataTable(datatable(p0_report8_mod1(),
+  #                             caption="商业价值",
+  #                             options = 
+  #                               list(ordering = F, dom = "t",
+  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+  #                                    initComplete = JS(
+  #                                      "function(settings, json) {",
+  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
+  #                                      "}"))))
+  # output$p0_report8_2 <- 
+  #   renderDataTable(datatable(p0_report()$report8_mod2,
+  #                             caption="销售业绩",
+  #                             options = 
+  #                               list(ordering = F, dom = "t",
+  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+  #                                    initComplete = JS(
+  #                                      "function(settings, json) {",
+  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
+  #                                      "}"))))
+  # 
   
   
   
@@ -5468,12 +5486,12 @@ server=function(input, output, session) {
     datatable(p1_news,
               escape = F,
               rownames = FALSE,
-              colnames = c("医院","","快报"),
+              colnames = c("医院","","快报","上期销售额(元)"),
               caption="",
               options =list(ordering = F, dom = "t",
                             columnDefs = list(list(className = 'dt-center', width = "150px", targets = 0),
                                               list(className = 'dt-left', width = "80px", targets = 1),
-                                              list(className = 'dt-center', width = "250px", targets = 2)),
+                                              list(className = 'dt-center', width = "250px", targets = 2:3)),
                             initComplete = JS(
                               "function(settings, json) {",
                               "$(this.api().table().header());",
@@ -6430,11 +6448,13 @@ server=function(input, output, session) {
                                        "}"))))
   
   output$download_phase1 <- downloadHandler(
-      filename = function() { paste("周期1", '.xlsx', sep='') },
+      filename = function() { paste("phase1", '.csv', sep='') },
       content = function(file) {
         saveWorkbook(writeDown("phase1",p1_report(),p1_report8_mod1()),
                      file,
                      overwrite = TRUE)
+        
+        
       }
     )
   
@@ -7325,7 +7345,7 @@ server=function(input, output, session) {
                                        "}"))))
   
   output$download_phase2 <- downloadHandler(
-    filename = function() { paste("周期2", '.xls', sep='') },
+    filename = function() { paste("phase2", '.xls', sep='') },
     content = function(file) {
       saveWorkbook(writeDown("phase2",p2_report(),p2_report8_mod1()),
                    file,

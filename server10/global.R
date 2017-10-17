@@ -928,6 +928,11 @@ report_data <- function(tmp,flm_data,null_report) {
   report7_mod1 <- report7_mod1 %>%
     select(-`医院`)
   
+  report7_mod2_rank <- data.frame(
+    sales_rep=c(sr_info_list$sales_rep,"总体"),
+    rep_code=1:6
+  )
+  
   report7_mod2 <- tmp %>%
     select(sales_rep,
            real_revenue_by_sr,
@@ -954,6 +959,11 @@ report_data <- function(tmp,flm_data,null_report) {
            # pp_real_volume_by_sr,
            # real_volume_by_sr,
            # sr_target_volume_realization
+  
+  report7_mod2 <- report7_mod2 %>%
+    left_join(report7_mod2_rank,by="sales_rep") %>%
+    arrange(rep_code) %>%
+    select(-rep_code)
   
   
   
@@ -1018,7 +1028,10 @@ report_data <- function(tmp,flm_data,null_report) {
            # real_volume_increase_ratio,
            # target_volume_realization_by_product
   
-  
+  report7_mod3 <- report7_mod3 %>%
+    left_join(product_info_list,by="product") %>%
+    arrange(prod_code) %>%
+    select(-prod_code)
   
   colnames(report7_mod3) <- c("产品",
                               "当期销售指标",

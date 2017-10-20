@@ -26,6 +26,8 @@ sr_info_list <- data.frame(
   stringsAsFactors = F
 )
 
+
+
 worktime =100
 overhead =2
 
@@ -57,8 +59,9 @@ hospital_info[is.na(hospital_info)] <- 0
 
 hospital_info_ui <- hospital_info[,c(1,3,4,5,7,8)]
 hospital_info_ui$`潜力(元)` <- unlist(lapply(hospital_info_ui$`潜力(元)` ,function(x)prettyNum(x,big.mark = ",")))
-hospital_info_ui <- spread(hospital_info_ui,`产品`,`潜力(元)`)
-hospital_info_ui <- hospital_info_ui[,c(1,2,3,4,5,8,7,6)]
+hospital_info_ui <- hospital_info_ui %>%
+  dplyr::mutate(产品=factor(产品, levels = c("口服抗生素", "一代降糖药", "三代降糖药", "皮肤药"))) %>%
+  spread(`产品`,`潜力(元)`)
 
 
 hospital_info_list <- unique(data.frame(
@@ -119,7 +122,7 @@ total_promotional_budget <- read.xlsx("pre_info_new.xlsx",
 
 
 ## 
-null_report8 <- data.frame(
+null_report7 <- data.frame(
   phase=c("周期0","周期1","周期2"),
   "total_revenue"=rep("",3),
   "profit"=rep("",3),
@@ -130,7 +133,7 @@ null_report8 <- data.frame(
   stringsAsFactors = F
 )
 
-report8_mod1_rank <- data.frame(
+report7_mod1_rank <- data.frame(
   variable=c("total_revenue",
              "profit",
             # "average_customer_relationship_index",

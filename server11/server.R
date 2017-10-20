@@ -7,8 +7,7 @@ library(dplyr)
 library(tidyr)
 library(digest)
 library(openxlsx)
-library(shiny.semantic)
-options(scipen=200)
+
 
 
 
@@ -4627,24 +4626,6 @@ mainbody <- div(
     
     tabItem(tabName = "reports",
             tabsetPanel(
-              
-              # tabPanel("周期0",
-              #          
-              #          br(),
-              #          box(title="市场销售报告",
-              #              width="100%",
-              #              status = "primary", solidHeader = TRUE,
-              #              
-              #              
-              #              tags$div(style = "text-align:left;margin-left:3%",
-              #                       dataTableOutput("p0_report8_1")),
-              #              br(),br(),br(),
-              #              tags$div(style = "text-align:left;margin-left:3%",
-              #                       dataTableOutput("p0_report8_2")))
-              #          
-              #          
-              # ),
-              
               tabPanel("周期1",
                        
                        br(),
@@ -4659,10 +4640,10 @@ mainbody <- div(
                            
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report8_1")),
+                                    dataTableOutput("p1_report7_1")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report8_2"))),
+                                    dataTableOutput("p1_report7_2"))),
                        
                        br(),
                        box(title="代表报告",
@@ -4671,6 +4652,9 @@ mainbody <- div(
                            solidHeader = TRUE,
                            
                            
+                           tags$div(style = "text-align:left;margin-left:3%",
+                                    dataTableOutput("p1_report1_1")),
+                           br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
                                     dataTableOutput("p1_report1_2")),
                            br(),br(),br(),
@@ -4681,10 +4665,7 @@ mainbody <- div(
                                     dataTableOutput("p1_report1_4")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report1_5")),
-                           br(),br(),br(),
-                           tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report1_6"))
+                                    dataTableOutput("p1_report1_5"))
                        ),
                        br(),
                        box(title="经理报告",
@@ -4710,15 +4691,7 @@ mainbody <- div(
                            
                            tags$div(style = "text-align:left;margin-left:3%",
                                     dataTableOutput("p1_report3"))),
-                       # br(),
-                       # box(title="决策报告",
-                       #     width="100%",
-                       #     status = "primary", solidHeader = TRUE,
-                       #     
-                       #     
-                       #     
-                       #     tags$div(style = "text-align:left;margin-left:3%",
-                       #              dataTableOutput("p1_report4_3"))),
+                       
                        br(),
                        box(title="利润贡献(总体)",
                            width="100%",
@@ -4726,11 +4699,11 @@ mainbody <- div(
                            
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report5_1")),
+                                    dataTableOutput("p1_report4_1")),
                            
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report5_3"))),
+                                    dataTableOutput("p1_report4_2"))),
                        br(),
                        box(title="利润贡献(每客户)",
                            width="100%",
@@ -4743,7 +4716,7 @@ mainbody <- div(
                                                 selected=NULL)),
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report6_1"))),
+                                    dataTableOutput("p1_report5_1"))),
                        br(),
                        box(title="销售报告",
                            width="100%",
@@ -4751,13 +4724,13 @@ mainbody <- div(
                            
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report7_1")),
+                                    dataTableOutput("p1_report6_1")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report7_2")),
+                                    dataTableOutput("p1_report6_2")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report7_3")))
+                                    dataTableOutput("p1_report6_3")))
                        
                        
               ),
@@ -4777,10 +4750,10 @@ mainbody <- div(
                            
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report8_1")),
+                                    dataTableOutput("p2_report7_1")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report8_2"))),
+                                    dataTableOutput("p2_report7_2"))),
                        
                        br(),
                        box(title="代表报告",
@@ -4791,6 +4764,9 @@ mainbody <- div(
                            
                            
                            tags$div(style = "text-align:left;margin-left:3%",
+                                    dataTableOutput("p2_report1_1")),
+                           br(),br(),br(),
+                           tags$div(style = "text-align:left;margin-left:3%",
                                     dataTableOutput("p2_report1_2")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
@@ -4800,10 +4776,7 @@ mainbody <- div(
                                     dataTableOutput("p2_report1_4")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report1_5")),
-                           br(),br(),br(),
-                           tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report1_6"))
+                                    dataTableOutput("p2_report1_5"))
                        ),
                        br(),
                        box(title="经理报告",
@@ -4848,11 +4821,11 @@ mainbody <- div(
                            
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report5_1")),
+                                    dataTableOutput("p2_report4_1")),
                            
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report5_3"))),
+                                    dataTableOutput("p2_report4_2"))),
                        br(),
                        box(title="利润贡献(每客户)",
                            width="100%",
@@ -4865,7 +4838,7 @@ mainbody <- div(
                                                 selected=NULL)),
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report6_1"))),
+                                    dataTableOutput("p2_report5_1"))),
                        br(),
                        box(title="销售报告",
                            width="100%",
@@ -4874,13 +4847,13 @@ mainbody <- div(
                            
                            
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report7_1")),
+                                    dataTableOutput("p2_report6_1")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report7_2")),
+                                    dataTableOutput("p2_report6_2")),
                            br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report7_3")))
+                                    dataTableOutput("p2_report6_3")))
                        
               )
               
@@ -5392,7 +5365,7 @@ server=function(input, output, session) {
       p0_calculator_result()[6] <=100 &
       sum(p0_flm_data()) <=worktime
     ) {
-      p0_report <- report_data(tmp0(),p0_flm_data(),null_report8)
+      p0_report <- report_data(tmp0(),p0_flm_data(),null_report7)
       return(p0_report)
     }
     
@@ -5405,49 +5378,6 @@ server=function(input, output, session) {
       write.csv(tmp0(), file)
     }
   )
-  
-  # p0_report8_mod1 <- reactive({
-  #   report8_mod1 <- p0_report()$report8_mod1
-  #   report8_mod1 <- report8_mod1 %>% 
-  #     gather(variable,`值`,-phase) %>%
-  #     spread(phase,`值`)
-  #   
-  #   
-  #   report8_mod1 <- report8_mod1 %>%
-  #     left_join(report8_mod1_rank,by="variable") %>%
-  #     arrange(rank) %>%
-  #     select(-variable,-rank)
-  #   
-  #   rownames(report8_mod1) <- report8_mod1$name
-  #   
-  #   report8_mod1 <- report8_mod1 %>%
-  #     select(-name)
-  #   
-  #   
-  # })
-  
-  # output$p0_report8_1 <- 
-  #   renderDataTable(datatable(p0_report8_mod1(),
-  #                             caption="商业价值",
-  #                             options = 
-  #                               list(ordering = F, dom = "t",
-  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-  #                                    initComplete = JS(
-  #                                      "function(settings, json) {",
-  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-  #                                      "}"))))
-  # output$p0_report8_2 <- 
-  #   renderDataTable(datatable(p0_report()$report8_mod2,
-  #                             caption="销售业绩",
-  #                             options = 
-  #                               list(ordering = F, dom = "t",
-  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-  #                                    initComplete = JS(
-  #                                      "function(settings, json) {",
-  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-  #                                      "}"))))
-  # 
-  
   
   
   
@@ -6195,7 +6125,7 @@ server=function(input, output, session) {
       p1_calculator_result()[6] <=100 &
       sum(p1_flm_data()) <=worktime
     ) {
-      p1_report <- report_data(tmp(),p1_flm_data(),p0_report()$report8_mod1)
+      p1_report <- report_data(tmp(),p1_flm_data(),p0_report()$report7_mod1)
       return(p1_report)
     } else {
       return(NULL)
@@ -6221,6 +6151,15 @@ server=function(input, output, session) {
                        promotional_support_index,
                        customer_relationship_index,
                        sales_performance,
+                       pp_product_knowledge_index,
+                       pp_sales_skills_index,
+                       pp_motivation_index,
+                       pp_sr_sales_performance,
+                       pp_sales_performance,
+                       pp_deployment_quality_index,
+                       pp_promotional_support_index,
+                       pp_customer_relationship_index,
+                       pp_sales_performance,
                        oa_customer_relationship_factor,
                        oa_sales_performance_factor,
                        cp_offer_attractiveness)
@@ -6229,8 +6168,8 @@ server=function(input, output, session) {
   )
   
   
-  output$p1_report1_2 <- 
-    renderDataTable(datatable(p1_report()$report1_mod2,
+  output$p1_report1_1 <- 
+    renderDataTable(datatable(p1_report()$report1_mod1,
                               caption="时间分配",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6241,8 +6180,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p1_report1_3 <- 
-    renderDataTable(datatable(p1_report()$report1_mod3,
+  output$p1_report1_2 <- 
+    renderDataTable(datatable(p1_report()$report1_mod2,
                               caption="产品知识",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6252,8 +6191,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p1_report1_4 <- 
-    renderDataTable(datatable(p1_report()$report1_mod4,
+  output$p1_report1_3 <- 
+    renderDataTable(datatable(p1_report()$report1_mod3,
                               caption="经验",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6262,8 +6201,8 @@ server=function(input, output, session) {
                                        "function(settings, json) {",
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
-  output$p1_report1_5 <- 
-    renderDataTable(datatable(p1_report()$report1_mod5,
+  output$p1_report1_4 <- 
+    renderDataTable(datatable(p1_report()$report1_mod4,
                               caption="销售技巧",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6273,8 +6212,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p1_report1_6 <- 
-    renderDataTable(datatable(p1_report()$report1_mod6,
+  output$p1_report1_5 <- 
+    renderDataTable(datatable(p1_report()$report1_mod5,
                               caption="动力值",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6333,19 +6272,8 @@ server=function(input, output, session) {
                                        "}"))))
   
   
-  
-  # output$p1_report4_3 <- 
-  #   renderDataTable(datatable(p1_report()$report4_mod3,
-  #                             caption="决策质量",
-  #                             options = 
-  #                               list(ordering = F, dom = "t",
-  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-  #                                    initComplete = JS(
-  #                                      "function(settings, json) {",
-  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-  #                                      "}"))))
-  output$p1_report5_1 <- 
-    renderDataTable(datatable(p1_report()$report5_mod1,
+  output$p1_report4_1 <- 
+    renderDataTable(datatable(p1_report()$report4_mod1,
                               caption="利润贡献 每产品(总)",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6355,8 +6283,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p1_report5_3 <- 
-    renderDataTable(datatable(p1_report()$report5_mod3,
+  output$p1_report4_1 <- 
+    renderDataTable(datatable(p1_report()$report4_mod2,
                               caption="利润贡献 (总体)",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6367,18 +6295,18 @@ server=function(input, output, session) {
                                        "}"))))
   
   
-  p1_report6_mod1 <- reactive({
+  p1_report5_mod1 <- reactive({
     if (input$p1_profit3_hosp=="ALL") {
-      out <- p1_report()$report6_mod1
+      out <- p1_report()$report5_mod1
     } else {
-      data <- p1_report()$report6_mod1
+      data <- p1_report()$report5_mod1
       out <- data[which(data$医院==input$p1_profit3_hosp),]
     }
     out
   })
   
-  output$p1_report6_1 <- 
-    renderDataTable(datatable(p1_report6_mod1(),
+  output$p1_report5_1 <- 
+    renderDataTable(datatable(p1_report5_mod1(),
                               rownames = F,
                               caption="利润贡献 每客户",
                               options = 
@@ -6390,8 +6318,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p1_report7_1 <- 
-    renderDataTable(datatable(p1_report()$report7_mod1,
+  output$p1_report6_1 <- 
+    renderDataTable(datatable(p1_report()$report6_mod1,
                               caption="销售额和数量/客户",
                               options = 
                                 list(pageLength = 120,
@@ -6402,8 +6330,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p1_report7_2 <- 
-    renderDataTable(datatable(p1_report()$report7_mod2,
+  output$p1_report6_2 <- 
+    renderDataTable(datatable(p1_report()$report6_mod2,
                               caption="销售额和数量/代表",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6413,8 +6341,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p1_report7_3 <- 
-    renderDataTable(datatable(p1_report()$report7_mod3,
+  output$p1_report6_3 <- 
+    renderDataTable(datatable(p1_report()$report6_mod3,
                               caption="销售额和数量/产品",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6424,29 +6352,29 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  p1_report8_mod1 <- reactive({
+  p1_report7_mod1 <- reactive({
     if ( is.null(p1_report())) {NULL} else {
-    report8_mod1 <- p1_report()$report8_mod1
-    report8_mod1 <- report8_mod1 %>% 
+    report7_mod1 <- p1_report()$report7_mod1
+    report7_mod1 <- report7_mod1 %>% 
       gather(variable,`值`,-phase) %>%
       spread(phase,`值`)
     
     
-    report8_mod1 <- report8_mod1 %>%
-      left_join(report8_mod1_rank,by="variable") %>%
+    report7_mod1 <- report7_mod1 %>%
+      left_join(report7_mod1_rank,by="variable") %>%
       arrange(rank) %>%
       select(-variable,-rank)
     
-    rownames(report8_mod1) <- report8_mod1$name
+    rownames(report7_mod1) <- report7_mod1$name
     
-    report8_mod1 <- report8_mod1 %>%
+    report7_mod1 <- report7_mod1 %>%
       select(-name)
     }
     
   })
   
-  output$p1_report8_1 <- 
-    renderDataTable(datatable(p1_report8_mod1(),
+  output$p1_report7_1 <- 
+    renderDataTable(datatable(p1_report7_mod1(),
                               caption="商业价值",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6455,8 +6383,8 @@ server=function(input, output, session) {
                                        "function(settings, json) {",
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
-  output$p1_report8_2 <- 
-    renderDataTable(datatable(p1_report()$report8_mod2,
+  output$p1_report7_2 <- 
+    renderDataTable(datatable(p1_report()$report7_mod2,
                               caption="销售业绩",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6469,7 +6397,7 @@ server=function(input, output, session) {
   output$download_phase1 <- downloadHandler(
       filename = function() { paste("phase1", '.xlsx', sep='') },
       content = function(file) {
-        saveWorkbook(writeDown("phase1",p1_report(),p1_report8_mod1()),
+        saveWorkbook(writeDown("phase1",p1_report(),p1_report7_mod1()),
                      file,
                      overwrite = TRUE)
         
@@ -6478,8 +6406,8 @@ server=function(input, output, session) {
     )
   
   observe({
-    if (!is.null(p1_report8_mod1())) {
-      saveWorkbook(writeDown("phase1",p1_report(),p1_report8_mod1()),
+    if (!is.null(p1_report7_mod1())) {
+      saveWorkbook(writeDown("phase1",p1_report(),p1_report7_mod1()),
                    file = paste("users/",input$user_name,"/",
                                 user_input$time,"_",
                                 user_input$time_stamp,"/report_phase1.xlsx",sep=""),
@@ -7112,7 +7040,7 @@ server=function(input, output, session) {
       p2_calculator_result()[6] <=100 &
       sum(p2_flm_data(),na.rm=T) <=worktime
     ) {
-      p2_report <- report_data(tmp2(),p2_flm_data(),p1_report()$report8_mod1)
+      p2_report <- report_data(tmp2(),p2_flm_data(),p1_report()$report7_mod1)
       return(p2_report)
     } 
     
@@ -7127,8 +7055,8 @@ server=function(input, output, session) {
     }
   )
   
-  output$p2_report1_2 <- 
-    renderDataTable(datatable(p2_report()$report1_mod2,
+  output$p2_report1_1 <- 
+    renderDataTable(datatable(p2_report()$report1_mod1,
                               caption="时间分配",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7139,8 +7067,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report1_3 <- 
-    renderDataTable(datatable(p2_report()$report1_mod3,
+  output$p2_report1_2 <- 
+    renderDataTable(datatable(p2_report()$report1_mod2,
                               caption="产品知识",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7150,8 +7078,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report1_4 <- 
-    renderDataTable(datatable(p2_report()$report1_mod4,
+  output$p2_report1_3 <- 
+    renderDataTable(datatable(p2_report()$report1_mod3,
                               caption="经验",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7160,8 +7088,8 @@ server=function(input, output, session) {
                                        "function(settings, json) {",
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
-  output$p2_report1_5 <- 
-    renderDataTable(datatable(p2_report()$report1_mod5,
+  output$p2_report1_4 <- 
+    renderDataTable(datatable(p2_report()$report1_mod4,
                               caption="销售技巧",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7171,8 +7099,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report1_6 <- 
-    renderDataTable(datatable(p2_report()$report1_mod6,
+  output$p2_report1_5 <- 
+    renderDataTable(datatable(p2_report()$report1_mod5,
                               caption="动力值",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7230,20 +7158,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  
-  
-  # output$p2_report4_3 <- 
-  #   renderDataTable(datatable(p2_report()$report4_mod3,
-  #                             caption="决策质量",
-  #                             options = 
-  #                               list(ordering = F, dom = "t",
-  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-  #                                    initComplete = JS(
-  #                                      "function(settings, json) {",
-  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-  #                                      "}"))))
-  output$p2_report5_1 <- 
-    renderDataTable(datatable(p2_report()$report5_mod1,
+  output$p2_report4_1 <- 
+    renderDataTable(datatable(p2_report()$report4_mod1,
                               caption="利润贡献 每产品(总)",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7253,8 +7169,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report5_3 <- 
-    renderDataTable(datatable(p2_report()$report5_mod3,
+  output$p2_report4_2 <- 
+    renderDataTable(datatable(p2_report()$report4_mod2,
                               caption="利润贡献 (总体)",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7265,18 +7181,18 @@ server=function(input, output, session) {
                                        "}"))))
   
   
-  p2_report6_mod1 <- reactive({
+  p2_report5_mod1 <- reactive({
     if (input$p2_profit3_hosp=="ALL") {
-      out <- p2_report()$report6_mod1
+      out <- p2_report()$report5_mod1
     } else {
-      data <- p2_report()$report6_mod1
+      data <- p2_report()$report5_mod1
       out <- data[which(data$医院==input$p2_profit3_hosp),]
     }
     out
   })
   
-  output$p2_report6_1 <- 
-    renderDataTable(datatable(p2_report6_mod1(),
+  output$p2_report5_1 <- 
+    renderDataTable(datatable(p2_report5_mod1(),
                               rownames = F,
                               caption="利润贡献 每客户",
                               options = 
@@ -7288,8 +7204,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report7_1 <- 
-    renderDataTable(datatable(p2_report()$report7_mod1,
+  output$p2_report6_1 <- 
+    renderDataTable(datatable(p2_report()$report6_mod1,
                               caption="销售额和数量/客户",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7299,8 +7215,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report7_2 <- 
-    renderDataTable(datatable(p2_report()$report7_mod2,
+  output$p2_report6_2 <- 
+    renderDataTable(datatable(p2_report()$report6_mod2,
                               caption="销售额和数量/代表",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7310,8 +7226,8 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report7_3 <- 
-    renderDataTable(datatable(p2_report()$report7_mod3,
+  output$p2_report6_3 <- 
+    renderDataTable(datatable(p2_report()$report6_mod3,
                               caption="销售额和数量/产品",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7321,29 +7237,29 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  p2_report8_mod1 <- reactive({
+  p2_report7_mod1 <- reactive({
     if ( is.null(p2_report())) {NULL} else {
-    report8_mod1 <- p2_report()$report8_mod1
-    report8_mod1 <- report8_mod1 %>% 
+    report7_mod1 <- p2_report()$report7_mod1
+    report7_mod1 <- report7_mod1 %>% 
       gather(variable,`值`,-phase) %>%
       spread(phase,`值`)
     
     
-    report8_mod1 <- report8_mod1 %>%
-      left_join(report8_mod1_rank,by="variable") %>%
+    report7_mod1 <- report7_mod1 %>%
+      left_join(report7_mod1_rank,by="variable") %>%
       arrange(rank) %>%
       select(-variable,-rank)
     
-    rownames(report8_mod1) <- report8_mod1$name
+    rownames(report7_mod1) <- report7_mod1$name
     
-    report8_mod1 <- report8_mod1 %>%
+    report7_mod1 <- report7_mod1 %>%
       select(-name)
     }
     
   })
   
-  output$p2_report8_1 <- 
-    renderDataTable(datatable(p2_report8_mod1(),
+  output$p2_report7_1 <- 
+    renderDataTable(datatable(p2_report7_mod1(),
                               caption="商业价值",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7352,8 +7268,8 @@ server=function(input, output, session) {
                                        "function(settings, json) {",
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
-  output$p2_report8_2 <- 
-    renderDataTable(datatable(p2_report()$report8_mod2,
+  output$p2_report7_2 <- 
+    renderDataTable(datatable(p2_report()$report7_mod2,
                               caption="销售业绩",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -7366,7 +7282,7 @@ server=function(input, output, session) {
   output$download_phase2 <- downloadHandler(
     filename = function() { paste("phase2", '.xls', sep='') },
     content = function(file) {
-      saveWorkbook(writeDown("phase2",p2_report(),p2_report8_mod1()),
+      saveWorkbook(writeDown("phase2",p2_report(),p2_report7_mod1()),
                    file,
                    overwrite = TRUE)
     }
@@ -7463,48 +7379,48 @@ server=function(input, output, session) {
   # })
   output$uiLogin <- renderUI({
     fluidRow(
-    wellPanel(
-      
-      textInput("user_name", "用户名"),
-      
-      passwordInput("password", "密码"),
-      
-      # actionButton("login_button", "Log in")
-      
-      # tags$div(
-      # 
-      # tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-      #          actionButton(inputId = "login_button",
-      #                       label = "登录",
-      #                       icon = icon("th"))),
-      # tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:140px;text-align:center;margin-right:10px;",
-      #          actionButton(inputId = "Signup_button",
-      #                       label = "注册",
-      #                       icon = icon("th"),
-      #                       onclick ="location.href='http://tm.pharbers.com/register/';"
-      #                       # onclick ="window.open('http://59.110.31.215:3838/register/')"
-      #          )))
-      fluidRow(
-        column(width = 6,
-               offset = 1,
-               #tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                        actionButton(inputId = "login_button",
-                                     label = "登录",
-                                     icon = icon("th"))
-               ),
-        #column(width = 2),
-        column(width = 1,
-               #offset = 1,
-               #tags$div(style = "display:inline-block;width:16%;vertical-align:middle;text-align:left;margin-right:10px;",
-                        actionButton(inputId = "Signup_button",
-                                     label = "注册",
-                                     icon = icon("th"),
-                                     onclick ="location.href='http://tm.pharbers.com/register/';"
-                                     # onclick ="window.open('http://59.110.31.215:3838/register/')"
-                        )
+      wellPanel(
+        
+        textInput("user_name", "用户名"),
+        
+        passwordInput("password", "密码"),
+        
+        # actionButton("login_button", "Log in")
+        
+        # tags$div(
+        # 
+        # tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+        #          actionButton(inputId = "login_button",
+        #                       label = "登录",
+        #                       icon = icon("th"))),
+        # tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:140px;text-align:center;margin-right:10px;",
+        #          actionButton(inputId = "Signup_button",
+        #                       label = "注册",
+        #                       icon = icon("th"),
+        #                       onclick ="location.href='http://tm.pharbers.com/register/';"
+        #                       # onclick ="window.open('http://59.110.31.215:3838/register/')"
+        #          )))
+        fluidRow(
+          column(width = 6,
+                 offset = 1,
+                 #tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
+                 actionButton(inputId = "login_button",
+                              label = "登录",
+                              icon = icon("th"))
+          ),
+          #column(width = 2),
+          column(width = 1,
+                 #offset = 1,
+                 #tags$div(style = "display:inline-block;width:16%;vertical-align:middle;text-align:left;margin-right:10px;",
+                 actionButton(inputId = "Signup_button",
+                              label = "注册",
+                              icon = icon("th"),
+                              onclick ="location.href='http://tm.pharbers.com/register/';"
+                              # onclick ="window.open('http://59.110.31.215:3838/register/')"
+                 )
+          )
         )
-      )
-    ))
+      ))
   })
   
   # red error message if bad credentials

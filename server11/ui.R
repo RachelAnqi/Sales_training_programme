@@ -7,7 +7,6 @@ library(dplyr)
 library(tidyr)
 library(digest)
 library(openxlsx)
-library(shiny.semantic)
 
 
 

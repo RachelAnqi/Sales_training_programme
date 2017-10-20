@@ -203,32 +203,31 @@ calculation <- function(pp_data1,
         (ss_experience_index_pp+pp_sales_skills_index)*((weightage$sales_skills)$experience)),
       product_knowledge_index = round(
         product_knowledge_addition_current_period+
-          pp_product_knowledge_index)
-      #product_knowledge_transfer_value),
-    ) %>%
-    dplyr::mutate(srsp_motivation_factor = sapply(pp_motivation_index,function(x)curve(curve32,x)),
-                  srsp_sales_skills_factor = sapply(sales_skills_index,function(x)curve(curve34,x)),
-                  srsp_product_knowledge_factor = sapply(product_knowledge_index,
+          pp_product_knowledge_index)) %>%
+    dplyr::mutate(srsp_motivation_delta = sapply(pp_motivation_index,function(x)curve(curve32,x)),
+                  srsp_sales_skills_delta = sapply(sales_skills_index,function(x)curve(curve34,x)),
+                  srsp_product_knowledge_delta = sapply(product_knowledge_index,
                                                          function(x)curve(curve33,x)),
-                  srsp_time_with_account_factor = 
-                    mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
-                      curve(curve35,y)} else if(
+                  srsp_time_with_account_delta =  mapply(function(x,y,z){ if(
                         x==as.character(product_info_list$product[2])){
                         curve(curve36,y)} else if (
                           x==as.character(product_info_list$product[3])) {
-                          curve(curve37,y)} else {
-                            curve(curve38,y)}},
-                      product,real_sr_time)) %>%
-    dplyr::mutate(sr_sales_performance = 
-                    srsp_motivation_factor*pp_sr_sales_performance*
+                          curve(curve37,y)} else if (x==as.character(product_info_list$product[4])) {
+                            curve(curve38,y)} else if (x==as.character(product_info_list$product[1])|
+                                                       z %in% c("大学医院","人民医院","中日医院")){
+                              curve(curve39,y)} else{curve(35,y)}},
+                      product,real_sr_time,hospital)) %>%
+    dplyr::mutate(sr_sales_performance =
+                    (srsp_motivation_delta+pp_sr_sales_performance)*
                     ((weightage$sr_sales_performance)$motivation)+
-                    srsp_sales_skills_factor*pp_sr_sales_performance*
+                    (srsp_sales_skills_delta+pp_sr_sales_performance)*
                     ((weightage$sr_sales_performance)$sales_skills)+
-                    srsp_product_knowledge_factor*pp_sr_sales_performance*
+                    (srsp_product_knowledge_delta+pp_sr_sales_performance)*
                     ((weightage$sr_sales_performance)$product_knowledge)+
-                    srsp_time_with_account_factor*pp_sr_sales_performance*
+                    (srsp_time_with_account_delta+pp_sr_sales_performance)*
                     ((weightage$sr_sales_performance)$time_with_account))%>%
-    dplyr::mutate(dq_admin_work_delta = sapply(admin_work,function(x)curve(curve5,x)),
+    dplyr::mutate(sr_sales_performance = ifelse(sr_sales_performance<0,0,sr_sales_performance),
+                  dq_admin_work_delta = sapply(admin_work,function(x)curve(curve5,x)),
                   dq_meetings_with_team_delta =sapply(meetings_with_team,function(x)curve(curve7,x)),
                   dq_kpi_analysis_factor = sapply(kpi_analysis,function(x)curve(curve8,x)))%>%
     dplyr::mutate(deployment_quality_index = round(
@@ -242,15 +241,17 @@ calculation <- function(pp_data1,
                   ps_promotional_budget_factor = sapply(promotional_budget,function(x)curve(curve30,x))) %>%
     dplyr::mutate(promotional_support_index = 
                     pp_promotional_support_index*ps_promotional_budget_factor) %>%
-    dplyr::mutate(sp_field_work_delta = sapply(field_work_peraccount,function(x)curve(curve40,x)),
-                  sp_deployment_quality_factor = sapply(deployment_quality_index,function(x)curve(curve41,x))) %>%
+    dplyr::mutate(promotional_support_index = ifelse(promotional_support_index<0,0,promotional_support_index),
+                  sp_field_work_delta = sapply(field_work_peraccount,function(x)curve(curve40,x)),
+                  sp_deployment_quality_delta = sapply(deployment_quality_index,function(x)curve(curve41,x))) %>%
     dplyr::mutate(sales_performance = 
                     sr_sales_performance*((weightage$sales_performance)$sr_sales_performance)+
                     (pp_sales_performance+sp_field_work_delta)*
                     ((weightage$sales_performance)$field_work)+
-                    (pp_sales_performance*sp_deployment_quality_factor)*
+                    (pp_sales_performance+sp_deployment_quality_delta)*
                     ((weightage$sales_performance)$deployment_quality))%>%
-    dplyr::mutate(cr_product_knowledge_delta = 
+    dplyr::mutate(sales_performance = ifelse(sales_performance<0,0,sales_performance),
+                  cr_product_knowledge_delta = 
                     sapply(product_knowledge_index,function(x)curve(curve2,x)),
                   cr_promotional_support_delta = 
                     sapply(ps_promotional_budget_factor,function(x)curve(curve3,x)),
@@ -261,10 +262,7 @@ calculation <- function(pp_data1,
                     (weightage$customer_relaitonship)$product_knowledge+
                     (cr_pp_customer_relationship_index+cr_promotional_support_delta)*
                     (weightage$customer_relaitonship)$promotional_support) %>%
-    dplyr::mutate(customer_relationship_index=sapply(customer_relationship_index,
-                                                     function(x) ifelse(x<0,0,x))) %>%
-    # +cr_pp_customer_relationship_index*
-    #   (weightage$customer_relaitonship)$past_relationship) %>%
+    dplyr::mutate(customer_relationship_index=ifelse(customer_relationship_index<0,0,customer_relationship_index))%>%
     dplyr::mutate(oa_customer_relationship_factor = 
                     mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
                       curve(curve19,y)} else if(
@@ -276,9 +274,9 @@ calculation <- function(pp_data1,
                       product,customer_relationship_index),
                   oa_sales_performance_factor = sapply(sales_performance,function(x)curve(curve25,x))) %>%
     dplyr::mutate(cp_offer_attractiveness = 
-                    pp_offer_attractiveness*oa_customer_relationship_factor*
+                    oa_customer_relationship_factor*100*
                     (weightage$cp_offer_attractiveness)$customer_relationship+
-                    pp_offer_attractiveness*oa_sales_performance_factor*
+                    oa_sales_performance_factor*100*
                     (weightage$cp_offer_attractiveness)$sales_performance) %>%
     dplyr::mutate(cp_offer_attractiveness = ifelse(sales_rep==0,0,cp_offer_attractiveness),
                   offer_attractiveness = 

@@ -6141,29 +6141,7 @@ server=function(input, output, session) {
   output$p1_chk_data <- downloadHandler(
     filename = function() { paste("phase1", '.csv', sep='') },
     content = function(file) {
-      write.csv(select(tmp(),
-                       product_knowledge_index,
-                       sales_skills_index,
-                       motivation_index,
-                       sr_sales_performance,
-                       sales_performance,
-                       deployment_quality_index,
-                       promotional_support_index,
-                       customer_relationship_index,
-                       sales_performance,
-                       pp_product_knowledge_index,
-                       pp_sales_skills_index,
-                       pp_motivation_index,
-                       pp_sr_sales_performance,
-                       pp_sales_performance,
-                       pp_deployment_quality_index,
-                       pp_promotional_support_index,
-                       pp_customer_relationship_index,
-                       pp_sales_performance,
-                       oa_customer_relationship_factor,
-                       oa_sales_performance_factor,
-                       cp_offer_attractiveness)
-                , file)
+      write.csv(tmp(), file)
     }
   )
   

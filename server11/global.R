@@ -238,7 +238,8 @@ calculation <- function(pp_data1,
         ((weightage$deployment_quality)$meetings_with_team)+
         pp_deployment_quality_index*dq_kpi_analysis_factor*
         ((weightage$deployment_quality)$kpi_report_analysis)))%>%
-    dplyr::mutate(ps_promotional_budget_factor = sapply(promotional_budget,function(x)curve(curve30,x))) %>%
+    dplyr::mutate(deployment_quality_index = ifelse(deployment_quality_index<0,0,deployment_quality_index),
+                  ps_promotional_budget_factor = sapply(promotional_budget,function(x)curve(curve30,x))) %>%
     dplyr::mutate(promotional_support_index = 
                     pp_promotional_support_index*ps_promotional_budget_factor) %>%
     dplyr::mutate(sp_field_work_delta = sapply(field_work_peraccount,function(x)curve(curve40,x)),

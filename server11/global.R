@@ -151,17 +151,33 @@ calculation <- function(pp_data1,
   tmp2 <- left_join(cp_data2,pp_data2,by=c("sales_rep"))
   
   tmp <- left_join(tmp1,tmp2,by=c("phase","sales_rep")) %>%
+    dplyr::mutate(sales_rep = ifelse(sr_time_proportion==0,"0",sales_rep),
+                  sales_level = ifelse(sr_time_proportion==0,"0",sales_level),
+                  pp_real_volume_by_sr = ifelse(sr_time_proportion==0,0,pp_real_volume_by_sr),
+                  pp_real_revenue_by_sr = ifelse(sr_time_proportion==0,0,pp_real_revenue_by_sr),
+                  pp_sr_acc_revenue = ifelse(sr_time_proportion==0,0,pp_sr_acc_revenue),
+                  pp_sales_skills_index = ifelse(sr_time_proportion==0,0,pp_sales_skills_index),
+                  pp_product_knowledge_index = ifelse(sr_time_proportion==0,0,pp_product_knowledge_index),
+                  pp_motivation_index = ifelse(sr_time_proportion==0,0,pp_motivation_index),
+                  pp_sr_acc_field_work = ifelse(sr_time_proportion==0,0,pp_sr_acc_field_work),
+                  pp_target_revenue_realization_by_sr = ifelse(sr_time_proportion==0,0,pp_target_revenue_realization_by_sr),
+                  sales_training = ifelse(sr_time_proportion==0,0,sales_training),
+                  product_training = ifelse(sr_time_proportion==0,0,product_training),
+                  field_work = ifelse(sr_time_proportion==0,0,field_work),
+                  meetings_with_team = ifelse(sr_time_proportion==0,0,meetings_with_team),
+                  kpi_analysis = ifelse(sr_time_proportion==0,0,kpi_analysis),
+                  admin_work = ifelse(sr_time_proportion==0,0,admin_work),
+                  work_time = ifelse(sr_time_proportion==0,0,work_time)) %>%
     dplyr::mutate(product_price = sapply(product,function(x) product_info[which(product_info$类别==x),]$`单价（公司考核价）`),
-           target_revenue= sales_target,
-           target_volume = round(target_revenue/product_price)) %>%
+                  target_revenue= sales_target,
+                  target_volume = round(target_revenue/product_price)) %>%
     group_by(phase,sales_rep) %>%
     dplyr::mutate(other_time=work_time-(
-      # sales_training+
-             product_training+
-             meetings_with_team),
-           sr_time=sr_time_proportion*other_time,
-           no.hospitals = n_distinct(hospital),
-           sr_time_total=sum(sr_time,na.rm=T)) %>%
+      product_training+
+        meetings_with_team),
+      sr_time=sr_time_proportion*other_time,
+      no.hospitals = n_distinct(hospital),
+      sr_time_total=sum(sr_time,na.rm=T)) %>%
     ungroup %>%
     group_by(phase,hospital) %>%
     dplyr::mutate(sr_time_by_hosp=sum(sr_time,na.rm=T)) %>%
@@ -188,33 +204,33 @@ calculation <- function(pp_data1,
       product_knowledge_index = round(
         product_knowledge_addition_current_period+
           pp_product_knowledge_index)
-          #product_knowledge_transfer_value),
+      #product_knowledge_transfer_value),
     ) %>%
     dplyr::mutate(srsp_motivation_factor = sapply(pp_motivation_index,function(x)curve(curve32,x)),
-           srsp_sales_skills_factor = sapply(sales_skills_index,function(x)curve(curve34,x)),
-           srsp_product_knowledge_factor = sapply(product_knowledge_index,
-                                                  function(x)curve(curve33,x)),
-           srsp_time_with_account_factor = 
-             mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
-               curve(curve35,y)} else if(
-                 x==as.character(product_info_list$product[2])){
-                 curve(curve36,y)} else if (
-                   x==as.character(product_info_list$product[3])) {
-                   curve(curve37,y)} else {
-                     curve(curve38,y)}},
-               product,real_sr_time)) %>%
+                  srsp_sales_skills_factor = sapply(sales_skills_index,function(x)curve(curve34,x)),
+                  srsp_product_knowledge_factor = sapply(product_knowledge_index,
+                                                         function(x)curve(curve33,x)),
+                  srsp_time_with_account_factor = 
+                    mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
+                      curve(curve35,y)} else if(
+                        x==as.character(product_info_list$product[2])){
+                        curve(curve36,y)} else if (
+                          x==as.character(product_info_list$product[3])) {
+                          curve(curve37,y)} else {
+                            curve(curve38,y)}},
+                      product,real_sr_time)) %>%
     dplyr::mutate(sr_sales_performance = 
-             srsp_motivation_factor*pp_sr_sales_performance*
-             ((weightage$sr_sales_performance)$motivation)+
-             srsp_sales_skills_factor*pp_sr_sales_performance*
-             ((weightage$sr_sales_performance)$sales_skills)+
-             srsp_product_knowledge_factor*pp_sr_sales_performance*
-             ((weightage$sr_sales_performance)$product_knowledge)+
-             srsp_time_with_account_factor*pp_sr_sales_performance*
-             ((weightage$sr_sales_performance)$time_with_account))%>%
+                    srsp_motivation_factor*pp_sr_sales_performance*
+                    ((weightage$sr_sales_performance)$motivation)+
+                    srsp_sales_skills_factor*pp_sr_sales_performance*
+                    ((weightage$sr_sales_performance)$sales_skills)+
+                    srsp_product_knowledge_factor*pp_sr_sales_performance*
+                    ((weightage$sr_sales_performance)$product_knowledge)+
+                    srsp_time_with_account_factor*pp_sr_sales_performance*
+                    ((weightage$sr_sales_performance)$time_with_account))%>%
     dplyr::mutate(dq_admin_work_delta = sapply(admin_work,function(x)curve(curve5,x)),
-           dq_meetings_with_team_delta =sapply(meetings_with_team,function(x)curve(curve7,x)),
-           dq_kpi_analysis_factor = sapply(kpi_analysis,function(x)curve(curve8,x)))%>%
+                  dq_meetings_with_team_delta =sapply(meetings_with_team,function(x)curve(curve7,x)),
+                  dq_kpi_analysis_factor = sapply(kpi_analysis,function(x)curve(curve8,x)))%>%
     dplyr::mutate(deployment_quality_index = round(
       (pp_deployment_quality_index+dq_admin_work_delta)*
         ((weightage$deployment_quality)$admin_work)+
@@ -224,97 +240,99 @@ calculation <- function(pp_data1,
         ((weightage$deployment_quality)$kpi_report_analysis)))%>%
     dplyr::mutate(ps_promotional_budget_factor = sapply(promotional_budget,function(x)curve(curve30,x))) %>%
     dplyr::mutate(promotional_support_index = 
-             pp_promotional_support_index*ps_promotional_budget_factor) %>%
+                    pp_promotional_support_index*ps_promotional_budget_factor) %>%
     dplyr::mutate(sp_field_work_delta = sapply(field_work_peraccount,function(x)curve(curve40,x)),
-           sp_deployment_quality_factor = sapply(deployment_quality_index,function(x)curve(curve41,x))) %>%
+                  sp_deployment_quality_factor = sapply(deployment_quality_index,function(x)curve(curve41,x))) %>%
     dplyr::mutate(sales_performance = 
-             sr_sales_performance*((weightage$sales_performance)$sr_sales_performance)+
-             (pp_sales_performance+sp_field_work_delta)*
-             ((weightage$sales_performance)$field_work)+
-             (pp_sales_performance*sp_deployment_quality_factor)*
-             ((weightage$sales_performance)$deployment_quality))%>%
+                    sr_sales_performance*((weightage$sales_performance)$sr_sales_performance)+
+                    (pp_sales_performance+sp_field_work_delta)*
+                    ((weightage$sales_performance)$field_work)+
+                    (pp_sales_performance*sp_deployment_quality_factor)*
+                    ((weightage$sales_performance)$deployment_quality))%>%
     dplyr::mutate(cr_product_knowledge_delta = 
-             sapply(product_knowledge_index,function(x)curve(curve2,x)),
-           cr_promotional_support_delta = 
-             sapply(ps_promotional_budget_factor,function(x)curve(curve3,x)),
-           cr_pp_customer_relationship_index = 
-             sapply(pp_customer_relationship_index,function(x)curve(curve4,x)))%>%
+                    sapply(product_knowledge_index,function(x)curve(curve2,x)),
+                  cr_promotional_support_delta = 
+                    sapply(ps_promotional_budget_factor,function(x)curve(curve3,x)),
+                  cr_pp_customer_relationship_index = 
+                    sapply(pp_customer_relationship_index,function(x)curve(curve4,x)))%>%
     dplyr::mutate(customer_relationship_index = 
-      (cr_pp_customer_relationship_index+cr_product_knowledge_delta)*
-        (weightage$customer_relaitonship)$product_knowledge+
-        (cr_pp_customer_relationship_index+cr_promotional_support_delta)*
-        (weightage$customer_relaitonship)$promotional_support) %>%
+                    (cr_pp_customer_relationship_index+cr_product_knowledge_delta)*
+                    (weightage$customer_relaitonship)$product_knowledge+
+                    (cr_pp_customer_relationship_index+cr_promotional_support_delta)*
+                    (weightage$customer_relaitonship)$promotional_support) %>%
     dplyr::mutate(customer_relationship_index=sapply(customer_relationship_index,
                                                      function(x) ifelse(x<0,0,x))) %>%
-      # +cr_pp_customer_relationship_index*
-      #   (weightage$customer_relaitonship)$past_relationship) %>%
+    # +cr_pp_customer_relationship_index*
+    #   (weightage$customer_relaitonship)$past_relationship) %>%
     dplyr::mutate(oa_customer_relationship_factor = 
-             mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
-               curve(curve19,y)} else if(
-                 x==as.character(product_info_list$product[2])){
-                 curve(curve20,y)} else if (
-                   x==as.character(product_info_list$product[3])) {
-                   curve(curve21,y)} else {
-                     curve(curve22,y)}},
-               product,customer_relationship_index),
-           oa_sales_performance_factor = sapply(sales_performance,function(x)curve(curve25,x))) %>%
+                    mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
+                      curve(curve19,y)} else if(
+                        x==as.character(product_info_list$product[2])){
+                        curve(curve20,y)} else if (
+                          x==as.character(product_info_list$product[3])) {
+                          curve(curve21,y)} else {
+                            curve(curve22,y)}},
+                      product,customer_relationship_index),
+                  oa_sales_performance_factor = sapply(sales_performance,function(x)curve(curve25,x))) %>%
     dplyr::mutate(cp_offer_attractiveness = 
-             pp_offer_attractiveness*oa_customer_relationship_factor*
-             (weightage$cp_offer_attractiveness)$customer_relationship+
-             pp_offer_attractiveness*oa_sales_performance_factor*
-             (weightage$cp_offer_attractiveness)$sales_performance) %>%
-    dplyr::mutate(offer_attractiveness = 
+                    pp_offer_attractiveness*oa_customer_relationship_factor*
+                    (weightage$cp_offer_attractiveness)$customer_relationship+
+                    pp_offer_attractiveness*oa_sales_performance_factor*
+                    (weightage$cp_offer_attractiveness)$sales_performance) %>%
+    dplyr::mutate(cp_offer_attractiveness = ifelse(sales_rep==0,0,cp_offer_attractiveness),
+                  offer_attractiveness = 
                     cp_offer_attractiveness*(weightage$total_attractiveness)$cp_offer_attractiveness+
-                            pp_offer_attractiveness*(weightage$total_attractiveness)$pp_offer_attractiveness,
-           acc_offer_attractiveness = round(pp_acc_offer_attractiveness+offer_attractiveness),
-           market_share =  mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
-             curve(curve51_1,y)} else if(
-               x==as.character(product_info_list$product[2])){
-               curve(curve51_2,y)} else if (
-                 x==as.character(product_info_list$product[3])) {
-                 curve(curve51_2,y)} else {
-                   curve(curve51_3,y)}},
-             product,offer_attractiveness),
-           real_revenue = round(market_share/100*potential_revenue),
-           real_volume = round(real_revenue/product_price)) %>%
+                    pp_offer_attractiveness*(weightage$total_attractiveness)$pp_offer_attractiveness,
+                  acc_offer_attractiveness = round(pp_acc_offer_attractiveness+offer_attractiveness),
+                  market_share =  mapply(function(x,y){if (x==as.character(product_info_list$product[1])){
+                    curve(curve51_1,y)} else if(
+                      x==as.character(product_info_list$product[2])){
+                      curve(curve51_2,y)} else if (
+                        x==as.character(product_info_list$product[3])) {
+                        curve(curve51_2,y)} else {
+                          curve(curve51_3,y)}},
+                    product,offer_attractiveness),
+                  real_revenue = round(market_share/100*potential_revenue),
+                  real_volume = round(real_revenue/product_price)) %>%
     ungroup() %>%
     dplyr::group_by(phase,sales_rep) %>%
     dplyr::mutate(target_revenue_by_sr = sum(target_revenue,na.rm=T),
-           real_revenue_by_sr = sum(real_revenue,na.rm=T),
-           target_revenue_realization_by_sr = round(real_revenue_by_sr/target_revenue_by_sr*100,2),
-           target_volume_by_sr = sum(target_volume,na.rm=T),
-           real_volume_by_sr = sum(real_volume,na.rm=T),
-           target_volume_realization_by_sr = round(real_volume_by_sr/target_volume_by_sr*100,2),
-           #incentive_factor = sapply(target_revenue_realization_by_sr, function(x) curve(curve10,x)),
-           bonus = #round(0.03*ifelse(target_revenue_realization_by_sr>=90 & target_revenue_realization_by_sr<=120,
-                                     #target_revenue_realization_by_sr,
-                                     #0)/100*real_revenue_by_sr),
-             mapply(function(x,y) {if (x >= 90 & x <= 120){
-               round(x/100*y*0.03)} else if(x >120) {
-                 round(1.2*y*0.03)} else {0}},
-               target_revenue_realization_by_sr,real_revenue_by_sr),
-           sr_acc_revenue = real_revenue_by_sr+pp_sr_acc_revenue,
-           experience_index = sapply(sr_acc_revenue, function(x) round(curve(curve11,x),2)),
-           m_meeting_with_team_delta =  mapply(function(x,y){
-             if (x == "junior") {
-               curve(curve13,y)
-             } else if(x=="middle"){
-               curve(curve14,y)
-             } else {curve(curve15,y)}
-           },sales_level,
-           meetings_with_team,SIMPLIFY=T),
-           m_sales_target_realization_delta = sapply(target_revenue_realization_by_sr,function(x)curve(curve16,x)),
-           motivation_index = round(
-             (pp_motivation_index+m_admin_work_delta)*
-               ((weightage$motivation)$admin_work)+
-               (pp_motivation_index+m_sales_target_realization_delta)*
-               ((weightage$motivation)$sales_target_realization)+
-               (pp_motivation_index+m_meeting_with_team_delta)*
-               ((weightage$motivation)$meetings_with_team)+
-               (pp_motivation_index+m_sales_training_delta)*
-               ((weightage$motivation)$sales_training))) %>%
+                  real_revenue_by_sr = sum(real_revenue,na.rm=T),
+                  target_revenue_realization_by_sr = round(real_revenue_by_sr/target_revenue_by_sr*100,2),
+                  target_volume_by_sr = sum(target_volume,na.rm=T),
+                  real_volume_by_sr = sum(real_volume,na.rm=T),
+                  target_volume_realization_by_sr = round(real_volume_by_sr/target_volume_by_sr*100,2),
+                  bonus = mapply(function(x,y) {if(is.nan(x)) {
+                    0} else if (x >= 90 & x <= 120){
+                      round(x/100*y*0.03)} else if(x >120) {
+                        round(1.2*y*0.03)} else {0}},
+                    target_revenue_realization_by_sr,real_revenue_by_sr),
+                  sr_acc_revenue = real_revenue_by_sr+pp_sr_acc_revenue,
+                  experience_index = sapply(sr_acc_revenue, function(x) round(curve(curve11,x),2)),
+                  m_meeting_with_team_delta =  mapply(function(x,y){
+                    if (x == "junior") {
+                      curve(curve13,y)
+                    } else if(x=="middle"){
+                      curve(curve14,y)
+                    } else if(x=="senior"){
+                      curve(curve15,y)
+                    } else{0}
+                  },sales_level,
+                  meetings_with_team,SIMPLIFY=T),
+                  m_sales_target_realization_delta = sapply(target_revenue_realization_by_sr,function(x) 
+                    if (!is.nan(x)) {curve(curve16,x)} else {0}),
+                  motivation_index = round(
+                    (pp_motivation_index+m_admin_work_delta)*
+                      ((weightage$motivation)$admin_work)+
+                      (pp_motivation_index+m_sales_target_realization_delta)*
+                      ((weightage$motivation)$sales_target_realization)+
+                      (pp_motivation_index+m_meeting_with_team_delta)*
+                      ((weightage$motivation)$meetings_with_team)+
+                      (pp_motivation_index+m_sales_training_delta)*
+                      ((weightage$motivation)$sales_training))) %>%
+    dplyr::mutate(motivation_index=ifelse(sales_rep==0,0,motivation_index)) %>%
     ungroup()
-             
+  
   
   tmp
 }
@@ -347,14 +365,15 @@ get.data1 <- function(input,phase){
       data_decision <- plyr::rbind.fill(data_decision,data.frame(
         phase = name.phase,
         hospital = name.hospital,
-        sales_rep = name.sales_rep, 
+        sales_rep = ifelse(name.sales_rep=="",0,name.sales_rep), 
         product = name.product,
         sales_target = ifelse(is.na(value.sales_target),0,value.sales_target),
         potential_revenue = hospital_info[which(hospital_info$phase==name.phase&
                                                  hospital_info$名称==name.hospital&
                                                  hospital_info$产品==name.product),]$`潜力(元)`,
         promotional_budget = ifelse(is.na(value.promotional_budget),0,value.promotional_budget),
-        sr_time_proportion = ifelse(is.na(value.sr_time_proportion),0,value.sr_time_proportion)
+        sr_time_proportion = ifelse(is.null(name.sales_rep)|is.na(value.sr_time_proportion),
+                                    0,value.sr_time_proportion)
       ))
     }}
   data_decision
@@ -390,6 +409,19 @@ get.data2 <- function(input,phase){
     value.admin_work <- as.numeric(
       input[[paste("p",phase,"_flm_admin_work",sep="")]])
     
+    if (name.sales_rep==""){
+      data_decision2 <- plyr::rbind.fill(data_decision2,data.frame(
+        phase = as.character(paste("周期",phase,sep="")),
+        sales_rep = 0,
+        sales_training = 0,
+        product_training = 0,
+        field_work = 0,
+        meetings_with_team = 0,
+        kpi_analysis = 0,
+        admin_work = 0,
+        work_time = 0))
+    } else{
+    
     data_decision2 <- plyr::rbind.fill(data_decision2,data.frame(
       phase = as.character(paste("周期",phase,sep="")),
       sales_rep = name.sales_rep,
@@ -400,7 +432,7 @@ get.data2 <- function(input,phase){
       kpi_analysis = ifelse(is.na(value.kpi_analysis),0,value.kpi_analysis),
       admin_work = ifelse(is.na(value.admin_work),0,value.admin_work),
       work_time = worktime
-    ))
+    ))}
   }
   data_decision2
 }
@@ -428,16 +460,18 @@ get.data3 <- function(input,phase){
 report_data <- function(tmp,flm_data,null_report) {
   
   tmp <- tmp %>% 
+    dplyr::mutate(product = factor(product,levels=c("口服抗生素",
+                                                    "一代降糖药",
+                                                    "三代降糖药",
+                                                    "皮肤药"))) 
+  report1 <- tmp %>%
+    filter(sales_rep!="0") %>%
     dplyr::mutate(sales_rep=factor(sales_rep,levels = c("小宋",
                                                         "小兰",
                                                         "小白",
                                                         "小木",
-                                                        "小青")),
-                  product = factor(product,levels=c("口服抗生素",
-                                                    "一代降糖药",
-                                                    "三代降糖药",
-                                                    "皮肤药"))) 
-  report1_mod1 <- tmp %>%
+                                                        "小青")))
+  report1_mod1 <- report1 %>%
     group_by(sales_rep) %>%
     dplyr::mutate(visit_time=round(sum(real_sr_time,na.rm=T)),
                   total_sr_time=round(overhead_time+
@@ -487,7 +521,7 @@ report_data <- function(tmp,flm_data,null_report) {
   
   
   
-  report1_mod2 <- tmp %>%
+  report1_mod2 <- report1 %>%
     select(sales_rep,
            pp_product_knowledge_index,
            product_knowledge_index) %>%
@@ -504,7 +538,7 @@ report_data <- function(tmp,flm_data,null_report) {
   rownames(report1_mod2) <- report1_mod2$variable
   report1_mod2 <- report1_mod2 %>% select(-variable)
   
-  report1_mod3 <- tmp %>%
+  report1_mod3 <- report1 %>%
     select(pp_experience_index,
            #real_revenue_by_sr,
            #sr_acc_revenue,
@@ -525,7 +559,7 @@ report_data <- function(tmp,flm_data,null_report) {
   
   
   
-  report1_mod4 <- tmp%>%
+  report1_mod4 <- report1%>%
     select(sales_rep,
            pp_sales_skills_index,
            sales_skills_index) %>%
@@ -540,7 +574,7 @@ report_data <- function(tmp,flm_data,null_report) {
   rownames(report1_mod4) <- report1_mod4$variable
   report1_mod4 <- report1_mod4 %>% select(-variable)
   
-  report1_mod5 <- tmp %>%
+  report1_mod5 <- report1 %>%
     select(sales_rep,
            pp_motivation_index,
            motivation_index) %>%
@@ -874,11 +908,12 @@ report_data <- function(tmp,flm_data,null_report) {
     select(-`医院`)
   
   report6_mod2_rank <- data.frame(
-    sales_rep=c(sr_info_list$sales_rep,"总体"),
+    sales_rep=c(sr_info$`业务代表`,"总体"),
     rep_code=1:6
   )
   
   report6_mod2 <- tmp %>%
+    filter(sales_rep!=0) %>%
     select(sales_rep,
            real_revenue_by_sr,
            pp_real_revenue_by_sr,
@@ -967,8 +1002,9 @@ report_data <- function(tmp,flm_data,null_report) {
            real_revenue,
            pp_acc_success_value) %>%
     distinct() %>%
-    dplyr::mutate(total_revenue = round(sum(real_revenue,na.rm=T),2),
-                  average_customer_relationship_index = round(mean(customer_relationship_index,na.rm=T),2),
+    dplyr::mutate(total_revenue = round(sum(real_revenue,na.rm=T),2)) %>%
+    filter(sales_rep!="0") %>%
+    dplyr::mutate(average_customer_relationship_index = round(mean(customer_relationship_index,na.rm=T),2),
                   average_sales_skills_index = round(mean(sales_skills_index,na.rm=T),2),
                   average_product_knowledge_index = round(mean(product_knowledge_index,na.rm=T),2),
                   average_motivation_index = round(mean(motivation_index,na.rm=T),2),

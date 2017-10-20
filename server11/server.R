@@ -272,7 +272,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp1",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -395,7 +395,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp2",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -517,7 +517,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp3",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -642,7 +642,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp4",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -765,7 +765,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp5",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -889,7 +889,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp6",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -1012,7 +1012,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp7",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -1136,7 +1136,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp8",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -1259,7 +1259,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp9",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -1383,7 +1383,7 @@ mainbody <- div(
                        selectizeInput(
                          "p1_sr_hosp10",
                          label = NULL,
-                         choices = sr_info$业务代表,
+                         choices = c("",sr_info$业务代表),
                          selected = NULL
                        )
                      )
@@ -1577,7 +1577,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp1",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -1699,7 +1699,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp2",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -1822,7 +1822,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp3",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -1945,7 +1945,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp4",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -2068,7 +2068,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp5",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -2192,7 +2192,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp6",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -2314,7 +2314,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp7",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -2436,7 +2436,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp8",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -2557,7 +2557,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp9",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -2679,7 +2679,7 @@ mainbody <- div(
                       selectizeInput(
                         "p2_sr_hosp10",
                         label = NULL,
-                        choices = sr_info$业务代表,
+                        choices = c("",sr_info$业务代表),
                         selected = NULL
                       )
                     )
@@ -5357,12 +5357,12 @@ server=function(input, output, session) {
   p0_report <- reactive({
     if (
       
-      p0_calculator_result()[1] <=100 &
-      p0_calculator_result()[2] <=100 &
-      p0_calculator_result()[3] <=100 &
-      p0_calculator_result()[4] <=100 &
-      p0_calculator_result()[5] <=100 &
-      p0_calculator_result()[6] <=100 &
+      p0_calculator_result()[1]>0&p0_calculator_result()[1] <=100 &
+      p0_calculator_result()[2]>0&p0_calculator_result()[2] <=100 &
+      p0_calculator_result()[3]>0&p0_calculator_result()[3] <=100 &
+      p0_calculator_result()[4]>0&p0_calculator_result()[4] <=100 &
+      p0_calculator_result()[5]>0&p0_calculator_result()[5] <=100 &
+      p0_calculator_result()[6]>0&p0_calculator_result()[6] <=100 &
       sum(p0_flm_data()) <=worktime
     ) {
       p0_report <- report_data(tmp0(),p0_flm_data(),null_report7)
@@ -5954,12 +5954,12 @@ server=function(input, output, session) {
   
   observeEvent(input$decision2_phase1_submit,{
     if (
-      p1_calculator_result()[1] >100 |
-      p1_calculator_result()[2] >100 |
-      p1_calculator_result()[3] >100 |
-      p1_calculator_result()[4] >100 |
-      p1_calculator_result()[5] >100 |
-      p1_calculator_result()[6] >100 |
+      p1_calculator_result()[1] >100 | p1_calculator_result()[1]==0|
+      p1_calculator_result()[2] >100 | p1_calculator_result()[2]==0|
+      p1_calculator_result()[3] >100 | p1_calculator_result()[3]==0|
+      p1_calculator_result()[4] >100 | p1_calculator_result()[4]==0|
+      p1_calculator_result()[5] >100 | p1_calculator_result()[5]==0|
+      p1_calculator_result()[6] >100 | p1_calculator_result()[6]==0|
       sum(p1_flm_data()) >worktime
     ) {
       shinyjs::alert("推广预算分配或是时间分配超出最大值！！")
@@ -6117,12 +6117,12 @@ server=function(input, output, session) {
   p1_report <- eventReactive(input$decision2_phase1_submit,{
     if (
       
-      p1_calculator_result()[1] <=100 &
-      p1_calculator_result()[2] <=100 &
-      p1_calculator_result()[3] <=100 &
-      p1_calculator_result()[4] <=100 &
-      p1_calculator_result()[5] <=100 &
-      p1_calculator_result()[6] <=100 &
+      p1_calculator_result()[1]>0&p1_calculator_result()[1] <=100 &
+      p1_calculator_result()[2]>0&p1_calculator_result()[2] <=100 &
+      p1_calculator_result()[3]>0&p1_calculator_result()[3] <=100 &
+      p1_calculator_result()[4]>0&p1_calculator_result()[4] <=100 &
+      p1_calculator_result()[5]>0&p1_calculator_result()[5] <=100 &
+      p1_calculator_result()[6]>0&p1_calculator_result()[6] <=100 &
       sum(p1_flm_data()) <=worktime
     ) {
       p1_report <- report_data(tmp(),p1_flm_data(),p0_report()$report7_mod1)
@@ -6864,12 +6864,12 @@ server=function(input, output, session) {
   observeEvent(input$decision2_phase2_submit, {
     
     if (
-      p2_calculator_result()[1] >100 |
-      p2_calculator_result()[2] >100 |
-      p2_calculator_result()[3] >100 |
-      p2_calculator_result()[4] >100 |
-      p2_calculator_result()[5] >100 |
-      p2_calculator_result()[6] >100 |
+      p2_calculator_result()[1] >100 | p2_calculator_result()[1]==0|
+      p2_calculator_result()[2] >100 | p2_calculator_result()[2]==0|
+      p2_calculator_result()[3] >100 | p2_calculator_result()[3]==0|
+      p2_calculator_result()[4] >100 | p2_calculator_result()[4]==0|
+      p2_calculator_result()[5] >100 | p2_calculator_result()[5]==0|
+      p2_calculator_result()[6] >100 | p2_calculator_result()[6]==0|
       sum(p2_flm_data()) >worktime
     ) {
       shinyjs::alert("推广预算分配或是时间分配超出最大值！！")
@@ -7032,12 +7032,12 @@ server=function(input, output, session) {
   p2_report<- eventReactive(input$decision2_phase2_submit,{
     if (
       
-      p2_calculator_result()[1] <=100 &
-      p2_calculator_result()[2] <=100 &
-      p2_calculator_result()[3] <=100 &
-      p2_calculator_result()[4] <=100 &
-      p2_calculator_result()[5] <=100 &
-      p2_calculator_result()[6] <=100 &
+      p2_calculator_result()[1] <=100 & p2_calculator_result()[1]>0&
+      p2_calculator_result()[2] <=100 & p2_calculator_result()[2]>0&
+      p2_calculator_result()[3] <=100 & p2_calculator_result()[3]>0&
+      p2_calculator_result()[4] <=100 & p2_calculator_result()[4]>0&
+      p2_calculator_result()[5] <=100 & p2_calculator_result()[5]>0&
+      p2_calculator_result()[6] <=100 & p2_calculator_result()[6]>0&
       sum(p2_flm_data(),na.rm=T) <=worktime
     ) {
       p2_report <- report_data(tmp2(),p2_flm_data(),p1_report()$report7_mod1)

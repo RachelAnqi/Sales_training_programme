@@ -25,7 +25,7 @@ sr_info_list <- data.frame(
   sr_info[,5:13],
   stringsAsFactors = F
 )
-
+sr_info_list <- rbind(sr_info_list,c(NULL,NULL,0,0,0,0,0,0,0,0))
 
 
 worktime =100

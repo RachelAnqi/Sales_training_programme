@@ -1591,7 +1591,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_1",
                         label = NULL,
-                        value = "6"
+                        value = ""
                       )
                     ),
                     tags$div(
@@ -1599,7 +1599,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_2",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1608,7 +1608,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1617,7 +1617,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_4",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     )
@@ -1713,7 +1713,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_1",
                         label = NULL,
-                        value = "6"
+                        value = ""
                       )
                     ),
                     tags$div(
@@ -1721,7 +1721,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_2",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1730,7 +1730,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1739,7 +1739,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_4",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     )
@@ -1836,7 +1836,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_1",
                         label = NULL,
-                        value = "6"
+                        value = ""
                       )
                     ),
                     tags$div(
@@ -1844,7 +1844,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_2",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1853,7 +1853,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1862,7 +1862,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_4",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     )
@@ -2588,7 +2588,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp9_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -2726,1313 +2726,8 @@ mainbody <- div(
                   )
                 )
             )
-          )),
-        hidden(
-          tabPanel(title="周期0",
-                        value="phase0",
-                        hidden(checkboxInput("hide1", "Show tab2", FALSE)),
-                        br(),
-                        #selectInput(inputId = "hide1",chices="yes",selected="yes"),
-                        
-                        #fluidRow(
-                        # h3("总推广预算(元)"),
-                        box(title = "总推广预算(元)",
-                            status = "primary",
-                            solidHeader = TRUE,
-                            width="100%",
-                            
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       "经理指标(元)"),
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                       verbatimTextOutput("p0_flm_sales_target"))
-                            ),
-                            
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       "总推广预算(元)"),
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                       verbatimTextOutput("p0_total_promotional_budget"))
-                            ),
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       "已分配的推广预算(%)"),
-                              tags$div(
-                                style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                verbatimTextOutput("p0_arranged_promotional_budget")
-                              )
-                            ),
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       paste("已分配时间 ",sr_info$业务代表[1],"(%)",sep="")),
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                       verbatimTextOutput("p0_arranged_time_of_sr1"))
-                            ),
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       paste("已分配时间 ",sr_info$业务代表[2],"(%)",sep="")),
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                       verbatimTextOutput("p0_arranged_time_of_sr2"))
-                            ),
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       paste("已分配时间 ",sr_info$业务代表[3],"(%)",sep="")),
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                       verbatimTextOutput("p0_arranged_time_of_sr3"))
-                            ),
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       paste("已分配时间 ",sr_info$业务代表[4],"(%)",sep="")),
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                       verbatimTextOutput("p0_arranged_time_of_sr4"))
-                            ),
-                            tags$div(
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                       paste("已分配时间 ",sr_info$业务代表[5],"(%)",sep="")),
-                              tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left",
-                                       verbatimTextOutput("p0_arranged_time_of_sr5"))
-                            )
-                        ),
-                        
-                        br(),
-                        box(
-                          title=unique(hospital_info$名称)[1],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          
-                          #fluidRow(  
-                          
-                          #h3("决策-医院1"),
-                          #h3(hospital_info$hospital[1]),
-                          #htmlOutput(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp1_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp1_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp1_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp1_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp1", 
-                                               label = NULL,
-                                               value="22"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp1_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp1_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp1_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp1_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp1_sales_target_1",label = NULL, value="1500000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp1_sales_target_2",label = NULL, value="200000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp1_sales_target_3",label = NULL, value="270000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     disabled(textInput("p0_hosp1_sales_target_4",label = NULL, value="")))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp1",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小宋"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp1_worktime_1",
-                                label = NULL,
-                                value = "50"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp1_worktime_2",
-                                label = NULL,
-                                value = "15"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp1_worktime_3",
-                                label = NULL,
-                                value = "17"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              disabled(textInput(
-                                "p0_hosp1_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                              ))
-                          )
-                        ),
-                        br(),
-                        # fluidRow(
-                        #   h3("决策-医院2"),
-                        box(
-                          title=unique(hospital_info$名称)[2],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp2_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp2_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp2_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp2_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp2", 
-                                               label = NULL,
-                                               value="7"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp2_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp2_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp2_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp2_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp2_sales_target_1",label = NULL, value="470000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp2_sales_target_2",label = NULL, value="205000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp2_sales_target_3",label = NULL, value="83000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     disabled(textInput("p0_hosp2_sales_target_4",label = NULL, value="")))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp2",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小白"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp2_worktime_1",
-                                label = NULL,
-                                value = "25"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp2_worktime_2",
-                                label = NULL,
-                                value = "15"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp2_worktime_3",
-                                label = NULL,
-                                value = "5"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              disabled(textInput(
-                                "p0_hosp2_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                              ))
-                          )
-                        ),
-                        br(),
-                        # fluidRow(
-                        #   h3("决策-医院3"),
-                        box(
-                          title=unique(hospital_info$名称)[3],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp3_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp3_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp3_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp3_4"))
-                          ),
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp3", 
-                                               label = NULL,
-                                               value="14"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp3_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp3_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp3_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp3_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp3_sales_target_1",label = NULL, value="895000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp3_sales_target_2",label = NULL, value="148000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp3_sales_target_3",label = NULL, value="36800")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     disabled(textInput("p0_hosp3_sales_target_4",label = NULL, value="")))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp3",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = '小青'
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp3_worktime_1",
-                                label = NULL,
-                                value = "48"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp3_worktime_2",
-                                label = NULL,
-                                value = "15"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp3_worktime_3",
-                                label = NULL,
-                                value = "5"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              disabled(textInput(
-                                "p0_hosp3_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                              ))
-                          )
-                          
-                          
-                        ),
-                        br(),
-                        # fluidRow(
-                        #   h3("决策-医院4"),
-                        box(
-                          title=unique(hospital_info$名称)[4],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp4_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp4_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp4_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp4_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp4", 
-                                               label = NULL,
-                                               value="11"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp4_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp4_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp4_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp4_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp4_sales_target_1",label = NULL, value="940000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp4_sales_target_2",label = NULL, value="180000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp4_sales_target_3",label = NULL, value="90000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     disabled(textInput("p0_hosp4_sales_target_4",label = NULL, value="")))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp4",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小白"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp4_worktime_1",
-                                label = NULL,
-                                value = "40"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp4_worktime_2",
-                                label = NULL,
-                                value = "10"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp4_worktime_3",
-                                label = NULL,
-                                value = "5"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              disabled(textInput(
-                                "p0_hosp4_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                              ))
-                          )
-                        ),
-                        br(),
-                        # fluidRow(
-                        #   h3("决策-医院5"),
-                        box(
-                          title=unique(hospital_info$名称)[5],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp5_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp5_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp5_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp5_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp5", 
-                                               label = NULL,
-                                               value="4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp5_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp5_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp5_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp5_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp5_sales_target_1",label = NULL, value="265000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp5_sales_target_2",label = NULL, value="105000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp5_sales_target_3",label = NULL, value="33000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     disabled(textInput("p0_hosp5_sales_target_4",label = NULL, value="")))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp5",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小青"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp5_worktime_1",
-                                label = NULL,
-                                value = "16"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp5_worktime_2",
-                                label = NULL,
-                                value = "10"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp5_worktime_3",
-                                label = NULL,
-                                value = "6"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp5_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                            )
-                          )
-                        ),
-                        br(),
-                        
-                        # fluidRow(
-                        #   h3("决策-医院6"),
-                        box(
-                          title=unique(hospital_info$名称)[6],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp6_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp6_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp6_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp6_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp6", 
-                                               label = NULL,
-                                               value="7"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp6_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp6_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp6_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp6_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp6_sales_target_1",label = NULL, value="650000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp6_sales_target_2",label = NULL, value="170000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp6_sales_target_3",label = NULL, value="47000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp6_sales_target_4",label = NULL, value=""))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp6",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小木"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp6_worktime_1",
-                                label = NULL,
-                                value = "35"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp6_worktime_2",
-                                label = NULL,
-                                value = "15"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp6_worktime_3",
-                                label = NULL,
-                                value = "5"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp6_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                            )
-                          )
-                        ),
-                        br(),
-                        # fluidRow(
-                        #   h3("决策-医院7"),
-                        box(
-                          title=unique(hospital_info$名称)[7],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp7_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp7_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp7_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp7_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp7", 
-                                               label = NULL,
-                                               value="7"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp7_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp7_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp7_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp7_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp7_sales_target_1",label = NULL, value="500000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp7_sales_target_2",label = NULL, value="160000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp7_sales_target_3",label = NULL, value="30000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp7_sales_target_4",label = NULL, value=""))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp7",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小木"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp7_worktime_1",
-                                label = NULL,
-                                value = "30"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp7_worktime_2",
-                                label = NULL,
-                                value = "10"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp7_worktime_3",
-                                label = NULL,
-                                value = "5"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp7_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                            )
-                          )
-                        ),
-                        br(),
-                        
-                        # fluidRow(
-                        #   h3("决策-医院8"),
-                        box(
-                          title=unique(hospital_info$名称)[8],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp8_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp8_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp8_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp8_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp8", 
-                                               label = NULL,
-                                               value="2"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp8_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp8_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp8_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp8_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp8_sales_target_1",label = NULL, value="170000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp8_sales_target_2",label = NULL, value="60000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp8_sales_target_3",label = NULL, value="8000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp8_sales_target_4",label = NULL, value=""))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp8",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小宋"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp8_worktime_1",
-                                label = NULL,
-                                value = "10"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp8_worktime_2",
-                                label = NULL,
-                                value = "5"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp8_worktime_3",
-                                label = NULL,
-                                value = "3"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp8_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                            )
-                          )
-                        ),
-                        br(),
-                        # fluidRow(
-                        #   h3("决策-医院9"),
-                        box(
-                          title=unique(hospital_info$名称)[9],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp9_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp9_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp9_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp9_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp9", 
-                                               label = NULL,
-                                               value="2"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp9_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp9_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp9_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp9_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp9_sales_target_1",label = NULL, value="170000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp9_sales_target_2",label = NULL, value="70000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp9_sales_target_3",label = NULL, value="25000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp9_sales_target_4",label = NULL, value=""))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp9",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小兰"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp9_worktime_1",
-                                label = NULL,
-                                value = "10"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp9_worktime_2",
-                                label = NULL,
-                                value = "7"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp9_worktime_3",
-                                label = NULL,
-                                value = "3"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp9_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                            )
-                          )
-                        ),
-                        br(),
-                        
-                        # fluidRow(
-                        #   h3("决策-医院10"),
-                        box(
-                          title=unique(hospital_info$名称)[10],
-                          status = "primary",
-                          solidHeader = TRUE,
-                          width="100%",
-                          tags$div(
-                            tags$div(style = "display:inline-block;vertical-align:middle;margin-left:18%;width:18%;text-align:center",
-                                     product_info$类别[1]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[2]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[3]),
-                            tags$div(style = "display:inline-block;width:18%;text-align:center;vertical-align:middle;margin-left:10px",
-                                     product_info$类别[4])
-                          ),
-                          br(),
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "潜力(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp10_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp10_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp10_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_potential_sales_hosp10_4"))
-                          ),
-                          
-                          
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的总推广预算(%)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_promotional_budget_hosp10", 
-                                               label = NULL,
-                                               value="23"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "上期销售额(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp10_1")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp10_2")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp10_3")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;margin-right:10px;",
-                                     verbatimTextOutput("p0_current_sales_hosp10_4"))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "销售指标设定(元)"),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp10_sales_target_1",label = NULL, value="2000000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp10_sales_target_2",label = NULL, value="200000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp10_sales_target_3",label = NULL, value="225000")),
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                                     textInput("p0_hosp10_sales_target_4",label = NULL, value=""))
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "分派业务代表"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              selectizeInput(
-                                "p0_sr_hosp10",
-                                label = NULL,
-                                choices = sr_info$业务代表,
-                                selected = "小兰"
-                              )
-                            )
-                          ),
-                          
-                          tags$div(
-                            tags$div(style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:left;",
-                                     "批准的医院拜访时间(%)"),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:10px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp10_worktime_1",
-                                label = NULL,
-                                value = "60"
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp10_worktime_2",
-                                label = NULL,
-                                value = "10"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp10_worktime_3",
-                                label = NULL,
-                                value = "10"
-                                
-                              )
-                            ),
-                            tags$div(
-                              style = "display:inline-block;width:16%;vertical-align:middle;margin-left:20px;text-align:center;margin-right:10px;",
-                              textInput(
-                                "p0_hosp10_worktime_4",
-                                label = NULL,
-                                value = ""
-                                
-                              )
-                            )
-                          )
-                       )
-        ))
+          ))
+        
       )),
     tabItem(
       tabName = "decision2",
@@ -4255,7 +2950,11 @@ mainbody <- div(
           hidden(
             div(id="decision2_phase2",
                 
-                actionButton("decision2_phase2_submit","提交"),
+                # actionButton("decision2_phase2_submit","提交"),
+                fluidRow(
+                  column(width=10),
+                  column(width=2,
+                         actionButton("decision2_phase2_submit", strong(" 提  交"),icon("check-square-o"),width=150))),
                 downloadButton("p2_chk_data","下载中间数据"),
                 #fluidRow(h3("时间分配"),
                 box(
@@ -4434,193 +3133,7 @@ mainbody <- div(
                                          NULL))
                   )
                 )))
-        ),
-        
-        hidden(
-          tabPanel(
-            title="周期0",
-            value="phase0",
-            hidden(checkboxInput("hide2", "Show tab2", FALSE)),
-            
-            #fluidRow(h3("时间分配"),
-            box(
-              title="时间分配",
-              status = "primary",
-              solidHeader = TRUE,
-              width="100%",
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                         "可供时间分配(天)"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_work_time"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:15%;margin-left:20px;",
-                         "已分配时间 经理(天)"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:3%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_arranged_time_of_flm"))
-              )),
-            hr(),
-            # fluidRow(
-            #   h3("经理时间分配(天数)"),
-            box(
-              title="经理时间分配(天数)",
-              status = "primary",
-              solidHeader = TRUE,
-              width="100%",
-              tags$div(
-                tags$div(style = "display:inline-block;margin-left:15%;vertical-align:middle;text-align:center;width:11.5%",
-                         "总时间的百分比"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
-                         "经理"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                         sr_info$业务代表[1]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                         sr_info$业务代表[2]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                         sr_info$业务代表[3]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                         sr_info$业务代表[4]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;width:10%",
-                         sr_info$业务代表[5])
-              ),
-              br(),
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px",
-                         "能力辅导"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_total_sales_training")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_flm_sales_training")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr1_sales_training", label =
-                                     NULL,value=4)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr2_sales_training", label =
-                                     NULL,value=4)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr3_sales_training", label =
-                                     NULL,value=6)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr4_sales_training", label =
-                                     NULL,value=4)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr5_sales_training", label =
-                                     NULL,value=5))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px;",
-                         "实地随访"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_total_field_work")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_flm_field_work")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr1_field_work", label =
-                                     NULL,value=6)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr2_field_work", label =
-                                     NULL,value=8)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr3_field_work", label =
-                                     NULL,value=8)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr4_field_work", label =
-                                     NULL,value=8)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr5_field_work", label =
-                                     NULL,value=10))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px;",
-                         "团队例会和团建"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_total_team_meeting")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
-                         textInput("p0_flm_team_meeting", label =
-                                     NULL,value=10)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         verbatimTextOutput("p0_sr1_team_meeting")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         verbatimTextOutput("p0_sr2_team_meeting")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         verbatimTextOutput("p0_sr3_team_meeting")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         verbatimTextOutput("p0_sr4_team_meeting")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         verbatimTextOutput("p0_sr5_team_meeting"))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px;",
-                         "KPI 报告分析"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_total_kpi_analysis")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
-                         textInput("p0_flm_kpi_analysis", label =
-                                     NULL,value=15))
-              ),
-              
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px;",
-                         "行政工作"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_total_admin_work")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
-                         textInput("p0_flm_admin_work", label =
-                                     NULL,value=10))
-              ),
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px",
-                         "合计"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:1%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_total_management")),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:2%;width:8%;margin-right:1%",
-                         verbatimTextOutput("p0_flm_management"))
-              )
-            ),
-            br(),
-            # fluidRow(
-            #   h3("产品培训"),
-            box(
-              title="批准代表脱岗进行产品培训(天数)",
-              status = "primary",
-              solidHeader = TRUE,
-              width="100%",
-              tags$div(
-                tags$div(style = "display:inline-block;margin-left:15%;vertical-align:middle;text-align:center;width:11.5%",
-                         sr_info$业务代表[1]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:30px;width:8%",
-                         sr_info$业务代表[2]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:25px;width:10.5%",
-                         sr_info$业务代表[3]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:20px;width:10.5%",
-                         sr_info$业务代表[4]),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;margin-left:15px;width:10.5%",
-                         sr_info$业务代表[5])
-              ),
-              br(),
-              
-              tags$div(
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:left;width:13%;margin-left:20px",
-                         "产品培训"),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:1%;width:8%;margin-right:1%",
-                         textInput("p0_sr1_product_training", label =
-                                     NULL,value=5)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2%;width:8%;margin-right:1%",
-                         textInput("p0_sr2_product_training", label =
-                                     NULL,value=5)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr3_product_training", label =
-                                     NULL,value=5)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr4_product_training", label =
-                                     NULL,value=5)),
-                tags$div(style = "display:inline-block;vertical-align:middle;text-align:center;margin-left:2.5%;width:8%;margin-right:1.5%",
-                         textInput("p0_sr5_product_training", label =
-                                     NULL,value=5))
-              )
-            )
-          ))
+        )
         
       )),
     
@@ -4630,8 +3143,8 @@ mainbody <- div(
                        
                        br(),
                        fluidRow(column(width = 10),
-                                column(width = 2, downloadButton(outputId = "download_phase1",
-                                               label = "下载周期1报告"))),
+                                column(width = 2, disabled(downloadButton(outputId = "download_phase1",
+                                               label = "下载周期1报告")))),
                       
                        br(),
                        box(title="市场销售报告",
@@ -4739,8 +3252,8 @@ mainbody <- div(
                        
                        br(),
                        fluidRow(column(width = 10),
-                                column(width = 2, downloadButton(outputId = "download_phase2",
-                                                                 label = "下载周期2报告"))),
+                                column(width = 2, disabled(downloadButton(outputId = "download_phase2",
+                                                                 label = "下载周期2报告")))),
                        
                        br(),
                        box(title="市场销售报告",
@@ -4857,7 +3370,14 @@ mainbody <- div(
                        
               )
               
-            ))
+            )),
+    tabItem(tabName = "help",
+            box(title="学员须知",
+                width="100%",
+                status = "primary", 
+                solidHeader = TRUE,
+                htmlOutput("Attention"))
+            )
     )
 )
 
@@ -4935,6 +3455,7 @@ server=function(input, output, session) {
   
   
   #### YOUR APP'S SERVER CODE GOES HERE ----------------------------------------
+  session$allowReconnect(TRUE)
   
   observe({
     if (user_input$authenticated == T) {
@@ -4980,371 +3501,33 @@ server=function(input, output, session) {
     toggle(condition = input$hide2, selector = "#tab2 li a[data-value=phase0]")
   })
   
+  output$Attention <- renderUI(
+    div(h4("若周期决策提交失败，系统将跳出提示，"),
+        br(),
+        p(span("提示1:   代表已分配时间或推广预算已分配不能为0", style="color:red")),
+        p("解决方法： 返回业务决策页面，检查是否有代表没有分配时间或是未进行推广预算分配"),
+        br(),
+        p(span("提示2:   推广预算分配或是时间分配超出最大值", style="color:red")),
+        p("解决方法： 返回业务决策页面，查看系统自动计算模块，检查是否存在某一项计算结果超出100，对超出的那一项重新调整分配"),
+        br(),
+        p(span("提示3:  第x 家医院未填写代表", style="color:red")),
+        p("解决方法：  返回业务决策页面，检查是否第x家医院填写了时间分配或推广预算，但是未选定代表，为其选择代表，或将该家医院的时间分配和推广预算清空"))
+  )
+  
+  
  
-  output$p0_total_promotional_budget <- renderText(total_promotional_budget$phase1)
-  
-  
-  p0_calculator_result <- reactive({  calculator(input,0) })
-  
-  output$p0_arranged_time_of_sr1 <- renderText(p0_calculator_result()[2])
-  output$p0_arranged_time_of_sr2 <- renderText(p0_calculator_result()[3])
-  output$p0_arranged_time_of_sr3 <- renderText(p0_calculator_result()[4])
-  output$p0_arranged_time_of_sr4 <- renderText(p0_calculator_result()[5])
-  output$p0_arranged_time_of_sr5 <- renderText(p0_calculator_result()[6])
-  
-  output$p0_potential_sales_hosp1_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==1&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp1_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==1&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp1_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==1&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp1_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==1&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp1_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==1&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp1_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==1&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp1_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==1&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp1_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==1&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  
-  output$p0_potential_sales_hosp2_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==2&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp2_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==2&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp2_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==2&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp2_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==2&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp2_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==2&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp2_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==2&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp2_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==2&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp2_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==2&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp3_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==3&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp3_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==3&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp3_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==3&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp3_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==3&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp3_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==3&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp3_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==3&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp3_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==3&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp3_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==3&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp4_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==4&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp4_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==4&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp4_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==4&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp4_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==4&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp4_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==4&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp4_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==4&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp4_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==4&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp4_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==4&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp5_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==5&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp5_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==5&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp5_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==5&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp5_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==5&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp5_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==5&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp5_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==5&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp5_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==5&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp5_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==5&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp6_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==6&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp6_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==6&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp6_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==6&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp6_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==6&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp6_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==6&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp6_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==6&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp6_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==6&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp6_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==6&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp7_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==7&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp7_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==7&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp7_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==7&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp7_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==7&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp7_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==7&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp7_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==7&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp7_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==7&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp7_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==7&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp8_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==8&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp8_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==8&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp8_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==8&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp8_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==8&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp8_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==8&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp8_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==8&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp8_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==8&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp8_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==8&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp9_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==9&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp9_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==9&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp9_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==9&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp9_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==9&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp9_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==9&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp9_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==9&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp9_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==9&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp9_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==9&
-                    pp_info$prod_code==4),]$pp_real_revenue)
-  
-  output$p0_potential_sales_hosp10_1 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==10&
-                          hospital_info$prod_code==1),]$潜力)
-  output$p0_potential_sales_hosp10_2 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==10&
-                          hospital_info$prod_code==2),]$潜力)
-  output$p0_potential_sales_hosp10_3 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==10&
-                          hospital_info$prod_code==3),]$潜力)
-  output$p0_potential_sales_hosp10_4 <- renderText(
-    hospital_info[which(hospital_info$phase=="周期0"&
-                          hospital_info$hosp_code==10&
-                          hospital_info$prod_code==4),]$潜力)
-  
-  output$p0_current_sales_hosp10_1 <- renderText(
-    pp_info[which(pp_info$hosp_code==10&
-                    pp_info$prod_code==1),]$pp_real_revenue)
-  output$p0_current_sales_hosp10_2 <- renderText(
-    pp_info[which(pp_info$hosp_code==10&
-                    pp_info$prod_code==2),]$pp_real_revenue)
-  output$p0_current_sales_hosp10_3 <- renderText(
-    pp_info[which(pp_info$hosp_code==10&
-                    pp_info$prod_code==3),]$pp_real_revenue)
-  output$p0_current_sales_hosp10_4 <- renderText(
-    pp_info[which(pp_info$hosp_code==10&
-                    pp_info$prod_code==4),]$pp_real_revenue)
   
   
   
+  p0_flm_data <- reactive(get.data3(inputs,0))
   
-  p0_calculator_result <- reactive({  calculator(input,0) })
-  
-  output$p0_arranged_time_of_sr1 <- renderText(p0_calculator_result()[2])
-  output$p0_arranged_time_of_sr2 <- renderText(p0_calculator_result()[3])
-  output$p0_arranged_time_of_sr3 <- renderText(p0_calculator_result()[4])
-  output$p0_arranged_time_of_sr4 <- renderText(p0_calculator_result()[5])
-  output$p0_arranged_time_of_sr5 <- renderText(p0_calculator_result()[6])
-  
-  
-  p0_flm_data <- reactive(get.data3(input,0))
-  output$p0_total_sales_training <-renderText(sales_training(input,0))
-  output$p0_flm_sales_training <- renderText(sales_training(input,0))
-  output$p0_total_field_work <-renderText(field_work(input,0))
-  output$p0_flm_field_work <- renderText(field_work(input,0))
-  output$p0_sr1_team_meeting <- renderText(ifelse(input$p0_flm_team_meeting=="",
-                                                  NA,
-                                                  input$p0_flm_team_meeting))
-  output$p0_sr2_team_meeting <- renderText(ifelse(input$p0_flm_team_meeting=="",
-                                                  NA,
-                                                  input$p0_flm_team_meeting))
-  output$p0_sr3_team_meeting <- renderText(ifelse(input$p0_flm_team_meeting=="",
-                                                  NA,
-                                                  input$p0_flm_team_meeting))
-  output$p0_sr4_team_meeting <- renderText(ifelse(input$p0_flm_team_meeting=="",
-                                                  NA,
-                                                  input$p0_flm_team_meeting))
-  output$p0_sr5_team_meeting <- renderText(ifelse(input$p0_flm_team_meeting=="",
-                                                  NA,
-                                                  input$p0_flm_team_meeting))
-  output$p0_total_team_meeting <- renderText(ifelse(input$p0_flm_team_meeting=="",
-                                                    NA,
-                                                    input$p0_flm_team_meeting))
-  output$p0_total_kpi_analysis <- renderText(ifelse(input$p0_flm_kpi_analysis=="",
-                                                    NA,
-                                                    input$p0_flm_kpi_analysis))
-  
-  output$p0_total_admin_work <- renderText(ifelse(input$p0_flm_admin_work=="",
-                                                  NA,
-                                                  input$p0_flm_admin_work))
-  output$p0_total_management <- renderText(sum(p0_flm_data(),na.rm=T))
-  output$p0_flm_management <- renderText(sum(p0_flm_data(),na.rm=T))
-  output$p0_arranged_time_of_flm <- renderText(sum(p0_flm_data(),na.rm=T))
   
   
   tmp0 <- reactive({
     pp_data1 <- pp_info
     pp_data2 <- sr_info_list
-    cp_data1 <- get.data1(input,0)
-    cp_data2 <- get.data2(input,0)
+    cp_data1 <- get.data1(inputs,0)
+    cp_data2 <- get.data2(inputs,0)
     tmp <- calculation(pp_data1,
                        pp_data2,
                        cp_data1,
@@ -5355,19 +3538,8 @@ server=function(input, output, session) {
   
   
   p0_report <- reactive({
-    if (
+    report_data(tmp0(),p0_flm_data(),null_report7)
       
-      p0_calculator_result()[1]>0&p0_calculator_result()[1] <=100 &
-      p0_calculator_result()[2]>0&p0_calculator_result()[2] <=100 &
-      p0_calculator_result()[3]>0&p0_calculator_result()[3] <=100 &
-      p0_calculator_result()[4]>0&p0_calculator_result()[4] <=100 &
-      p0_calculator_result()[5]>0&p0_calculator_result()[5] <=100 &
-      p0_calculator_result()[6]>0&p0_calculator_result()[6] <=100 &
-      sum(p0_flm_data()) <=worktime
-    ) {
-      p0_report <- report_data(tmp0(),p0_flm_data(),null_report7)
-      return(p0_report)
-    }
     
   })
   
@@ -5953,7 +4125,11 @@ server=function(input, output, session) {
   
   
   observeEvent(input$decision2_phase1_submit,{
-    if (
+    numberOfhosp <- vapply(1:10,function(x) test(phase=1,hosp=x,input),c(c=0))
+    if (sum(numberOfhosp,na.rm=T)>0) {
+      shinyjs::alert(paste("第",paste(numberOfhosp[which(!is.na(numberOfhosp))],collapse=","),"家医院未填写代表"))
+    }
+     else if (
       p1_calculator_result()[1] >100 | p1_calculator_result()[1]==0|
       p1_calculator_result()[2] >100 | p1_calculator_result()[2]==0|
       p1_calculator_result()[3] >100 | p1_calculator_result()[3]==0|
@@ -5973,6 +4149,7 @@ server=function(input, output, session) {
       shinyjs::enable(id="phase2_hospital_info")
       shinyjs::enable(id="phase2_WAS_info")
       
+      enable("download_phase1")
       #hosp1
       disable("p1_promotional_budget_hosp1")
       disable("p1_hosp1_sales_target_1")
@@ -6112,6 +4289,42 @@ server=function(input, output, session) {
       disable("p1_sr4_product_training")
       disable("p1_sr5_product_training")
       shinyjs::alert("周期1决策已提交，无法再修改。")}
+    
+    # ##  load 2 from 1
+    # input_list <- reactiveValuesToList(input)
+    # for (i in 1: 10) {
+    #   input_list[[paste("p2_promotional_budget_hosp",i,sep="")]] =
+    #     input_list[[paste("p1_promotional_budget_hosp",i,sep="")]]
+    #   input_list[[paste("p2_sr_hosp",i,sep="")]] =
+    #     input_list[[paste("p1_sr_hosp",i,sep="")]]
+    #   for ( j in 1:4) {
+    #     input_list[[paste("p2_hosp",i,"_sales_target_",j,sep="")]] =
+    #       input_list[[paste("p1_hosp",i,"_sales_target_",j,sep="")]]
+    #     input_list[[paste("p2_hosp",i,"_worktime_",j,sep="")]] =
+    #       input_list[[paste("p1_hosp",i,"_worktime_",j,sep="")]]
+    #   }
+    # }
+    # for (k in 1:5) {
+    #   input_list[[paste("p2_sr",k,"_sales_training",sep="")]] =
+    #     input_list[[paste("p1_sr",k,"_sales_training",sep="")]]
+    #   input_list[[paste("p2_sr",k,"_field_work",sep="")]] =
+    #     input_list[[paste("p1_sr",k,"_field_work",sep="")]]
+    #   input_list[[paste("p2_sr",k,"_product_training",sep="")]] =
+    #     input_list[[paste("p1_sr",k,"_product_training",sep="")]]
+    # }
+    # 
+    # input_list[["p2_flm_team_meeting"]] =
+    #   input_list[["p1_flm_team_meeting"]]
+    # input_list[["p2_flm_kpi_analysis"]] =
+    #   input_list[["p1_flm_kpi_analysis"]]
+    # input_list[["p2_flm_admin_work"]] =
+    #   input_list[["p1_flm_admin_work"]]
+    # 
+    # input_list[["sidebarmenu"]] <-"reports"
+    # 
+    # for (q in 1:length(input_list)) {
+    #   session$sendInputMessage(names(input_list)[q],  list(value=input_list[[q]]) )
+    # }
   })
   
   p1_report <- eventReactive(input$decision2_phase1_submit,{
@@ -6144,6 +4357,8 @@ server=function(input, output, session) {
       write.csv(tmp(), file)
     }
   )
+  
+  
   
   
   output$p1_report1_1 <- 
@@ -6203,6 +4418,7 @@ server=function(input, output, session) {
   
   output$p1_report2_1 <- 
     renderDataTable(datatable(p1_report()$report2_mod1,
+                              rownames = F,
                               caption="职员成本",
                               options = 
                                 list(ordering = F, dom = "t",
@@ -6860,6 +5076,7 @@ server=function(input, output, session) {
       shinyjs::enable(id="phase3_hospital_info")
       shinyjs::enable(id="phase3_WAS_info")
       
+      enable("download_phase2")
       #hosp1
       disable("p2_promotional_budget_hosp1")
       disable("p2_hosp1_sales_target_1")
@@ -7090,6 +5307,7 @@ server=function(input, output, session) {
   
   output$p2_report2_1 <- 
     renderDataTable(datatable(p2_report()$report2_mod1,
+                              rownames = F,
                               caption="职员成本",
                               options = 
                                 list(ordering = F, dom = "t",

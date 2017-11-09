@@ -1592,7 +1592,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_1",
                         label = NULL,
-                        value = "6"
+                        value = ""
                       )
                     ),
                     tags$div(
@@ -1600,7 +1600,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_2",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1609,7 +1609,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1618,7 +1618,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp1_worktime_4",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     )
@@ -1714,7 +1714,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_1",
                         label = NULL,
-                        value = "6"
+                        value = ""
                       )
                     ),
                     tags$div(
@@ -1722,7 +1722,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_2",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1731,7 +1731,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1740,7 +1740,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp2_worktime_4",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     )
@@ -1837,7 +1837,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_1",
                         label = NULL,
-                        value = "6"
+                        value = ""
                       )
                     ),
                     tags$div(
@@ -1845,7 +1845,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_2",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1854,7 +1854,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -1863,7 +1863,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp3_worktime_4",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     )
@@ -2589,7 +2589,7 @@ mainbody <- div(
                       textInput(
                         "p2_hosp9_worktime_3",
                         label = NULL,
-                        value = "6"
+                        value = ""
                         
                       )
                     ),
@@ -4046,20 +4046,11 @@ mainbody <- div(
         tabPanel(
           "周期1",
           br(),
-          
-          # fluidRow(
-          #   column(
-          #      width=2,
-          #           br(),
-          #           br(),
-          #           br(),
-          #           br(),
+      
           fluidRow(
             column(width=10),
             column(width=2,
                    actionButton("decision2_phase1_submit", strong(" 提  交"),icon("check-square-o"),width=150))),
-          # div(id="decision2_phase1_submit",class = "ui blue button", 
-          #     "Color icon button"),
           div(
             id="admin",
             selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
@@ -4067,10 +4058,7 @@ mainbody <- div(
           downloadButton("p0_chk_data","下载周期0中间数据"),
           downloadButton("p1_chk_data","下载周期1中间数据"),
           
-          #   column(width=5,textInput(inputId = "filename",label = "保存文件名"),
-          #          actionButton('save_inputs', '保存输入')),
-          #   column(width=5,selectInput(inputId="select_file",label="选择文件",choices=list.files(pattern = "\\.RDS$"),selected=NULL),
-          #          actionButton("load_inputs", "加载输入"))),
+          
           br(),
           #fluidRow(h3("时间分配"),
           box(
@@ -4256,7 +4244,11 @@ mainbody <- div(
           hidden(
             div(id="decision2_phase2",
                 
-                actionButton("decision2_phase2_submit","提交"),
+                br(),
+                fluidRow(
+                  column(width=10),
+                  column(width=2,
+                         actionButton("decision2_phase2_submit", strong(" 提  交"),icon("check-square-o"),width=150))),
                 downloadButton("p2_chk_data","下载中间数据"),
                 #fluidRow(h3("时间分配"),
                 box(
@@ -4631,8 +4623,8 @@ mainbody <- div(
                        
                        br(),
                        fluidRow(column(width = 10),
-                                column(width = 2, downloadButton(outputId = "download_phase1",
-                                               label = "下载周期1报告"))),
+                                column(width = 2, disabled(downloadButton(outputId = "download_phase1",
+                                               label = "下载周期1报告")))),
                       
                        br(),
                        box(title="市场销售报告",
@@ -4694,19 +4686,19 @@ mainbody <- div(
                                     dataTableOutput("p1_report3"))),
                        
                        br(),
-                       box(title="利润贡献(总体)",
+                       box(title="合计",
                            width="100%",
                            status = "primary", solidHeader = TRUE,
                            
                            
-                           tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p1_report4_1")),
-                           
-                           br(),br(),br(),
+                           # tags$div(style = "text-align:left;margin-left:3%",
+                           #          dataTableOutput("p1_report4_1")),
+                           # 
+                           # br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
                                     dataTableOutput("p1_report4_2"))),
                        br(),
-                       box(title="利润贡献(每客户)",
+                       box(title="销售明细 (每客户)",
                            width="100%",
                            status = "primary", solidHeader = TRUE,
                            
@@ -4740,8 +4732,8 @@ mainbody <- div(
                        
                        br(),
                        fluidRow(column(width = 10),
-                                column(width = 2, downloadButton(outputId = "download_phase2",
-                                                                 label = "下载周期2报告"))),
+                                column(width = 2, disabled(downloadButton(outputId = "download_phase2",
+                                                                 label = "下载周期2报告")))),
                        
                        br(),
                        box(title="市场销售报告",
@@ -4815,20 +4807,20 @@ mainbody <- div(
                        #              dataTableOutput("p2_report4_3"))),
                        
                        br(),
-                       box(title="利润贡献(总体)",
+                       box(title="合计",
                            width="100%",
                            status = "primary", 
                            solidHeader = TRUE,
                            
                            
-                           tags$div(style = "text-align:left;margin-left:3%",
-                                    dataTableOutput("p2_report4_1")),
-                           
-                           br(),br(),br(),
+                           # tags$div(style = "text-align:left;margin-left:3%",
+                           #          dataTableOutput("p2_report4_1")),
+                           # 
+                           # br(),br(),br(),
                            tags$div(style = "text-align:left;margin-left:3%",
                                     dataTableOutput("p2_report4_2"))),
                        br(),
-                       box(title="利润贡献(每客户)",
+                       box(title="销售明细 (每客户)",
                            width="100%",
                            status = "primary", 
                            solidHeader = TRUE,
@@ -4936,6 +4928,7 @@ server=function(input, output, session) {
   
   
   #### YOUR APP'S SERVER CODE GOES HERE ----------------------------------------
+  session$allowReconnect(TRUE)
   
   observe({
     if (user_input$authenticated == T) {
@@ -5954,13 +5947,20 @@ server=function(input, output, session) {
   
   
   observeEvent(input$decision2_phase1_submit,{
-    if (
-      p1_calculator_result()[1] >100 | p1_calculator_result()[1]==0|
-      p1_calculator_result()[2] >100 | p1_calculator_result()[2]==0|
-      p1_calculator_result()[3] >100 | p1_calculator_result()[3]==0|
-      p1_calculator_result()[4] >100 | p1_calculator_result()[4]==0|
-      p1_calculator_result()[5] >100 | p1_calculator_result()[5]==0|
-      p1_calculator_result()[6] >100 | p1_calculator_result()[6]==0|
+    if (p1_calculator_result()[1]==0|
+        p1_calculator_result()[2]==0|
+        p1_calculator_result()[3]==0|
+        p1_calculator_result()[4]==0|
+        p1_calculator_result()[5]==0|
+        p1_calculator_result()[6]==0) {
+      shinyjs::alert("代表已分配时间或推广预算已分配不能为0")
+    } else if (
+      p1_calculator_result()[1] >100 | 
+      p1_calculator_result()[2] >100 | 
+      p1_calculator_result()[3] >100 | 
+      p1_calculator_result()[4] >100 | 
+      p1_calculator_result()[5] >100 | 
+      p1_calculator_result()[6] >100 | 
       sum(p1_flm_data()) >worktime
     ) {
       shinyjs::alert("推广预算分配或是时间分配超出最大值！！")
@@ -5974,6 +5974,8 @@ server=function(input, output, session) {
       shinyjs::enable(id="phase2_hospital_info")
       shinyjs::enable(id="phase2_WAS_info")
       
+      disable("decision2_phase1_submit")
+      enable("download_phase1")
       #hosp1
       disable("p1_promotional_budget_hosp1")
       disable("p1_hosp1_sales_target_1")
@@ -6251,20 +6253,20 @@ server=function(input, output, session) {
                                        "}"))))
   
   
-  output$p1_report4_1 <- 
-    renderDataTable(datatable(p1_report()$report4_mod1,
-                              caption="利润贡献 每产品(总)",
-                              options = 
-                                list(ordering = F, dom = "t",
-                                     columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-                                     initComplete = JS(
-                                       "function(settings, json) {",
-                                       "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-                                       "}"))))
-  
+  # output$p1_report4_1 <- 
+  #   renderDataTable(datatable(p1_report()$report4_mod1,
+  #                             caption="利润贡献 每产品(总)",
+  #                             options = 
+  #                               list(ordering = F, dom = "t",
+  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+  #                                    initComplete = JS(
+  #                                      "function(settings, json) {",
+  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
+  #                                      "}"))))
+  # 
   output$p1_report4_1 <- 
     renderDataTable(datatable(p1_report()$report4_mod2,
-                              caption="利润贡献 (总体)",
+                              caption="合计",
                               options = 
                                 list(ordering = F, dom = "t",
                                      columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
@@ -6287,7 +6289,7 @@ server=function(input, output, session) {
   output$p1_report5_1 <- 
     renderDataTable(datatable(p1_report5_mod1(),
                               rownames = F,
-                              caption="利润贡献 每客户",
+                              caption="销售明细 每客户",
                               options = 
                                 list(pageLength = 120,
                                      ordering = F, dom = "t",
@@ -6389,7 +6391,7 @@ server=function(input, output, session) {
       saveWorkbook(writeDown("phase1",p1_report(),p1_report7_mod1()),
                    file = paste("users/",input$user_name,"/",
                                 user_input$time,"_",
-                                user_input$time_stamp,"/report_phase1.xlsx",sep=""),
+                                user_input$times,"/report_phase1.xlsx",sep=""),
                    overwrite = TRUE)
     }
   })
@@ -6840,15 +6842,21 @@ server=function(input, output, session) {
   
   
   
-  observeEvent(input$decision2_phase2_submit, {
-    
-    if (
-      p2_calculator_result()[1] >100 | p2_calculator_result()[1]==0|
-      p2_calculator_result()[2] >100 | p2_calculator_result()[2]==0|
-      p2_calculator_result()[3] >100 | p2_calculator_result()[3]==0|
-      p2_calculator_result()[4] >100 | p2_calculator_result()[4]==0|
-      p2_calculator_result()[5] >100 | p2_calculator_result()[5]==0|
-      p2_calculator_result()[6] >100 | p2_calculator_result()[6]==0|
+  observeEvent(input$decision2_phase2_submit,{
+    if (p2_calculator_result()[1]==0|
+        p2_calculator_result()[2]==0|
+        p2_calculator_result()[3]==0|
+        p2_calculator_result()[4]==0|
+        p2_calculator_result()[5]==0|
+        p2_calculator_result()[6]==0) {
+      shinyjs::alert("代表已分配时间或推广预算已分配不能为0")
+    } else if (
+      p2_calculator_result()[1] >100 | 
+      p2_calculator_result()[2] >100 | 
+      p2_calculator_result()[3] >100 | 
+      p2_calculator_result()[4] >100 | 
+      p2_calculator_result()[5] >100 | 
+      p2_calculator_result()[6] >100 | 
       sum(p2_flm_data()) >worktime
     ) {
       shinyjs::alert("推广预算分配或是时间分配超出最大值！！")
@@ -6861,6 +6869,8 @@ server=function(input, output, session) {
       shinyjs::enable(id="phase3_hospital_info")
       shinyjs::enable(id="phase3_WAS_info")
       
+      disable("decision2_phase2_submit")
+      enable("download_phase2")
       #hosp1
       disable("p2_promotional_budget_hosp1")
       disable("p2_hosp1_sales_target_1")
@@ -7137,20 +7147,20 @@ server=function(input, output, session) {
                                        "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
                                        "}"))))
   
-  output$p2_report4_1 <- 
-    renderDataTable(datatable(p2_report()$report4_mod1,
-                              caption="利润贡献 每产品(总)",
-                              options = 
-                                list(ordering = F, dom = "t",
-                                     columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
-                                     initComplete = JS(
-                                       "function(settings, json) {",
-                                       "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
-                                       "}"))))
+  # output$p2_report4_1 <- 
+  #   renderDataTable(datatable(p2_report()$report4_mod1,
+  #                             caption="利润贡献 每产品(总)",
+  #                             options = 
+  #                               list(ordering = F, dom = "t",
+  #                                    columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
+  #                                    initComplete = JS(
+  #                                      "function(settings, json) {",
+  #                                      "$(this.api().table().header()).css({'background-color': '#41555D', 'color': '#fff'});",
+  #                                      "}"))))
   
   output$p2_report4_2 <- 
     renderDataTable(datatable(p2_report()$report4_mod2,
-                              caption="利润贡献 (总体)",
+                              caption="合计",
                               options = 
                                 list(ordering = F, dom = "t",
                                      columnDefs = list(list(className = 'dt-center', width = "250px", targets = "_all")),
@@ -7173,7 +7183,7 @@ server=function(input, output, session) {
   output$p2_report5_1 <- 
     renderDataTable(datatable(p2_report5_mod1(),
                               rownames = F,
-                              caption="利润贡献 每客户",
+                              caption="销售明细 每客户",
                               options = 
                                 list(pageLength = 120,
                                      ordering = F, dom = "t",
@@ -7276,7 +7286,7 @@ server=function(input, output, session) {
   # reactive value containing user's authentication status
   user_input <- reactiveValues(authenticated = FALSE, valid_credentials = FALSE, 
                                user_locked_out = FALSE, status = "",
-                               time_stamp = NULL,time = NULL)
+                               times = NULL,time = NULL)
   
   # authenticate user by:
   #   1. checking whether their user name and password are in the credentials 
@@ -7312,7 +7322,7 @@ server=function(input, output, session) {
         (row_username %in% row_password)) {
       user_input$valid_credentials <- TRUE
       user_input$user_locked_out <- credentials$locked_out[row_username]
-      user_input$time_stamp <- credentials$timestamp[row_username]
+      user_input$times <- as.numeric(credentials$timestamp[row_username])+1
     }
     
     # if user is not currently locked out but has now failed login too many times:
@@ -7325,9 +7335,11 @@ server=function(input, output, session) {
       user_input$user_locked_out <- TRUE
       
       if (length(row_username) == 1) {
-        credentials$locked_out[row_username] <- TRUE
-        
-        write.csv(credentials, "credentials/register_data.csv")
+        # credentials$locked_out[row_username] <- TRUE
+        # 
+        # write.csv(credentials, "credentials/register_data.csv")
+        tmp_name <- paste('{"user" : ', '"', input$user_name, '"', '}', sep = "")
+        db$update(tmp_name, '{"$set":{"locked_out": true}}')
       }
     }
     
@@ -7336,7 +7348,10 @@ server=function(input, output, session) {
       user_input$authenticated <- TRUE
       user_input$time <- gsub("-","_",Sys.Date())
       system(paste("mkdir users/",input$user_name,"/",
-                   user_input$time,"_",user_input$time_stamp,sep=""))
+                   user_input$time,"_",user_input$times,sep=""))
+      tmp_name <- paste('{"user" : ', '"', input$user_name, '"', '}', sep = "")
+      tmp_times <- paste('{"$set":{"times":', user_input$times, '}}', sep = "")
+      db$update(tmp_name, tmp_times)
     } else {
       user_input$authenticated <- FALSE
     }

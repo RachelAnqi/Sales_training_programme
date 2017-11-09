@@ -155,6 +155,8 @@ news <- read.xlsx("pre_info_new.xlsx",
                   sheet="news")
 colnames(news)[1] <- ""
 
+news$`上期销售额(元)` <- unlist(lapply(news$`上期销售额(元)` ,function(x)prettyNum(x,big.mark = ",")))
+
 p1_news <- data.frame("医院"=news[,1],
                       "icon"=c('<img src="./Hospitals/hosp1.png" height="52"></img>',
                                          '<img src="./Hospitals/hosp2.png" height="52"></img>',

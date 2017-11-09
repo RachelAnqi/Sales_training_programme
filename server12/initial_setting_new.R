@@ -4,6 +4,8 @@ library(dplyr)
 library(openxlsx)
 options(scipen=200)
 
+
+inputs <- readRDS("17_40.RDS")
 ## flm targets
 flm_target <- read.xlsx("pre_info_new.xlsx",
                         sheet="flm_target")
@@ -125,7 +127,7 @@ total_promotional_budget <- read.xlsx("pre_info_new.xlsx",
 null_report7 <- data.frame(
   phase=c("周期0","周期1","周期2"),
   "total_revenue"=rep("",3),
-  "profit"=rep("",3),
+  #"profit"=rep("",3),
   #"average_customer_relationship_index"=rep("",5),
   "team_capability"=rep("",3),
   "success_value"=rep("",3),
@@ -135,18 +137,18 @@ null_report7 <- data.frame(
 
 report7_mod1_rank <- data.frame(
   variable=c("total_revenue",
-             "profit",
+             #"profit",
             # "average_customer_relationship_index",
              "team_capability",
              "success_value",
              "acc_success_value"),
   name = c("总销售(元)",
-           "总利润(元)",
+           #"总利润(元)",
            #"客户关系均值(指数)",
            "团队能力(指数)",
            "得分",
            "累计得分"),
-  rank=1:5
+  rank=1:4
   
 )
 
@@ -154,6 +156,8 @@ report7_mod1_rank <- data.frame(
 news <- read.xlsx("pre_info_new.xlsx",
                   sheet="news")
 colnames(news)[1] <- ""
+
+news$`上期销售额(元)` <- unlist(lapply(news$`上期销售额(元)` ,function(x)prettyNum(x,big.mark = ",")))
 
 p1_news <- data.frame("医院"=news[,1],
                       "icon"=c('<img src="./Hospitals/hosp1.png" height="52"></img>',
@@ -213,7 +217,7 @@ rsd_sheet_names <- c("市场销售报告",
                      "经理报告",
                      "分配报告",
                      "利润贡献总体报告",
-                     "利润贡献客户报",
+                     "销售明细报告",
                      "销售报告")
 
 
